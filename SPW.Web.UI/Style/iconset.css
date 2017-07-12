@@ -1,0 +1,320 @@
+﻿  /*action icon*/
+  .action-icon-white-tran{
+      width:120px;
+      background-color:#3498db;
+  }
+ .panel.panel-primary.testpage .glyph-icon {
+     background-color:#5e7b7b;
+}
+
+  .panel.panel-primary .glyph-icon:before  {
+    content:'';
+}
+  .panel.panel-primary .glyph-icon {
+           
+            background-image: url('iconset/action-icon-white-tran.png');
+          background-repeat: repeat;
+    background-size: 120px;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    line-height: 32px;
+        }
+    .panel.panel-primary .glyph-icon.sample{
+        width:120px;
+        height:120px;
+    }
+    .panel.panel-primary .glyph-icon.icon-sample{
+        border:1px solid black;
+            background-position-x: 0px;
+    background-position-y: 0px;
+    }
+    /*.panel.panel-primary .btn-info{
+        background-color:transparent;
+    }
+    .panel.panel-primary .btn-danger{
+        background-color:transparent;
+    }*/
+     .panel.panel-primary .icon-typicons-plus-outline 
+     ,.panel.panel-primary .icon-plus{
+              background-position-x: -57px;
+    background-position-y: 0px;
+        }
+
+       .panel.panel-primary .icon-typicons-edit
+       ,.panel.panel-primary .icon-edit {
+     background-position-x: -27px;
+    background-position-y: -83px;
+        }
+         .panel.panel-primary .icon-typicons-trash,.panel.panel-primary .icon-trash {
+     background-position-x: -88px;
+    background-position-y: -83px;
+        }
+          .panel.panel-primary .icon-save {
+         background-position-x: -58px;
+    background-position-y: -84px;
+        } .panel.panel-primary .icon-close {
+    background-position-x: -86px;
+    background-position-y: -54px;
+        }
+          .panel.panel-primary .icon-search {
+       background-position-x: -87px;
+    background-position-y: -28px;
+        }
+           .panel.panel-primary .icon-refresh {
+          background-position-x: -57px;
+    background-position-y: -29px;
+        }
+
+
+         /*use font-awasome*/
+             .panel.panel-primary .icon-caret-down {
+     background-position-x: -86px;
+    background-position-y: 0px;
+        }
+          .panel.panel-primary .icon-caret-down:before {
+     content: "\f0d7";
+        }
+          /*Addby Nattawit.k Approve btn*/
+          .panel.panel-primary .icon-approve {
+     background-position-x: -86px;
+    background-position-y: 0px;
+        }
+          .panel.panel-primary .icon-approve:before {
+     content: "\f058";
+        }
+          .panel.panel-primary .icon-unapprove {
+     background-position-x: -86px;
+    background-position-y: 0px;
+        }
+          .panel.panel-primary .icon-unapprove:before {
+     content: "\f0e2";
+        }
+
+           .panel.panel-primary .icon-image {
+       background-position-x: -86px;
+    background-position-y: 0px;
+        }
+          .panel.panel-primary .icon-image:before {
+   content: "\f03e";
+        }
+           .panel.panel-primary .icon-exchange {
+       background-position-x: -86px;
+    background-position-y: 0px;
+        }
+          .panel.panel-primary .icon-exchange:before {
+   content: "\f0ec";
+        }
+           .panel.panel-primary .icon-minus {
+       background-position-x: -86px;
+    background-position-y: 0px;
+        }
+          .panel.panel-primary .icon-minus:before {
+     content: "\f068";
+        }
+
+
+
+         
+
+           /*
+            overide bootstrap
+
+        */
+        .btn.btn-blue-alt {
+            background: #316fc5;
+            border-color: #316fc5;
+        }
+
+            .btn.btn-blue-alt[disabled] {
+                background: #888686;
+                border-color: #888686;
+            }
+
+
+        /* change all edit delete button*/
+
+        a > i.glyph-icon.icon-typicons-trash {
+            font-size: 14px;
+            font-weight: normal;
+            position: relative;
+            display: inline-block;
+            padding: 0 8px;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            text-align: center;
+            white-space: nowrap;
+            border-width: 1px;
+            border-style: solid;
+            border-color: transparent;
+            background-image: none;
+            -o-user-select: none;
+            line-height: 32px;
+            height: 33px;
+            min-width: 32px;
+            border-radius: 3px;
+            color: #fff;
+         
+        }
+
+        a > i.glyph-icon.icon-typicons-edit, a > i.glyph-icon.icon-typicons-plus-outline {
+            font-size: 14px;
+            font-weight: normal;
+            position: relative;
+            display: inline-block;
+            padding: 0 8px;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            text-align: center;
+            white-space: nowrap;
+            border-width: 1px;
+            border-style: solid;
+            border-color: transparent;
+            background-image: none;
+            -o-user-select: none;
+            line-height: 32px;
+            height: 33px;
+            width: 32px;
+            border-radius: 3px;
+            color: #fff;
+           
+        }
+
+
+
+
+
+        /*
+           end overide bootstrap
+
+        */
+
+/* menu icon */
+        #sidebar-menu .glyph-icon {
+            left: 0;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background-image: url('iconset/iconsetsm.png');
+            color: #0093d9;
+            background-repeat: repeat;
+            background-position: 21px;
+        }
+#sidebar-menu .glyph-icon:before  {
+
+    content:'';
+}
+
+        #sidebar-menu .icon-data32 {
+            background-position-x: 209px;
+            background-position-y: -21px;
+        }
+
+        #sidebar-menu .icon-data-analytic32 {
+            background-position-x: 216px;
+            background-position-y: 263px;
+        }
+
+        #sidebar-menu .icon-home32 {
+            background-position-x: 212px;
+            background-position-y: -292px;
+        }
+
+        #sidebar-menu .icon-map32 {
+            background-position-x: 214px;
+            background-position-y: 320px;
+        }
+
+        #sidebar-menu .icon-sale-control32 {
+            background-position-x: 216px;
+            background-position-y: 167px;
+        }
+
+        #sidebar-menu .icon-system-manage32 {
+            background-position-x: 212px;
+            background-position-y: -352px;
+        }
+
+         #sidebar-menu .icon-tag {
+            background-position-x: 212px;
+            background-position-y: -407px;
+        }
+          #sidebar-menu .icon-gears {
+            background-position-x: 212px;
+            background-position-y: -459px;
+        }
+             #sidebar-menu .icon-magic {
+          background-position-x: 209px;
+    background-position-y: -79px;
+        }
+         
+            #sidebar-menu .icon-bookmark-o {
+          background-position-x: 209px;
+    background-position-y: -130px;
+        }
+                #sidebar-menu .icon-bank {
+          background-position-x: 209px;
+    background-position-y: -181px;
+        }
+                #sidebar-menu .icon-qrcode {
+          background-position-x: 209px;
+    background-position-y:-233px;
+        }  #sidebar-menu .icon-transaction {
+          background-position-x: 209px;
+    background-position-y:-131px;
+        }
+             #sidebar-menu .icon-contract-init {
+          background-position-x: 209px;
+    background-position-y:-80px;
+        }
+              #sidebar-menu .icon-plus-square-o {
+          background-position-x: 209px;
+    background-position-y:33px;
+        }
+           
+   .ms-list .ms-hover {
+    border: none;
+    background: #1c82e1;
+    color: white;
+}
+        .chosen-results .ms-hover.highlighted,.chosen-drop li.active-result.highlighted {
+    border: none !important;
+    background: #1c82e1;
+    color: white;
+}
+     
+          .chosen-results .result-selected  {
+    border: none !important;
+    background: #1c82e1;
+    color: white;
+}
+
+
+        /*end menu icon */
+
+
+
+
+        .fileUpload {
+position: relative;
+overflow: hidden;
+margin: 0;
+}
+
+.fileUpload input.upload {
+position: absolute;
+top: 0;
+right: 0;
+margin: 0;
+padding: 0;
+font-size: 20px;
+cursor: pointer;
+opacity: 0;
+filter: alpha(opacity=0);
+}

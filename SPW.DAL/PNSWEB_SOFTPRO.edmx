@@ -1,0 +1,1207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PNSWEB_SoftProModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PNSWEB.dbo.vw_AD11INV1_SearchResult' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_AD11INV1_SearchResult">
+          <Key>
+            <PropertyRef Name="FVOUNO" />
+          </Key>
+          <Property Name="FVOUNO" Type="varchar" MaxLength="18" Nullable="false" />
+          <Property Name="FASSETNO" Type="varchar" MaxLength="10" />
+          <Property Name="FPCLNDNO" Type="varchar" MaxLength="15" />
+          <Property Name="FPCPIECE" Type="varchar" MaxLength="10" />
+          <Property Name="FSUCODE" Type="varchar" MaxLength="8" />
+          <Property Name="FSUNAME" Type="varchar" MaxLength="200" />
+          <Property Name="FVOUDATE" Type="datetime" />
+          <Property Name="FMDATE" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PNSWEB.dbo.vw_BD10DIVI_joinCoreCompany' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_BD10DIVI_joinCoreCompany">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="FDIVCODE" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="COMID" Type="varchar" MaxLength="3" />
+          <Property Name="FDIVCODE" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="FDIVNAME" Type="varchar" MaxLength="50" />
+          <Property Name="FDIVNAMET" Type="varchar" MaxLength="50" />
+          <Property Name="FDIVMG" Type="varchar" MaxLength="15" />
+          <Property Name="FADD1" Type="varchar" MaxLength="50" />
+          <Property Name="FADD2" Type="varchar" MaxLength="50" />
+          <Property Name="FADD3" Type="varchar" MaxLength="20" />
+          <Property Name="FPOSTAL" Type="varchar" MaxLength="5" />
+          <Property Name="FCOMPTAXNO" Type="varchar" MaxLength="13" />
+          <Property Name="FSOCIALNO" Type="varchar" MaxLength="10" />
+          <Property Name="FSCBRANCH" Type="varchar" MaxLength="6" />
+          <Property Name="FPRAC" Type="varchar" MaxLength="12" />
+          <Property Name="FTAXAC" Type="varchar" MaxLength="12" />
+          <Property Name="FSOCIALAC" Type="varchar" MaxLength="12" />
+          <Property Name="FPFAC" Type="varchar" MaxLength="12" />
+          <Property Name="FLOANAC" Type="varchar" MaxLength="12" />
+          <Property Name="FLOANPFAC" Type="varchar" MaxLength="12" />
+          <Property Name="FADVAC" Type="varchar" MaxLength="12" />
+          <Property Name="FOTHAC" Type="varchar" MaxLength="12" />
+          <Property Name="FHOUSEAC" Type="varchar" MaxLength="12" />
+          <Property Name="FBONUSAC" Type="varchar" MaxLength="12" />
+          <Property Name="FBONUSAC2" Type="varchar" MaxLength="12" />
+          <Property Name="FBONUSAC3" Type="varchar" MaxLength="12" />
+          <Property Name="FPRNMARK" Type="varchar" MaxLength="1" />
+          <Property Name="FRETFAC" Type="varchar" MaxLength="12" />
+          <Property Name="Expr1" Type="varchar" MaxLength="3" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PNSWEB.dbo.vw_ED11PAJ2_WithDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_ED11PAJ2_WithDetail">
+          <Key>
+            
+            <PropertyRef Name="FTRNNO" />
+            <PropertyRef Name="FITEMNO" />
+          </Key>
+          <Property Name="RowNumber" Type="bigint" />
+          <Property Name="FTRNNO" Type="varchar" MaxLength="18" Nullable="false" />
+          <Property Name="FITEMNO" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="FPDCODE" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="FPDNAME" Type="varchar" MaxLength="80" />
+          <Property Name="FPDNAMET" Type="varchar" MaxLength="80" />
+          <Property Name="FSERIALNO" Type="varchar" MaxLength="10" />
+          <Property Name="FPROPRICE" Type="float" />
+          <Property Name="FDISCPRICE" Type="float" />
+          <Property Name="FSTDPRICE" Type="float" />
+          <Property Name="FAREA" Type="float" />
+          <Property Name="FREPRJNO" Type="varchar" MaxLength="6" />
+          <Property Name="FREPHASE" Type="varchar" MaxLength="3" />
+          <Property Name="FREZONE" Type="varchar" MaxLength="4" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PNSWEB.dbo.vw_FD11PROP_JoinED03UNIT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_FD11PROP_JoinED03UNIT">
+          <Key>
+            <PropertyRef Name="FASSETNO" />
+          </Key>
+          <Property Name="FREPRJNO" Type="varchar" MaxLength="6" />
+          <Property Name="FASSETNO" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="FPCPIECE" Type="varchar" MaxLength="10" />
+          <Property Name="FPCLNDNO" Type="varchar" MaxLength="15" />
+          <Property Name="FPCWIDTH" Type="varchar" MaxLength="6" />
+          <Property Name="FPCBETWEEN" Type="varchar" MaxLength="35" />
+          <Property Name="FPCBOOK" Type="varchar" MaxLength="10" />
+          <Property Name="FPCPAGE" Type="varchar" MaxLength="10" />
+          <Property Name="FQTY" Type="float" />
+          <Property Name="FSERNO" Type="varchar" MaxLength="28" />
+          <Property Name="FMORTGYN" Type="varchar" MaxLength="3" />
+          <Property Name="FASSPRCA" Type="float" />
+          <Property Name="FPCINST" Type="varchar" MaxLength="50" />
+          <Property Name="FPCNOTE" Type="text" />
+          <Property Name="FAREAOUT" Type="float" />
+          <Property Name="FAREAIN" Type="float" />
+          <Property Name="FAREAPARK" Type="float" />
+          <Property Name="FPWIEGHAREA" Type="float" />
+          <Property Name="FPAREAOUT" Type="float" />
+          <Property Name="FPAREAIN" Type="float" />
+          <Property Name="FPAREAPARK" Type="float" />
+          <Property Name="FHBKDATE" Type="datetime" />
+          <Property Name="e_FASSETNO" Type="varchar" MaxLength="21" />
+          <Property Name="e_FPDCODE" Type="varchar" MaxLength="25" />
+          <Property Name="e_FSERIALNO" Type="varchar" MaxLength="10" />
+          <Property Name="e_FADDRNO" Type="varchar" MaxLength="10" />
+          <Property Name="FENTTYPE" Type="varchar" MaxLength="3" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PNSWEB.dbo.vw_FD11PROP_NotInAD11INV1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_FD11PROP_NotInAD11INV1">
+          <Key>
+            <PropertyRef Name="FASSETNO" />
+          </Key>
+          <Property Name="FASSETNO" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="FTAGNO" Type="varchar" MaxLength="6" />
+          <Property Name="FAGRNO" Type="varchar" MaxLength="16" />
+          <Property Name="FTRNNO" Type="varchar" MaxLength="18" />
+          <Property Name="FASSETTY" Type="varchar" MaxLength="3" />
+          <Property Name="FASSETST" Type="varchar" MaxLength="2" />
+          <Property Name="FASSETOBJ" Type="varchar" MaxLength="1" />
+          <Property Name="FASSETOBJ2" Type="varchar" MaxLength="1" />
+          <Property Name="FDIVCODE" Type="varchar" MaxLength="2" />
+          <Property Name="FDPCODE" Type="varchar" MaxLength="4" />
+          <Property Name="FREPRJNO" Type="varchar" MaxLength="6" />
+          <Property Name="FLCNO" Type="varchar" MaxLength="4" />
+          <Property Name="FPCINST" Type="varchar" MaxLength="50" />
+          <Property Name="FPCINST2" Type="varchar" MaxLength="50" />
+          <Property Name="FPCINST3" Type="varchar" MaxLength="50" />
+          <Property Name="FPCPIECE" Type="varchar" MaxLength="10" />
+          <Property Name="FPCBETWEEN" Type="varchar" MaxLength="35" />
+          <Property Name="FPCLNDNO" Type="varchar" MaxLength="15" />
+          <Property Name="FPCWIDTH" Type="varchar" MaxLength="6" />
+          <Property Name="FPCBOOK" Type="varchar" MaxLength="10" />
+          <Property Name="FPCPAGE" Type="varchar" MaxLength="10" />
+          <Property Name="FPCTAMBON" Type="varchar" MaxLength="60" />
+          <Property Name="FPCAMPHER" Type="varchar" MaxLength="60" />
+          <Property Name="FPCPROVINC" Type="varchar" MaxLength="60" />
+          <Property Name="FPCPROVCD" Type="varchar" MaxLength="2" />
+          <Property Name="FPCCITYCD" Type="varchar" MaxLength="2" />
+          <Property Name="FPCLANDOWN" Type="varchar" MaxLength="50" />
+          <Property Name="FPCLANDOWN2" Type="varchar" MaxLength="100" />
+          <Property Name="FPCLANDOWNT" Type="varchar" MaxLength="1" />
+          <Property Name="FPCLANDOWTL" Type="varchar" MaxLength="20" />
+          <Property Name="FASSETNM" Type="varchar" MaxLength="120" />
+          <Property Name="FASBRAND" Type="varchar" MaxLength="15" />
+          <Property Name="FASTYPE" Type="varchar" MaxLength="15" />
+          <Property Name="FASMODLE" Type="varchar" MaxLength="20" />
+          <Property Name="FSERNO" Type="varchar" MaxLength="28" />
+          <Property Name="FASCOLOR" Type="varchar" MaxLength="20" />
+          <Property Name="FASENGNO" Type="varchar" MaxLength="25" />
+          <Property Name="FASCHASSIE" Type="varchar" MaxLength="25" />
+          <Property Name="FASREGYR" Type="varchar" MaxLength="4" />
+          <Property Name="FASHPOWER" Type="varchar" MaxLength="10" />
+          <Property Name="FASCC" Type="varchar" MaxLength="5" />
+          <Property Name="FASOIL" Type="varchar" MaxLength="5" />
+          <Property Name="FCARNO" Type="varchar" MaxLength="12" />
+          <Property Name="FTAXFROM" Type="datetime" />
+          <Property Name="FTAXTO" Type="datetime" />
+          <Property Name="FINSURER" Type="varchar" MaxLength="8" />
+          <Property Name="FINSPOLNO" Type="varchar" MaxLength="25" />
+          <Property Name="FINSFROM" Type="datetime" />
+          <Property Name="FINSTO" Type="datetime" />
+          <Property Name="FINSAMT" Type="float" />
+          <Property Name="FINSPREM" Type="float" />
+          <Property Name="FMAINCWITH" Type="varchar" MaxLength="7" />
+          <Property Name="FMAINCSTR" Type="datetime" />
+          <Property Name="FMAINCEND" Type="datetime" />
+          <Property Name="FDES1" Type="varchar" MaxLength="50" />
+          <Property Name="FDES2" Type="varchar" MaxLength="50" />
+          <Property Name="FDES3" Type="varchar" MaxLength="50" />
+          <Property Name="FLCOMPCOMP" Type="varchar" MaxLength="10" />
+          <Property Name="FSUCODE" Type="varchar" MaxLength="8" />
+          <Property Name="FSUNAME" Type="varchar" MaxLength="50" />
+          <Property Name="FINVNO" Type="varchar" MaxLength="18" />
+          <Property Name="FGAREXP" Type="datetime" />
+          <Property Name="FPONO" Type="varchar" MaxLength="18" />
+          <Property Name="FRRNO" Type="varchar" MaxLength="18" />
+          <Property Name="FRRITEMNO" Type="varchar" MaxLength="5" />
+          <Property Name="FRRDATE" Type="datetime" />
+          <Property Name="FSTDATE" Type="datetime" />
+          <Property Name="FENDATE" Type="datetime" />
+          <Property Name="FTOTAGE" Type="float" />
+          <Property Name="FNOMONTH" Type="float" />
+          <Property Name="FOUTMONTH" Type="float" />
+          <Property Name="FQTY" Type="float" />
+          <Property Name="FQTYTYPE" Type="varchar" MaxLength="1" />
+          <Property Name="FQTYADJ" Type="float" />
+          <Property Name="FORGCOST" Type="float" />
+          <Property Name="FTOTCOST" Type="float" />
+          <Property Name="FVSALVAG" Type="float" />
+          <Property Name="FVDEPRE" Type="float" />
+          <Property Name="FVSALVAGAC" Type="float" />
+          <Property Name="FVDEPREAC" Type="float" />
+          <Property Name="FLCALDEP" Type="varchar" MaxLength="3" />
+          <Property Name="FLACTST" Type="varchar" MaxLength="3" />
+          <Property Name="FDEPMETH" Type="varchar" MaxLength="3" />
+          <Property Name="FRFINCOST" Type="float" />
+          <Property Name="FMKPRCU" Type="float" />
+          <Property Name="FMKPRCA" Type="float" />
+          <Property Name="FMKPRCBY" Type="varchar" MaxLength="30" />
+          <Property Name="FMKPRCDT" Type="datetime" />
+          <Property Name="FASSPRCU" Type="float" />
+          <Property Name="FASSPRCA" Type="float" />
+          <Property Name="FASSPRCDT" Type="datetime" />
+          <Property Name="FASSWHO" Type="varchar" MaxLength="15" />
+          <Property Name="FASSCHG" Type="float" />
+          <Property Name="FMORTGYN" Type="varchar" MaxLength="3" />
+          <Property Name="FMORTGDT" Type="datetime" />
+          <Property Name="FMORTGBK" Type="varchar" MaxLength="15" />
+          <Property Name="FSECCODE" Type="varchar" MaxLength="4" />
+          <Property Name="FENTTYPE" Type="varchar" MaxLength="3" />
+          <Property Name="FENTDATE" Type="datetime" />
+          <Property Name="FENTBY" Type="varchar" MaxLength="3" />
+          <Property Name="FUPDDATE" Type="datetime" />
+          <Property Name="FUPDBY" Type="varchar" MaxLength="3" />
+          <Property Name="FPCNOTE" Type="text" />
+          <Property Name="FAREAOUT" Type="float" />
+          <Property Name="FAREAIN" Type="float" />
+          <Property Name="FAREAPARK" Type="float" />
+          <Property Name="FPAREAOUT" Type="float" />
+          <Property Name="FPAREAIN" Type="float" />
+          <Property Name="FPAREAPARK" Type="float" />
+          <Property Name="FHBKDATE" Type="datetime" />
+          <Property Name="FPWIEGHAREA" Type="float" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PNSWEB.dbo.VW_FREZONE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VW_FREZONE">
+          <Key>
+            <PropertyRef Name="FREPRJNO" />
+          </Key>
+          <Property Name="FREPRJNO" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="FREPHASE" Type="varchar" MaxLength="3" />
+          <Property Name="FREZONE" Type="varchar" MaxLength="4" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PNSWEB.dbo.vw_Project_join' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_Project_join">
+          <Key>
+            <PropertyRef Name="FREPRJNO" />
+          </Key>
+          <Property Name="FREPRJNO" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="FREPRJNM" Type="varchar" MaxLength="120" />
+          <Property Name="e_FREPRJNO" Type="varchar" MaxLength="6" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PNSWEB.dbo.vw_ProjectPriceList_SearchResult' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_ProjectPriceList_SearchResult">
+          <Key>
+            <PropertyRef Name="FTRNNO" />
+          </Key>
+          <Property Name="FTRNNO" Type="varchar" MaxLength="18" Nullable="false" />
+          <Property Name="FVOUDATE" Type="datetime" />
+          <Property Name="FREPRJNO" Type="varchar" MaxLength="6" />
+          <Property Name="FREPRJNM" Type="varchar" MaxLength="120" />
+          <Property Name="FREPHASE" Type="varchar" MaxLength="3" />
+          <Property Name="FREZONE" Type="varchar" MaxLength="4" />
+          <Property Name="FSERIALNO" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PNSWEB.dbo.vw_TypeHouse_Join' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_TypeHouse_Join">
+          <Key>
+            <PropertyRef Name="FTYCODE" />
+          </Key>
+          <Property Name="FTYCODE" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="FDESC" Type="varchar" MaxLength="100" />
+          <Property Name="e_FTYCODE" Type="nvarchar" MaxLength="6" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PNSWEB.dbo.vw_UnitDefineProject' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_UnitDefineProject">
+          <Key>
+            <PropertyRef Name="FREPRJNO" />
+            
+            <PropertyRef Name="FSERIALNO" />
+            <PropertyRef Name="e_FSERIALNO" />
+          </Key>
+          <Property Name="FREPRJNO" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="FRESTATUS" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="FSERIALNO" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="FTYUNIT" Type="varchar" MaxLength="1" />
+          <Property Name="FPDCODE" Type="varchar" MaxLength="25" />
+          <Property Name="FPDNAME" Type="varchar" MaxLength="80" />
+          <Property Name="FPDNAMET" Type="varchar" MaxLength="80" />
+          <Property Name="FAREA" Type="float" />
+          <Property Name="FADDRNO" Type="varchar" MaxLength="10" />
+          <Property Name="FPCPIECE" Type="varchar" MaxLength="10" />
+          <Property Name="FREPHASE" Type="varchar" MaxLength="3" />
+          <Property Name="FREZONE" Type="varchar" MaxLength="4" />
+          <Property Name="FREBLOCK" Type="varchar" MaxLength="2" />
+          <Property Name="FBUILTIN" Type="float" />
+          <Property Name="FTOWER" Type="varchar" MaxLength="5" />
+          <Property Name="FFLOOR" Type="varchar" MaxLength="3" />
+          <Property Name="FASSETNO" Type="varchar" MaxLength="21" />
+          <Property Name="FSTDBUILT" Type="float" />
+          <Property Name="FDESC" Type="varchar" MaxLength="100" />
+          <Property Name="e_FSTDAREA" Type="float" />
+          <Property Name="e_FSTDBUILT" Type="float" />
+          <Property Name="e_FDESC" Type="varchar" MaxLength="100" />
+          <Property Name="FRESTATUSDESC" Type="nvarchar" MaxLength="50" />
+          <Property Name="FRESTYPEDESC" Type="nvarchar" MaxLength="50" />
+          <Property Name="e_FSERIALNO" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="PNSWEB_SoftProModelStoreContainer">
+          <EntitySet Name="vw_AD11INV1_SearchResult" EntityType="Self.vw_AD11INV1_SearchResult" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_AD11INV1_SearchResult].[FVOUNO] AS [FVOUNO], 
+    [vw_AD11INV1_SearchResult].[FASSETNO] AS [FASSETNO], 
+    [vw_AD11INV1_SearchResult].[FPCLNDNO] AS [FPCLNDNO], 
+    [vw_AD11INV1_SearchResult].[FPCPIECE] AS [FPCPIECE], 
+    [vw_AD11INV1_SearchResult].[FSUCODE] AS [FSUCODE], 
+    [vw_AD11INV1_SearchResult].[FSUNAME] AS [FSUNAME], 
+    [vw_AD11INV1_SearchResult].[FVOUDATE] AS [FVOUDATE], 
+    [vw_AD11INV1_SearchResult].[FMDATE] AS [FMDATE]
+    FROM [dbo].[vw_AD11INV1_SearchResult] AS [vw_AD11INV1_SearchResult]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_BD10DIVI_joinCoreCompany" EntityType="Self.vw_BD10DIVI_joinCoreCompany" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_BD10DIVI_joinCoreCompany].[ID] AS [ID], 
+    [vw_BD10DIVI_joinCoreCompany].[UserID] AS [UserID], 
+    [vw_BD10DIVI_joinCoreCompany].[COMID] AS [COMID], 
+    [vw_BD10DIVI_joinCoreCompany].[FDIVCODE] AS [FDIVCODE], 
+    [vw_BD10DIVI_joinCoreCompany].[FDIVNAME] AS [FDIVNAME], 
+    [vw_BD10DIVI_joinCoreCompany].[FDIVNAMET] AS [FDIVNAMET], 
+    [vw_BD10DIVI_joinCoreCompany].[FDIVMG] AS [FDIVMG], 
+    [vw_BD10DIVI_joinCoreCompany].[FADD1] AS [FADD1], 
+    [vw_BD10DIVI_joinCoreCompany].[FADD2] AS [FADD2], 
+    [vw_BD10DIVI_joinCoreCompany].[FADD3] AS [FADD3], 
+    [vw_BD10DIVI_joinCoreCompany].[FPOSTAL] AS [FPOSTAL], 
+    [vw_BD10DIVI_joinCoreCompany].[FCOMPTAXNO] AS [FCOMPTAXNO], 
+    [vw_BD10DIVI_joinCoreCompany].[FSOCIALNO] AS [FSOCIALNO], 
+    [vw_BD10DIVI_joinCoreCompany].[FSCBRANCH] AS [FSCBRANCH], 
+    [vw_BD10DIVI_joinCoreCompany].[FPRAC] AS [FPRAC], 
+    [vw_BD10DIVI_joinCoreCompany].[FTAXAC] AS [FTAXAC], 
+    [vw_BD10DIVI_joinCoreCompany].[FSOCIALAC] AS [FSOCIALAC], 
+    [vw_BD10DIVI_joinCoreCompany].[FPFAC] AS [FPFAC], 
+    [vw_BD10DIVI_joinCoreCompany].[FLOANAC] AS [FLOANAC], 
+    [vw_BD10DIVI_joinCoreCompany].[FLOANPFAC] AS [FLOANPFAC], 
+    [vw_BD10DIVI_joinCoreCompany].[FADVAC] AS [FADVAC], 
+    [vw_BD10DIVI_joinCoreCompany].[FOTHAC] AS [FOTHAC], 
+    [vw_BD10DIVI_joinCoreCompany].[FHOUSEAC] AS [FHOUSEAC], 
+    [vw_BD10DIVI_joinCoreCompany].[FBONUSAC] AS [FBONUSAC], 
+    [vw_BD10DIVI_joinCoreCompany].[FBONUSAC2] AS [FBONUSAC2], 
+    [vw_BD10DIVI_joinCoreCompany].[FBONUSAC3] AS [FBONUSAC3], 
+    [vw_BD10DIVI_joinCoreCompany].[FPRNMARK] AS [FPRNMARK], 
+    [vw_BD10DIVI_joinCoreCompany].[FRETFAC] AS [FRETFAC], 
+    [vw_BD10DIVI_joinCoreCompany].[Expr1] AS [Expr1]
+    FROM [dbo].[vw_BD10DIVI_joinCoreCompany] AS [vw_BD10DIVI_joinCoreCompany]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_ED11PAJ2_WithDetail" EntityType="Self.vw_ED11PAJ2_WithDetail" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_ED11PAJ2_WithDetail].[RowNumber] AS [RowNumber], 
+    [vw_ED11PAJ2_WithDetail].[FTRNNO] AS [FTRNNO], 
+    [vw_ED11PAJ2_WithDetail].[FITEMNO] AS [FITEMNO], 
+    [vw_ED11PAJ2_WithDetail].[FPDCODE] AS [FPDCODE], 
+    [vw_ED11PAJ2_WithDetail].[FPDNAME] AS [FPDNAME], 
+    [vw_ED11PAJ2_WithDetail].[FPDNAMET] AS [FPDNAMET], 
+    [vw_ED11PAJ2_WithDetail].[FSERIALNO] AS [FSERIALNO], 
+    [vw_ED11PAJ2_WithDetail].[FPROPRICE] AS [FPROPRICE], 
+    [vw_ED11PAJ2_WithDetail].[FDISCPRICE] AS [FDISCPRICE], 
+    [vw_ED11PAJ2_WithDetail].[FSTDPRICE] AS [FSTDPRICE], 
+    [vw_ED11PAJ2_WithDetail].[FAREA] AS [FAREA], 
+    [vw_ED11PAJ2_WithDetail].[FREPRJNO] AS [FREPRJNO], 
+    [vw_ED11PAJ2_WithDetail].[FREPHASE] AS [FREPHASE], 
+    [vw_ED11PAJ2_WithDetail].[FREZONE] AS [FREZONE]
+    FROM [dbo].[vw_ED11PAJ2_WithDetail] AS [vw_ED11PAJ2_WithDetail]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_FD11PROP_JoinED03UNIT" EntityType="Self.vw_FD11PROP_JoinED03UNIT" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_FD11PROP_JoinED03UNIT].[FREPRJNO] AS [FREPRJNO], 
+    [vw_FD11PROP_JoinED03UNIT].[FASSETNO] AS [FASSETNO], 
+    [vw_FD11PROP_JoinED03UNIT].[FPCPIECE] AS [FPCPIECE], 
+    [vw_FD11PROP_JoinED03UNIT].[FPCLNDNO] AS [FPCLNDNO], 
+    [vw_FD11PROP_JoinED03UNIT].[FPCWIDTH] AS [FPCWIDTH], 
+    [vw_FD11PROP_JoinED03UNIT].[FPCBETWEEN] AS [FPCBETWEEN], 
+    [vw_FD11PROP_JoinED03UNIT].[FPCBOOK] AS [FPCBOOK], 
+    [vw_FD11PROP_JoinED03UNIT].[FPCPAGE] AS [FPCPAGE], 
+    [vw_FD11PROP_JoinED03UNIT].[FQTY] AS [FQTY], 
+    [vw_FD11PROP_JoinED03UNIT].[FSERNO] AS [FSERNO], 
+    [vw_FD11PROP_JoinED03UNIT].[FMORTGYN] AS [FMORTGYN], 
+    [vw_FD11PROP_JoinED03UNIT].[FASSPRCA] AS [FASSPRCA], 
+    [vw_FD11PROP_JoinED03UNIT].[FPCINST] AS [FPCINST], 
+    [vw_FD11PROP_JoinED03UNIT].[FPCNOTE] AS [FPCNOTE], 
+    [vw_FD11PROP_JoinED03UNIT].[FAREAOUT] AS [FAREAOUT], 
+    [vw_FD11PROP_JoinED03UNIT].[FAREAIN] AS [FAREAIN], 
+    [vw_FD11PROP_JoinED03UNIT].[FAREAPARK] AS [FAREAPARK], 
+    [vw_FD11PROP_JoinED03UNIT].[FPWIEGHAREA] AS [FPWIEGHAREA], 
+    [vw_FD11PROP_JoinED03UNIT].[FPAREAOUT] AS [FPAREAOUT], 
+    [vw_FD11PROP_JoinED03UNIT].[FPAREAIN] AS [FPAREAIN], 
+    [vw_FD11PROP_JoinED03UNIT].[FPAREAPARK] AS [FPAREAPARK], 
+    [vw_FD11PROP_JoinED03UNIT].[FHBKDATE] AS [FHBKDATE], 
+    [vw_FD11PROP_JoinED03UNIT].[e_FASSETNO] AS [e_FASSETNO], 
+    [vw_FD11PROP_JoinED03UNIT].[e_FPDCODE] AS [e_FPDCODE], 
+    [vw_FD11PROP_JoinED03UNIT].[e_FSERIALNO] AS [e_FSERIALNO], 
+    [vw_FD11PROP_JoinED03UNIT].[e_FADDRNO] AS [e_FADDRNO], 
+    [vw_FD11PROP_JoinED03UNIT].[FENTTYPE] AS [FENTTYPE]
+    FROM [dbo].[vw_FD11PROP_JoinED03UNIT] AS [vw_FD11PROP_JoinED03UNIT]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_FD11PROP_NotInAD11INV1" EntityType="Self.vw_FD11PROP_NotInAD11INV1" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_FD11PROP_NotInAD11INV1].[FASSETNO] AS [FASSETNO], 
+    [vw_FD11PROP_NotInAD11INV1].[FTAGNO] AS [FTAGNO], 
+    [vw_FD11PROP_NotInAD11INV1].[FAGRNO] AS [FAGRNO], 
+    [vw_FD11PROP_NotInAD11INV1].[FTRNNO] AS [FTRNNO], 
+    [vw_FD11PROP_NotInAD11INV1].[FASSETTY] AS [FASSETTY], 
+    [vw_FD11PROP_NotInAD11INV1].[FASSETST] AS [FASSETST], 
+    [vw_FD11PROP_NotInAD11INV1].[FASSETOBJ] AS [FASSETOBJ], 
+    [vw_FD11PROP_NotInAD11INV1].[FASSETOBJ2] AS [FASSETOBJ2], 
+    [vw_FD11PROP_NotInAD11INV1].[FDIVCODE] AS [FDIVCODE], 
+    [vw_FD11PROP_NotInAD11INV1].[FDPCODE] AS [FDPCODE], 
+    [vw_FD11PROP_NotInAD11INV1].[FREPRJNO] AS [FREPRJNO], 
+    [vw_FD11PROP_NotInAD11INV1].[FLCNO] AS [FLCNO], 
+    [vw_FD11PROP_NotInAD11INV1].[FPCINST] AS [FPCINST], 
+    [vw_FD11PROP_NotInAD11INV1].[FPCINST2] AS [FPCINST2], 
+    [vw_FD11PROP_NotInAD11INV1].[FPCINST3] AS [FPCINST3], 
+    [vw_FD11PROP_NotInAD11INV1].[FPCPIECE] AS [FPCPIECE], 
+    [vw_FD11PROP_NotInAD11INV1].[FPCBETWEEN] AS [FPCBETWEEN], 
+    [vw_FD11PROP_NotInAD11INV1].[FPCLNDNO] AS [FPCLNDNO], 
+    [vw_FD11PROP_NotInAD11INV1].[FPCWIDTH] AS [FPCWIDTH], 
+    [vw_FD11PROP_NotInAD11INV1].[FPCBOOK] AS [FPCBOOK], 
+    [vw_FD11PROP_NotInAD11INV1].[FPCPAGE] AS [FPCPAGE], 
+    [vw_FD11PROP_NotInAD11INV1].[FPCTAMBON] AS [FPCTAMBON], 
+    [vw_FD11PROP_NotInAD11INV1].[FPCAMPHER] AS [FPCAMPHER], 
+    [vw_FD11PROP_NotInAD11INV1].[FPCPROVINC] AS [FPCPROVINC], 
+    [vw_FD11PROP_NotInAD11INV1].[FPCPROVCD] AS [FPCPROVCD], 
+    [vw_FD11PROP_NotInAD11INV1].[FPCCITYCD] AS [FPCCITYCD], 
+    [vw_FD11PROP_NotInAD11INV1].[FPCLANDOWN] AS [FPCLANDOWN], 
+    [vw_FD11PROP_NotInAD11INV1].[FPCLANDOWN2] AS [FPCLANDOWN2], 
+    [vw_FD11PROP_NotInAD11INV1].[FPCLANDOWNT] AS [FPCLANDOWNT], 
+    [vw_FD11PROP_NotInAD11INV1].[FPCLANDOWTL] AS [FPCLANDOWTL], 
+    [vw_FD11PROP_NotInAD11INV1].[FASSETNM] AS [FASSETNM], 
+    [vw_FD11PROP_NotInAD11INV1].[FASBRAND] AS [FASBRAND], 
+    [vw_FD11PROP_NotInAD11INV1].[FASTYPE] AS [FASTYPE], 
+    [vw_FD11PROP_NotInAD11INV1].[FASMODLE] AS [FASMODLE], 
+    [vw_FD11PROP_NotInAD11INV1].[FSERNO] AS [FSERNO], 
+    [vw_FD11PROP_NotInAD11INV1].[FASCOLOR] AS [FASCOLOR], 
+    [vw_FD11PROP_NotInAD11INV1].[FASENGNO] AS [FASENGNO], 
+    [vw_FD11PROP_NotInAD11INV1].[FASCHASSIE] AS [FASCHASSIE], 
+    [vw_FD11PROP_NotInAD11INV1].[FASREGYR] AS [FASREGYR], 
+    [vw_FD11PROP_NotInAD11INV1].[FASHPOWER] AS [FASHPOWER], 
+    [vw_FD11PROP_NotInAD11INV1].[FASCC] AS [FASCC], 
+    [vw_FD11PROP_NotInAD11INV1].[FASOIL] AS [FASOIL], 
+    [vw_FD11PROP_NotInAD11INV1].[FCARNO] AS [FCARNO], 
+    [vw_FD11PROP_NotInAD11INV1].[FTAXFROM] AS [FTAXFROM], 
+    [vw_FD11PROP_NotInAD11INV1].[FTAXTO] AS [FTAXTO], 
+    [vw_FD11PROP_NotInAD11INV1].[FINSURER] AS [FINSURER], 
+    [vw_FD11PROP_NotInAD11INV1].[FINSPOLNO] AS [FINSPOLNO], 
+    [vw_FD11PROP_NotInAD11INV1].[FINSFROM] AS [FINSFROM], 
+    [vw_FD11PROP_NotInAD11INV1].[FINSTO] AS [FINSTO], 
+    [vw_FD11PROP_NotInAD11INV1].[FINSAMT] AS [FINSAMT], 
+    [vw_FD11PROP_NotInAD11INV1].[FINSPREM] AS [FINSPREM], 
+    [vw_FD11PROP_NotInAD11INV1].[FMAINCWITH] AS [FMAINCWITH], 
+    [vw_FD11PROP_NotInAD11INV1].[FMAINCSTR] AS [FMAINCSTR], 
+    [vw_FD11PROP_NotInAD11INV1].[FMAINCEND] AS [FMAINCEND], 
+    [vw_FD11PROP_NotInAD11INV1].[FDES1] AS [FDES1], 
+    [vw_FD11PROP_NotInAD11INV1].[FDES2] AS [FDES2], 
+    [vw_FD11PROP_NotInAD11INV1].[FDES3] AS [FDES3], 
+    [vw_FD11PROP_NotInAD11INV1].[FLCOMPCOMP] AS [FLCOMPCOMP], 
+    [vw_FD11PROP_NotInAD11INV1].[FSUCODE] AS [FSUCODE], 
+    [vw_FD11PROP_NotInAD11INV1].[FSUNAME] AS [FSUNAME], 
+    [vw_FD11PROP_NotInAD11INV1].[FINVNO] AS [FINVNO], 
+    [vw_FD11PROP_NotInAD11INV1].[FGAREXP] AS [FGAREXP], 
+    [vw_FD11PROP_NotInAD11INV1].[FPONO] AS [FPONO], 
+    [vw_FD11PROP_NotInAD11INV1].[FRRNO] AS [FRRNO], 
+    [vw_FD11PROP_NotInAD11INV1].[FRRITEMNO] AS [FRRITEMNO], 
+    [vw_FD11PROP_NotInAD11INV1].[FRRDATE] AS [FRRDATE], 
+    [vw_FD11PROP_NotInAD11INV1].[FSTDATE] AS [FSTDATE], 
+    [vw_FD11PROP_NotInAD11INV1].[FENDATE] AS [FENDATE], 
+    [vw_FD11PROP_NotInAD11INV1].[FTOTAGE] AS [FTOTAGE], 
+    [vw_FD11PROP_NotInAD11INV1].[FNOMONTH] AS [FNOMONTH], 
+    [vw_FD11PROP_NotInAD11INV1].[FOUTMONTH] AS [FOUTMONTH], 
+    [vw_FD11PROP_NotInAD11INV1].[FQTY] AS [FQTY], 
+    [vw_FD11PROP_NotInAD11INV1].[FQTYTYPE] AS [FQTYTYPE], 
+    [vw_FD11PROP_NotInAD11INV1].[FQTYADJ] AS [FQTYADJ], 
+    [vw_FD11PROP_NotInAD11INV1].[FORGCOST] AS [FORGCOST], 
+    [vw_FD11PROP_NotInAD11INV1].[FTOTCOST] AS [FTOTCOST], 
+    [vw_FD11PROP_NotInAD11INV1].[FVSALVAG] AS [FVSALVAG], 
+    [vw_FD11PROP_NotInAD11INV1].[FVDEPRE] AS [FVDEPRE], 
+    [vw_FD11PROP_NotInAD11INV1].[FVSALVAGAC] AS [FVSALVAGAC], 
+    [vw_FD11PROP_NotInAD11INV1].[FVDEPREAC] AS [FVDEPREAC], 
+    [vw_FD11PROP_NotInAD11INV1].[FLCALDEP] AS [FLCALDEP], 
+    [vw_FD11PROP_NotInAD11INV1].[FLACTST] AS [FLACTST], 
+    [vw_FD11PROP_NotInAD11INV1].[FDEPMETH] AS [FDEPMETH], 
+    [vw_FD11PROP_NotInAD11INV1].[FRFINCOST] AS [FRFINCOST], 
+    [vw_FD11PROP_NotInAD11INV1].[FMKPRCU] AS [FMKPRCU], 
+    [vw_FD11PROP_NotInAD11INV1].[FMKPRCA] AS [FMKPRCA], 
+    [vw_FD11PROP_NotInAD11INV1].[FMKPRCBY] AS [FMKPRCBY], 
+    [vw_FD11PROP_NotInAD11INV1].[FMKPRCDT] AS [FMKPRCDT], 
+    [vw_FD11PROP_NotInAD11INV1].[FASSPRCU] AS [FASSPRCU], 
+    [vw_FD11PROP_NotInAD11INV1].[FASSPRCA] AS [FASSPRCA], 
+    [vw_FD11PROP_NotInAD11INV1].[FASSPRCDT] AS [FASSPRCDT], 
+    [vw_FD11PROP_NotInAD11INV1].[FASSWHO] AS [FASSWHO], 
+    [vw_FD11PROP_NotInAD11INV1].[FASSCHG] AS [FASSCHG], 
+    [vw_FD11PROP_NotInAD11INV1].[FMORTGYN] AS [FMORTGYN], 
+    [vw_FD11PROP_NotInAD11INV1].[FMORTGDT] AS [FMORTGDT], 
+    [vw_FD11PROP_NotInAD11INV1].[FMORTGBK] AS [FMORTGBK], 
+    [vw_FD11PROP_NotInAD11INV1].[FSECCODE] AS [FSECCODE], 
+    [vw_FD11PROP_NotInAD11INV1].[FENTTYPE] AS [FENTTYPE], 
+    [vw_FD11PROP_NotInAD11INV1].[FENTDATE] AS [FENTDATE], 
+    [vw_FD11PROP_NotInAD11INV1].[FENTBY] AS [FENTBY], 
+    [vw_FD11PROP_NotInAD11INV1].[FUPDDATE] AS [FUPDDATE], 
+    [vw_FD11PROP_NotInAD11INV1].[FUPDBY] AS [FUPDBY], 
+    [vw_FD11PROP_NotInAD11INV1].[FPCNOTE] AS [FPCNOTE], 
+    [vw_FD11PROP_NotInAD11INV1].[FAREAOUT] AS [FAREAOUT], 
+    [vw_FD11PROP_NotInAD11INV1].[FAREAIN] AS [FAREAIN], 
+    [vw_FD11PROP_NotInAD11INV1].[FAREAPARK] AS [FAREAPARK], 
+    [vw_FD11PROP_NotInAD11INV1].[FPAREAOUT] AS [FPAREAOUT], 
+    [vw_FD11PROP_NotInAD11INV1].[FPAREAIN] AS [FPAREAIN], 
+    [vw_FD11PROP_NotInAD11INV1].[FPAREAPARK] AS [FPAREAPARK], 
+    [vw_FD11PROP_NotInAD11INV1].[FHBKDATE] AS [FHBKDATE], 
+    [vw_FD11PROP_NotInAD11INV1].[FPWIEGHAREA] AS [FPWIEGHAREA]
+    FROM [dbo].[vw_FD11PROP_NotInAD11INV1] AS [vw_FD11PROP_NotInAD11INV1]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VW_FREZONE" EntityType="Self.VW_FREZONE" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VW_FREZONE].[FREPRJNO] AS [FREPRJNO], 
+    [VW_FREZONE].[FREPHASE] AS [FREPHASE], 
+    [VW_FREZONE].[FREZONE] AS [FREZONE]
+    FROM [dbo].[VW_FREZONE] AS [VW_FREZONE]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_Project_join" EntityType="Self.vw_Project_join" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_Project_join].[FREPRJNO] AS [FREPRJNO], 
+    [vw_Project_join].[FREPRJNM] AS [FREPRJNM], 
+    [vw_Project_join].[e_FREPRJNO] AS [e_FREPRJNO]
+    FROM [dbo].[vw_Project_join] AS [vw_Project_join]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_ProjectPriceList_SearchResult" EntityType="Self.vw_ProjectPriceList_SearchResult" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_ProjectPriceList_SearchResult].[FTRNNO] AS [FTRNNO], 
+    [vw_ProjectPriceList_SearchResult].[FVOUDATE] AS [FVOUDATE], 
+    [vw_ProjectPriceList_SearchResult].[FREPRJNO] AS [FREPRJNO], 
+    [vw_ProjectPriceList_SearchResult].[FREPRJNM] AS [FREPRJNM], 
+    [vw_ProjectPriceList_SearchResult].[FREPHASE] AS [FREPHASE], 
+    [vw_ProjectPriceList_SearchResult].[FREZONE] AS [FREZONE], 
+    [vw_ProjectPriceList_SearchResult].[FSERIALNO] AS [FSERIALNO]
+    FROM [dbo].[vw_ProjectPriceList_SearchResult] AS [vw_ProjectPriceList_SearchResult]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_TypeHouse_Join" EntityType="Self.vw_TypeHouse_Join" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_TypeHouse_Join].[FTYCODE] AS [FTYCODE], 
+    [vw_TypeHouse_Join].[FDESC] AS [FDESC], 
+    [vw_TypeHouse_Join].[e_FTYCODE] AS [e_FTYCODE]
+    FROM [dbo].[vw_TypeHouse_Join] AS [vw_TypeHouse_Join]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_UnitDefineProject" EntityType="Self.vw_UnitDefineProject" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_UnitDefineProject].[FREPRJNO] AS [FREPRJNO], 
+    [vw_UnitDefineProject].[FRESTATUS] AS [FRESTATUS], 
+    [vw_UnitDefineProject].[FSERIALNO] AS [FSERIALNO], 
+    [vw_UnitDefineProject].[FTYUNIT] AS [FTYUNIT], 
+    [vw_UnitDefineProject].[FPDCODE] AS [FPDCODE], 
+    [vw_UnitDefineProject].[FPDNAME] AS [FPDNAME], 
+    [vw_UnitDefineProject].[FPDNAMET] AS [FPDNAMET], 
+    [vw_UnitDefineProject].[FAREA] AS [FAREA], 
+    [vw_UnitDefineProject].[FADDRNO] AS [FADDRNO], 
+    [vw_UnitDefineProject].[FPCPIECE] AS [FPCPIECE], 
+    [vw_UnitDefineProject].[FREPHASE] AS [FREPHASE], 
+    [vw_UnitDefineProject].[FREZONE] AS [FREZONE], 
+    [vw_UnitDefineProject].[FREBLOCK] AS [FREBLOCK], 
+    [vw_UnitDefineProject].[FBUILTIN] AS [FBUILTIN], 
+    [vw_UnitDefineProject].[FTOWER] AS [FTOWER], 
+    [vw_UnitDefineProject].[FFLOOR] AS [FFLOOR], 
+    [vw_UnitDefineProject].[FASSETNO] AS [FASSETNO], 
+    [vw_UnitDefineProject].[FSTDBUILT] AS [FSTDBUILT], 
+    [vw_UnitDefineProject].[FDESC] AS [FDESC], 
+    [vw_UnitDefineProject].[e_FSTDAREA] AS [e_FSTDAREA], 
+    [vw_UnitDefineProject].[e_FSTDBUILT] AS [e_FSTDBUILT], 
+    [vw_UnitDefineProject].[e_FDESC] AS [e_FDESC], 
+    [vw_UnitDefineProject].[FRESTATUSDESC] AS [FRESTATUSDESC], 
+    [vw_UnitDefineProject].[FRESTYPEDESC] AS [FRESTYPEDESC], 
+    [vw_UnitDefineProject].[e_FSERIALNO] AS [e_FSERIALNO]
+    FROM [dbo].[vw_UnitDefineProject] AS [vw_UnitDefineProject]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PNSWEB_SoftProModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="vw_AD11INV1_SearchResult">
+          <Key>
+            <PropertyRef Name="FVOUNO" />
+          </Key>
+          <Property Name="FVOUNO" Type="String" MaxLength="18" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FASSETNO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FPCLNDNO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="FPCPIECE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FSUCODE" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="FSUNAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="FVOUDATE" Type="DateTime" Precision="3" />
+          <Property Name="FMDATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="vw_FD11PROP_JoinED03UNIT">
+          <Key>
+            <PropertyRef Name="FASSETNO" />
+          </Key>
+          <Property Name="FREPRJNO" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="FASSETNO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FPCPIECE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FPCLNDNO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="FPCWIDTH" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="FPCBETWEEN" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="FPCBOOK" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FPCPAGE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FQTY" Type="Double" />
+          <Property Name="FSERNO" Type="String" MaxLength="28" FixedLength="false" Unicode="false" />
+          <Property Name="FMORTGYN" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="FASSPRCA" Type="Double" />
+          <Property Name="FPCINST" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FPCNOTE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FAREAOUT" Type="Double" />
+          <Property Name="FAREAIN" Type="Double" />
+          <Property Name="FAREAPARK" Type="Double" />
+          <Property Name="FPWIEGHAREA" Type="Double" />
+          <Property Name="FPAREAOUT" Type="Double" />
+          <Property Name="FPAREAIN" Type="Double" />
+          <Property Name="FPAREAPARK" Type="Double" />
+          <Property Name="FHBKDATE" Type="DateTime" Precision="3" />
+          <Property Name="e_FASSETNO" Type="String" MaxLength="21" FixedLength="false" Unicode="false" />
+          <Property Name="e_FPDCODE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="e_FSERIALNO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="e_FADDRNO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FENTTYPE" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vw_FD11PROP_NotInAD11INV1">
+          <Key>
+            <PropertyRef Name="FASSETNO" />
+          </Key>
+          <Property Name="FASSETNO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FTAGNO" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="FAGRNO" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="FTRNNO" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="FASSETTY" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="FASSETST" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="FASSETOBJ" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="FASSETOBJ2" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="FDIVCODE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="FDPCODE" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="FREPRJNO" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="FLCNO" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="FPCINST" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FPCINST2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FPCINST3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FPCPIECE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FPCBETWEEN" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="FPCLNDNO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="FPCWIDTH" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="FPCBOOK" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FPCPAGE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FPCTAMBON" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="FPCAMPHER" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="FPCPROVINC" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="FPCPROVCD" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="FPCCITYCD" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="FPCLANDOWN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FPCLANDOWN2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FPCLANDOWNT" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="FPCLANDOWTL" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FASSETNM" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="FASBRAND" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="FASTYPE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="FASMODLE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FSERNO" Type="String" MaxLength="28" FixedLength="false" Unicode="false" />
+          <Property Name="FASCOLOR" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FASENGNO" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="FASCHASSIE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="FASREGYR" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="FASHPOWER" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FASCC" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="FASOIL" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="FCARNO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="FTAXFROM" Type="DateTime" Precision="3" />
+          <Property Name="FTAXTO" Type="DateTime" Precision="3" />
+          <Property Name="FINSURER" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="FINSPOLNO" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="FINSFROM" Type="DateTime" Precision="3" />
+          <Property Name="FINSTO" Type="DateTime" Precision="3" />
+          <Property Name="FINSAMT" Type="Double" />
+          <Property Name="FINSPREM" Type="Double" />
+          <Property Name="FMAINCWITH" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Name="FMAINCSTR" Type="DateTime" Precision="3" />
+          <Property Name="FMAINCEND" Type="DateTime" Precision="3" />
+          <Property Name="FDES1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FDES2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FDES3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FLCOMPCOMP" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FSUCODE" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="FSUNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FINVNO" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="FGAREXP" Type="DateTime" Precision="3" />
+          <Property Name="FPONO" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="FRRNO" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="FRRITEMNO" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="FRRDATE" Type="DateTime" Precision="3" />
+          <Property Name="FSTDATE" Type="DateTime" Precision="3" />
+          <Property Name="FENDATE" Type="DateTime" Precision="3" />
+          <Property Name="FTOTAGE" Type="Double" />
+          <Property Name="FNOMONTH" Type="Double" />
+          <Property Name="FOUTMONTH" Type="Double" />
+          <Property Name="FQTY" Type="Double" />
+          <Property Name="FQTYTYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="FQTYADJ" Type="Double" />
+          <Property Name="FORGCOST" Type="Double" />
+          <Property Name="FTOTCOST" Type="Double" />
+          <Property Name="FVSALVAG" Type="Double" />
+          <Property Name="FVDEPRE" Type="Double" />
+          <Property Name="FVSALVAGAC" Type="Double" />
+          <Property Name="FVDEPREAC" Type="Double" />
+          <Property Name="FLCALDEP" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="FLACTST" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="FDEPMETH" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="FRFINCOST" Type="Double" />
+          <Property Name="FMKPRCU" Type="Double" />
+          <Property Name="FMKPRCA" Type="Double" />
+          <Property Name="FMKPRCBY" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FMKPRCDT" Type="DateTime" Precision="3" />
+          <Property Name="FASSPRCU" Type="Double" />
+          <Property Name="FASSPRCA" Type="Double" />
+          <Property Name="FASSPRCDT" Type="DateTime" Precision="3" />
+          <Property Name="FASSWHO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="FASSCHG" Type="Double" />
+          <Property Name="FMORTGYN" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="FMORTGDT" Type="DateTime" Precision="3" />
+          <Property Name="FMORTGBK" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="FSECCODE" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="FENTTYPE" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="FENTDATE" Type="DateTime" Precision="3" />
+          <Property Name="FENTBY" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="FUPDDATE" Type="DateTime" Precision="3" />
+          <Property Name="FUPDBY" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="FPCNOTE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FAREAOUT" Type="Double" />
+          <Property Name="FAREAIN" Type="Double" />
+          <Property Name="FAREAPARK" Type="Double" />
+          <Property Name="FPAREAOUT" Type="Double" />
+          <Property Name="FPAREAIN" Type="Double" />
+          <Property Name="FPAREAPARK" Type="Double" />
+          <Property Name="FHBKDATE" Type="DateTime" Precision="3" />
+          <Property Name="FPWIEGHAREA" Type="Double" />
+        </EntityType>
+        <EntityType Name="VW_FREZONE">
+          <Key>
+            <PropertyRef Name="FREPRJNO" />
+          </Key>
+          <Property Name="FREPRJNO" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FREPHASE" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="FREZONE" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="PNSWEB_SoftProEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="vw_AD11INV1_SearchResult" EntityType="Self.vw_AD11INV1_SearchResult" />
+          <EntitySet Name="vw_FD11PROP_JoinED03UNIT" EntityType="Self.vw_FD11PROP_JoinED03UNIT" />
+          <EntitySet Name="vw_FD11PROP_NotInAD11INV1" EntityType="Self.vw_FD11PROP_NotInAD11INV1" />
+          <EntitySet Name="VW_FREZONE" EntityType="Self.VW_FREZONE" />
+          <EntitySet Name="vw_ED11PAJ2_WithDetail" EntityType="PNSWEB_SoftProModel.vw_ED11PAJ2_WithDetail" />
+          <EntitySet Name="vw_UnitDefineProject" EntityType="PNSWEB_SoftProModel.vw_UnitDefineProject" />
+          <EntitySet Name="vw_TypeHouse_Join" EntityType="PNSWEB_SoftProModel.vw_TypeHouse_Join" />
+          <EntitySet Name="vw_Project_join" EntityType="PNSWEB_SoftProModel.vw_Project_join" />
+          <EntitySet Name="vw_BD10DIVI_joinCoreCompany" EntityType="PNSWEB_SoftProModel.vw_BD10DIVI_joinCoreCompany" />
+          <EntitySet Name="vw_ProjectPriceList_SearchResult" EntityType="PNSWEB_SoftProModel.vw_ProjectPriceList_SearchResult" />
+        </EntityContainer>
+        <EntityType Name="vw_ED11PAJ2_WithDetail">
+          <Key>
+            <PropertyRef Name="FTRNNO" />
+            <PropertyRef Name="FITEMNO" />
+          </Key>
+          <Property Name="FTRNNO" Type="String" Nullable="false" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="FPDCODE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FPDNAME" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="FPDNAMET" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="FSERIALNO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FPROPRICE" Type="Double" />
+          <Property Name="FDISCPRICE" Type="Double" />
+          <Property Name="FSTDPRICE" Type="Double" />
+          <Property Name="FAREA" Type="Double" />
+          <Property Name="FREPRJNO" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="FREPHASE" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="FREZONE" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="FITEMNO" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="RowNumber" Type="Int64" />
+        </EntityType>
+        <EntityType Name="vw_UnitDefineProject">
+          <Key>
+            <PropertyRef Name="FREPRJNO" />
+            <PropertyRef Name="FSERIALNO" />
+            <PropertyRef Name="e_FSERIALNO" />
+          </Key>
+          <Property Name="FREPRJNO" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="FRESTATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FSERIALNO" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FTYUNIT" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="FPDCODE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="FPDNAME" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="FPDNAMET" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="FAREA" Type="Double" />
+          <Property Name="FADDRNO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FPCPIECE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FREPHASE" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="FREZONE" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="FREBLOCK" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="FBUILTIN" Type="Double" />
+          <Property Name="FTOWER" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="FFLOOR" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="FASSETNO" Type="String" MaxLength="21" FixedLength="false" Unicode="false" />
+          <Property Name="FSTDBUILT" Type="Double" />
+          <Property Name="FDESC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="e_FSTDAREA" Type="Double" />
+          <Property Name="e_FSTDBUILT" Type="Double" />
+          <Property Name="e_FDESC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FRESTATUSDESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FRESTYPEDESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="e_FSERIALNO" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vw_TypeHouse_Join">
+          <Key>
+            <PropertyRef Name="FTYCODE" />
+          </Key>
+          <Property Name="FTYCODE" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="FDESC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="e_FTYCODE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vw_Project_join">
+          <Key>
+            <PropertyRef Name="FREPRJNO" />
+          </Key>
+          <Property Name="FREPRJNO" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="FREPRJNM" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="e_FREPRJNO" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vw_BD10DIVI_joinCoreCompany">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="FDIVCODE" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="COMID" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="FDIVCODE" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="FDIVNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FDIVNAMET" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FDIVMG" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="FADD1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FADD2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FADD3" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FPOSTAL" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="FCOMPTAXNO" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="FSOCIALNO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FSCBRANCH" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="FPRAC" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="FTAXAC" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="FSOCIALAC" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="FPFAC" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="FLOANAC" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="FLOANPFAC" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="FADVAC" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="FOTHAC" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="FHOUSEAC" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="FBONUSAC" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="FBONUSAC2" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="FBONUSAC3" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="FPRNMARK" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="FRETFAC" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="Expr1" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vw_ProjectPriceList_SearchResult">
+          <Key>
+            <PropertyRef Name="FTRNNO" />
+          </Key>
+          <Property Name="FTRNNO" Type="String" Nullable="false" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="FVOUDATE" Type="DateTime" Precision="3" />
+          <Property Name="FREPRJNO" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="FREPRJNM" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="FREPHASE" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="FREZONE" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="FSERIALNO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PNSWEB_SoftProModelStoreContainer" CdmEntityContainer="PNSWEB_SoftProEntities">
+          <EntitySetMapping Name="vw_AD11INV1_SearchResult">
+            <EntityTypeMapping TypeName="PNSWEB_SoftProModel.vw_AD11INV1_SearchResult">
+              <MappingFragment StoreEntitySet="vw_AD11INV1_SearchResult">
+                <ScalarProperty Name="FVOUNO" ColumnName="FVOUNO" />
+                <ScalarProperty Name="FASSETNO" ColumnName="FASSETNO" />
+                <ScalarProperty Name="FPCLNDNO" ColumnName="FPCLNDNO" />
+                <ScalarProperty Name="FPCPIECE" ColumnName="FPCPIECE" />
+                <ScalarProperty Name="FSUCODE" ColumnName="FSUCODE" />
+                <ScalarProperty Name="FSUNAME" ColumnName="FSUNAME" />
+                <ScalarProperty Name="FVOUDATE" ColumnName="FVOUDATE" />
+                <ScalarProperty Name="FMDATE" ColumnName="FMDATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_FD11PROP_JoinED03UNIT">
+            <EntityTypeMapping TypeName="PNSWEB_SoftProModel.vw_FD11PROP_JoinED03UNIT">
+              <MappingFragment StoreEntitySet="vw_FD11PROP_JoinED03UNIT">
+                <ScalarProperty Name="FREPRJNO" ColumnName="FREPRJNO" />
+                <ScalarProperty Name="FASSETNO" ColumnName="FASSETNO" />
+                <ScalarProperty Name="FPCPIECE" ColumnName="FPCPIECE" />
+                <ScalarProperty Name="FPCLNDNO" ColumnName="FPCLNDNO" />
+                <ScalarProperty Name="FPCWIDTH" ColumnName="FPCWIDTH" />
+                <ScalarProperty Name="FPCBETWEEN" ColumnName="FPCBETWEEN" />
+                <ScalarProperty Name="FPCBOOK" ColumnName="FPCBOOK" />
+                <ScalarProperty Name="FPCPAGE" ColumnName="FPCPAGE" />
+                <ScalarProperty Name="FQTY" ColumnName="FQTY" />
+                <ScalarProperty Name="FSERNO" ColumnName="FSERNO" />
+                <ScalarProperty Name="FMORTGYN" ColumnName="FMORTGYN" />
+                <ScalarProperty Name="FASSPRCA" ColumnName="FASSPRCA" />
+                <ScalarProperty Name="FPCINST" ColumnName="FPCINST" />
+                <ScalarProperty Name="FPCNOTE" ColumnName="FPCNOTE" />
+                <ScalarProperty Name="FAREAOUT" ColumnName="FAREAOUT" />
+                <ScalarProperty Name="FAREAIN" ColumnName="FAREAIN" />
+                <ScalarProperty Name="FAREAPARK" ColumnName="FAREAPARK" />
+                <ScalarProperty Name="FPWIEGHAREA" ColumnName="FPWIEGHAREA" />
+                <ScalarProperty Name="FPAREAOUT" ColumnName="FPAREAOUT" />
+                <ScalarProperty Name="FPAREAIN" ColumnName="FPAREAIN" />
+                <ScalarProperty Name="FPAREAPARK" ColumnName="FPAREAPARK" />
+                <ScalarProperty Name="FHBKDATE" ColumnName="FHBKDATE" />
+                <ScalarProperty Name="e_FASSETNO" ColumnName="e_FASSETNO" />
+                <ScalarProperty Name="e_FPDCODE" ColumnName="e_FPDCODE" />
+                <ScalarProperty Name="e_FSERIALNO" ColumnName="e_FSERIALNO" />
+                <ScalarProperty Name="e_FADDRNO" ColumnName="e_FADDRNO" />
+                <ScalarProperty Name="FENTTYPE" ColumnName="FENTTYPE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_FD11PROP_NotInAD11INV1">
+            <EntityTypeMapping TypeName="PNSWEB_SoftProModel.vw_FD11PROP_NotInAD11INV1">
+              <MappingFragment StoreEntitySet="vw_FD11PROP_NotInAD11INV1">
+                <ScalarProperty Name="FASSETNO" ColumnName="FASSETNO" />
+                <ScalarProperty Name="FTAGNO" ColumnName="FTAGNO" />
+                <ScalarProperty Name="FAGRNO" ColumnName="FAGRNO" />
+                <ScalarProperty Name="FTRNNO" ColumnName="FTRNNO" />
+                <ScalarProperty Name="FASSETTY" ColumnName="FASSETTY" />
+                <ScalarProperty Name="FASSETST" ColumnName="FASSETST" />
+                <ScalarProperty Name="FASSETOBJ" ColumnName="FASSETOBJ" />
+                <ScalarProperty Name="FASSETOBJ2" ColumnName="FASSETOBJ2" />
+                <ScalarProperty Name="FDIVCODE" ColumnName="FDIVCODE" />
+                <ScalarProperty Name="FDPCODE" ColumnName="FDPCODE" />
+                <ScalarProperty Name="FREPRJNO" ColumnName="FREPRJNO" />
+                <ScalarProperty Name="FLCNO" ColumnName="FLCNO" />
+                <ScalarProperty Name="FPCINST" ColumnName="FPCINST" />
+                <ScalarProperty Name="FPCINST2" ColumnName="FPCINST2" />
+                <ScalarProperty Name="FPCINST3" ColumnName="FPCINST3" />
+                <ScalarProperty Name="FPCPIECE" ColumnName="FPCPIECE" />
+                <ScalarProperty Name="FPCBETWEEN" ColumnName="FPCBETWEEN" />
+                <ScalarProperty Name="FPCLNDNO" ColumnName="FPCLNDNO" />
+                <ScalarProperty Name="FPCWIDTH" ColumnName="FPCWIDTH" />
+                <ScalarProperty Name="FPCBOOK" ColumnName="FPCBOOK" />
+                <ScalarProperty Name="FPCPAGE" ColumnName="FPCPAGE" />
+                <ScalarProperty Name="FPCTAMBON" ColumnName="FPCTAMBON" />
+                <ScalarProperty Name="FPCAMPHER" ColumnName="FPCAMPHER" />
+                <ScalarProperty Name="FPCPROVINC" ColumnName="FPCPROVINC" />
+                <ScalarProperty Name="FPCPROVCD" ColumnName="FPCPROVCD" />
+                <ScalarProperty Name="FPCCITYCD" ColumnName="FPCCITYCD" />
+                <ScalarProperty Name="FPCLANDOWN" ColumnName="FPCLANDOWN" />
+                <ScalarProperty Name="FPCLANDOWN2" ColumnName="FPCLANDOWN2" />
+                <ScalarProperty Name="FPCLANDOWNT" ColumnName="FPCLANDOWNT" />
+                <ScalarProperty Name="FPCLANDOWTL" ColumnName="FPCLANDOWTL" />
+                <ScalarProperty Name="FASSETNM" ColumnName="FASSETNM" />
+                <ScalarProperty Name="FASBRAND" ColumnName="FASBRAND" />
+                <ScalarProperty Name="FASTYPE" ColumnName="FASTYPE" />
+                <ScalarProperty Name="FASMODLE" ColumnName="FASMODLE" />
+                <ScalarProperty Name="FSERNO" ColumnName="FSERNO" />
+                <ScalarProperty Name="FASCOLOR" ColumnName="FASCOLOR" />
+                <ScalarProperty Name="FASENGNO" ColumnName="FASENGNO" />
+                <ScalarProperty Name="FASCHASSIE" ColumnName="FASCHASSIE" />
+                <ScalarProperty Name="FASREGYR" ColumnName="FASREGYR" />
+                <ScalarProperty Name="FASHPOWER" ColumnName="FASHPOWER" />
+                <ScalarProperty Name="FASCC" ColumnName="FASCC" />
+                <ScalarProperty Name="FASOIL" ColumnName="FASOIL" />
+                <ScalarProperty Name="FCARNO" ColumnName="FCARNO" />
+                <ScalarProperty Name="FTAXFROM" ColumnName="FTAXFROM" />
+                <ScalarProperty Name="FTAXTO" ColumnName="FTAXTO" />
+                <ScalarProperty Name="FINSURER" ColumnName="FINSURER" />
+                <ScalarProperty Name="FINSPOLNO" ColumnName="FINSPOLNO" />
+                <ScalarProperty Name="FINSFROM" ColumnName="FINSFROM" />
+                <ScalarProperty Name="FINSTO" ColumnName="FINSTO" />
+                <ScalarProperty Name="FINSAMT" ColumnName="FINSAMT" />
+                <ScalarProperty Name="FINSPREM" ColumnName="FINSPREM" />
+                <ScalarProperty Name="FMAINCWITH" ColumnName="FMAINCWITH" />
+                <ScalarProperty Name="FMAINCSTR" ColumnName="FMAINCSTR" />
+                <ScalarProperty Name="FMAINCEND" ColumnName="FMAINCEND" />
+                <ScalarProperty Name="FDES1" ColumnName="FDES1" />
+                <ScalarProperty Name="FDES2" ColumnName="FDES2" />
+                <ScalarProperty Name="FDES3" ColumnName="FDES3" />
+                <ScalarProperty Name="FLCOMPCOMP" ColumnName="FLCOMPCOMP" />
+                <ScalarProperty Name="FSUCODE" ColumnName="FSUCODE" />
+                <ScalarProperty Name="FSUNAME" ColumnName="FSUNAME" />
+                <ScalarProperty Name="FINVNO" ColumnName="FINVNO" />
+                <ScalarProperty Name="FGAREXP" ColumnName="FGAREXP" />
+                <ScalarProperty Name="FPONO" ColumnName="FPONO" />
+                <ScalarProperty Name="FRRNO" ColumnName="FRRNO" />
+                <ScalarProperty Name="FRRITEMNO" ColumnName="FRRITEMNO" />
+                <ScalarProperty Name="FRRDATE" ColumnName="FRRDATE" />
+                <ScalarProperty Name="FSTDATE" ColumnName="FSTDATE" />
+                <ScalarProperty Name="FENDATE" ColumnName="FENDATE" />
+                <ScalarProperty Name="FTOTAGE" ColumnName="FTOTAGE" />
+                <ScalarProperty Name="FNOMONTH" ColumnName="FNOMONTH" />
+                <ScalarProperty Name="FOUTMONTH" ColumnName="FOUTMONTH" />
+                <ScalarProperty Name="FQTY" ColumnName="FQTY" />
+                <ScalarProperty Name="FQTYTYPE" ColumnName="FQTYTYPE" />
+                <ScalarProperty Name="FQTYADJ" ColumnName="FQTYADJ" />
+                <ScalarProperty Name="FORGCOST" ColumnName="FORGCOST" />
+                <ScalarProperty Name="FTOTCOST" ColumnName="FTOTCOST" />
+                <ScalarProperty Name="FVSALVAG" ColumnName="FVSALVAG" />
+                <ScalarProperty Name="FVDEPRE" ColumnName="FVDEPRE" />
+                <ScalarProperty Name="FVSALVAGAC" ColumnName="FVSALVAGAC" />
+                <ScalarProperty Name="FVDEPREAC" ColumnName="FVDEPREAC" />
+                <ScalarProperty Name="FLCALDEP" ColumnName="FLCALDEP" />
+                <ScalarProperty Name="FLACTST" ColumnName="FLACTST" />
+                <ScalarProperty Name="FDEPMETH" ColumnName="FDEPMETH" />
+                <ScalarProperty Name="FRFINCOST" ColumnName="FRFINCOST" />
+                <ScalarProperty Name="FMKPRCU" ColumnName="FMKPRCU" />
+                <ScalarProperty Name="FMKPRCA" ColumnName="FMKPRCA" />
+                <ScalarProperty Name="FMKPRCBY" ColumnName="FMKPRCBY" />
+                <ScalarProperty Name="FMKPRCDT" ColumnName="FMKPRCDT" />
+                <ScalarProperty Name="FASSPRCU" ColumnName="FASSPRCU" />
+                <ScalarProperty Name="FASSPRCA" ColumnName="FASSPRCA" />
+                <ScalarProperty Name="FASSPRCDT" ColumnName="FASSPRCDT" />
+                <ScalarProperty Name="FASSWHO" ColumnName="FASSWHO" />
+                <ScalarProperty Name="FASSCHG" ColumnName="FASSCHG" />
+                <ScalarProperty Name="FMORTGYN" ColumnName="FMORTGYN" />
+                <ScalarProperty Name="FMORTGDT" ColumnName="FMORTGDT" />
+                <ScalarProperty Name="FMORTGBK" ColumnName="FMORTGBK" />
+                <ScalarProperty Name="FSECCODE" ColumnName="FSECCODE" />
+                <ScalarProperty Name="FENTTYPE" ColumnName="FENTTYPE" />
+                <ScalarProperty Name="FENTDATE" ColumnName="FENTDATE" />
+                <ScalarProperty Name="FENTBY" ColumnName="FENTBY" />
+                <ScalarProperty Name="FUPDDATE" ColumnName="FUPDDATE" />
+                <ScalarProperty Name="FUPDBY" ColumnName="FUPDBY" />
+                <ScalarProperty Name="FPCNOTE" ColumnName="FPCNOTE" />
+                <ScalarProperty Name="FAREAOUT" ColumnName="FAREAOUT" />
+                <ScalarProperty Name="FAREAIN" ColumnName="FAREAIN" />
+                <ScalarProperty Name="FAREAPARK" ColumnName="FAREAPARK" />
+                <ScalarProperty Name="FPAREAOUT" ColumnName="FPAREAOUT" />
+                <ScalarProperty Name="FPAREAIN" ColumnName="FPAREAIN" />
+                <ScalarProperty Name="FPAREAPARK" ColumnName="FPAREAPARK" />
+                <ScalarProperty Name="FHBKDATE" ColumnName="FHBKDATE" />
+                <ScalarProperty Name="FPWIEGHAREA" ColumnName="FPWIEGHAREA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VW_FREZONE">
+            <EntityTypeMapping TypeName="PNSWEB_SoftProModel.VW_FREZONE">
+              <MappingFragment StoreEntitySet="VW_FREZONE">
+                <ScalarProperty Name="FREPRJNO" ColumnName="FREPRJNO" />
+                <ScalarProperty Name="FREPHASE" ColumnName="FREPHASE" />
+                <ScalarProperty Name="FREZONE" ColumnName="FREZONE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_ED11PAJ2_WithDetail">
+            <EntityTypeMapping TypeName="PNSWEB_SoftProModel.vw_ED11PAJ2_WithDetail">
+              <MappingFragment StoreEntitySet="vw_ED11PAJ2_WithDetail">
+                <ScalarProperty Name="RowNumber" ColumnName="RowNumber" />
+                <ScalarProperty Name="FITEMNO" ColumnName="FITEMNO" />
+                <ScalarProperty Name="FREZONE" ColumnName="FREZONE" />
+                <ScalarProperty Name="FREPHASE" ColumnName="FREPHASE" />
+                <ScalarProperty Name="FREPRJNO" ColumnName="FREPRJNO" />
+                <ScalarProperty Name="FAREA" ColumnName="FAREA" />
+                <ScalarProperty Name="FSTDPRICE" ColumnName="FSTDPRICE" />
+                <ScalarProperty Name="FDISCPRICE" ColumnName="FDISCPRICE" />
+                <ScalarProperty Name="FPROPRICE" ColumnName="FPROPRICE" />
+                <ScalarProperty Name="FSERIALNO" ColumnName="FSERIALNO" />
+                <ScalarProperty Name="FPDNAMET" ColumnName="FPDNAMET" />
+                <ScalarProperty Name="FPDNAME" ColumnName="FPDNAME" />
+                <ScalarProperty Name="FPDCODE" ColumnName="FPDCODE" />
+                <ScalarProperty Name="FTRNNO" ColumnName="FTRNNO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_UnitDefineProject">
+            <EntityTypeMapping TypeName="PNSWEB_SoftProModel.vw_UnitDefineProject">
+              <MappingFragment StoreEntitySet="vw_UnitDefineProject">
+                <ScalarProperty Name="e_FSERIALNO" ColumnName="e_FSERIALNO" />
+                <ScalarProperty Name="FRESTYPEDESC" ColumnName="FRESTYPEDESC" />
+                <ScalarProperty Name="FRESTATUSDESC" ColumnName="FRESTATUSDESC" />
+                <ScalarProperty Name="e_FDESC" ColumnName="e_FDESC" />
+                <ScalarProperty Name="e_FSTDBUILT" ColumnName="e_FSTDBUILT" />
+                <ScalarProperty Name="e_FSTDAREA" ColumnName="e_FSTDAREA" />
+                <ScalarProperty Name="FDESC" ColumnName="FDESC" />
+                <ScalarProperty Name="FSTDBUILT" ColumnName="FSTDBUILT" />
+                <ScalarProperty Name="FASSETNO" ColumnName="FASSETNO" />
+                <ScalarProperty Name="FFLOOR" ColumnName="FFLOOR" />
+                <ScalarProperty Name="FTOWER" ColumnName="FTOWER" />
+                <ScalarProperty Name="FBUILTIN" ColumnName="FBUILTIN" />
+                <ScalarProperty Name="FREBLOCK" ColumnName="FREBLOCK" />
+                <ScalarProperty Name="FREZONE" ColumnName="FREZONE" />
+                <ScalarProperty Name="FREPHASE" ColumnName="FREPHASE" />
+                <ScalarProperty Name="FPCPIECE" ColumnName="FPCPIECE" />
+                <ScalarProperty Name="FADDRNO" ColumnName="FADDRNO" />
+                <ScalarProperty Name="FAREA" ColumnName="FAREA" />
+                <ScalarProperty Name="FPDNAMET" ColumnName="FPDNAMET" />
+                <ScalarProperty Name="FPDNAME" ColumnName="FPDNAME" />
+                <ScalarProperty Name="FPDCODE" ColumnName="FPDCODE" />
+                <ScalarProperty Name="FTYUNIT" ColumnName="FTYUNIT" />
+                <ScalarProperty Name="FSERIALNO" ColumnName="FSERIALNO" />
+                <ScalarProperty Name="FRESTATUS" ColumnName="FRESTATUS" />
+                <ScalarProperty Name="FREPRJNO" ColumnName="FREPRJNO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_TypeHouse_Join">
+            <EntityTypeMapping TypeName="PNSWEB_SoftProModel.vw_TypeHouse_Join">
+              <MappingFragment StoreEntitySet="vw_TypeHouse_Join">
+                <ScalarProperty Name="e_FTYCODE" ColumnName="e_FTYCODE" />
+                <ScalarProperty Name="FDESC" ColumnName="FDESC" />
+                <ScalarProperty Name="FTYCODE" ColumnName="FTYCODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_Project_join">
+            <EntityTypeMapping TypeName="PNSWEB_SoftProModel.vw_Project_join">
+              <MappingFragment StoreEntitySet="vw_Project_join">
+                <ScalarProperty Name="e_FREPRJNO" ColumnName="e_FREPRJNO" />
+                <ScalarProperty Name="FREPRJNM" ColumnName="FREPRJNM" />
+                <ScalarProperty Name="FREPRJNO" ColumnName="FREPRJNO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_BD10DIVI_joinCoreCompany">
+            <EntityTypeMapping TypeName="PNSWEB_SoftProModel.vw_BD10DIVI_joinCoreCompany">
+              <MappingFragment StoreEntitySet="vw_BD10DIVI_joinCoreCompany">
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+                <ScalarProperty Name="FRETFAC" ColumnName="FRETFAC" />
+                <ScalarProperty Name="FPRNMARK" ColumnName="FPRNMARK" />
+                <ScalarProperty Name="FBONUSAC3" ColumnName="FBONUSAC3" />
+                <ScalarProperty Name="FBONUSAC2" ColumnName="FBONUSAC2" />
+                <ScalarProperty Name="FBONUSAC" ColumnName="FBONUSAC" />
+                <ScalarProperty Name="FHOUSEAC" ColumnName="FHOUSEAC" />
+                <ScalarProperty Name="FOTHAC" ColumnName="FOTHAC" />
+                <ScalarProperty Name="FADVAC" ColumnName="FADVAC" />
+                <ScalarProperty Name="FLOANPFAC" ColumnName="FLOANPFAC" />
+                <ScalarProperty Name="FLOANAC" ColumnName="FLOANAC" />
+                <ScalarProperty Name="FPFAC" ColumnName="FPFAC" />
+                <ScalarProperty Name="FSOCIALAC" ColumnName="FSOCIALAC" />
+                <ScalarProperty Name="FTAXAC" ColumnName="FTAXAC" />
+                <ScalarProperty Name="FPRAC" ColumnName="FPRAC" />
+                <ScalarProperty Name="FSCBRANCH" ColumnName="FSCBRANCH" />
+                <ScalarProperty Name="FSOCIALNO" ColumnName="FSOCIALNO" />
+                <ScalarProperty Name="FCOMPTAXNO" ColumnName="FCOMPTAXNO" />
+                <ScalarProperty Name="FPOSTAL" ColumnName="FPOSTAL" />
+                <ScalarProperty Name="FADD3" ColumnName="FADD3" />
+                <ScalarProperty Name="FADD2" ColumnName="FADD2" />
+                <ScalarProperty Name="FADD1" ColumnName="FADD1" />
+                <ScalarProperty Name="FDIVMG" ColumnName="FDIVMG" />
+                <ScalarProperty Name="FDIVNAMET" ColumnName="FDIVNAMET" />
+                <ScalarProperty Name="FDIVNAME" ColumnName="FDIVNAME" />
+                <ScalarProperty Name="FDIVCODE" ColumnName="FDIVCODE" />
+                <ScalarProperty Name="COMID" ColumnName="COMID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_ProjectPriceList_SearchResult">
+            <EntityTypeMapping TypeName="PNSWEB_SoftProModel.vw_ProjectPriceList_SearchResult">
+              <MappingFragment StoreEntitySet="vw_ProjectPriceList_SearchResult">
+                <ScalarProperty Name="FSERIALNO" ColumnName="FSERIALNO" />
+                <ScalarProperty Name="FREZONE" ColumnName="FREZONE" />
+                <ScalarProperty Name="FREPHASE" ColumnName="FREPHASE" />
+                <ScalarProperty Name="FREPRJNM" ColumnName="FREPRJNM" />
+                <ScalarProperty Name="FREPRJNO" ColumnName="FREPRJNO" />
+                <ScalarProperty Name="FVOUDATE" ColumnName="FVOUDATE" />
+                <ScalarProperty Name="FTRNNO" ColumnName="FTRNNO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

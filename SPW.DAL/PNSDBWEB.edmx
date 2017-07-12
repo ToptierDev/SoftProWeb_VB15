@@ -1,0 +1,2916 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PNSDBWEBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CoreAccessLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ACCESSTIME" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="IPADDRESS" Type="nvarchar" MaxLength="255" />
+          <Property Name="MENUID" Type="int" Nullable="false" />
+          <Property Name="FUSERID" Type="nvarchar" MaxLength="3" />
+          <Property Name="UpdateBy" Type="nvarchar" MaxLength="3" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CoreDivision">
+          <Key>
+            <PropertyRef Name="DivisionCode" />
+          </Key>
+          <Property Name="DivisionCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="DivisionName" Type="nvarchar" MaxLength="255" />
+          <Property Name="UpdateBy" Type="nvarchar" MaxLength="3" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CoreErrorLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ErrorDescription" Type="nvarchar" MaxLength="1000" />
+          <Property Name="ErrorFunction" Type="nvarchar" MaxLength="255" />
+          <Property Name="ErrorTime" Type="datetime" />
+          <Property Name="IPAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MenuID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="nvarchar" MaxLength="3" />
+          <Property Name="ErrorDescription1" Type="nvarchar(max)" />
+          <Property Name="ErrorDescription2" Type="nvarchar(max)" />
+          <Property Name="ErrorDescription3" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="CoreMenu">
+          <Key>
+            <PropertyRef Name="MenuID" />
+          </Key>
+          <Property Name="MenuID" Type="int" Nullable="false" />
+          <Property Name="MenuNameLC" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="MenuNameEN" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="MenuLocation" Type="nvarchar" MaxLength="255" />
+          <Property Name="ParentID" Type="int" />
+          <Property Name="Sequence" Type="int" />
+          <Property Name="MenuType" Type="nvarchar" MaxLength="3" />
+          <Property Name="EnableFlag" Type="int" />
+          <Property Name="SystemID" Type="int" />
+          <Property Name="MenuIcon" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModuleID" Type="int" />
+        </EntityType>
+        <EntityType Name="CoreModule">
+          <Key>
+            <PropertyRef Name="ModuleID" />
+          </Key>
+          <Property Name="ModuleID" Type="int" Nullable="false" />
+          <Property Name="ModuleNameEN" Type="nvarchar" MaxLength="255" />
+          <Property Name="ModuleNameTH" Type="nvarchar" MaxLength="255" />
+          <Property Name="UpdateBy" Type="nvarchar" MaxLength="3" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CorePosition">
+          <Key>
+            <PropertyRef Name="PositionCode" />
+          </Key>
+          <Property Name="PositionCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="PositionName" Type="nvarchar" MaxLength="255" />
+          <Property Name="PriceApprove" Type="int" />
+          <Property Name="UpdateBy" Type="nvarchar" MaxLength="3" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CoreRoleMenu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DivisionCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="PositionCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="MenuID" Type="int" />
+          <Property Name="UpdateBy" Type="nvarchar" MaxLength="3" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="isAdd" Type="bit" Nullable="false" />
+          <Property Name="isEdit" Type="bit" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+          <Property Name="isApprove" Type="bit" Nullable="false" />
+          <Property Name="isPrint" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CoreUser">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="EmployeeNo" Type="nvarchar" MaxLength="30" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" />
+          <Property Name="TitleEng" Type="nvarchar" MaxLength="30" />
+          <Property Name="TitleThai" Type="nvarchar" MaxLength="30" />
+          <Property Name="NameEng" Type="nvarchar" MaxLength="100" />
+          <Property Name="NameThai" Type="nvarchar" MaxLength="100" />
+          <Property Name="LastnameEng" Type="nvarchar" MaxLength="100" />
+          <Property Name="LastnameThai" Type="nvarchar" MaxLength="100" />
+          <Property Name="ImgFile" Type="image" />
+          <Property Name="ImgSignature" Type="image" />
+          <Property Name="IDCardNo" Type="nvarchar" MaxLength="30" />
+          <Property Name="Department" Type="nvarchar" MaxLength="100" />
+          <Property Name="Division" Type="nvarchar" MaxLength="100" />
+          <Property Name="Position" Type="nvarchar" MaxLength="100" />
+          <Property Name="PhoneNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="RegisterDate" Type="datetime" />
+          <Property Name="Extension" Type="nvarchar" MaxLength="30" />
+          <Property Name="ResignDate" Type="datetime" />
+          <Property Name="isForgetPassword" Type="int" />
+          <Property Name="ResetPassword" Type="nvarchar" MaxLength="100" />
+          <Property Name="ForgetPasswordDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CoreUsersCompany">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="COMID" Type="varchar" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="CoreUsersMenu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="MenuID" Type="int" />
+          <Property Name="isAdd" Type="bit" Nullable="false" />
+          <Property Name="isEdit" Type="bit" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+          <Property Name="isApprove" Type="bit" Nullable="false" />
+          <Property Name="isPrint" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CoreUsersProject">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="FREPRJNO" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="CoreWebResource">
+          <Key>
+            <PropertyRef Name="ResourceID" />
+          </Key>
+          <Property Name="ResourceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ResourceName" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="ResourceValueLC" Type="nvarchar" MaxLength="255" />
+          <Property Name="ResourceValueEN" Type="nvarchar" MaxLength="255" />
+          <Property Name="ResourceType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MenuID" Type="int" Nullable="false" />
+          <Property Name="UpdateBy" Type="nvarchar" MaxLength="3" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="EMPLOYEE_INFO">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Employee2" Type="varchar" MaxLength="30" />
+          <Property Name="Status" Type="varchar" MaxLength="30" />
+          <Property Name="EmployeeType" Type="varchar" MaxLength="30" />
+          <Property Name="Prefix" Type="varchar" MaxLength="30" />
+          <Property Name="Branch" Type="varchar" MaxLength="30" />
+          <Property Name="TitleEng" Type="varchar" MaxLength="30" />
+          <Property Name="TitleThai" Type="varchar" MaxLength="30" />
+          <Property Name="Name1" Type="varchar" MaxLength="100" />
+          <Property Name="Name2" Type="varchar" MaxLength="100" />
+          <Property Name="Lastname1" Type="varchar" MaxLength="100" />
+          <Property Name="Lastname2" Type="varchar" MaxLength="100" />
+          <Property Name="Nickname" Type="varchar" MaxLength="100" />
+          <Property Name="ImgFile" Type="image" />
+          <Property Name="IDCardNo" Type="varchar" MaxLength="30" />
+          <Property Name="IDIssueDate" Type="datetime" />
+          <Property Name="IDExpDate" Type="datetime" />
+          <Property Name="IDCardLocation" Type="varchar" MaxLength="100" />
+          <Property Name="IDCardProvince" Type="varchar" MaxLength="100" />
+          <Property Name="PlaceOfBirth" Type="varchar" MaxLength="100" />
+          <Property Name="BusWay" Type="varchar" MaxLength="100" />
+          <Property Name="BusStation" Type="varchar" MaxLength="100" />
+          <Property Name="SocialNo" Type="varchar" MaxLength="100" />
+          <Property Name="SocialExpDate" Type="datetime" />
+          <Property Name="TaxNo" Type="varchar" MaxLength="30" />
+          <Property Name="PassportID" Type="varchar" MaxLength="30" />
+          <Property Name="PassportExpDate" Type="datetime" />
+          <Property Name="Department" Type="varchar" MaxLength="100" />
+          <Property Name="Division" Type="varchar" MaxLength="100" />
+          <Property Name="Sectionn" Type="varchar" MaxLength="100" />
+          <Property Name="Positionn" Type="varchar" MaxLength="100" />
+          <Property Name="PhoneNo" Type="varchar" MaxLength="100" />
+          <Property Name="Extension" Type="varchar" MaxLength="30" />
+          <Property Name="FaxNo" Type="varchar" MaxLength="30" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="Job" Type="varchar" MaxLength="100" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="StartYear" Type="int" />
+          <Property Name="StartMonth" Type="int" />
+          <Property Name="StartDay" Type="int" />
+          <Property Name="PositionDate" Type="datetime" />
+          <Property Name="PositionYear" Type="int" />
+          <Property Name="PositionMonth" Type="int" />
+          <Property Name="PositionDay" Type="int" />
+          <Property Name="Probation" Type="varchar" MaxLength="100" />
+          <Property Name="ProbationDayMonth" Type="int" />
+          <Property Name="ProbationDate" Type="int" />
+          <Property Name="BirthDate" Type="datetime" />
+          <Property Name="DateOfBirthYear" Type="int" />
+          <Property Name="DateOfBirthMonth" Type="int" />
+          <Property Name="DateOfBirthDay" Type="int" />
+          <Property Name="Sex" Type="varchar" MaxLength="30" />
+          <Property Name="Height" Type="int" />
+          <Property Name="Weight" Type="int" />
+          <Property Name="TotalChild" Type="int" />
+          <Property Name="NoofChild" Type="int" />
+          <Property Name="StudyChild" Type="int" />
+          <Property Name="TotalRelative" Type="int" />
+          <Property Name="BigBrother" Type="int" />
+          <Property Name="Brother" Type="int" />
+          <Property Name="BigSister" Type="int" />
+          <Property Name="Sister" Type="int" />
+          <Property Name="TaxPaidBy" Type="int" />
+          <Property Name="Marital" Type="varchar" MaxLength="30" />
+          <Property Name="Nationality" Type="varchar" MaxLength="30" />
+          <Property Name="MilitaryStatus" Type="varchar" MaxLength="30" />
+          <Property Name="Religion" Type="varchar" MaxLength="30" />
+          <Property Name="Blood" Type="varchar" MaxLength="30" />
+          <Property Name="Origin" Type="varchar" MaxLength="30" />
+          <Property Name="Hobbies" Type="varchar" MaxLength="30" />
+          <Property Name="Sport" Type="varchar" MaxLength="30" />
+          <Property Name="Specialist" Type="varchar" MaxLength="30" />
+          <Property Name="Diseases" Type="varchar" MaxLength="30" />
+          <Property Name="TRNFlag" Type="varchar" MaxLength="30" />
+          <Property Name="ResignDate" Type="datetime" />
+          <Property Name="ResignReason" Type="varchar" MaxLength="30" />
+          <Property Name="Approve" Type="varchar" MaxLength="30" />
+          <Property Name="AnnualDay" Type="int" />
+          <Property Name="AnnualHour" Type="float" />
+          <Property Name="Bank" Type="varchar" MaxLength="30" />
+          <Property Name="AccountNo" Type="varchar" MaxLength="30" />
+          <Property Name="AccountName" Type="varchar" MaxLength="100" />
+          <Property Name="CashPercent" Type="float" />
+          <Property Name="BankPercent" Type="float" />
+          <Property Name="CashAmount" Type="float" />
+          <Property Name="BankAmount" Type="float" />
+          <Property Name="PFNo" Type="varchar" MaxLength="30" />
+          <Property Name="PFDate" Type="datetime" />
+          <Property Name="PFDateEnd" Type="datetime" />
+          <Property Name="PFComper" Type="int" />
+          <Property Name="PFEmpper" Type="int" />
+          <Property Name="PFTotal" Type="int" />
+          <Property Name="WorkPlan" Type="varchar" MaxLength="30" />
+          <Property Name="District" Type="varchar" MaxLength="100" />
+          <Property Name="Province" Type="varchar" MaxLength="100" />
+          <Property Name="Type" Type="varchar" MaxLength="100" />
+          <Property Name="LateCode" Type="varchar" MaxLength="30" />
+          <Property Name="OTCode" Type="varchar" MaxLength="30" />
+          <Property Name="SpouseNameEng" Type="varchar" MaxLength="100" />
+          <Property Name="SpouseNameThai" Type="varchar" MaxLength="100" />
+          <Property Name="SpouseIDCard" Type="varchar" MaxLength="100" />
+          <Property Name="SpouseBirthDay" Type="int" />
+          <Property Name="SpouseWorkOffice" Type="varchar" MaxLength="100" />
+          <Property Name="SpouseRegisterDate" Type="datetime" />
+          <Property Name="COMID" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="ITDMENU0">
+          <Key>
+            <PropertyRef Name="GROUPID" />
+          </Key>
+          <Property Name="GROUPID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="GROUPNAME" Type="nvarchar" MaxLength="80" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PNSDBWEB.dbo.ITDMENU1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ITDMENU1">
+          <Key>
+            <PropertyRef Name="MENUID" />
+          </Key>
+          <Property Name="PROGRAM" Type="nvarchar" MaxLength="120" />
+          <Property Name="MENUID" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="MENUNAME" Type="nvarchar" MaxLength="80" />
+          <Property Name="GROUPID" Type="nvarchar" MaxLength="20" />
+          <Property Name="MENUTYPE" Type="nvarchar" MaxLength="1" />
+          <Property Name="INDEXAS" Type="tinyint" />
+          <Property Name="FDESC" Type="nvarchar" MaxLength="120" />
+        </EntityType>
+        <EntityType Name="ITSTRUCA">
+          <Key>
+            <PropertyRef Name="RID" />
+          </Key>
+          <Property Name="RID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TABLENAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="COLUMNSNAME" Type="nvarchar" MaxLength="120" />
+          <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+          <Property Name="ISPRIMARYKEY" Type="nvarchar" MaxLength="1" />
+          <Property Name="STMPDATE" Type="datetime" />
+          <Property Name="STMPUPDATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ITSTRUTA">
+          <Key>
+            <PropertyRef Name="RID" />
+          </Key>
+          <Property Name="RID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TABLENAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="SYSTEMLIST" Type="nvarchar" MaxLength="50" />
+          <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="MD00SITE">
+          <Key>
+            <PropertyRef Name="FRNID" />
+          </Key>
+          <Property Name="FMAXPRJ" Type="float" />
+          <Property Name="FMAXCOMP" Type="float" />
+          <Property Name="FEXPDATE1" Type="datetime" />
+          <Property Name="FEXPDATE2" Type="datetime" />
+          <Property Name="FEXPDATE3" Type="datetime" />
+          <Property Name="FEXPDATE4" Type="datetime" />
+          <Property Name="FEXPPRNO" Type="nvarchar" MaxLength="1" />
+          <Property Name="FSUBGLO" Type="nvarchar" MaxLength="20" />
+          <Property Name="FYEARCONV" Type="float" />
+          <Property Name="FSUBPRG" Type="nvarchar" MaxLength="20" />
+          <Property Name="FCHKSUM" Type="float" />
+          <Property Name="FVERSION" Type="nvarchar" MaxLength="15" />
+          <Property Name="FSONO" Type="nvarchar" MaxLength="9" />
+          <Property Name="FRNID" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MD00VARL">
+          <Key>
+            <PropertyRef Name="FRNID" />
+          </Key>
+          <Property Name="FVARTYPE" Type="nvarchar" MaxLength="7" />
+          <Property Name="FUSERID" Type="nvarchar" MaxLength="3" />
+          <Property Name="FPNAME" Type="nvarchar" MaxLength="10" />
+          <Property Name="FVARNAME" Type="nvarchar" MaxLength="20" />
+          <Property Name="FVALUE" Type="nvarchar" MaxLength="30" />
+          <Property Name="FRNID" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MD02PRG1">
+          <Key>
+            <PropertyRef Name="FPNAME" />
+          </Key>
+          <Property Name="FPNAME" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="FFUNC" Type="nvarchar" MaxLength="220" />
+          <Property Name="FFUNCTH" Type="nvarchar" MaxLength="220" />
+          <Property Name="FPLEVEL" Type="nvarchar" MaxLength="1" />
+          <Property Name="FGROUP" Type="nvarchar" MaxLength="10" />
+          <Property Name="FTYPE" Type="nvarchar" MaxLength="20" />
+          <Property Name="FMENUPLACE" Type="nvarchar" MaxLength="40" />
+          <Property Name="FHWPLACE" Type="nvarchar" MaxLength="30" />
+          <Property Name="FPARREC" Type="nvarchar" MaxLength="30" />
+          <Property Name="FPARRET" Type="nvarchar" MaxLength="30" />
+          <Property Name="FLOGIC" Type="nvarchar(max)" />
+          <Property Name="FBECAREFUL" Type="nvarchar(max)" />
+          <Property Name="FEDITING" Type="nvarchar(max)" />
+          <Property Name="FREMARK" Type="nvarchar(max)" />
+          <Property Name="FWRTBY" Type="nvarchar" MaxLength="30" />
+          <Property Name="FHDLBY" Type="nvarchar" MaxLength="30" />
+          <Property Name="FLACTDATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MD02PRG2">
+          <Key>
+            <PropertyRef Name="FPNAME" />
+            <PropertyRef Name="FRNID" />
+          </Key>
+          <Property Name="FPNAME" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="FDNAME" Type="nvarchar" MaxLength="250" />
+          <Property Name="FATTR" Type="nvarchar" MaxLength="250" />
+          <Property Name="FTODO" Type="nvarchar" MaxLength="250" />
+          <Property Name="FRNID" Type="nvarchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MD02PRG3">
+          <Key>
+            <PropertyRef Name="FPNAME" />
+            <PropertyRef Name="FCALLER" />
+            <PropertyRef Name="FPRJCODE" />
+          </Key>
+          <Property Name="FPNAME" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="FCALLER" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="FMENUNAME" Type="nvarchar" MaxLength="60" />
+          <Property Name="FMENUNO" Type="int" />
+          <Property Name="FPRJCODE" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="FRNID" Type="nvarchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MD04MENU">
+          <Key>
+            <PropertyRef Name="FMENUNO" />
+          </Key>
+          <Property Name="FMENUNO" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="FMENUNM" Type="nvarchar" MaxLength="150" />
+          <Property Name="FMENUNMT" Type="nvarchar" MaxLength="150" />
+          <Property Name="FCOMMAND" Type="nvarchar" MaxLength="150" />
+          <Property Name="FPATH" Type="nvarchar" MaxLength="150" />
+          <Property Name="FPRJCODE" Type="nvarchar" MaxLength="3" />
+          <Property Name="FPARAMETER" Type="nvarchar" MaxLength="150" />
+          <Property Name="FLEVEL" Type="nvarchar" MaxLength="1" />
+          <Property Name="FROW" Type="float" />
+          <Property Name="FCOL" Type="float" />
+          <Property Name="FNO" Type="float" />
+          <Property Name="FADDINS" Type="nvarchar" MaxLength="1" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PNSDBWEB.dbo.MD04MENU_Backup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="MD04MENU_Backup">
+          <Key>
+            <PropertyRef Name="FMENUNO" />
+          </Key>
+          <Property Name="FMENUNO" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="FMENUNM" Type="nvarchar" MaxLength="150" />
+          <Property Name="FMENUNMT" Type="nvarchar" MaxLength="150" />
+          <Property Name="FCOMMAND" Type="nvarchar" MaxLength="150" />
+          <Property Name="FPATH" Type="nvarchar" MaxLength="150" />
+          <Property Name="FPRJCODE" Type="nvarchar" MaxLength="3" />
+          <Property Name="FPARAMETER" Type="nvarchar" MaxLength="150" />
+          <Property Name="FLEVEL" Type="nvarchar" MaxLength="1" />
+          <Property Name="FROW" Type="float" />
+          <Property Name="FCOL" Type="float" />
+          <Property Name="FNO" Type="float" />
+          <Property Name="FADDINS" Type="nvarchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="MD05USR1">
+          <Key>
+            <PropertyRef Name="FUSERID" />
+          </Key>
+          <Property Name="FUSERID" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="FPASSWORD" Type="nvarchar" MaxLength="8" />
+          <Property Name="FPASSWORDT" Type="nvarchar" MaxLength="50" />
+          <Property Name="FUSERNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="FPLEVEL" Type="nvarchar" MaxLength="1" />
+          <Property Name="FMTRUST" Type="nvarchar" MaxLength="20" />
+          <Property Name="FCTRUST" Type="nvarchar" MaxLength="10" />
+          <Property Name="FLASTUPD" Type="datetime" />
+          <Property Name="FGODOWN" Type="nvarchar" MaxLength="20" />
+          <Property Name="FCASHIER" Type="nvarchar" MaxLength="120" />
+          <Property Name="FSMCODE" Type="nvarchar" MaxLength="12" />
+          <Property Name="FDIVCODE" Type="nvarchar" MaxLength="2" />
+          <Property Name="FDPCODE" Type="nvarchar" MaxLength="9" />
+          <Property Name="FSECCODE" Type="nvarchar" MaxLength="6" />
+          <Property Name="FDORI" Type="nvarchar" MaxLength="1" />
+          <Property Name="FROTATE" Type="nvarchar" MaxLength="1" />
+          <Property Name="FPRDCATE" Type="nvarchar" MaxLength="20" />
+          <Property Name="FPRDCLASS" Type="nvarchar" MaxLength="20" />
+          <Property Name="FCUCATE" Type="nvarchar" MaxLength="20" />
+          <Property Name="FSUCATE" Type="nvarchar" MaxLength="20" />
+          <Property Name="FQGRPLIST" Type="nvarchar" MaxLength="30" />
+          <Property Name="FPRLIMIT" Type="float" />
+          <Property Name="FPDLINE" Type="nvarchar" MaxLength="30" />
+          <Property Name="FPRSIGN" Type="nvarchar" MaxLength="1" />
+          <Property Name="FGETMAIL" Type="nvarchar" MaxLength="1" />
+          <Property Name="FOPCODE" Type="nvarchar" MaxLength="120" />
+          <Property Name="FWCCODE" Type="nvarchar" MaxLength="6" />
+          <Property Name="FREPRJLIST" Type="nvarchar" MaxLength="150" />
+          <Property Name="FPOSITION" Type="nvarchar" MaxLength="150" />
+          <Property Name="FPDALEVEL" Type="nvarchar" MaxLength="5" />
+          <Property Name="IDCARDNO" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PNSDBWEB.dbo.MD05USR1BeforChangeDeptcode' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="MD05USR1BeforChangeDeptcode">
+          <Key>
+            <PropertyRef Name="FUSERID" />
+          </Key>
+          <Property Name="FUSERID" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="FPASSWORD" Type="nvarchar" MaxLength="8" />
+          <Property Name="FPASSWORDT" Type="nvarchar" MaxLength="50" />
+          <Property Name="FUSERNAME" Type="nvarchar" MaxLength="30" />
+          <Property Name="FPLEVEL" Type="nvarchar" MaxLength="1" />
+          <Property Name="FMTRUST" Type="nvarchar" MaxLength="20" />
+          <Property Name="FCTRUST" Type="nvarchar" MaxLength="10" />
+          <Property Name="FLASTUPD" Type="datetime" />
+          <Property Name="FGODOWN" Type="nvarchar" MaxLength="20" />
+          <Property Name="FCASHIER" Type="nvarchar" MaxLength="120" />
+          <Property Name="FSMCODE" Type="nvarchar" MaxLength="12" />
+          <Property Name="FDIVCODE" Type="nvarchar" MaxLength="2" />
+          <Property Name="FDPCODE" Type="nvarchar" MaxLength="6" />
+          <Property Name="FSECCODE" Type="nvarchar" MaxLength="6" />
+          <Property Name="FDORI" Type="nvarchar" MaxLength="1" />
+          <Property Name="FROTATE" Type="nvarchar" MaxLength="1" />
+          <Property Name="FPRDCATE" Type="nvarchar" MaxLength="20" />
+          <Property Name="FPRDCLASS" Type="nvarchar" MaxLength="20" />
+          <Property Name="FCUCATE" Type="nvarchar" MaxLength="20" />
+          <Property Name="FSUCATE" Type="nvarchar" MaxLength="20" />
+          <Property Name="FQGRPLIST" Type="nvarchar" MaxLength="30" />
+          <Property Name="FPRLIMIT" Type="float" />
+          <Property Name="FPDLINE" Type="nvarchar" MaxLength="30" />
+          <Property Name="FPRSIGN" Type="nvarchar" MaxLength="1" />
+          <Property Name="FGETMAIL" Type="nvarchar" MaxLength="1" />
+          <Property Name="FOPCODE" Type="nvarchar" MaxLength="120" />
+          <Property Name="FWCCODE" Type="nvarchar" MaxLength="6" />
+          <Property Name="FREPRJLIST" Type="nvarchar" MaxLength="150" />
+          <Property Name="FPOSITION" Type="nvarchar" MaxLength="150" />
+          <Property Name="FPDALEVEL" Type="nvarchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="MD05USR2">
+          <Key>
+            <PropertyRef Name="FUSERID" />
+            <PropertyRef Name="FPRJCODE" />
+            <PropertyRef Name="FMENUNO" />
+            <PropertyRef Name="FAUTHO" />
+            <PropertyRef Name="FRNID" />
+          </Key>
+          <Property Name="FUSERID" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="FPRJCODE" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="FMENUNO" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="FAUTHO" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="FTRNCD" Type="nvarchar" MaxLength="2" />
+          <Property Name="FVOUCD" Type="nvarchar" MaxLength="2" />
+          <Property Name="FRNID" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PNSDBWEB.dbo.MD05USR2_Backup20131216' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="MD05USR2_Backup20131216">
+          <Key>
+            <PropertyRef Name="FUSERID" />
+            <PropertyRef Name="FPRJCODE" />
+            <PropertyRef Name="FMENUNO" />
+            <PropertyRef Name="FAUTHO" />
+            <PropertyRef Name="FRNID" />
+          </Key>
+          <Property Name="FUSERID" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="FPRJCODE" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="FMENUNO" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="FAUTHO" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="FTRNCD" Type="nvarchar" MaxLength="2" />
+          <Property Name="FVOUCD" Type="nvarchar" MaxLength="2" />
+          <Property Name="FRNID" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MD07COMP">
+          <Key>
+            <PropertyRef Name="FCOMCODE" />
+          </Key>
+          <Property Name="FCOMCODE" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="FCOMNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="FTCOMNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="FADD1" Type="nvarchar" MaxLength="50" />
+          <Property Name="FADD2" Type="nvarchar" MaxLength="50" />
+          <Property Name="FADD3" Type="nvarchar" MaxLength="20" />
+          <Property Name="FPOSTAL" Type="nvarchar" MaxLength="5" />
+          <Property Name="FTEL" Type="nvarchar" MaxLength="20" />
+          <Property Name="FFAX" Type="nvarchar" MaxLength="20" />
+          <Property Name="FTELEX" Type="nvarchar" MaxLength="20" />
+          <Property Name="FCOMPTAXNO" Type="nvarchar" MaxLength="13" />
+          <Property Name="FSOCIALNO" Type="nvarchar" MaxLength="10" />
+          <Property Name="FDBFTYPE" Type="nvarchar" MaxLength="40" />
+          <Property Name="FDBFNAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="FDBFCON" Type="nvarchar" MaxLength="50" />
+          <Property Name="COMID" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PNSDBWEB.dbo.MD07COMP_Backup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="MD07COMP_Backup">
+          <Key>
+            <PropertyRef Name="FCOMCODE" />
+          </Key>
+          <Property Name="FCOMCODE" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="FCOMNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="FTCOMNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="FADD1" Type="nvarchar" MaxLength="50" />
+          <Property Name="FADD2" Type="nvarchar" MaxLength="50" />
+          <Property Name="FADD3" Type="nvarchar" MaxLength="20" />
+          <Property Name="FPOSTAL" Type="nvarchar" MaxLength="5" />
+          <Property Name="FTEL" Type="nvarchar" MaxLength="20" />
+          <Property Name="FFAX" Type="nvarchar" MaxLength="20" />
+          <Property Name="FTELEX" Type="nvarchar" MaxLength="20" />
+          <Property Name="FCOMPTAXNO" Type="nvarchar" MaxLength="13" />
+          <Property Name="FSOCIALNO" Type="nvarchar" MaxLength="10" />
+          <Property Name="FDBFTYPE" Type="nvarchar" MaxLength="40" />
+          <Property Name="FDBFNAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="FDBFCON" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MD07ERRO">
+          <Key>
+            <PropertyRef Name="FERRDATE" />
+            <PropertyRef Name="FERRTIME" />
+            <PropertyRef Name="FUSERID" />
+            <PropertyRef Name="FERRNO" />
+            <PropertyRef Name="FRNID" />
+          </Key>
+          <Property Name="FERRDATE" Type="datetime" Nullable="false" />
+          <Property Name="FERRTIME" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="FUSERID" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="FERRNO" Type="float" Nullable="false" />
+          <Property Name="FERRMSG" Type="nvarchar" MaxLength="150" />
+          <Property Name="FERRSOURCE" Type="nvarchar" MaxLength="150" />
+          <Property Name="FERRPROC" Type="nvarchar" MaxLength="150" />
+          <Property Name="FONDBF" Type="nvarchar" MaxLength="150" />
+          <Property Name="FCOMCODE" Type="nvarchar" MaxLength="150" />
+          <Property Name="FPRJCODE" Type="nvarchar" MaxLength="150" />
+          <Property Name="FRNID" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MD08MDLS">
+          <Key>
+            <PropertyRef Name="FPRJNO" />
+          </Key>
+          <Property Name="FPRJCODE" Type="nvarchar" MaxLength="3" />
+          <Property Name="FPRJNO" Type="float" Nullable="false" />
+          <Property Name="FPRJNAME" Type="nvarchar" MaxLength="40" />
+          <Property Name="FPRJNAMET" Type="nvarchar" MaxLength="42" />
+          <Property Name="FRPATH" Type="nvarchar" MaxLength="20" />
+          <Property Name="FMNAME" Type="nvarchar" MaxLength="10" />
+          <Property Name="FINSTALLYN" Type="nvarchar" MaxLength="1" />
+          <Property Name="FDPATH" Type="nvarchar" MaxLength="20" />
+          <Property Name="FSELPRN" Type="nvarchar" MaxLength="30" />
+          <Property Name="FRELPATH" Type="nvarchar" MaxLength="20" />
+          <Property Name="FIMAGE" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PNSDBWEB.dbo.MD09PLV1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="MD09PLV1">
+          <Key>
+            <PropertyRef Name="FRNID" />
+          </Key>
+          <Property Name="FPLEVEL" Type="nvarchar" MaxLength="1" />
+          <Property Name="FCTRUST" Type="nvarchar" MaxLength="10" />
+          <Property Name="FMTRUST" Type="nvarchar" MaxLength="20" />
+          <Property Name="FRNID" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PNSDBWEB.dbo.MD09PLV2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="MD09PLV2">
+          <Key>
+            <PropertyRef Name="FRNID" />
+          </Key>
+          <Property Name="FPLEVEL" Type="nvarchar" MaxLength="1" />
+          <Property Name="FMENUNO" Type="nvarchar" MaxLength="4" />
+          <Property Name="FAUTHO" Type="nvarchar" MaxLength="6" />
+          <Property Name="FRNID" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MD100STN">
+          <Key>
+            <PropertyRef Name="FSTATIONNO" />
+          </Key>
+          <Property Name="FSTATIONNO" Type="float" Nullable="false" />
+          <Property Name="FPSTNNO" Type="nvarchar" MaxLength="20" />
+          <Property Name="FRNID" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MD101URG">
+          <Key>
+            <PropertyRef Name="FSTATIONNO" />
+            <PropertyRef Name="FUSERID" />
+            <PropertyRef Name="FRNID" />
+          </Key>
+          <Property Name="FSTATIONNO" Type="float" Nullable="false" />
+          <Property Name="FUSERID" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="FPSTNNO" Type="nvarchar" MaxLength="20" />
+          <Property Name="FMDATEIN" Type="datetime" />
+          <Property Name="FMTIMEIN" Type="datetime" />
+          <Property Name="FMDATEOUT" Type="datetime" />
+          <Property Name="FMTIMEOUT" Type="nvarchar" MaxLength="5" />
+          <Property Name="FNETUSER" Type="nvarchar" MaxLength="40" />
+          <Property Name="FCOMCODE" Type="nvarchar" MaxLength="2" />
+          <Property Name="FLASTACTDT" Type="datetime" />
+          <Property Name="FLASTACTTM" Type="nvarchar" MaxLength="5" />
+          <Property Name="FNONACTCNT" Type="float" />
+          <Property Name="FRNID" Type="nvarchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MD102SMM">
+          <Key>
+            <PropertyRef Name="FPASLOCK" />
+          </Key>
+          <Property Name="FPASLOCK" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="FPASUNLOCK" Type="nvarchar" MaxLength="8" />
+          <Property Name="FLOCKYN" Type="nvarchar" MaxLength="1" />
+          <Property Name="FLOCKBY" Type="nvarchar" MaxLength="3" />
+          <Property Name="FLOCKDT" Type="datetime" />
+          <Property Name="FLOCKTM" Type="nvarchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="MD10PACC">
+          <Key>
+            <PropertyRef Name="FMDATE" />
+            <PropertyRef Name="FUSERID" />
+            <PropertyRef Name="FPRJCODE" />
+            <PropertyRef Name="FMTIMEIN" />
+            <PropertyRef Name="FCOMCODE" />
+            <PropertyRef Name="FPNAME" />
+          </Key>
+          <Property Name="FMDATE" Type="datetime" Nullable="false" />
+          <Property Name="FUSERID" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="FPRJCODE" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="FDESC" Type="nvarchar" MaxLength="250" />
+          <Property Name="FMTIMEIN" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="FMTIMEOUT" Type="nvarchar" MaxLength="10" />
+          <Property Name="FCOMCODE" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="FPNAME" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="FACTION" Type="nvarchar" MaxLength="50" />
+          <Property Name="FPKEY" Type="nvarchar" MaxLength="250" />
+          <Property Name="FPCOUNT" Type="float" />
+          <Property Name="FRNID" Type="nvarchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MD11DBFD">
+          <Key>
+            <PropertyRef Name="FDNAME" />
+          </Key>
+          <Property Name="FSUBNO" Type="nvarchar" MaxLength="3" />
+          <Property Name="FDNAME" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="FFUNC" Type="nvarchar" MaxLength="40" />
+          <Property Name="FPRJCODE" Type="nvarchar" MaxLength="3" />
+          <Property Name="FALIAS" Type="nvarchar" MaxLength="15" />
+          <Property Name="FRECLEN" Type="float" />
+          <Property Name="FDTYPE" Type="nvarchar" MaxLength="1" />
+          <Property Name="FIDXTYPE" Type="nvarchar" MaxLength="1" />
+          <Property Name="FDPOPUPYN" Type="nvarchar" MaxLength="1" />
+          <Property Name="FPRJGRP" Type="nvarchar" MaxLength="40" />
+          <Property Name="FGROUP" Type="nvarchar" MaxLength="50" />
+          <Property Name="FTYPE" Type="nvarchar" MaxLength="50" />
+          <Property Name="FBECAREFUL" Type="nvarchar(max)" />
+          <Property Name="FEDITING" Type="nvarchar(max)" />
+          <Property Name="FREMARK" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="MD11DBRL">
+          <Key>
+            <PropertyRef Name="FRNID" />
+          </Key>
+          <Property Name="FDNAME" Type="nvarchar" MaxLength="8" />
+          <Property Name="FRELDNAME" Type="nvarchar" MaxLength="8" />
+          <Property Name="FRELINO" Type="nvarchar" MaxLength="1" />
+          <Property Name="FRELFDNM" Type="nvarchar" MaxLength="60" />
+          <Property Name="FRNID" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MD12INDD">
+          <Key>
+            <PropertyRef Name="FRNID" />
+          </Key>
+          <Property Name="FDNAME" Type="nvarchar" MaxLength="8" />
+          <Property Name="FFIELDIND" Type="nvarchar" MaxLength="90" />
+          <Property Name="FINAME" Type="nvarchar" MaxLength="8" />
+          <Property Name="FINO" Type="nvarchar" MaxLength="1" />
+          <Property Name="FLASTUPD" Type="datetime" />
+          <Property Name="FUSERID" Type="nvarchar" MaxLength="3" />
+          <Property Name="FREMARK" Type="nvarchar" MaxLength="20" />
+          <Property Name="FORDERTYPE" Type="nvarchar" MaxLength="1" />
+          <Property Name="FRNID" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MD13DBFS">
+          <Key>
+            <PropertyRef Name="FRNID" />
+          </Key>
+          <Property Name="FDNAME" Type="nvarchar" MaxLength="8" />
+          <Property Name="FFDNAME" Type="nvarchar" MaxLength="15" />
+          <Property Name="FFDTYPE" Type="nvarchar" MaxLength="1" />
+          <Property Name="FFDWIDTH" Type="float" />
+          <Property Name="FFDDEC" Type="float" />
+          <Property Name="FFDDESC" Type="nvarchar" MaxLength="60" />
+          <Property Name="FFDFORMAT" Type="nvarchar" MaxLength="20" />
+          <Property Name="FSELMARK" Type="nvarchar" MaxLength="2" />
+          <Property Name="FSELTYPE" Type="nvarchar" MaxLength="1" />
+          <Property Name="FSELEXP" Type="nvarchar" MaxLength="60" />
+          <Property Name="FSELORDNO" Type="float" />
+          <Property Name="FRELDBFNM" Type="nvarchar" MaxLength="8" />
+          <Property Name="FRELFDNM" Type="nvarchar" MaxLength="40" />
+          <Property Name="FRELINO" Type="nvarchar" MaxLength="1" />
+          <Property Name="FPRNMARK" Type="nvarchar" MaxLength="1" />
+          <Property Name="FITEMNO" Type="nvarchar" MaxLength="5" />
+          <Property Name="FRNID" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MD14POPU">
+          <Key>
+            <PropertyRef Name="FVARREAD0" />
+          </Key>
+          <Property Name="FVARREAD0" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="FVARREADEQ" Type="nvarchar" MaxLength="80" />
+          <Property Name="FDSPFIELD" Type="nvarchar" MaxLength="150" />
+          <Property Name="FKEYRET" Type="nvarchar" MaxLength="20" />
+          <Property Name="FINO" Type="nvarchar" MaxLength="1" />
+          <Property Name="FDNAME" Type="nvarchar(max)" />
+          <Property Name="FPRJCODE" Type="nvarchar" MaxLength="40" />
+          <Property Name="FPOPUPNM" Type="nvarchar" MaxLength="30" />
+          <Property Name="FCOND" Type="nvarchar" MaxLength="100" />
+          <Property Name="FNOUSE" Type="float" />
+          <Property Name="FFIELDDS" Type="nvarchar" MaxLength="150" />
+          <Property Name="FFIELDWD" Type="nvarchar" MaxLength="80" />
+          <Property Name="FRNID" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="FDATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MD15SLBL">
+          <Key>
+            <PropertyRef Name="FRNID" />
+          </Key>
+          <Property Name="FFORMNAME" Type="nvarchar" MaxLength="15" />
+          <Property Name="FCTRLNAME" Type="nvarchar" MaxLength="40" />
+          <Property Name="FLABEL0" Type="nvarchar" MaxLength="40" />
+          <Property Name="FLABEL1" Type="nvarchar" MaxLength="40" />
+          <Property Name="FLABEL2" Type="nvarchar" MaxLength="40" />
+          <Property Name="FLABEL3" Type="nvarchar" MaxLength="40" />
+          <Property Name="FLABEL4" Type="nvarchar" MaxLength="40" />
+          <Property Name="FRIGHTS" Type="nvarchar" MaxLength="20" />
+          <Property Name="FTOP" Type="int" />
+          <Property Name="FLEFT" Type="int" />
+          <Property Name="FWIDTH" Type="int" />
+          <Property Name="FHEIGHT" Type="int" />
+          <Property Name="FRNID" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MD16ALER">
+          <Key>
+            <PropertyRef Name="FRNID" />
+          </Key>
+          <Property Name="FALERTNO" Type="nvarchar" MaxLength="10" />
+          <Property Name="FDESC" Type="nvarchar" MaxLength="50" />
+          <Property Name="FNOTE" Type="nvarchar" MaxLength="250" />
+          <Property Name="FSQLSTM" Type="nvarchar" MaxLength="250" />
+          <Property Name="FCOMCODE" Type="nvarchar" MaxLength="2" />
+          <Property Name="FNOTTO" Type="nvarchar" MaxLength="30" />
+          <Property Name="FALERTDAY" Type="nvarchar" MaxLength="7" />
+          <Property Name="FALERTONTM" Type="nvarchar" MaxLength="5" />
+          <Property Name="FALERTWK" Type="float" />
+          <Property Name="FSTARTDATE" Type="datetime" />
+          <Property Name="FLASTALERT" Type="datetime" />
+          <Property Name="FSTARTTYPE" Type="nvarchar" MaxLength="1" />
+          <Property Name="FSTATUS" Type="nvarchar" MaxLength="1" />
+          <Property Name="FDEFAULT" Type="nvarchar" MaxLength="1" />
+          <Property Name="FNEXTALTDT" Type="datetime" />
+          <Property Name="FNEXTALTTM" Type="nvarchar" MaxLength="5" />
+          <Property Name="FRNID" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MD17PBUF">
+          <Key>
+            <PropertyRef Name="FUSERID" />
+            <PropertyRef Name="FPRGID" />
+            <PropertyRef Name="FROWNO" />
+            <PropertyRef Name="FDATACOL2" />
+          </Key>
+          <Property Name="FUSERID" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="FPRGID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="FROWNO" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="FDATACOL1" Type="nvarchar" MaxLength="250" />
+          <Property Name="FDATACOL2" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="FDATACOL3" Type="nvarchar" MaxLength="250" />
+          <Property Name="FDATACOL4" Type="nvarchar" MaxLength="250" />
+          <Property Name="FDATACOL5" Type="nvarchar" MaxLength="250" />
+          <Property Name="FDATACOL6" Type="nvarchar" MaxLength="250" />
+          <Property Name="FDATACOL7" Type="nvarchar" MaxLength="250" />
+          <Property Name="FDATACOL8" Type="nvarchar" MaxLength="250" />
+          <Property Name="FDATACOL9" Type="nvarchar" MaxLength="250" />
+          <Property Name="FDATACOL10" Type="nvarchar" MaxLength="250" />
+          <Property Name="FDATACOL11" Type="nvarchar" MaxLength="250" />
+          <Property Name="FDATACOL12" Type="nvarchar" MaxLength="250" />
+          <Property Name="FDATACOL13" Type="nvarchar" MaxLength="250" />
+          <Property Name="FDATACOL14" Type="nvarchar" MaxLength="250" />
+          <Property Name="FDATACOL15" Type="nvarchar" MaxLength="250" />
+          <Property Name="FDATACOL16" Type="nvarchar" MaxLength="250" />
+          <Property Name="FDATACOL17" Type="nvarchar" MaxLength="250" />
+          <Property Name="FDATACOL18" Type="nvarchar" MaxLength="250" />
+          <Property Name="FDATACOL19" Type="nvarchar" MaxLength="250" />
+          <Property Name="FDATACOL20" Type="nvarchar" MaxLength="250" />
+          <Property Name="FRNID" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PNSDBWEB.dbo.VW_MenuFRM' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VW_MenuFRM">
+          <Key>
+            <PropertyRef Name="ParentMenuID" />
+            <PropertyRef Name="ParentMenuNameEN" />
+            <PropertyRef Name="ParentMenuNameLC" />
+          </Key>
+          <Property Name="ParentSequence" Type="int" />
+          <Property Name="ParentMenuID" Type="int" Nullable="false" />
+          <Property Name="ParentMenuNameEN" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="ParentMenuNameLC" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Sequence" Type="int" />
+          <Property Name="MenuID" Type="int" />
+          <Property Name="MenuNameEN" Type="nvarchar" MaxLength="255" />
+          <Property Name="MenuNameLC" Type="nvarchar" MaxLength="255" />
+          <Property Name="ModuleID" Type="int" />
+          <Property Name="ModuleNameEN" Type="nvarchar" MaxLength="255" />
+          <Property Name="ModuleNameTH" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PNSDBWEB.dbo.VW_MenuRPT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VW_MenuRPT">
+          <Key>
+            <PropertyRef Name="ParentMenuID" />
+            <PropertyRef Name="ParentMenuNameEN" />
+            <PropertyRef Name="ParentMenuNameLC" />
+          </Key>
+          <Property Name="ParentSequence" Type="int" />
+          <Property Name="ParentMenuID" Type="int" Nullable="false" />
+          <Property Name="ParentMenuNameEN" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="ParentMenuNameLC" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Sequence" Type="int" />
+          <Property Name="MenuID" Type="int" />
+          <Property Name="MenuNameEN" Type="nvarchar" MaxLength="255" />
+          <Property Name="MenuNameLC" Type="nvarchar" MaxLength="255" />
+          <Property Name="ModuleID" Type="int" />
+          <Property Name="ModuleNameEN" Type="nvarchar" MaxLength="255" />
+          <Property Name="ModuleNameTH" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityContainer Name="PNSDBWEBModelStoreContainer">
+          <EntitySet Name="CoreAccessLog" EntityType="Self.CoreAccessLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CoreDivision" EntityType="Self.CoreDivision" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CoreErrorLog" EntityType="Self.CoreErrorLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CoreMenu" EntityType="Self.CoreMenu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CoreModule" EntityType="Self.CoreModule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CorePosition" EntityType="Self.CorePosition" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CoreRoleMenu" EntityType="Self.CoreRoleMenu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CoreUser" EntityType="Self.CoreUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CoreUsersCompany" EntityType="Self.CoreUsersCompany" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CoreUsersMenu" EntityType="Self.CoreUsersMenu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CoreUsersProject" EntityType="Self.CoreUsersProject" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CoreWebResource" EntityType="Self.CoreWebResource" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EMPLOYEE_INFO" EntityType="Self.EMPLOYEE_INFO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ITDMENU0" EntityType="Self.ITDMENU0" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ITSTRUCA" EntityType="Self.ITSTRUCA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ITSTRUTA" EntityType="Self.ITSTRUTA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MD00SITE" EntityType="Self.MD00SITE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MD00VARL" EntityType="Self.MD00VARL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MD02PRG1" EntityType="Self.MD02PRG1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MD02PRG2" EntityType="Self.MD02PRG2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MD02PRG3" EntityType="Self.MD02PRG3" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MD04MENU" EntityType="Self.MD04MENU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MD05USR1" EntityType="Self.MD05USR1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MD05USR2" EntityType="Self.MD05USR2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MD07COMP" EntityType="Self.MD07COMP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MD07ERRO" EntityType="Self.MD07ERRO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MD08MDLS" EntityType="Self.MD08MDLS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MD100STN" EntityType="Self.MD100STN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MD101URG" EntityType="Self.MD101URG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MD102SMM" EntityType="Self.MD102SMM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MD10PACC" EntityType="Self.MD10PACC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MD11DBFD" EntityType="Self.MD11DBFD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MD11DBRL" EntityType="Self.MD11DBRL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MD12INDD" EntityType="Self.MD12INDD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MD13DBFS" EntityType="Self.MD13DBFS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MD14POPU" EntityType="Self.MD14POPU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MD15SLBL" EntityType="Self.MD15SLBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MD16ALER" EntityType="Self.MD16ALER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MD17PBUF" EntityType="Self.MD17PBUF" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ITDMENU1" EntityType="Self.ITDMENU1" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[ITDMENU1].[PROGRAM] AS [PROGRAM], 
+[ITDMENU1].[MENUID] AS [MENUID], 
+[ITDMENU1].[MENUNAME] AS [MENUNAME], 
+[ITDMENU1].[GROUPID] AS [GROUPID], 
+[ITDMENU1].[MENUTYPE] AS [MENUTYPE], 
+[ITDMENU1].[INDEXAS] AS [INDEXAS], 
+[ITDMENU1].[FDESC] AS [FDESC]
+FROM [dbo].[ITDMENU1] AS [ITDMENU1]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MD04MENU_Backup" EntityType="Self.MD04MENU_Backup" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[MD04MENU_Backup].[FMENUNO] AS [FMENUNO], 
+[MD04MENU_Backup].[FMENUNM] AS [FMENUNM], 
+[MD04MENU_Backup].[FMENUNMT] AS [FMENUNMT], 
+[MD04MENU_Backup].[FCOMMAND] AS [FCOMMAND], 
+[MD04MENU_Backup].[FPATH] AS [FPATH], 
+[MD04MENU_Backup].[FPRJCODE] AS [FPRJCODE], 
+[MD04MENU_Backup].[FPARAMETER] AS [FPARAMETER], 
+[MD04MENU_Backup].[FLEVEL] AS [FLEVEL], 
+[MD04MENU_Backup].[FROW] AS [FROW], 
+[MD04MENU_Backup].[FCOL] AS [FCOL], 
+[MD04MENU_Backup].[FNO] AS [FNO], 
+[MD04MENU_Backup].[FADDINS] AS [FADDINS]
+FROM [dbo].[MD04MENU_Backup] AS [MD04MENU_Backup]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MD05USR1BeforChangeDeptcode" EntityType="Self.MD05USR1BeforChangeDeptcode" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[MD05USR1BeforChangeDeptcode].[FUSERID] AS [FUSERID], 
+[MD05USR1BeforChangeDeptcode].[FPASSWORD] AS [FPASSWORD], 
+[MD05USR1BeforChangeDeptcode].[FPASSWORDT] AS [FPASSWORDT], 
+[MD05USR1BeforChangeDeptcode].[FUSERNAME] AS [FUSERNAME], 
+[MD05USR1BeforChangeDeptcode].[FPLEVEL] AS [FPLEVEL], 
+[MD05USR1BeforChangeDeptcode].[FMTRUST] AS [FMTRUST], 
+[MD05USR1BeforChangeDeptcode].[FCTRUST] AS [FCTRUST], 
+[MD05USR1BeforChangeDeptcode].[FLASTUPD] AS [FLASTUPD], 
+[MD05USR1BeforChangeDeptcode].[FGODOWN] AS [FGODOWN], 
+[MD05USR1BeforChangeDeptcode].[FCASHIER] AS [FCASHIER], 
+[MD05USR1BeforChangeDeptcode].[FSMCODE] AS [FSMCODE], 
+[MD05USR1BeforChangeDeptcode].[FDIVCODE] AS [FDIVCODE], 
+[MD05USR1BeforChangeDeptcode].[FDPCODE] AS [FDPCODE], 
+[MD05USR1BeforChangeDeptcode].[FSECCODE] AS [FSECCODE], 
+[MD05USR1BeforChangeDeptcode].[FDORI] AS [FDORI], 
+[MD05USR1BeforChangeDeptcode].[FROTATE] AS [FROTATE], 
+[MD05USR1BeforChangeDeptcode].[FPRDCATE] AS [FPRDCATE], 
+[MD05USR1BeforChangeDeptcode].[FPRDCLASS] AS [FPRDCLASS], 
+[MD05USR1BeforChangeDeptcode].[FCUCATE] AS [FCUCATE], 
+[MD05USR1BeforChangeDeptcode].[FSUCATE] AS [FSUCATE], 
+[MD05USR1BeforChangeDeptcode].[FQGRPLIST] AS [FQGRPLIST], 
+[MD05USR1BeforChangeDeptcode].[FPRLIMIT] AS [FPRLIMIT], 
+[MD05USR1BeforChangeDeptcode].[FPDLINE] AS [FPDLINE], 
+[MD05USR1BeforChangeDeptcode].[FPRSIGN] AS [FPRSIGN], 
+[MD05USR1BeforChangeDeptcode].[FGETMAIL] AS [FGETMAIL], 
+[MD05USR1BeforChangeDeptcode].[FOPCODE] AS [FOPCODE], 
+[MD05USR1BeforChangeDeptcode].[FWCCODE] AS [FWCCODE], 
+[MD05USR1BeforChangeDeptcode].[FREPRJLIST] AS [FREPRJLIST], 
+[MD05USR1BeforChangeDeptcode].[FPOSITION] AS [FPOSITION], 
+[MD05USR1BeforChangeDeptcode].[FPDALEVEL] AS [FPDALEVEL]
+FROM [dbo].[MD05USR1BeforChangeDeptcode] AS [MD05USR1BeforChangeDeptcode]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MD05USR2_Backup20131216" EntityType="Self.MD05USR2_Backup20131216" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[MD05USR2_Backup20131216].[FUSERID] AS [FUSERID], 
+[MD05USR2_Backup20131216].[FPRJCODE] AS [FPRJCODE], 
+[MD05USR2_Backup20131216].[FMENUNO] AS [FMENUNO], 
+[MD05USR2_Backup20131216].[FAUTHO] AS [FAUTHO], 
+[MD05USR2_Backup20131216].[FTRNCD] AS [FTRNCD], 
+[MD05USR2_Backup20131216].[FVOUCD] AS [FVOUCD], 
+[MD05USR2_Backup20131216].[FRNID] AS [FRNID]
+FROM [dbo].[MD05USR2_Backup20131216] AS [MD05USR2_Backup20131216]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MD07COMP_Backup" EntityType="Self.MD07COMP_Backup" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[MD07COMP_Backup].[FCOMCODE] AS [FCOMCODE], 
+[MD07COMP_Backup].[FCOMNAME] AS [FCOMNAME], 
+[MD07COMP_Backup].[FTCOMNAME] AS [FTCOMNAME], 
+[MD07COMP_Backup].[FADD1] AS [FADD1], 
+[MD07COMP_Backup].[FADD2] AS [FADD2], 
+[MD07COMP_Backup].[FADD3] AS [FADD3], 
+[MD07COMP_Backup].[FPOSTAL] AS [FPOSTAL], 
+[MD07COMP_Backup].[FTEL] AS [FTEL], 
+[MD07COMP_Backup].[FFAX] AS [FFAX], 
+[MD07COMP_Backup].[FTELEX] AS [FTELEX], 
+[MD07COMP_Backup].[FCOMPTAXNO] AS [FCOMPTAXNO], 
+[MD07COMP_Backup].[FSOCIALNO] AS [FSOCIALNO], 
+[MD07COMP_Backup].[FDBFTYPE] AS [FDBFTYPE], 
+[MD07COMP_Backup].[FDBFNAME] AS [FDBFNAME], 
+[MD07COMP_Backup].[FDBFCON] AS [FDBFCON]
+FROM [dbo].[MD07COMP_Backup] AS [MD07COMP_Backup]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MD09PLV1" EntityType="Self.MD09PLV1" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[MD09PLV1].[FPLEVEL] AS [FPLEVEL], 
+[MD09PLV1].[FCTRUST] AS [FCTRUST], 
+[MD09PLV1].[FMTRUST] AS [FMTRUST], 
+[MD09PLV1].[FRNID] AS [FRNID]
+FROM [dbo].[MD09PLV1] AS [MD09PLV1]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MD09PLV2" EntityType="Self.MD09PLV2" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[MD09PLV2].[FPLEVEL] AS [FPLEVEL], 
+[MD09PLV2].[FMENUNO] AS [FMENUNO], 
+[MD09PLV2].[FAUTHO] AS [FAUTHO], 
+[MD09PLV2].[FRNID] AS [FRNID]
+FROM [dbo].[MD09PLV2] AS [MD09PLV2]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VW_MenuFRM" EntityType="Self.VW_MenuFRM" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[VW_MenuFRM].[ParentSequence] AS [ParentSequence], 
+[VW_MenuFRM].[ParentMenuID] AS [ParentMenuID], 
+[VW_MenuFRM].[ParentMenuNameEN] AS [ParentMenuNameEN], 
+[VW_MenuFRM].[ParentMenuNameLC] AS [ParentMenuNameLC], 
+[VW_MenuFRM].[Sequence] AS [Sequence], 
+[VW_MenuFRM].[MenuID] AS [MenuID], 
+[VW_MenuFRM].[MenuNameEN] AS [MenuNameEN], 
+[VW_MenuFRM].[MenuNameLC] AS [MenuNameLC], 
+[VW_MenuFRM].[ModuleID] AS [ModuleID], 
+[VW_MenuFRM].[ModuleNameEN] AS [ModuleNameEN], 
+[VW_MenuFRM].[ModuleNameTH] AS [ModuleNameTH]
+FROM [dbo].[VW_MenuFRM] AS [VW_MenuFRM]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VW_MenuRPT" EntityType="Self.VW_MenuRPT" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[VW_MenuRPT].[ParentSequence] AS [ParentSequence], 
+[VW_MenuRPT].[ParentMenuID] AS [ParentMenuID], 
+[VW_MenuRPT].[ParentMenuNameEN] AS [ParentMenuNameEN], 
+[VW_MenuRPT].[ParentMenuNameLC] AS [ParentMenuNameLC], 
+[VW_MenuRPT].[Sequence] AS [Sequence], 
+[VW_MenuRPT].[MenuID] AS [MenuID], 
+[VW_MenuRPT].[MenuNameEN] AS [MenuNameEN], 
+[VW_MenuRPT].[MenuNameLC] AS [MenuNameLC], 
+[VW_MenuRPT].[ModuleID] AS [ModuleID], 
+[VW_MenuRPT].[ModuleNameEN] AS [ModuleNameEN], 
+[VW_MenuRPT].[ModuleNameTH] AS [ModuleNameTH]
+FROM [dbo].[VW_MenuRPT] AS [VW_MenuRPT]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PNSDBWEBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="PNSDBWEBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CoreAccessLogs" EntityType="PNSDBWEBModel.CoreAccessLog" />
+          <EntitySet Name="CoreDivisions" EntityType="PNSDBWEBModel.CoreDivision" />
+          <EntitySet Name="CoreErrorLogs" EntityType="PNSDBWEBModel.CoreErrorLog" />
+          <EntitySet Name="CoreMenus" EntityType="PNSDBWEBModel.CoreMenu" />
+          <EntitySet Name="CoreModules" EntityType="PNSDBWEBModel.CoreModule" />
+          <EntitySet Name="CorePositions" EntityType="PNSDBWEBModel.CorePosition" />
+          <EntitySet Name="CoreRoleMenus" EntityType="PNSDBWEBModel.CoreRoleMenu" />
+          <EntitySet Name="CoreWebResources" EntityType="PNSDBWEBModel.CoreWebResource" />
+          <EntitySet Name="EMPLOYEE_INFO" EntityType="PNSDBWEBModel.EMPLOYEE_INFO" />
+          <EntitySet Name="ITDMENU0" EntityType="PNSDBWEBModel.ITDMENU0" />
+          <EntitySet Name="ITSTRUCAs" EntityType="PNSDBWEBModel.ITSTRUCA" />
+          <EntitySet Name="ITSTRUTAs" EntityType="PNSDBWEBModel.ITSTRUTA" />
+          <EntitySet Name="MD00SITE" EntityType="PNSDBWEBModel.MD00SITE" />
+          <EntitySet Name="MD00VARL" EntityType="PNSDBWEBModel.MD00VARL" />
+          <EntitySet Name="MD02PRG1" EntityType="PNSDBWEBModel.MD02PRG1" />
+          <EntitySet Name="MD02PRG2" EntityType="PNSDBWEBModel.MD02PRG2" />
+          <EntitySet Name="MD02PRG3" EntityType="PNSDBWEBModel.MD02PRG3" />
+          <EntitySet Name="MD04MENU" EntityType="PNSDBWEBModel.MD04MENU" />
+          <EntitySet Name="MD05USR1" EntityType="PNSDBWEBModel.MD05USR1" />
+          <EntitySet Name="MD05USR2" EntityType="PNSDBWEBModel.MD05USR2" />
+          <EntitySet Name="MD07COMP" EntityType="PNSDBWEBModel.MD07COMP" />
+          <EntitySet Name="MD07ERRO" EntityType="PNSDBWEBModel.MD07ERRO" />
+          <EntitySet Name="MD08MDLS" EntityType="PNSDBWEBModel.MD08MDLS" />
+          <EntitySet Name="MD100STN" EntityType="PNSDBWEBModel.MD100STN" />
+          <EntitySet Name="MD101URG" EntityType="PNSDBWEBModel.MD101URG" />
+          <EntitySet Name="MD102SMM" EntityType="PNSDBWEBModel.MD102SMM" />
+          <EntitySet Name="MD10PACC" EntityType="PNSDBWEBModel.MD10PACC" />
+          <EntitySet Name="MD11DBFD" EntityType="PNSDBWEBModel.MD11DBFD" />
+          <EntitySet Name="MD11DBRL" EntityType="PNSDBWEBModel.MD11DBRL" />
+          <EntitySet Name="MD12INDD" EntityType="PNSDBWEBModel.MD12INDD" />
+          <EntitySet Name="MD13DBFS" EntityType="PNSDBWEBModel.MD13DBFS" />
+          <EntitySet Name="MD14POPU" EntityType="PNSDBWEBModel.MD14POPU" />
+          <EntitySet Name="MD15SLBL" EntityType="PNSDBWEBModel.MD15SLBL" />
+          <EntitySet Name="MD16ALER" EntityType="PNSDBWEBModel.MD16ALER" />
+          <EntitySet Name="MD17PBUF" EntityType="PNSDBWEBModel.MD17PBUF" />
+          <EntitySet Name="ITDMENU1" EntityType="PNSDBWEBModel.ITDMENU1" />
+          <EntitySet Name="MD04MENU_Backup" EntityType="PNSDBWEBModel.MD04MENU_Backup" />
+          <EntitySet Name="MD05USR1BeforChangeDeptcode" EntityType="PNSDBWEBModel.MD05USR1BeforChangeDeptcode" />
+          <EntitySet Name="MD05USR2_Backup20131216" EntityType="PNSDBWEBModel.MD05USR2_Backup20131216" />
+          <EntitySet Name="MD07COMP_Backup" EntityType="PNSDBWEBModel.MD07COMP_Backup" />
+          <EntitySet Name="MD09PLV1" EntityType="PNSDBWEBModel.MD09PLV1" />
+          <EntitySet Name="MD09PLV2" EntityType="PNSDBWEBModel.MD09PLV2" />
+          <EntitySet Name="VW_MenuFRM" EntityType="PNSDBWEBModel.VW_MenuFRM" />
+          <EntitySet Name="VW_MenuRPT" EntityType="PNSDBWEBModel.VW_MenuRPT" />
+          <EntitySet Name="CoreUsers" EntityType="PNSDBWEBModel.CoreUser" />
+          <EntitySet Name="CoreUsersCompanies" EntityType="PNSDBWEBModel.CoreUsersCompany" />
+          <EntitySet Name="CoreUsersMenus" EntityType="PNSDBWEBModel.CoreUsersMenu" />
+          <EntitySet Name="CoreUsersProjects" EntityType="PNSDBWEBModel.CoreUsersProject" />
+        </EntityContainer>
+        <EntityType Name="CoreAccessLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ACCESSTIME" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IPADDRESS" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MENUID" Type="Int32" Nullable="false" />
+          <Property Name="FUSERID" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateBy" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="CoreDivision">
+          <Key>
+            <PropertyRef Name="DivisionCode" />
+          </Key>
+          <Property Name="DivisionCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DivisionName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateBy" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="CoreErrorLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ErrorDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="ErrorFunction" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ErrorTime" Type="DateTime" Precision="3" />
+          <Property Name="IPAddress" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MenuID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="ErrorDescription1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ErrorDescription2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ErrorDescription3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CoreMenu">
+          <Key>
+            <PropertyRef Name="MenuID" />
+          </Key>
+          <Property Name="MenuID" Type="Int32" Nullable="false" />
+          <Property Name="MenuNameLC" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MenuNameEN" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MenuLocation" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ParentID" Type="Int32" />
+          <Property Name="Sequence" Type="Int32" />
+          <Property Name="MenuType" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="EnableFlag" Type="Int32" />
+          <Property Name="SystemID" Type="Int32" />
+          <Property Name="MenuIcon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModuleID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="CoreModule">
+          <Key>
+            <PropertyRef Name="ModuleID" />
+          </Key>
+          <Property Name="ModuleID" Type="Int32" Nullable="false" />
+          <Property Name="ModuleNameEN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ModuleNameTH" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateBy" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="CorePosition">
+          <Key>
+            <PropertyRef Name="PositionCode" />
+          </Key>
+          <Property Name="PositionCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PositionName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateBy" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="PriceApprove" Type="Int32" />
+        </EntityType>
+        <EntityType Name="CoreRoleMenu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DivisionCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PositionCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MenuID" Type="Int32" />
+          <Property Name="UpdateBy" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="isAdd" Type="Boolean" Nullable="false" />
+          <Property Name="isEdit" Type="Boolean" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+          <Property Name="isApprove" Type="Boolean" Nullable="false" />
+          <Property Name="isPrint" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CoreWebResource">
+          <Key>
+            <PropertyRef Name="ResourceID" />
+          </Key>
+          <Property Name="ResourceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ResourceName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ResourceValueLC" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ResourceValueEN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ResourceType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MenuID" Type="Int32" Nullable="false" />
+          <Property Name="UpdateBy" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="EMPLOYEE_INFO">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Employee2" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="EmployeeType" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Prefix" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Branch" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TitleEng" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TitleThai" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Name1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Name2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Lastname1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Lastname2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Nickname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ImgFile" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="IDCardNo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="IDIssueDate" Type="DateTime" Precision="3" />
+          <Property Name="IDExpDate" Type="DateTime" Precision="3" />
+          <Property Name="IDCardLocation" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IDCardProvince" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PlaceOfBirth" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BusWay" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BusStation" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SocialNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SocialExpDate" Type="DateTime" Precision="3" />
+          <Property Name="TaxNo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PassportID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PassportExpDate" Type="DateTime" Precision="3" />
+          <Property Name="Department" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Division" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Sectionn" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Positionn" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Extension" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FaxNo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Job" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="StartYear" Type="Int32" />
+          <Property Name="StartMonth" Type="Int32" />
+          <Property Name="StartDay" Type="Int32" />
+          <Property Name="PositionDate" Type="DateTime" Precision="3" />
+          <Property Name="PositionYear" Type="Int32" />
+          <Property Name="PositionMonth" Type="Int32" />
+          <Property Name="PositionDay" Type="Int32" />
+          <Property Name="Probation" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ProbationDayMonth" Type="Int32" />
+          <Property Name="ProbationDate" Type="Int32" />
+          <Property Name="BirthDate" Type="DateTime" Precision="3" />
+          <Property Name="DateOfBirthYear" Type="Int32" />
+          <Property Name="DateOfBirthMonth" Type="Int32" />
+          <Property Name="DateOfBirthDay" Type="Int32" />
+          <Property Name="Sex" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Height" Type="Int32" />
+          <Property Name="Weight" Type="Int32" />
+          <Property Name="TotalChild" Type="Int32" />
+          <Property Name="NoofChild" Type="Int32" />
+          <Property Name="StudyChild" Type="Int32" />
+          <Property Name="TotalRelative" Type="Int32" />
+          <Property Name="BigBrother" Type="Int32" />
+          <Property Name="Brother" Type="Int32" />
+          <Property Name="BigSister" Type="Int32" />
+          <Property Name="Sister" Type="Int32" />
+          <Property Name="TaxPaidBy" Type="Int32" />
+          <Property Name="Marital" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Nationality" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="MilitaryStatus" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Religion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Blood" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Origin" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Hobbies" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Sport" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Specialist" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Diseases" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TRNFlag" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ResignDate" Type="DateTime" Precision="3" />
+          <Property Name="ResignReason" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Approve" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="AnnualDay" Type="Int32" />
+          <Property Name="AnnualHour" Type="Double" />
+          <Property Name="Bank" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="AccountNo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="AccountName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CashPercent" Type="Double" />
+          <Property Name="BankPercent" Type="Double" />
+          <Property Name="CashAmount" Type="Double" />
+          <Property Name="BankAmount" Type="Double" />
+          <Property Name="PFNo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PFDate" Type="DateTime" Precision="3" />
+          <Property Name="PFDateEnd" Type="DateTime" Precision="3" />
+          <Property Name="PFComper" Type="Int32" />
+          <Property Name="PFEmpper" Type="Int32" />
+          <Property Name="PFTotal" Type="Int32" />
+          <Property Name="WorkPlan" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="District" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Province" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LateCode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="OTCode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="SpouseNameEng" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SpouseNameThai" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SpouseIDCard" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SpouseBirthDay" Type="Int32" />
+          <Property Name="SpouseWorkOffice" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SpouseRegisterDate" Type="DateTime" Precision="3" />
+          <Property Name="COMID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ITDMENU0">
+          <Key>
+            <PropertyRef Name="GROUPID" />
+          </Key>
+          <Property Name="GROUPID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="GROUPNAME" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ITSTRUCA">
+          <Key>
+            <PropertyRef Name="RID" />
+          </Key>
+          <Property Name="RID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TABLENAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="COLUMNSNAME" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ISPRIMARYKEY" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="STMPDATE" Type="DateTime" Precision="3" />
+          <Property Name="STMPUPDATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ITSTRUTA">
+          <Key>
+            <PropertyRef Name="RID" />
+          </Key>
+          <Property Name="RID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TABLENAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SYSTEMLIST" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MD00SITE">
+          <Key>
+            <PropertyRef Name="FRNID" />
+          </Key>
+          <Property Name="FMAXPRJ" Type="Double" />
+          <Property Name="FMAXCOMP" Type="Double" />
+          <Property Name="FEXPDATE1" Type="DateTime" Precision="3" />
+          <Property Name="FEXPDATE2" Type="DateTime" Precision="3" />
+          <Property Name="FEXPDATE3" Type="DateTime" Precision="3" />
+          <Property Name="FEXPDATE4" Type="DateTime" Precision="3" />
+          <Property Name="FEXPPRNO" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="FSUBGLO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FYEARCONV" Type="Double" />
+          <Property Name="FSUBPRG" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FCHKSUM" Type="Double" />
+          <Property Name="FVERSION" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="FSONO" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+          <Property Name="FRNID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MD00VARL">
+          <Key>
+            <PropertyRef Name="FRNID" />
+          </Key>
+          <Property Name="FVARTYPE" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="FUSERID" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="FPNAME" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FVARNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FVALUE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="FRNID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MD02PRG1">
+          <Key>
+            <PropertyRef Name="FPNAME" />
+          </Key>
+          <Property Name="FPNAME" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="FFUNC" Type="String" MaxLength="220" FixedLength="false" Unicode="true" />
+          <Property Name="FFUNCTH" Type="String" MaxLength="220" FixedLength="false" Unicode="true" />
+          <Property Name="FPLEVEL" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="FGROUP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FTYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FMENUPLACE" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="FHWPLACE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="FPARREC" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="FPARRET" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="FLOGIC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FBECAREFUL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FEDITING" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FREMARK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FWRTBY" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="FHDLBY" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="FLACTDATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MD02PRG2">
+          <Key>
+            <PropertyRef Name="FPNAME" />
+            <PropertyRef Name="FRNID" />
+          </Key>
+          <Property Name="FPNAME" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FDNAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FATTR" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FTODO" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FRNID" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MD02PRG3">
+          <Key>
+            <PropertyRef Name="FPNAME" />
+            <PropertyRef Name="FCALLER" />
+            <PropertyRef Name="FPRJCODE" />
+          </Key>
+          <Property Name="FPNAME" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="FCALLER" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="FMENUNAME" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="FMENUNO" Type="Int32" />
+          <Property Name="FPRJCODE" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="FRNID" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MD04MENU">
+          <Key>
+            <PropertyRef Name="FMENUNO" />
+          </Key>
+          <Property Name="FMENUNO" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="FMENUNM" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FMENUNMT" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FCOMMAND" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FPATH" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FPRJCODE" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="FPARAMETER" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FLEVEL" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="FROW" Type="Double" />
+          <Property Name="FCOL" Type="Double" />
+          <Property Name="FNO" Type="Double" />
+          <Property Name="FADDINS" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MD05USR1">
+          <Key>
+            <PropertyRef Name="FUSERID" />
+          </Key>
+          <Property Name="FUSERID" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="FPASSWORD" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="FPASSWORDT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FUSERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FPLEVEL" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="FMTRUST" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FCTRUST" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FLASTUPD" Type="DateTime" Precision="3" />
+          <Property Name="FGODOWN" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FCASHIER" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="FSMCODE" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="FDIVCODE" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="FDPCODE" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+          <Property Name="FSECCODE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="FDORI" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="FROTATE" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="FPRDCATE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FPRDCLASS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FCUCATE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FSUCATE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FQGRPLIST" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="FPRLIMIT" Type="Double" />
+          <Property Name="FPDLINE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="FPRSIGN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="FGETMAIL" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="FOPCODE" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="FWCCODE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="FREPRJLIST" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FPOSITION" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FPDALEVEL" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="IDCARDNO" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MD05USR2">
+          <Key>
+            <PropertyRef Name="FUSERID" />
+            <PropertyRef Name="FPRJCODE" />
+            <PropertyRef Name="FMENUNO" />
+            <PropertyRef Name="FAUTHO" />
+            <PropertyRef Name="FRNID" />
+          </Key>
+          <Property Name="FUSERID" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="FPRJCODE" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="FMENUNO" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="FAUTHO" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="FTRNCD" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="FVOUCD" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="FRNID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MD07COMP">
+          <Key>
+            <PropertyRef Name="FCOMCODE" />
+          </Key>
+          <Property Name="FCOMCODE" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="FCOMNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FTCOMNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FADD1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FADD2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FADD3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FPOSTAL" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="FTEL" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FFAX" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FTELEX" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FCOMPTAXNO" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="FSOCIALNO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FDBFTYPE" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="FDBFNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FDBFCON" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="COMID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MD07ERRO">
+          <Key>
+            <PropertyRef Name="FERRDATE" />
+            <PropertyRef Name="FERRTIME" />
+            <PropertyRef Name="FUSERID" />
+            <PropertyRef Name="FERRNO" />
+            <PropertyRef Name="FRNID" />
+          </Key>
+          <Property Name="FERRDATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FERRTIME" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="FUSERID" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="FERRNO" Type="Double" Nullable="false" />
+          <Property Name="FERRMSG" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FERRSOURCE" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FERRPROC" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FONDBF" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FCOMCODE" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FPRJCODE" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FRNID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MD08MDLS">
+          <Key>
+            <PropertyRef Name="FPRJNO" />
+          </Key>
+          <Property Name="FPRJCODE" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="FPRJNO" Type="Double" Nullable="false" />
+          <Property Name="FPRJNAME" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="FPRJNAMET" Type="String" MaxLength="42" FixedLength="false" Unicode="true" />
+          <Property Name="FRPATH" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FMNAME" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FINSTALLYN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="FDPATH" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FSELPRN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="FRELPATH" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FIMAGE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MD100STN">
+          <Key>
+            <PropertyRef Name="FSTATIONNO" />
+          </Key>
+          <Property Name="FSTATIONNO" Type="Double" Nullable="false" />
+          <Property Name="FPSTNNO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FRNID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MD101URG">
+          <Key>
+            <PropertyRef Name="FSTATIONNO" />
+            <PropertyRef Name="FUSERID" />
+            <PropertyRef Name="FRNID" />
+          </Key>
+          <Property Name="FSTATIONNO" Type="Double" Nullable="false" />
+          <Property Name="FUSERID" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="FPSTNNO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FMDATEIN" Type="DateTime" Precision="3" />
+          <Property Name="FMTIMEIN" Type="DateTime" Precision="3" />
+          <Property Name="FMDATEOUT" Type="DateTime" Precision="3" />
+          <Property Name="FMTIMEOUT" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="FNETUSER" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="FCOMCODE" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="FLASTACTDT" Type="DateTime" Precision="3" />
+          <Property Name="FLASTACTTM" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="FNONACTCNT" Type="Double" />
+          <Property Name="FRNID" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MD102SMM">
+          <Key>
+            <PropertyRef Name="FPASLOCK" />
+          </Key>
+          <Property Name="FPASLOCK" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="FPASUNLOCK" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="FLOCKYN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="FLOCKBY" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="FLOCKDT" Type="DateTime" Precision="3" />
+          <Property Name="FLOCKTM" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MD10PACC">
+          <Key>
+            <PropertyRef Name="FMDATE" />
+            <PropertyRef Name="FUSERID" />
+            <PropertyRef Name="FPRJCODE" />
+            <PropertyRef Name="FMTIMEIN" />
+            <PropertyRef Name="FCOMCODE" />
+            <PropertyRef Name="FPNAME" />
+          </Key>
+          <Property Name="FMDATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FUSERID" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="FPRJCODE" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="FDESC" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FMTIMEIN" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FMTIMEOUT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FCOMCODE" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="FPNAME" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FACTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FPKEY" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FPCOUNT" Type="Double" />
+          <Property Name="FRNID" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MD11DBFD">
+          <Key>
+            <PropertyRef Name="FDNAME" />
+          </Key>
+          <Property Name="FSUBNO" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="FDNAME" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="FFUNC" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="FPRJCODE" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="FALIAS" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="FRECLEN" Type="Double" />
+          <Property Name="FDTYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="FIDXTYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="FDPOPUPYN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="FPRJGRP" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="FGROUP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FBECAREFUL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FEDITING" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FREMARK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MD11DBRL">
+          <Key>
+            <PropertyRef Name="FRNID" />
+          </Key>
+          <Property Name="FDNAME" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="FRELDNAME" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="FRELINO" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="FRELFDNM" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="FRNID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MD12INDD">
+          <Key>
+            <PropertyRef Name="FRNID" />
+          </Key>
+          <Property Name="FDNAME" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="FFIELDIND" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+          <Property Name="FINAME" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="FINO" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="FLASTUPD" Type="DateTime" Precision="3" />
+          <Property Name="FUSERID" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="FREMARK" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FORDERTYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="FRNID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MD13DBFS">
+          <Key>
+            <PropertyRef Name="FRNID" />
+          </Key>
+          <Property Name="FDNAME" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="FFDNAME" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="FFDTYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="FFDWIDTH" Type="Double" />
+          <Property Name="FFDDEC" Type="Double" />
+          <Property Name="FFDDESC" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="FFDFORMAT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FSELMARK" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="FSELTYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="FSELEXP" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="FSELORDNO" Type="Double" />
+          <Property Name="FRELDBFNM" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="FRELFDNM" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="FRELINO" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="FPRNMARK" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="FITEMNO" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="FRNID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MD14POPU">
+          <Key>
+            <PropertyRef Name="FVARREAD0" />
+          </Key>
+          <Property Name="FVARREAD0" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FVARREADEQ" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="FDSPFIELD" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FKEYRET" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FINO" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="FDNAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FPRJCODE" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="FPOPUPNM" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="FCOND" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FNOUSE" Type="Double" />
+          <Property Name="FFIELDDS" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FFIELDWD" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="FRNID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="FDATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MD15SLBL">
+          <Key>
+            <PropertyRef Name="FRNID" />
+          </Key>
+          <Property Name="FFORMNAME" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="FCTRLNAME" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="FLABEL0" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="FLABEL1" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="FLABEL2" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="FLABEL3" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="FLABEL4" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="FRIGHTS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FTOP" Type="Int32" />
+          <Property Name="FLEFT" Type="Int32" />
+          <Property Name="FWIDTH" Type="Int32" />
+          <Property Name="FHEIGHT" Type="Int32" />
+          <Property Name="FRNID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MD16ALER">
+          <Key>
+            <PropertyRef Name="FRNID" />
+          </Key>
+          <Property Name="FALERTNO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FDESC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FNOTE" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FSQLSTM" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FCOMCODE" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="FNOTTO" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="FALERTDAY" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="FALERTONTM" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="FALERTWK" Type="Double" />
+          <Property Name="FSTARTDATE" Type="DateTime" Precision="3" />
+          <Property Name="FLASTALERT" Type="DateTime" Precision="3" />
+          <Property Name="FSTARTTYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="FSTATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="FDEFAULT" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="FNEXTALTDT" Type="DateTime" Precision="3" />
+          <Property Name="FNEXTALTTM" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="FRNID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MD17PBUF">
+          <Key>
+            <PropertyRef Name="FUSERID" />
+            <PropertyRef Name="FPRGID" />
+            <PropertyRef Name="FROWNO" />
+            <PropertyRef Name="FDATACOL2" />
+          </Key>
+          <Property Name="FUSERID" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="FPRGID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FROWNO" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="FDATACOL1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FDATACOL2" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FDATACOL3" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FDATACOL4" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FDATACOL5" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FDATACOL6" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FDATACOL7" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FDATACOL8" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FDATACOL9" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FDATACOL10" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FDATACOL11" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FDATACOL12" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FDATACOL13" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FDATACOL14" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FDATACOL15" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FDATACOL16" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FDATACOL17" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FDATACOL18" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FDATACOL19" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FDATACOL20" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FRNID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ITDMENU1">
+          <Key>
+            <PropertyRef Name="MENUID" />
+          </Key>
+          <Property Name="PROGRAM" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="MENUID" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="MENUNAME" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="GROUPID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MENUTYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="INDEXAS" Type="Byte" />
+          <Property Name="FDESC" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MD04MENU_Backup">
+          <Key>
+            <PropertyRef Name="FMENUNO" />
+          </Key>
+          <Property Name="FMENUNO" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="FMENUNM" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FMENUNMT" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FCOMMAND" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FPATH" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FPRJCODE" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="FPARAMETER" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FLEVEL" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="FROW" Type="Double" />
+          <Property Name="FCOL" Type="Double" />
+          <Property Name="FNO" Type="Double" />
+          <Property Name="FADDINS" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MD05USR1BeforChangeDeptcode">
+          <Key>
+            <PropertyRef Name="FUSERID" />
+          </Key>
+          <Property Name="FUSERID" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="FPASSWORD" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="FPASSWORDT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FUSERNAME" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="FPLEVEL" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="FMTRUST" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FCTRUST" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FLASTUPD" Type="DateTime" Precision="3" />
+          <Property Name="FGODOWN" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FCASHIER" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="FSMCODE" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="FDIVCODE" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="FDPCODE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="FSECCODE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="FDORI" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="FROTATE" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="FPRDCATE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FPRDCLASS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FCUCATE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FSUCATE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FQGRPLIST" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="FPRLIMIT" Type="Double" />
+          <Property Name="FPDLINE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="FPRSIGN" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="FGETMAIL" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="FOPCODE" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="FWCCODE" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="FREPRJLIST" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FPOSITION" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FPDALEVEL" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MD05USR2_Backup20131216">
+          <Key>
+            <PropertyRef Name="FUSERID" />
+            <PropertyRef Name="FPRJCODE" />
+            <PropertyRef Name="FMENUNO" />
+            <PropertyRef Name="FAUTHO" />
+            <PropertyRef Name="FRNID" />
+          </Key>
+          <Property Name="FUSERID" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="FPRJCODE" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="FMENUNO" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="FAUTHO" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="FTRNCD" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="FVOUCD" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="FRNID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MD07COMP_Backup">
+          <Key>
+            <PropertyRef Name="FCOMCODE" />
+          </Key>
+          <Property Name="FCOMCODE" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="FCOMNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FTCOMNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FADD1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FADD2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FADD3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FPOSTAL" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="FTEL" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FFAX" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FTELEX" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FCOMPTAXNO" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="FSOCIALNO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FDBFTYPE" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="FDBFNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FDBFCON" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MD09PLV1">
+          <Key>
+            <PropertyRef Name="FRNID" />
+          </Key>
+          <Property Name="FPLEVEL" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="FCTRUST" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FMTRUST" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FRNID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MD09PLV2">
+          <Key>
+            <PropertyRef Name="FRNID" />
+          </Key>
+          <Property Name="FPLEVEL" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="FMENUNO" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="FAUTHO" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="FRNID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="VW_MenuFRM">
+          <Key>
+            <PropertyRef Name="ParentMenuID" />
+            <PropertyRef Name="ParentMenuNameEN" />
+            <PropertyRef Name="ParentMenuNameLC" />
+          </Key>
+          <Property Name="ParentSequence" Type="Int32" />
+          <Property Name="ParentMenuID" Type="Int32" Nullable="false" />
+          <Property Name="ParentMenuNameEN" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ParentMenuNameLC" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Sequence" Type="Int32" />
+          <Property Name="MenuID" Type="Int32" />
+          <Property Name="MenuNameEN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MenuNameLC" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ModuleID" Type="Int32" />
+          <Property Name="ModuleNameEN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ModuleNameTH" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="VW_MenuRPT">
+          <Key>
+            <PropertyRef Name="ParentMenuID" />
+            <PropertyRef Name="ParentMenuNameEN" />
+            <PropertyRef Name="ParentMenuNameLC" />
+          </Key>
+          <Property Name="ParentSequence" Type="Int32" />
+          <Property Name="ParentMenuID" Type="Int32" Nullable="false" />
+          <Property Name="ParentMenuNameEN" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ParentMenuNameLC" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Sequence" Type="Int32" />
+          <Property Name="MenuID" Type="Int32" />
+          <Property Name="MenuNameEN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MenuNameLC" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ModuleID" Type="Int32" />
+          <Property Name="ModuleNameEN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ModuleNameTH" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CoreUser">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeNo" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TitleEng" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="TitleThai" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="NameEng" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NameThai" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LastnameEng" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LastnameThai" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ImgFile" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ImgSignature" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="IDCardNo" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Department" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Division" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Position" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="RegisterDate" Type="DateTime" Precision="3" />
+          <Property Name="Extension" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ResignDate" Type="DateTime" Precision="3" />
+          <Property Name="isForgetPassword" Type="Int32" />
+          <Property Name="ResetPassword" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ForgetPasswordDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="CoreUsersCompany">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="COMID" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CoreUsersMenu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MenuID" Type="Int32" />
+          <Property Name="isAdd" Type="Boolean" Nullable="false" />
+          <Property Name="isEdit" Type="Boolean" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+          <Property Name="isApprove" Type="Boolean" Nullable="false" />
+          <Property Name="isPrint" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CoreUsersProject">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FREPRJNO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PNSDBWEBModelStoreContainer" CdmEntityContainer="PNSDBWEBEntities">
+          <EntitySetMapping Name="CoreAccessLogs">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.CoreAccessLog">
+              <MappingFragment StoreEntitySet="CoreAccessLog">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="FUSERID" ColumnName="FUSERID" />
+                <ScalarProperty Name="MENUID" ColumnName="MENUID" />
+                <ScalarProperty Name="IPADDRESS" ColumnName="IPADDRESS" />
+                <ScalarProperty Name="ACCESSTIME" ColumnName="ACCESSTIME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoreDivisions">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.CoreDivision">
+              <MappingFragment StoreEntitySet="CoreDivision">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="DivisionName" ColumnName="DivisionName" />
+                <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoreErrorLogs">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.CoreErrorLog">
+              <MappingFragment StoreEntitySet="CoreErrorLog">
+                <ScalarProperty Name="ErrorDescription3" ColumnName="ErrorDescription3" />
+                <ScalarProperty Name="ErrorDescription2" ColumnName="ErrorDescription2" />
+                <ScalarProperty Name="ErrorDescription1" ColumnName="ErrorDescription1" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="ErrorTime" ColumnName="ErrorTime" />
+                <ScalarProperty Name="ErrorFunction" ColumnName="ErrorFunction" />
+                <ScalarProperty Name="ErrorDescription" ColumnName="ErrorDescription" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoreMenus">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.CoreMenu">
+              <MappingFragment StoreEntitySet="CoreMenu">
+                <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+                <ScalarProperty Name="MenuIcon" ColumnName="MenuIcon" />
+                <ScalarProperty Name="SystemID" ColumnName="SystemID" />
+                <ScalarProperty Name="EnableFlag" ColumnName="EnableFlag" />
+                <ScalarProperty Name="MenuType" ColumnName="MenuType" />
+                <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="MenuLocation" ColumnName="MenuLocation" />
+                <ScalarProperty Name="MenuNameEN" ColumnName="MenuNameEN" />
+                <ScalarProperty Name="MenuNameLC" ColumnName="MenuNameLC" />
+                <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoreModules">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.CoreModule">
+              <MappingFragment StoreEntitySet="CoreModule">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="ModuleNameTH" ColumnName="ModuleNameTH" />
+                <ScalarProperty Name="ModuleNameEN" ColumnName="ModuleNameEN" />
+                <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CorePositions">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.CorePosition">
+              <MappingFragment StoreEntitySet="CorePosition">
+                <ScalarProperty Name="PriceApprove" ColumnName="PriceApprove" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="PositionName" ColumnName="PositionName" />
+                <ScalarProperty Name="PositionCode" ColumnName="PositionCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoreRoleMenus">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.CoreRoleMenu">
+              <MappingFragment StoreEntitySet="CoreRoleMenu">
+                <ScalarProperty Name="isPrint" ColumnName="isPrint" />
+                <ScalarProperty Name="isApprove" ColumnName="isApprove" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+                <ScalarProperty Name="isEdit" ColumnName="isEdit" />
+                <ScalarProperty Name="isAdd" ColumnName="isAdd" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+                <ScalarProperty Name="PositionCode" ColumnName="PositionCode" />
+                <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoreWebResources">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.CoreWebResource">
+              <MappingFragment StoreEntitySet="CoreWebResource">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+                <ScalarProperty Name="ResourceType" ColumnName="ResourceType" />
+                <ScalarProperty Name="ResourceValueEN" ColumnName="ResourceValueEN" />
+                <ScalarProperty Name="ResourceValueLC" ColumnName="ResourceValueLC" />
+                <ScalarProperty Name="ResourceName" ColumnName="ResourceName" />
+                <ScalarProperty Name="ResourceID" ColumnName="ResourceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EMPLOYEE_INFO">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.EMPLOYEE_INFO">
+              <MappingFragment StoreEntitySet="EMPLOYEE_INFO">
+                <ScalarProperty Name="COMID" ColumnName="COMID" />
+                <ScalarProperty Name="SpouseRegisterDate" ColumnName="SpouseRegisterDate" />
+                <ScalarProperty Name="SpouseWorkOffice" ColumnName="SpouseWorkOffice" />
+                <ScalarProperty Name="SpouseBirthDay" ColumnName="SpouseBirthDay" />
+                <ScalarProperty Name="SpouseIDCard" ColumnName="SpouseIDCard" />
+                <ScalarProperty Name="SpouseNameThai" ColumnName="SpouseNameThai" />
+                <ScalarProperty Name="SpouseNameEng" ColumnName="SpouseNameEng" />
+                <ScalarProperty Name="OTCode" ColumnName="OTCode" />
+                <ScalarProperty Name="LateCode" ColumnName="LateCode" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="WorkPlan" ColumnName="WorkPlan" />
+                <ScalarProperty Name="PFTotal" ColumnName="PFTotal" />
+                <ScalarProperty Name="PFEmpper" ColumnName="PFEmpper" />
+                <ScalarProperty Name="PFComper" ColumnName="PFComper" />
+                <ScalarProperty Name="PFDateEnd" ColumnName="PFDateEnd" />
+                <ScalarProperty Name="PFDate" ColumnName="PFDate" />
+                <ScalarProperty Name="PFNo" ColumnName="PFNo" />
+                <ScalarProperty Name="BankAmount" ColumnName="BankAmount" />
+                <ScalarProperty Name="CashAmount" ColumnName="CashAmount" />
+                <ScalarProperty Name="BankPercent" ColumnName="BankPercent" />
+                <ScalarProperty Name="CashPercent" ColumnName="CashPercent" />
+                <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+                <ScalarProperty Name="AccountNo" ColumnName="AccountNo" />
+                <ScalarProperty Name="Bank" ColumnName="Bank" />
+                <ScalarProperty Name="AnnualHour" ColumnName="AnnualHour" />
+                <ScalarProperty Name="AnnualDay" ColumnName="AnnualDay" />
+                <ScalarProperty Name="Approve" ColumnName="Approve" />
+                <ScalarProperty Name="ResignReason" ColumnName="ResignReason" />
+                <ScalarProperty Name="ResignDate" ColumnName="ResignDate" />
+                <ScalarProperty Name="TRNFlag" ColumnName="TRNFlag" />
+                <ScalarProperty Name="Diseases" ColumnName="Diseases" />
+                <ScalarProperty Name="Specialist" ColumnName="Specialist" />
+                <ScalarProperty Name="Sport" ColumnName="Sport" />
+                <ScalarProperty Name="Hobbies" ColumnName="Hobbies" />
+                <ScalarProperty Name="Origin" ColumnName="Origin" />
+                <ScalarProperty Name="Blood" ColumnName="Blood" />
+                <ScalarProperty Name="Religion" ColumnName="Religion" />
+                <ScalarProperty Name="MilitaryStatus" ColumnName="MilitaryStatus" />
+                <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+                <ScalarProperty Name="Marital" ColumnName="Marital" />
+                <ScalarProperty Name="TaxPaidBy" ColumnName="TaxPaidBy" />
+                <ScalarProperty Name="Sister" ColumnName="Sister" />
+                <ScalarProperty Name="BigSister" ColumnName="BigSister" />
+                <ScalarProperty Name="Brother" ColumnName="Brother" />
+                <ScalarProperty Name="BigBrother" ColumnName="BigBrother" />
+                <ScalarProperty Name="TotalRelative" ColumnName="TotalRelative" />
+                <ScalarProperty Name="StudyChild" ColumnName="StudyChild" />
+                <ScalarProperty Name="NoofChild" ColumnName="NoofChild" />
+                <ScalarProperty Name="TotalChild" ColumnName="TotalChild" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="DateOfBirthDay" ColumnName="DateOfBirthDay" />
+                <ScalarProperty Name="DateOfBirthMonth" ColumnName="DateOfBirthMonth" />
+                <ScalarProperty Name="DateOfBirthYear" ColumnName="DateOfBirthYear" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="ProbationDate" ColumnName="ProbationDate" />
+                <ScalarProperty Name="ProbationDayMonth" ColumnName="ProbationDayMonth" />
+                <ScalarProperty Name="Probation" ColumnName="Probation" />
+                <ScalarProperty Name="PositionDay" ColumnName="PositionDay" />
+                <ScalarProperty Name="PositionMonth" ColumnName="PositionMonth" />
+                <ScalarProperty Name="PositionYear" ColumnName="PositionYear" />
+                <ScalarProperty Name="PositionDate" ColumnName="PositionDate" />
+                <ScalarProperty Name="StartDay" ColumnName="StartDay" />
+                <ScalarProperty Name="StartMonth" ColumnName="StartMonth" />
+                <ScalarProperty Name="StartYear" ColumnName="StartYear" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Job" ColumnName="Job" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="FaxNo" ColumnName="FaxNo" />
+                <ScalarProperty Name="Extension" ColumnName="Extension" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="Positionn" ColumnName="Positionn" />
+                <ScalarProperty Name="Sectionn" ColumnName="Sectionn" />
+                <ScalarProperty Name="Division" ColumnName="Division" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="PassportExpDate" ColumnName="PassportExpDate" />
+                <ScalarProperty Name="PassportID" ColumnName="PassportID" />
+                <ScalarProperty Name="TaxNo" ColumnName="TaxNo" />
+                <ScalarProperty Name="SocialExpDate" ColumnName="SocialExpDate" />
+                <ScalarProperty Name="SocialNo" ColumnName="SocialNo" />
+                <ScalarProperty Name="BusStation" ColumnName="BusStation" />
+                <ScalarProperty Name="BusWay" ColumnName="BusWay" />
+                <ScalarProperty Name="PlaceOfBirth" ColumnName="PlaceOfBirth" />
+                <ScalarProperty Name="IDCardProvince" ColumnName="IDCardProvince" />
+                <ScalarProperty Name="IDCardLocation" ColumnName="IDCardLocation" />
+                <ScalarProperty Name="IDExpDate" ColumnName="IDExpDate" />
+                <ScalarProperty Name="IDIssueDate" ColumnName="IDIssueDate" />
+                <ScalarProperty Name="IDCardNo" ColumnName="IDCardNo" />
+                <ScalarProperty Name="ImgFile" ColumnName="ImgFile" />
+                <ScalarProperty Name="Nickname" ColumnName="Nickname" />
+                <ScalarProperty Name="Lastname2" ColumnName="Lastname2" />
+                <ScalarProperty Name="Lastname1" ColumnName="Lastname1" />
+                <ScalarProperty Name="Name2" ColumnName="Name2" />
+                <ScalarProperty Name="Name1" ColumnName="Name1" />
+                <ScalarProperty Name="TitleThai" ColumnName="TitleThai" />
+                <ScalarProperty Name="TitleEng" ColumnName="TitleEng" />
+                <ScalarProperty Name="Branch" ColumnName="Branch" />
+                <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+                <ScalarProperty Name="EmployeeType" ColumnName="EmployeeType" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Employee2" ColumnName="Employee2" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ITDMENU0">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.ITDMENU0">
+              <MappingFragment StoreEntitySet="ITDMENU0">
+                <ScalarProperty Name="GROUPNAME" ColumnName="GROUPNAME" />
+                <ScalarProperty Name="GROUPID" ColumnName="GROUPID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ITSTRUCAs">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.ITSTRUCA">
+              <MappingFragment StoreEntitySet="ITSTRUCA">
+                <ScalarProperty Name="STMPUPDATE" ColumnName="STMPUPDATE" />
+                <ScalarProperty Name="STMPDATE" ColumnName="STMPDATE" />
+                <ScalarProperty Name="ISPRIMARYKEY" ColumnName="ISPRIMARYKEY" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="COLUMNSNAME" ColumnName="COLUMNSNAME" />
+                <ScalarProperty Name="TABLENAME" ColumnName="TABLENAME" />
+                <ScalarProperty Name="RID" ColumnName="RID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ITSTRUTAs">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.ITSTRUTA">
+              <MappingFragment StoreEntitySet="ITSTRUTA">
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="SYSTEMLIST" ColumnName="SYSTEMLIST" />
+                <ScalarProperty Name="TABLENAME" ColumnName="TABLENAME" />
+                <ScalarProperty Name="RID" ColumnName="RID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MD00SITE">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.MD00SITE">
+              <MappingFragment StoreEntitySet="MD00SITE">
+                <ScalarProperty Name="FRNID" ColumnName="FRNID" />
+                <ScalarProperty Name="FSONO" ColumnName="FSONO" />
+                <ScalarProperty Name="FVERSION" ColumnName="FVERSION" />
+                <ScalarProperty Name="FCHKSUM" ColumnName="FCHKSUM" />
+                <ScalarProperty Name="FSUBPRG" ColumnName="FSUBPRG" />
+                <ScalarProperty Name="FYEARCONV" ColumnName="FYEARCONV" />
+                <ScalarProperty Name="FSUBGLO" ColumnName="FSUBGLO" />
+                <ScalarProperty Name="FEXPPRNO" ColumnName="FEXPPRNO" />
+                <ScalarProperty Name="FEXPDATE4" ColumnName="FEXPDATE4" />
+                <ScalarProperty Name="FEXPDATE3" ColumnName="FEXPDATE3" />
+                <ScalarProperty Name="FEXPDATE2" ColumnName="FEXPDATE2" />
+                <ScalarProperty Name="FEXPDATE1" ColumnName="FEXPDATE1" />
+                <ScalarProperty Name="FMAXCOMP" ColumnName="FMAXCOMP" />
+                <ScalarProperty Name="FMAXPRJ" ColumnName="FMAXPRJ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MD00VARL">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.MD00VARL">
+              <MappingFragment StoreEntitySet="MD00VARL">
+                <ScalarProperty Name="FRNID" ColumnName="FRNID" />
+                <ScalarProperty Name="FVALUE" ColumnName="FVALUE" />
+                <ScalarProperty Name="FVARNAME" ColumnName="FVARNAME" />
+                <ScalarProperty Name="FPNAME" ColumnName="FPNAME" />
+                <ScalarProperty Name="FUSERID" ColumnName="FUSERID" />
+                <ScalarProperty Name="FVARTYPE" ColumnName="FVARTYPE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MD02PRG1">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.MD02PRG1">
+              <MappingFragment StoreEntitySet="MD02PRG1">
+                <ScalarProperty Name="FLACTDATE" ColumnName="FLACTDATE" />
+                <ScalarProperty Name="FHDLBY" ColumnName="FHDLBY" />
+                <ScalarProperty Name="FWRTBY" ColumnName="FWRTBY" />
+                <ScalarProperty Name="FREMARK" ColumnName="FREMARK" />
+                <ScalarProperty Name="FEDITING" ColumnName="FEDITING" />
+                <ScalarProperty Name="FBECAREFUL" ColumnName="FBECAREFUL" />
+                <ScalarProperty Name="FLOGIC" ColumnName="FLOGIC" />
+                <ScalarProperty Name="FPARRET" ColumnName="FPARRET" />
+                <ScalarProperty Name="FPARREC" ColumnName="FPARREC" />
+                <ScalarProperty Name="FHWPLACE" ColumnName="FHWPLACE" />
+                <ScalarProperty Name="FMENUPLACE" ColumnName="FMENUPLACE" />
+                <ScalarProperty Name="FTYPE" ColumnName="FTYPE" />
+                <ScalarProperty Name="FGROUP" ColumnName="FGROUP" />
+                <ScalarProperty Name="FPLEVEL" ColumnName="FPLEVEL" />
+                <ScalarProperty Name="FFUNCTH" ColumnName="FFUNCTH" />
+                <ScalarProperty Name="FFUNC" ColumnName="FFUNC" />
+                <ScalarProperty Name="FPNAME" ColumnName="FPNAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MD02PRG2">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.MD02PRG2">
+              <MappingFragment StoreEntitySet="MD02PRG2">
+                <ScalarProperty Name="FRNID" ColumnName="FRNID" />
+                <ScalarProperty Name="FTODO" ColumnName="FTODO" />
+                <ScalarProperty Name="FATTR" ColumnName="FATTR" />
+                <ScalarProperty Name="FDNAME" ColumnName="FDNAME" />
+                <ScalarProperty Name="FPNAME" ColumnName="FPNAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MD02PRG3">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.MD02PRG3">
+              <MappingFragment StoreEntitySet="MD02PRG3">
+                <ScalarProperty Name="FRNID" ColumnName="FRNID" />
+                <ScalarProperty Name="FPRJCODE" ColumnName="FPRJCODE" />
+                <ScalarProperty Name="FMENUNO" ColumnName="FMENUNO" />
+                <ScalarProperty Name="FMENUNAME" ColumnName="FMENUNAME" />
+                <ScalarProperty Name="FCALLER" ColumnName="FCALLER" />
+                <ScalarProperty Name="FPNAME" ColumnName="FPNAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MD04MENU">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.MD04MENU">
+              <MappingFragment StoreEntitySet="MD04MENU">
+                <ScalarProperty Name="FADDINS" ColumnName="FADDINS" />
+                <ScalarProperty Name="FNO" ColumnName="FNO" />
+                <ScalarProperty Name="FCOL" ColumnName="FCOL" />
+                <ScalarProperty Name="FROW" ColumnName="FROW" />
+                <ScalarProperty Name="FLEVEL" ColumnName="FLEVEL" />
+                <ScalarProperty Name="FPARAMETER" ColumnName="FPARAMETER" />
+                <ScalarProperty Name="FPRJCODE" ColumnName="FPRJCODE" />
+                <ScalarProperty Name="FPATH" ColumnName="FPATH" />
+                <ScalarProperty Name="FCOMMAND" ColumnName="FCOMMAND" />
+                <ScalarProperty Name="FMENUNMT" ColumnName="FMENUNMT" />
+                <ScalarProperty Name="FMENUNM" ColumnName="FMENUNM" />
+                <ScalarProperty Name="FMENUNO" ColumnName="FMENUNO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MD05USR1">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.MD05USR1">
+              <MappingFragment StoreEntitySet="MD05USR1">
+                <ScalarProperty Name="IDCARDNO" ColumnName="IDCARDNO" />
+                <ScalarProperty Name="FPDALEVEL" ColumnName="FPDALEVEL" />
+                <ScalarProperty Name="FPOSITION" ColumnName="FPOSITION" />
+                <ScalarProperty Name="FREPRJLIST" ColumnName="FREPRJLIST" />
+                <ScalarProperty Name="FWCCODE" ColumnName="FWCCODE" />
+                <ScalarProperty Name="FOPCODE" ColumnName="FOPCODE" />
+                <ScalarProperty Name="FGETMAIL" ColumnName="FGETMAIL" />
+                <ScalarProperty Name="FPRSIGN" ColumnName="FPRSIGN" />
+                <ScalarProperty Name="FPDLINE" ColumnName="FPDLINE" />
+                <ScalarProperty Name="FPRLIMIT" ColumnName="FPRLIMIT" />
+                <ScalarProperty Name="FQGRPLIST" ColumnName="FQGRPLIST" />
+                <ScalarProperty Name="FSUCATE" ColumnName="FSUCATE" />
+                <ScalarProperty Name="FCUCATE" ColumnName="FCUCATE" />
+                <ScalarProperty Name="FPRDCLASS" ColumnName="FPRDCLASS" />
+                <ScalarProperty Name="FPRDCATE" ColumnName="FPRDCATE" />
+                <ScalarProperty Name="FROTATE" ColumnName="FROTATE" />
+                <ScalarProperty Name="FDORI" ColumnName="FDORI" />
+                <ScalarProperty Name="FSECCODE" ColumnName="FSECCODE" />
+                <ScalarProperty Name="FDPCODE" ColumnName="FDPCODE" />
+                <ScalarProperty Name="FDIVCODE" ColumnName="FDIVCODE" />
+                <ScalarProperty Name="FSMCODE" ColumnName="FSMCODE" />
+                <ScalarProperty Name="FCASHIER" ColumnName="FCASHIER" />
+                <ScalarProperty Name="FGODOWN" ColumnName="FGODOWN" />
+                <ScalarProperty Name="FLASTUPD" ColumnName="FLASTUPD" />
+                <ScalarProperty Name="FCTRUST" ColumnName="FCTRUST" />
+                <ScalarProperty Name="FMTRUST" ColumnName="FMTRUST" />
+                <ScalarProperty Name="FPLEVEL" ColumnName="FPLEVEL" />
+                <ScalarProperty Name="FUSERNAME" ColumnName="FUSERNAME" />
+                <ScalarProperty Name="FPASSWORDT" ColumnName="FPASSWORDT" />
+                <ScalarProperty Name="FPASSWORD" ColumnName="FPASSWORD" />
+                <ScalarProperty Name="FUSERID" ColumnName="FUSERID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MD05USR2">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.MD05USR2">
+              <MappingFragment StoreEntitySet="MD05USR2">
+                <ScalarProperty Name="FRNID" ColumnName="FRNID" />
+                <ScalarProperty Name="FVOUCD" ColumnName="FVOUCD" />
+                <ScalarProperty Name="FTRNCD" ColumnName="FTRNCD" />
+                <ScalarProperty Name="FAUTHO" ColumnName="FAUTHO" />
+                <ScalarProperty Name="FMENUNO" ColumnName="FMENUNO" />
+                <ScalarProperty Name="FPRJCODE" ColumnName="FPRJCODE" />
+                <ScalarProperty Name="FUSERID" ColumnName="FUSERID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MD07COMP">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.MD07COMP">
+              <MappingFragment StoreEntitySet="MD07COMP">
+                <ScalarProperty Name="COMID" ColumnName="COMID" />
+                <ScalarProperty Name="FDBFCON" ColumnName="FDBFCON" />
+                <ScalarProperty Name="FDBFNAME" ColumnName="FDBFNAME" />
+                <ScalarProperty Name="FDBFTYPE" ColumnName="FDBFTYPE" />
+                <ScalarProperty Name="FSOCIALNO" ColumnName="FSOCIALNO" />
+                <ScalarProperty Name="FCOMPTAXNO" ColumnName="FCOMPTAXNO" />
+                <ScalarProperty Name="FTELEX" ColumnName="FTELEX" />
+                <ScalarProperty Name="FFAX" ColumnName="FFAX" />
+                <ScalarProperty Name="FTEL" ColumnName="FTEL" />
+                <ScalarProperty Name="FPOSTAL" ColumnName="FPOSTAL" />
+                <ScalarProperty Name="FADD3" ColumnName="FADD3" />
+                <ScalarProperty Name="FADD2" ColumnName="FADD2" />
+                <ScalarProperty Name="FADD1" ColumnName="FADD1" />
+                <ScalarProperty Name="FTCOMNAME" ColumnName="FTCOMNAME" />
+                <ScalarProperty Name="FCOMNAME" ColumnName="FCOMNAME" />
+                <ScalarProperty Name="FCOMCODE" ColumnName="FCOMCODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MD07ERRO">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.MD07ERRO">
+              <MappingFragment StoreEntitySet="MD07ERRO">
+                <ScalarProperty Name="FRNID" ColumnName="FRNID" />
+                <ScalarProperty Name="FPRJCODE" ColumnName="FPRJCODE" />
+                <ScalarProperty Name="FCOMCODE" ColumnName="FCOMCODE" />
+                <ScalarProperty Name="FONDBF" ColumnName="FONDBF" />
+                <ScalarProperty Name="FERRPROC" ColumnName="FERRPROC" />
+                <ScalarProperty Name="FERRSOURCE" ColumnName="FERRSOURCE" />
+                <ScalarProperty Name="FERRMSG" ColumnName="FERRMSG" />
+                <ScalarProperty Name="FERRNO" ColumnName="FERRNO" />
+                <ScalarProperty Name="FUSERID" ColumnName="FUSERID" />
+                <ScalarProperty Name="FERRTIME" ColumnName="FERRTIME" />
+                <ScalarProperty Name="FERRDATE" ColumnName="FERRDATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MD08MDLS">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.MD08MDLS">
+              <MappingFragment StoreEntitySet="MD08MDLS">
+                <ScalarProperty Name="FIMAGE" ColumnName="FIMAGE" />
+                <ScalarProperty Name="FRELPATH" ColumnName="FRELPATH" />
+                <ScalarProperty Name="FSELPRN" ColumnName="FSELPRN" />
+                <ScalarProperty Name="FDPATH" ColumnName="FDPATH" />
+                <ScalarProperty Name="FINSTALLYN" ColumnName="FINSTALLYN" />
+                <ScalarProperty Name="FMNAME" ColumnName="FMNAME" />
+                <ScalarProperty Name="FRPATH" ColumnName="FRPATH" />
+                <ScalarProperty Name="FPRJNAMET" ColumnName="FPRJNAMET" />
+                <ScalarProperty Name="FPRJNAME" ColumnName="FPRJNAME" />
+                <ScalarProperty Name="FPRJNO" ColumnName="FPRJNO" />
+                <ScalarProperty Name="FPRJCODE" ColumnName="FPRJCODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MD100STN">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.MD100STN">
+              <MappingFragment StoreEntitySet="MD100STN">
+                <ScalarProperty Name="FRNID" ColumnName="FRNID" />
+                <ScalarProperty Name="FPSTNNO" ColumnName="FPSTNNO" />
+                <ScalarProperty Name="FSTATIONNO" ColumnName="FSTATIONNO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MD101URG">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.MD101URG">
+              <MappingFragment StoreEntitySet="MD101URG">
+                <ScalarProperty Name="FRNID" ColumnName="FRNID" />
+                <ScalarProperty Name="FNONACTCNT" ColumnName="FNONACTCNT" />
+                <ScalarProperty Name="FLASTACTTM" ColumnName="FLASTACTTM" />
+                <ScalarProperty Name="FLASTACTDT" ColumnName="FLASTACTDT" />
+                <ScalarProperty Name="FCOMCODE" ColumnName="FCOMCODE" />
+                <ScalarProperty Name="FNETUSER" ColumnName="FNETUSER" />
+                <ScalarProperty Name="FMTIMEOUT" ColumnName="FMTIMEOUT" />
+                <ScalarProperty Name="FMDATEOUT" ColumnName="FMDATEOUT" />
+                <ScalarProperty Name="FMTIMEIN" ColumnName="FMTIMEIN" />
+                <ScalarProperty Name="FMDATEIN" ColumnName="FMDATEIN" />
+                <ScalarProperty Name="FPSTNNO" ColumnName="FPSTNNO" />
+                <ScalarProperty Name="FUSERID" ColumnName="FUSERID" />
+                <ScalarProperty Name="FSTATIONNO" ColumnName="FSTATIONNO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MD102SMM">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.MD102SMM">
+              <MappingFragment StoreEntitySet="MD102SMM">
+                <ScalarProperty Name="FLOCKTM" ColumnName="FLOCKTM" />
+                <ScalarProperty Name="FLOCKDT" ColumnName="FLOCKDT" />
+                <ScalarProperty Name="FLOCKBY" ColumnName="FLOCKBY" />
+                <ScalarProperty Name="FLOCKYN" ColumnName="FLOCKYN" />
+                <ScalarProperty Name="FPASUNLOCK" ColumnName="FPASUNLOCK" />
+                <ScalarProperty Name="FPASLOCK" ColumnName="FPASLOCK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MD10PACC">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.MD10PACC">
+              <MappingFragment StoreEntitySet="MD10PACC">
+                <ScalarProperty Name="FRNID" ColumnName="FRNID" />
+                <ScalarProperty Name="FPCOUNT" ColumnName="FPCOUNT" />
+                <ScalarProperty Name="FPKEY" ColumnName="FPKEY" />
+                <ScalarProperty Name="FACTION" ColumnName="FACTION" />
+                <ScalarProperty Name="FPNAME" ColumnName="FPNAME" />
+                <ScalarProperty Name="FCOMCODE" ColumnName="FCOMCODE" />
+                <ScalarProperty Name="FMTIMEOUT" ColumnName="FMTIMEOUT" />
+                <ScalarProperty Name="FMTIMEIN" ColumnName="FMTIMEIN" />
+                <ScalarProperty Name="FDESC" ColumnName="FDESC" />
+                <ScalarProperty Name="FPRJCODE" ColumnName="FPRJCODE" />
+                <ScalarProperty Name="FUSERID" ColumnName="FUSERID" />
+                <ScalarProperty Name="FMDATE" ColumnName="FMDATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MD11DBFD">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.MD11DBFD">
+              <MappingFragment StoreEntitySet="MD11DBFD">
+                <ScalarProperty Name="FREMARK" ColumnName="FREMARK" />
+                <ScalarProperty Name="FEDITING" ColumnName="FEDITING" />
+                <ScalarProperty Name="FBECAREFUL" ColumnName="FBECAREFUL" />
+                <ScalarProperty Name="FTYPE" ColumnName="FTYPE" />
+                <ScalarProperty Name="FGROUP" ColumnName="FGROUP" />
+                <ScalarProperty Name="FPRJGRP" ColumnName="FPRJGRP" />
+                <ScalarProperty Name="FDPOPUPYN" ColumnName="FDPOPUPYN" />
+                <ScalarProperty Name="FIDXTYPE" ColumnName="FIDXTYPE" />
+                <ScalarProperty Name="FDTYPE" ColumnName="FDTYPE" />
+                <ScalarProperty Name="FRECLEN" ColumnName="FRECLEN" />
+                <ScalarProperty Name="FALIAS" ColumnName="FALIAS" />
+                <ScalarProperty Name="FPRJCODE" ColumnName="FPRJCODE" />
+                <ScalarProperty Name="FFUNC" ColumnName="FFUNC" />
+                <ScalarProperty Name="FDNAME" ColumnName="FDNAME" />
+                <ScalarProperty Name="FSUBNO" ColumnName="FSUBNO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MD11DBRL">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.MD11DBRL">
+              <MappingFragment StoreEntitySet="MD11DBRL">
+                <ScalarProperty Name="FRNID" ColumnName="FRNID" />
+                <ScalarProperty Name="FRELFDNM" ColumnName="FRELFDNM" />
+                <ScalarProperty Name="FRELINO" ColumnName="FRELINO" />
+                <ScalarProperty Name="FRELDNAME" ColumnName="FRELDNAME" />
+                <ScalarProperty Name="FDNAME" ColumnName="FDNAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MD12INDD">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.MD12INDD">
+              <MappingFragment StoreEntitySet="MD12INDD">
+                <ScalarProperty Name="FRNID" ColumnName="FRNID" />
+                <ScalarProperty Name="FORDERTYPE" ColumnName="FORDERTYPE" />
+                <ScalarProperty Name="FREMARK" ColumnName="FREMARK" />
+                <ScalarProperty Name="FUSERID" ColumnName="FUSERID" />
+                <ScalarProperty Name="FLASTUPD" ColumnName="FLASTUPD" />
+                <ScalarProperty Name="FINO" ColumnName="FINO" />
+                <ScalarProperty Name="FINAME" ColumnName="FINAME" />
+                <ScalarProperty Name="FFIELDIND" ColumnName="FFIELDIND" />
+                <ScalarProperty Name="FDNAME" ColumnName="FDNAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MD13DBFS">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.MD13DBFS">
+              <MappingFragment StoreEntitySet="MD13DBFS">
+                <ScalarProperty Name="FRNID" ColumnName="FRNID" />
+                <ScalarProperty Name="FITEMNO" ColumnName="FITEMNO" />
+                <ScalarProperty Name="FPRNMARK" ColumnName="FPRNMARK" />
+                <ScalarProperty Name="FRELINO" ColumnName="FRELINO" />
+                <ScalarProperty Name="FRELFDNM" ColumnName="FRELFDNM" />
+                <ScalarProperty Name="FRELDBFNM" ColumnName="FRELDBFNM" />
+                <ScalarProperty Name="FSELORDNO" ColumnName="FSELORDNO" />
+                <ScalarProperty Name="FSELEXP" ColumnName="FSELEXP" />
+                <ScalarProperty Name="FSELTYPE" ColumnName="FSELTYPE" />
+                <ScalarProperty Name="FSELMARK" ColumnName="FSELMARK" />
+                <ScalarProperty Name="FFDFORMAT" ColumnName="FFDFORMAT" />
+                <ScalarProperty Name="FFDDESC" ColumnName="FFDDESC" />
+                <ScalarProperty Name="FFDDEC" ColumnName="FFDDEC" />
+                <ScalarProperty Name="FFDWIDTH" ColumnName="FFDWIDTH" />
+                <ScalarProperty Name="FFDTYPE" ColumnName="FFDTYPE" />
+                <ScalarProperty Name="FFDNAME" ColumnName="FFDNAME" />
+                <ScalarProperty Name="FDNAME" ColumnName="FDNAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MD14POPU">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.MD14POPU">
+              <MappingFragment StoreEntitySet="MD14POPU">
+                <ScalarProperty Name="FDATE" ColumnName="FDATE" />
+                <ScalarProperty Name="FRNID" ColumnName="FRNID" />
+                <ScalarProperty Name="FFIELDWD" ColumnName="FFIELDWD" />
+                <ScalarProperty Name="FFIELDDS" ColumnName="FFIELDDS" />
+                <ScalarProperty Name="FNOUSE" ColumnName="FNOUSE" />
+                <ScalarProperty Name="FCOND" ColumnName="FCOND" />
+                <ScalarProperty Name="FPOPUPNM" ColumnName="FPOPUPNM" />
+                <ScalarProperty Name="FPRJCODE" ColumnName="FPRJCODE" />
+                <ScalarProperty Name="FDNAME" ColumnName="FDNAME" />
+                <ScalarProperty Name="FINO" ColumnName="FINO" />
+                <ScalarProperty Name="FKEYRET" ColumnName="FKEYRET" />
+                <ScalarProperty Name="FDSPFIELD" ColumnName="FDSPFIELD" />
+                <ScalarProperty Name="FVARREADEQ" ColumnName="FVARREADEQ" />
+                <ScalarProperty Name="FVARREAD0" ColumnName="FVARREAD0" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MD15SLBL">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.MD15SLBL">
+              <MappingFragment StoreEntitySet="MD15SLBL">
+                <ScalarProperty Name="FRNID" ColumnName="FRNID" />
+                <ScalarProperty Name="FHEIGHT" ColumnName="FHEIGHT" />
+                <ScalarProperty Name="FWIDTH" ColumnName="FWIDTH" />
+                <ScalarProperty Name="FLEFT" ColumnName="FLEFT" />
+                <ScalarProperty Name="FTOP" ColumnName="FTOP" />
+                <ScalarProperty Name="FRIGHTS" ColumnName="FRIGHTS" />
+                <ScalarProperty Name="FLABEL4" ColumnName="FLABEL4" />
+                <ScalarProperty Name="FLABEL3" ColumnName="FLABEL3" />
+                <ScalarProperty Name="FLABEL2" ColumnName="FLABEL2" />
+                <ScalarProperty Name="FLABEL1" ColumnName="FLABEL1" />
+                <ScalarProperty Name="FLABEL0" ColumnName="FLABEL0" />
+                <ScalarProperty Name="FCTRLNAME" ColumnName="FCTRLNAME" />
+                <ScalarProperty Name="FFORMNAME" ColumnName="FFORMNAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MD16ALER">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.MD16ALER">
+              <MappingFragment StoreEntitySet="MD16ALER">
+                <ScalarProperty Name="FRNID" ColumnName="FRNID" />
+                <ScalarProperty Name="FNEXTALTTM" ColumnName="FNEXTALTTM" />
+                <ScalarProperty Name="FNEXTALTDT" ColumnName="FNEXTALTDT" />
+                <ScalarProperty Name="FDEFAULT" ColumnName="FDEFAULT" />
+                <ScalarProperty Name="FSTATUS" ColumnName="FSTATUS" />
+                <ScalarProperty Name="FSTARTTYPE" ColumnName="FSTARTTYPE" />
+                <ScalarProperty Name="FLASTALERT" ColumnName="FLASTALERT" />
+                <ScalarProperty Name="FSTARTDATE" ColumnName="FSTARTDATE" />
+                <ScalarProperty Name="FALERTWK" ColumnName="FALERTWK" />
+                <ScalarProperty Name="FALERTONTM" ColumnName="FALERTONTM" />
+                <ScalarProperty Name="FALERTDAY" ColumnName="FALERTDAY" />
+                <ScalarProperty Name="FNOTTO" ColumnName="FNOTTO" />
+                <ScalarProperty Name="FCOMCODE" ColumnName="FCOMCODE" />
+                <ScalarProperty Name="FSQLSTM" ColumnName="FSQLSTM" />
+                <ScalarProperty Name="FNOTE" ColumnName="FNOTE" />
+                <ScalarProperty Name="FDESC" ColumnName="FDESC" />
+                <ScalarProperty Name="FALERTNO" ColumnName="FALERTNO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MD17PBUF">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.MD17PBUF">
+              <MappingFragment StoreEntitySet="MD17PBUF">
+                <ScalarProperty Name="FRNID" ColumnName="FRNID" />
+                <ScalarProperty Name="FDATACOL20" ColumnName="FDATACOL20" />
+                <ScalarProperty Name="FDATACOL19" ColumnName="FDATACOL19" />
+                <ScalarProperty Name="FDATACOL18" ColumnName="FDATACOL18" />
+                <ScalarProperty Name="FDATACOL17" ColumnName="FDATACOL17" />
+                <ScalarProperty Name="FDATACOL16" ColumnName="FDATACOL16" />
+                <ScalarProperty Name="FDATACOL15" ColumnName="FDATACOL15" />
+                <ScalarProperty Name="FDATACOL14" ColumnName="FDATACOL14" />
+                <ScalarProperty Name="FDATACOL13" ColumnName="FDATACOL13" />
+                <ScalarProperty Name="FDATACOL12" ColumnName="FDATACOL12" />
+                <ScalarProperty Name="FDATACOL11" ColumnName="FDATACOL11" />
+                <ScalarProperty Name="FDATACOL10" ColumnName="FDATACOL10" />
+                <ScalarProperty Name="FDATACOL9" ColumnName="FDATACOL9" />
+                <ScalarProperty Name="FDATACOL8" ColumnName="FDATACOL8" />
+                <ScalarProperty Name="FDATACOL7" ColumnName="FDATACOL7" />
+                <ScalarProperty Name="FDATACOL6" ColumnName="FDATACOL6" />
+                <ScalarProperty Name="FDATACOL5" ColumnName="FDATACOL5" />
+                <ScalarProperty Name="FDATACOL4" ColumnName="FDATACOL4" />
+                <ScalarProperty Name="FDATACOL3" ColumnName="FDATACOL3" />
+                <ScalarProperty Name="FDATACOL2" ColumnName="FDATACOL2" />
+                <ScalarProperty Name="FDATACOL1" ColumnName="FDATACOL1" />
+                <ScalarProperty Name="FROWNO" ColumnName="FROWNO" />
+                <ScalarProperty Name="FPRGID" ColumnName="FPRGID" />
+                <ScalarProperty Name="FUSERID" ColumnName="FUSERID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ITDMENU1">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.ITDMENU1">
+              <MappingFragment StoreEntitySet="ITDMENU1">
+                <ScalarProperty Name="FDESC" ColumnName="FDESC" />
+                <ScalarProperty Name="INDEXAS" ColumnName="INDEXAS" />
+                <ScalarProperty Name="MENUTYPE" ColumnName="MENUTYPE" />
+                <ScalarProperty Name="GROUPID" ColumnName="GROUPID" />
+                <ScalarProperty Name="MENUNAME" ColumnName="MENUNAME" />
+                <ScalarProperty Name="MENUID" ColumnName="MENUID" />
+                <ScalarProperty Name="PROGRAM" ColumnName="PROGRAM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MD04MENU_Backup">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.MD04MENU_Backup">
+              <MappingFragment StoreEntitySet="MD04MENU_Backup">
+                <ScalarProperty Name="FADDINS" ColumnName="FADDINS" />
+                <ScalarProperty Name="FNO" ColumnName="FNO" />
+                <ScalarProperty Name="FCOL" ColumnName="FCOL" />
+                <ScalarProperty Name="FROW" ColumnName="FROW" />
+                <ScalarProperty Name="FLEVEL" ColumnName="FLEVEL" />
+                <ScalarProperty Name="FPARAMETER" ColumnName="FPARAMETER" />
+                <ScalarProperty Name="FPRJCODE" ColumnName="FPRJCODE" />
+                <ScalarProperty Name="FPATH" ColumnName="FPATH" />
+                <ScalarProperty Name="FCOMMAND" ColumnName="FCOMMAND" />
+                <ScalarProperty Name="FMENUNMT" ColumnName="FMENUNMT" />
+                <ScalarProperty Name="FMENUNM" ColumnName="FMENUNM" />
+                <ScalarProperty Name="FMENUNO" ColumnName="FMENUNO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MD05USR1BeforChangeDeptcode">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.MD05USR1BeforChangeDeptcode">
+              <MappingFragment StoreEntitySet="MD05USR1BeforChangeDeptcode">
+                <ScalarProperty Name="FPDALEVEL" ColumnName="FPDALEVEL" />
+                <ScalarProperty Name="FPOSITION" ColumnName="FPOSITION" />
+                <ScalarProperty Name="FREPRJLIST" ColumnName="FREPRJLIST" />
+                <ScalarProperty Name="FWCCODE" ColumnName="FWCCODE" />
+                <ScalarProperty Name="FOPCODE" ColumnName="FOPCODE" />
+                <ScalarProperty Name="FGETMAIL" ColumnName="FGETMAIL" />
+                <ScalarProperty Name="FPRSIGN" ColumnName="FPRSIGN" />
+                <ScalarProperty Name="FPDLINE" ColumnName="FPDLINE" />
+                <ScalarProperty Name="FPRLIMIT" ColumnName="FPRLIMIT" />
+                <ScalarProperty Name="FQGRPLIST" ColumnName="FQGRPLIST" />
+                <ScalarProperty Name="FSUCATE" ColumnName="FSUCATE" />
+                <ScalarProperty Name="FCUCATE" ColumnName="FCUCATE" />
+                <ScalarProperty Name="FPRDCLASS" ColumnName="FPRDCLASS" />
+                <ScalarProperty Name="FPRDCATE" ColumnName="FPRDCATE" />
+                <ScalarProperty Name="FROTATE" ColumnName="FROTATE" />
+                <ScalarProperty Name="FDORI" ColumnName="FDORI" />
+                <ScalarProperty Name="FSECCODE" ColumnName="FSECCODE" />
+                <ScalarProperty Name="FDPCODE" ColumnName="FDPCODE" />
+                <ScalarProperty Name="FDIVCODE" ColumnName="FDIVCODE" />
+                <ScalarProperty Name="FSMCODE" ColumnName="FSMCODE" />
+                <ScalarProperty Name="FCASHIER" ColumnName="FCASHIER" />
+                <ScalarProperty Name="FGODOWN" ColumnName="FGODOWN" />
+                <ScalarProperty Name="FLASTUPD" ColumnName="FLASTUPD" />
+                <ScalarProperty Name="FCTRUST" ColumnName="FCTRUST" />
+                <ScalarProperty Name="FMTRUST" ColumnName="FMTRUST" />
+                <ScalarProperty Name="FPLEVEL" ColumnName="FPLEVEL" />
+                <ScalarProperty Name="FUSERNAME" ColumnName="FUSERNAME" />
+                <ScalarProperty Name="FPASSWORDT" ColumnName="FPASSWORDT" />
+                <ScalarProperty Name="FPASSWORD" ColumnName="FPASSWORD" />
+                <ScalarProperty Name="FUSERID" ColumnName="FUSERID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MD05USR2_Backup20131216">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.MD05USR2_Backup20131216">
+              <MappingFragment StoreEntitySet="MD05USR2_Backup20131216">
+                <ScalarProperty Name="FRNID" ColumnName="FRNID" />
+                <ScalarProperty Name="FVOUCD" ColumnName="FVOUCD" />
+                <ScalarProperty Name="FTRNCD" ColumnName="FTRNCD" />
+                <ScalarProperty Name="FAUTHO" ColumnName="FAUTHO" />
+                <ScalarProperty Name="FMENUNO" ColumnName="FMENUNO" />
+                <ScalarProperty Name="FPRJCODE" ColumnName="FPRJCODE" />
+                <ScalarProperty Name="FUSERID" ColumnName="FUSERID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MD07COMP_Backup">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.MD07COMP_Backup">
+              <MappingFragment StoreEntitySet="MD07COMP_Backup">
+                <ScalarProperty Name="FDBFCON" ColumnName="FDBFCON" />
+                <ScalarProperty Name="FDBFNAME" ColumnName="FDBFNAME" />
+                <ScalarProperty Name="FDBFTYPE" ColumnName="FDBFTYPE" />
+                <ScalarProperty Name="FSOCIALNO" ColumnName="FSOCIALNO" />
+                <ScalarProperty Name="FCOMPTAXNO" ColumnName="FCOMPTAXNO" />
+                <ScalarProperty Name="FTELEX" ColumnName="FTELEX" />
+                <ScalarProperty Name="FFAX" ColumnName="FFAX" />
+                <ScalarProperty Name="FTEL" ColumnName="FTEL" />
+                <ScalarProperty Name="FPOSTAL" ColumnName="FPOSTAL" />
+                <ScalarProperty Name="FADD3" ColumnName="FADD3" />
+                <ScalarProperty Name="FADD2" ColumnName="FADD2" />
+                <ScalarProperty Name="FADD1" ColumnName="FADD1" />
+                <ScalarProperty Name="FTCOMNAME" ColumnName="FTCOMNAME" />
+                <ScalarProperty Name="FCOMNAME" ColumnName="FCOMNAME" />
+                <ScalarProperty Name="FCOMCODE" ColumnName="FCOMCODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MD09PLV1">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.MD09PLV1">
+              <MappingFragment StoreEntitySet="MD09PLV1">
+                <ScalarProperty Name="FRNID" ColumnName="FRNID" />
+                <ScalarProperty Name="FMTRUST" ColumnName="FMTRUST" />
+                <ScalarProperty Name="FCTRUST" ColumnName="FCTRUST" />
+                <ScalarProperty Name="FPLEVEL" ColumnName="FPLEVEL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MD09PLV2">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.MD09PLV2">
+              <MappingFragment StoreEntitySet="MD09PLV2">
+                <ScalarProperty Name="FRNID" ColumnName="FRNID" />
+                <ScalarProperty Name="FAUTHO" ColumnName="FAUTHO" />
+                <ScalarProperty Name="FMENUNO" ColumnName="FMENUNO" />
+                <ScalarProperty Name="FPLEVEL" ColumnName="FPLEVEL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VW_MenuFRM">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.VW_MenuFRM">
+              <MappingFragment StoreEntitySet="VW_MenuFRM">
+                <ScalarProperty Name="ModuleNameTH" ColumnName="ModuleNameTH" />
+                <ScalarProperty Name="ModuleNameEN" ColumnName="ModuleNameEN" />
+                <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+                <ScalarProperty Name="MenuNameLC" ColumnName="MenuNameLC" />
+                <ScalarProperty Name="MenuNameEN" ColumnName="MenuNameEN" />
+                <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+                <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+                <ScalarProperty Name="ParentMenuNameLC" ColumnName="ParentMenuNameLC" />
+                <ScalarProperty Name="ParentMenuNameEN" ColumnName="ParentMenuNameEN" />
+                <ScalarProperty Name="ParentMenuID" ColumnName="ParentMenuID" />
+                <ScalarProperty Name="ParentSequence" ColumnName="ParentSequence" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VW_MenuRPT">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.VW_MenuRPT">
+              <MappingFragment StoreEntitySet="VW_MenuRPT">
+                <ScalarProperty Name="ModuleNameTH" ColumnName="ModuleNameTH" />
+                <ScalarProperty Name="ModuleNameEN" ColumnName="ModuleNameEN" />
+                <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+                <ScalarProperty Name="MenuNameLC" ColumnName="MenuNameLC" />
+                <ScalarProperty Name="MenuNameEN" ColumnName="MenuNameEN" />
+                <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+                <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+                <ScalarProperty Name="ParentMenuNameLC" ColumnName="ParentMenuNameLC" />
+                <ScalarProperty Name="ParentMenuNameEN" ColumnName="ParentMenuNameEN" />
+                <ScalarProperty Name="ParentMenuID" ColumnName="ParentMenuID" />
+                <ScalarProperty Name="ParentSequence" ColumnName="ParentSequence" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoreUsers">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.CoreUser">
+              <MappingFragment StoreEntitySet="CoreUser">
+                <ScalarProperty Name="ForgetPasswordDate" ColumnName="ForgetPasswordDate" />
+                <ScalarProperty Name="ResetPassword" ColumnName="ResetPassword" />
+                <ScalarProperty Name="isForgetPassword" ColumnName="isForgetPassword" />
+                <ScalarProperty Name="ResignDate" ColumnName="ResignDate" />
+                <ScalarProperty Name="Extension" ColumnName="Extension" />
+                <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Division" ColumnName="Division" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="IDCardNo" ColumnName="IDCardNo" />
+                <ScalarProperty Name="ImgSignature" ColumnName="ImgSignature" />
+                <ScalarProperty Name="ImgFile" ColumnName="ImgFile" />
+                <ScalarProperty Name="LastnameThai" ColumnName="LastnameThai" />
+                <ScalarProperty Name="LastnameEng" ColumnName="LastnameEng" />
+                <ScalarProperty Name="NameThai" ColumnName="NameThai" />
+                <ScalarProperty Name="NameEng" ColumnName="NameEng" />
+                <ScalarProperty Name="TitleThai" ColumnName="TitleThai" />
+                <ScalarProperty Name="TitleEng" ColumnName="TitleEng" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="EmployeeNo" ColumnName="EmployeeNo" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoreUsersCompanies">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.CoreUsersCompany">
+              <MappingFragment StoreEntitySet="CoreUsersCompany">
+                <ScalarProperty Name="COMID" ColumnName="COMID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoreUsersMenus">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.CoreUsersMenu">
+              <MappingFragment StoreEntitySet="CoreUsersMenu">
+                <ScalarProperty Name="isPrint" ColumnName="isPrint" />
+                <ScalarProperty Name="isApprove" ColumnName="isApprove" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+                <ScalarProperty Name="isEdit" ColumnName="isEdit" />
+                <ScalarProperty Name="isAdd" ColumnName="isAdd" />
+                <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoreUsersProjects">
+            <EntityTypeMapping TypeName="PNSDBWEBModel.CoreUsersProject">
+              <MappingFragment StoreEntitySet="CoreUsersProject">
+                <ScalarProperty Name="FREPRJNO" ColumnName="FREPRJNO" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

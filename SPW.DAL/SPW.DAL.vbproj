@@ -1,0 +1,1775 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{075B56EB-78EC-41DD-B1BD-11B0EE5FCEAE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SPW.DAL</RootNamespace>
+    <AssemblyName>SPW.DAL</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>SPW.DAL.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>SPW.DAL.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AD01VEN1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AD01VEN2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AD02CATE.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AD11INV1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AD11INV2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AD11INV3.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AD12CDN1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AD12CDN2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AD13PAY1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AD13PAY2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AD14ADJ1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AD14ADJ2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AD23APLG.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AD24APWK.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="APLEDGER.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ARLEDGER.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD01STB1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD01STB2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD01STB3.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD01STB4.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD01STB5.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD02HOLI.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD02SMPL.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD03CTRY.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD04BKBR.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD04CASH.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD05ALIN.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD05CURR.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD05SEXR.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD06PSET.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD10DIVI.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD11DEPT.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD12SECT.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD21CHLG.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD22BKLG.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD24CRRG.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD25CFA1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD25CFA2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD26CFE1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD26CFE2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD40RUNN.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD41CRDT.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BD42CQPC.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BG01PN01.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BG01TR01.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BG03ALBG.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BG03ALBG_HIS.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BG03ALBG_T_ADISAK1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BG03BGIN.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BG03IND1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BG03IND1_T_ADISAK.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BG03INDH.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CD11PAJ1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CD11PAJ2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CD11PAJ3.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CD20CTLG.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CD21MEXA.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CD40CTTY.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMMISSION.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMMISSIONCARD.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMMISSION_AA.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMMISSION_BALANCE.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMMISSION_CT.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMMISSION_FN.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMMISSION_TEMP_BALANCE.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMMLEVEL.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMMPROJ.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMMSALE.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMMSALESGROUP.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMMSTAGE.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMMTAGSALEGROUP.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CoreAccessLog.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CoreDivision.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CoreErrorLog.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CoreMenu.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CoreModule.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CorePosition.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CoreRoleMenu.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CoreUser.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CoreUsersCompany.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CoreUsersMenu.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CoreUsersProject.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CoreWebResource.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerVisit_Storeporc.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DE00AROLE1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DE00BANNER.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DE00CHOICE.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DE00FINDGP.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DE00GROUP.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DE00ROADM.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DE00ROADS.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DE01QUES0.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DE01QUES1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DE01QUES2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DE02CONT.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DE02CONT2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DE02QUSN1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DE02QUSN2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DE02QUSN3.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtproperty.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ED01COSTLIST.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ED01PRJTYPE.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ED01PROJ.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ED01PROJLAND.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ED01TEAC.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ED02PHAS.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ED03MAPPSAP.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ED03UNIT.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ED03UNITSTATUS.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ED03UNITTYPE.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ED03UNLN.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ED03UNQC.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ED04BLOK.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ED04RECF.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ED05CMT1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ED05CMT2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ED11COST.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ED11PAJ1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ED11PAJ2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ED11PAJ4.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ED20ESLS.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ED20RELG.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ED21LNDL.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EMPLOYEE_INFO.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FD01PERS.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FD01TYAS.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FD02LOCA.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FD11PROP.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FD21FALG.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FD22FADP.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FD23FAMM.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD00CHRT.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD01MAST.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD02CSCN.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD03BUDG.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD11GLDT.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD20TRAN.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD21GLSM.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD41ACGR.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD42ALTB.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GD44ACPR.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GLLEDGER.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GROUPACC.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GROUPACCID.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HD01GPRT.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HD01SHFT.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HD02POSI.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HD03DISE.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HD041TNG.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HD042TNT.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HD04EVL1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HD04EVL2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HD05BSSP.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HD05EQPM.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HD13RTER.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HD26EVL1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HD26EVL2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICLedger.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICREQD.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICREQH.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICRETD.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICRETH.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICSHIPD.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICSHIPH.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICSTOCK.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICSTOCK2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICTRAN.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICTXRATE.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITDASSET.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITDCTRNOTE.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITDMENU0.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITDMENU1.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITLAWDOC.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITLAWDOC1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITSTRUCA.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITSTRUTA.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KD01MACH.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KD02WKCN.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KD02WKPS.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KD05MOLD.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KD05RSCD.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KD06MNSB.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KD06MNWL.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KD20RPJB.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LD01SMAN.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LD02COLC.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LD02GCOM.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LD02NCCM.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LD02RTCM.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LD02TCOM.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LD03CMRG.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LD04PRMT.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LD06SLAR.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LD07AZIP.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LD07SLRT.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LD08SLTY.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LD08SMCT.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LD09CACT.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LD09CISL.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LD09MEDA.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LD20SAL1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LD20SAL2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LD21SASM.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LD23RFCP.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LD421PTR.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LD421PTY.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LD422PTR.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LD422TSC.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LD423SCT.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LD42PRMS.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LD42TPUBSALE.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LD42TPUBTRAN.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LD43PDOR.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MASTERTYPE.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MD00SITE.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MD00VARL.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MD02PRG1.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MD02PRG2.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MD02PRG3.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MD04MENU.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MD04MENU_Backup.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MD05USR1.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MD05USR1BeforChangeDeptcode.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MD05USR2.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MD05USR2_Backup20131216.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MD07COMP.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MD07COMP_Backup.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MD07ERRO.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MD08MDLS.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MD09PLV1.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MD09PLV2.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MD100STN.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MD101URG.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MD102SMM.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MD10PACC.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MD11DBFD.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MD11DBRL.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MD12INDD.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MD13DBFS.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MD14POPU.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MD15SLBL.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MD16ALER.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MD17PBUF.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MDCONFIG.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MDOPERAT.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MIS_Transaction.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MKCHECKRECIVE.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MKTOD11REA.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MKTPLANEXP.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modal\GeneralViewModels.vb" />
+    <Compile Include="Modal\ErrorViewModels.vb" />
+    <Compile Include="Modal\GeneralDataViewModel.vb" />
+    <Compile Include="Modal\APIUserMenuAccess_ViewModel.vb" />
+    <Compile Include="Modal\ProjectPhaseZoneBlockMaster_ViewModel.vb" />
+    <Compile Include="Modal\ProjectProceList_ViewModel.vb" />
+    <Compile Include="Modal\TRN_ReservationAndApproveRecord_ViewModel.vb" />
+    <Compile Include="Modal\TRN_UnitDefineProject_ViewModel.vb" />
+    <Compile Include="Modal\TRN_LandUtilitiesManage_ViewModel.vb" />
+    <Compile Include="Modal\LandPurchaseAgreement_ViewModel.vb" />
+    <Compile Include="Modal\Login_ViewModel.vb" />
+    <Compile Include="Modal\MasterMenu_ViewModel.vb" />
+    <Compile Include="Modal\MenuAccess_ViewModel.vb" />
+    <Compile Include="Modal\Menu_ViewModel.vb" />
+    <Compile Include="Modal\DeedSettingProject_ViewModel.vb" />
+    <Compile Include="Modal\SetTypeHouse_ViewModel.vb" />
+    <Compile Include="Modal\Block_ViewModel.vb" />
+    <Compile Include="Modal\FillterSearch.vb" />
+    <Compile Include="Modal\PhaseProject_ViewModel.vb" />
+    <Compile Include="Modal\APIProject_ViewModel .vb" />
+    <Compile Include="Modal\Zone_ViewModel.vb" />
+    <Compile Include="Modal\SalesMan_ViewModel.vb" />
+    <Compile Include="Modal\Promotion_ViewModel.vb" />
+    <Compile Include="Modal\WebResource_ViewModel.vb" />
+    <Compile Include="MP01CONS.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MP01PURC.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ND01PLAN.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ND03HDCT.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ND11VOLB.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ND12PBG1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ND12PBG2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ND13PUS1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ND13PUS2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ND21IBUD.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ND22BGLG.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ND23BUDG.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ND24BUDG.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD10QUO1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD10QUO2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD11BKT1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD11DOCU.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD12ORD1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD12ORD2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD13INV1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD13INV2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD14CRN1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD14CRN2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD15CSH1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD15CSH2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD16DBN1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD16DBN2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD20BKLG.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD20DLPN.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD20LAGR.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD20LPRT.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD20RESALEITEM.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD20SORD.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD212AGL.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD213CRD.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD21BODS.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD21LAGD.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD21LAGD2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD21LAPM.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD21PMUT.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD21PMUTL.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD22CLSH.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD22PKL1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD22PKL2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD23AADJ.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD23SHMT.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD50BUDGET.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD50BUDGET2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD50CIAC.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD50CISL.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD50INCOME.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD50INCOME2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD50RCVD.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD50RLABEL.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OD51CNPF.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ODLOCKPROMOTION.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OSALECU.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OSALEPRJ.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OSALEUNT.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PD20APWO.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PD20WOI1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PD20WOI2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PD20WOI3.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PD21WOO1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PD21WOO2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PD22WOBM.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PD23JBO1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PD23JBO2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PD23JBO3.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PD23JBO4.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PD24RSL1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PD24RSL2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PD24RSL3.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PD27QCDS.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PD27QCJB.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PD50PDPN.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PD51PDPH.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PD51PDPN.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PD52MRPN.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PD52MRPZ.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PD53CRPN.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PD53CRPP.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PD54RETN.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PNSDBWEB.Context.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PNSDBWEB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PNSDBWEB.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PNSDBWEB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PNSDBWEB.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PNSDBWEBEntities.vb" />
+    <Compile Include="PNSWEB.Context.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PNSWEB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PNSWEB.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PNSWEB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PNSWEB.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PNSWEB_SoftPro.Context.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PNSWEB_SoftPro.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PNSWEB_SoftPro.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PNSWEB_SoftPro.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PNSWEB_SoftPro.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PNSWEB_SoftPro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QD01GSPC.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QD02SINS.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RD01CUST.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RD01CXRF.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RD01SHRT.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RD02CATE.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RD04CULC.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RD05BANK.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RD06ROUT.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RD07MEMB.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RD11CHR1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RD11CHR2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RD11CHR3.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RD12PIN1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RD12PIN2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RD13RAJ1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RD13RAJ2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RD14RST1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RD14RST2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RD16INVO.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RD17RCT1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RD17RCT2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RD18CTR1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RD18CTR2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RD21ARDL.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RD22ARWK.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RD24CLRG.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RD26ORRG.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RD40CRT1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RD40CRT2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REPRINTLOG.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAPConvCust.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAPConvItem.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAPConvRecv.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAPDailyDoor.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAPInfCust.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAPInfEline.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAPInfPostMonthEnd.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAPInfRecv.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAPInfRecvPostLine.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAP_POOUT_DETAIL.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAP_POOUT_HEAD.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAP_UNIT.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SCANASSET.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SCANPRINT.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SD01CTRY.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SD02GODN.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SD03TYPE.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SD03TYPE1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SD03TYPE_Copy.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SD04INMT.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SD04PDBG.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SD05ACMK.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SD05PDDS.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SD05PDDS_20150115.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SD05PDSP.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SD05PROM1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SD05PROM2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SD05PROM3.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SD06PDLN.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SD07PRJPRICE.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SD08CLAS.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SD09BNLC.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SD11ICTR.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SD19PHY1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SD22FDLY.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SD23AVCT.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SD24STRG.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SD25STSR.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SD26ICBK.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SD26TRBK.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SD42ACTB.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SD42ACTB_Copy.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SM_BONUS.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SM_CALCHIST.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SM_COMM.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SM_COM_QUARTER.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SM_CONTRACT.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SM_HEADTARGET.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SM_MENU2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SM_MGRTARGET.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SM_PERFORM.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SM_PERFORM_Q.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SM_RATE.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SM_SALESTEAM.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SM_TARGET.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SM_TRANSFER.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SM_USR.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Snapt0606_SAPBI_TargetSaleUnit.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Snapt0606_SAPBI_TargetSaleValue.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Snapt0606_SAPBI_TargetTransferUnit.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Snapt0606_SAPBI_TargetTransferValue.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Snapt0606_SAPBI_Unit.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Snapt0606_SAPBI_UnitCancellation.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SV_ADDCHANGE.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SV_CHOICE.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SV_FORMPRINT.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SV_QUESTFORM.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SV_QUESTHISR.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SV_QUESTITEM.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SV_QUESTRAN1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SV_QUESTRAN2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SY01LOG1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SY02TYPY.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_CheckOverWO.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TD01LVRC.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TD11WKTM.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TD21SVAT.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TD32BPDW.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TEMPSD05PDDS.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CAL_COUNT.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CAL_SUMMARY_COUNT.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_COMMISSION.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_HISTORY.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LEVEL.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_MENU2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PERFORMANCE.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_RATE.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_SUMMARY_SALES_COMMISSION.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TEAM.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_TRANSACTION.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UD11PRQ1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UD11PRQ2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UD12POR1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UD12POR2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UD13APO1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UD13APO2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UD14RRF1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UD14RRF2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UD15RTV1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UD15RTV2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UD21PCPO.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UD22PCLG.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UD23RCL1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UDPRJLOCK.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VATTRAN.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_AD11INV1_SearchResult.vb">
+      <DependentUpon>PNSWEB_SoftPro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_BD10DIVI_joinCoreCompany.vb">
+      <DependentUpon>PNSWEB_SoftPro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_ED11PAJ2_WithDetail.vb">
+      <DependentUpon>PNSWEB_SoftPro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_FD11PROP_JoinED03UNIT.vb">
+      <DependentUpon>PNSWEB_SoftPro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_FD11PROP_NotInAD11INV1.vb">
+      <DependentUpon>PNSWEB_SoftPro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_FREZONE.vb">
+      <DependentUpon>PNSWEB_SoftPro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_MenuFRM.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_MenuRPT.vb">
+      <DependentUpon>PNSDBWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_ProjectPriceList_SearchResult.vb">
+      <DependentUpon>PNSWEB_SoftPro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_Project_join.vb">
+      <DependentUpon>PNSWEB_SoftPro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_TypeHouse_Join.vb">
+      <DependentUpon>PNSWEB_SoftPro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_UnitDefineProject.vb">
+      <DependentUpon>PNSWEB_SoftPro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WD22FDLY.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="YD02HOLI.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="YD03WORK.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="YD04MGNM.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="YD05EMP1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="YD05EMP2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="YD05EMP3.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="YD05EMP4.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="YD05EMRC.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="YD06EMLV.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="YD07ACTB.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="YD11PRTR.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="YD12SMSH.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="YD13BONU.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="YD14PRDC.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="YD20EML1.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="YD20EML2.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZFINBANK.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZFINREA.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZFINTRAN.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZFTRBANKFLOG.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZITAudit_OD23AADJ.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZMAPINFOProject.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZMAPINFOPuchase.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZTypeHouse.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZTypeHouseCon.vb">
+      <DependentUpon>PNSWEB.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <EntityDeploy Include="PNSDBWEB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PNSDBWEB.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <None Include="PNSDBWEB.edmx.diagram">
+      <DependentUpon>PNSDBWEB.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="PNSWEB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PNSWEB.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <None Include="PNSWEB.edmx.diagram">
+      <DependentUpon>PNSWEB.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="PNSWEB_SoftPro.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PNSWEB_SoftPro.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <None Include="PNSWEB_SoftPro.edmx.diagram">
+      <DependentUpon>PNSWEB_SoftPro.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PNSDBWEB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PNSDBWEB.edmx</DependentUpon>
+      <LastGenOutput>PNSDBWEB.Context.vb</LastGenOutput>
+    </Content>
+    <Content Include="PNSDBWEB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PNSDBWEB.edmx</DependentUpon>
+      <LastGenOutput>PNSDBWEB.vb</LastGenOutput>
+    </Content>
+    <Content Include="PNSWEB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PNSWEB.edmx</DependentUpon>
+      <LastGenOutput>PNSWEB.Context.vb</LastGenOutput>
+    </Content>
+    <Content Include="PNSWEB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PNSWEB.edmx</DependentUpon>
+      <LastGenOutput>PNSWEB.vb</LastGenOutput>
+    </Content>
+    <Content Include="PNSWEB_SoftPro.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PNSWEB_SoftPro.edmx</DependentUpon>
+      <LastGenOutput>PNSWEB_SoftPro.Context.vb</LastGenOutput>
+    </Content>
+    <Content Include="PNSWEB_SoftPro.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PNSWEB_SoftPro.edmx</DependentUpon>
+      <LastGenOutput>PNSWEB_SoftPro.vb</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

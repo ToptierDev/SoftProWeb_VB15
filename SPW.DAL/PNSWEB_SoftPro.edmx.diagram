@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="72c5553a6f934acfb24ae071fa93a586" Name="Diagram1">
+        <EntityTypeShape EntityType="PNSWEB_SoftProModel.vw_AD11INV1_SearchResult" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNSWEB_SoftProModel.vw_FD11PROP_JoinED03UNIT" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNSWEB_SoftProModel.vw_FD11PROP_NotInAD11INV1" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNSWEB_SoftProModel.VW_FREZONE" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNSWEB_SoftProModel.vw_ED11PAJ2_WithDetail" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="PNSWEB_SoftProModel.vw_UnitDefineProject" Width="1.5" PointX="7.375" PointY="6.75" />
+        <EntityTypeShape EntityType="PNSWEB_SoftProModel.vw_TypeHouse_Join" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="PNSWEB_SoftProModel.vw_Project_join" Width="1.5" PointX="9.375" PointY="3.75" />
+        <EntityTypeShape EntityType="PNSWEB_SoftProModel.vw_BD10DIVI_joinCoreCompany" Width="1.5" PointX="9.375" PointY="6.75" />
+        <EntityTypeShape EntityType="PNSWEB_SoftProModel.vw_ProjectPriceList_SearchResult" Width="1.5" PointX="11.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

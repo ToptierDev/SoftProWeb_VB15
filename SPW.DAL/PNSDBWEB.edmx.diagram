@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9832342501e1463daa03b38377682cca" Name="Diagram1" ZoomLevel="68">
+        <EntityTypeShape EntityType="PNSDBWEBModel.CoreAccessLog" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.CoreDivision" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.CoreErrorLog" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.CoreMenu" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.CoreModule" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.CorePosition" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.CoreRoleMenu" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.CoreWebResource" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.EMPLOYEE_INFO" Width="1.5" PointX="8.75" PointY="7.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.ITDMENU0" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.ITSTRUCA" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.ITSTRUTA" Width="1.5" PointX="2.75" PointY="10.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.MD00SITE" Width="1.5" PointX="10.75" PointY="3.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.MD00VARL" Width="1.5" PointX="10.75" PointY="8.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.MD02PRG1" Width="1.5" PointX="10.75" PointY="11.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.MD02PRG2" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.MD02PRG3" Width="1.5" PointX="12.75" PointY="3.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.MD04MENU" Width="1.5" PointX="4.75" PointY="12.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.MD05USR1" Width="1.5" PointX="12.75" PointY="6.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.MD05USR2" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.MD07COMP" Width="1.5" PointX="0.75" PointY="14.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.MD07ERRO" Width="1.5" PointX="14.75" PointY="4.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.MD08MDLS" Width="1.5" PointX="14.75" PointY="8.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.MD100STN" Width="1.5" PointX="14.75" PointY="12.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.MD101URG" Width="1.5" PointX="12.75" PointY="15.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.MD102SMM" Width="1.5" PointX="14.75" PointY="15.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.MD10PACC" Width="1.5" PointX="16.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.MD11DBFD" Width="1.5" PointX="16.75" PointY="5.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.MD11DBRL" Width="1.5" PointX="16.75" PointY="10.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.MD12INDD" Width="1.5" PointX="16.75" PointY="13.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.MD13DBFS" Width="1.5" PointX="2.75" PointY="17.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.MD14POPU" Width="1.5" PointX="4.75" PointY="17.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.MD15SLBL" Width="1.5" PointX="16.75" PointY="17.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.MD16ALER" Width="1.5" PointX="18.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.MD17PBUF" Width="1.5" PointX="18.75" PointY="6.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.ITDMENU1" Width="1.5" PointX="18.75" PointY="13.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.MD04MENU_Backup" Width="1.5" PointX="18.75" PointY="17.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.MD05USR1BeforChangeDeptcode" Width="1.5" PointX="20.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.MD05USR2_Backup20131216" Width="1.5" PointX="20.75" PointY="8.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.MD07COMP_Backup" Width="1.5" PointX="10.75" PointY="20.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.MD09PLV1" Width="1.5" PointX="20.75" PointY="12.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.MD09PLV2" Width="1.5" PointX="12.75" PointY="20.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.VW_MenuFRM" Width="1.5" PointX="20.75" PointY="15.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.VW_MenuRPT" Width="1.5" PointX="20.75" PointY="19.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.CoreUser" Width="1.5" PointX="5.375" PointY="22.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.CoreUsersCompany" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.CoreUsersMenu" Width="1.5" PointX="2.75" PointY="7.75" />
+        <EntityTypeShape EntityType="PNSDBWEBModel.CoreUsersProject" Width="1.5" PointX="4.75" PointY="7.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

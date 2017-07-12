@@ -1,0 +1,213 @@
+﻿body {
+    font-size: 13px;
+}
+.detailTable td label {
+    font-weight: normal;
+}
+
+  .bg-transition tr td {
+            -webkit-transition: background-color 1s ease-out;
+            -ms-transition: background-color 1s ease-out;
+            transition: background-color 1s ease-out;
+        }
+
+        
+      .detailTable tr.danger>td input {
+    border-color: #ca1a1a;
+        }
+       .detailTable tr.danger>td  {
+     background-color: #ec6868 !important
+        }
+     .detailTable tr.selected>td {
+    background-color: #c7c7fa !important;
+}
+      .detailTable tr.selected.danger>td {
+    background-color:  #c68dde !important
+}
+      .detailTable tr.selected>td input {
+    border-color: #2632ef;
+        }
+        .detailTable tr.blink-saved>td {
+            background-color: green !important;
+        }
+
+       
+
+select.chosen-select.disabled-aslabel[disabled]+div.chosen-container{
+    border:0;
+}
+select.chosen-select.disabled-aslabel[disabled]+div.chosen-container span{
+        color: black;
+    margin-left: -10px;
+    cursor: default;
+    font-weight: bold;
+}
+select.chosen-select.disabled-aslabel[disabled].disabled-aslargelabel+div.chosen-container span{
+    
+font-size: 20px;
+}
+
+select.chosen-select.disabled-aslabel[disabled]+div.chosen-container div{
+    display:none;
+}
+
+label.nestcheckbox {
+  display: block;
+  padding-left: 15px;
+  text-indent: -15px;
+}
+label.nestcheckbox>input {
+  width: 13px;
+  height: 13px;
+  padding: 0;
+  margin:0;
+  vertical-align: bottom;
+  position: relative;
+  top: -1px;
+  *overflow: hidden;
+  display: inline-block;
+}
+
+        input[readonly], select[readonly], textarea[readonly] {
+    
+    background: #ddd;
+}
+        input[type=number] {
+    text-align: right;
+}
+
+        .divRowPadding .row{
+            padding:5px;
+            
+        }
+
+        .form-control-container input{
+            
+    border-radius: 3px;
+                font-size: 13px;
+    display: block;
+    float: none;
+    background: #fff;
+    width: 100%;
+    height: 30px;
+    padding: 6px 12px;
+    color: #2b2f33;
+    border: #b2b2b2 solid 1px;
+    -webkit-box-shadow: inset 1px 1px 3px #f6f6f6;
+    -moz-box-shadow: inset 1px 1px 3px #f6f6f6;
+    box-shadow: inset 1px 1px 3px #f6f6f6;
+        }
+            .form-control-container input:focus {
+                color: #333;
+                border-color: #3da6ff;
+                border-color: #66afe9;
+                outline: 0;
+                -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+                box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+            }
+            .form-control-container input[type=checkbox] {
+                width:25px;
+                cursor:pointer;
+            }
+.form-control-container input[readonly]
+,.form-control-container select[readonly]
+,.form-control-container textarea[readonly] {
+    
+    background: #ddd;
+
+}
+            
+             .caltable tr.error input {
+background: red;
+    color: white;
+        }
+        .caltable tr.warning input {
+            background: #ff6a00;
+    color: white;
+        }
+        .caltable tr.success input {
+            background: #065206;
+    color: white;
+        }
+        .caltable td{
+     padding: 5px;
+        }
+        
+     #divEditContainer input{
+        
+     }
+
+        /*overide ng-material*/
+        .md-datepicker-input {
+   
+    border: solid #919191 1px;
+}
+        .md-datepicker-button {
+    display: none !important;   
+}
+
+.md-datepicker-input-container {
+    margin-left: 0 !important;    
+}
+
+        md-autocomplete md-autocomplete-wrap {
+
+    background-color: #ffe0c0;
+    border: solid 1px gray;
+    height: 30px;
+    border-radius: 3px;
+}
+        md-autocomplete input:not(.md-input) {
+             height: 30px;
+        }
+
+
+        .md-datepicker-calendar-pane{
+z-index: 1000}
+
+
+        .md-virtual-repeat-container.md-autocomplete-suggestions-container {
+            z-index: 1000;
+        }
+
+        .autocomplete-custom-template li {
+            border-bottom: 1px solid #ccc;
+            height: auto;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            white-space: normal;
+        }
+
+            .autocomplete-custom-template li:last-child {
+                border-bottom-width: 0;
+            }
+
+        .autocomplete-custom-template .item-title,
+        .autocomplete-custom-template .item-metadata {
+            display: block;
+            line-height: 2;
+        }
+
+            .autocomplete-custom-template .item-title md-icon {
+                height: 18px;
+                width: 18px;
+            }
+
+
+
+            /*overide chosen*/
+.chosen-container-single .chosen-single {
+    line-height: 30px;
+  
+    height: 29px;
+}
+
+#resPleaseSelect, #resPleaseEnter{
+            color:red;
+            font-weight:normal;
+        }
+
+
+[awnum]{
+    text-align:right;
+}

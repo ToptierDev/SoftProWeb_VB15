@@ -1,0 +1,31 @@
+﻿Public Class Promotion_ViewModel
+    Public Property FPDCODE As String
+    Public Property FPDNAME As String
+    Public Property FPDNAMET As String
+    Public Property FREPRJNO As String
+    Public Property FREPRJNM As String
+    Public Property FPDCODETYPE As String
+    Public Property FPDNAMETYPE As String
+    Public Property FPDNAMETYPET As String
+    Public Property FNOTUSE As String
+    Public Property FUPDBY As String
+    Public Property FUPDFLAG As String
+    Public Property FBATCHSZU As Double?
+    Public Property FPCOMPLETE As Double?
+    Public Property FSTDCOST As Double?
+    Public Property FSTDPRICE As Double?
+    Public Property FOPDESC As String
+    Public Property CreateDate As Date?
+    Public Property FCOMPCODE As String
+    Public Property FCOMPNAME As String
+    Public Property FCOMPNAMET As String
+    Public Property FUNITMT As String
+    Public Property FUNITMT2 As String
+    Public Property FQTY As Double?
+    Public Property FUCOST As Double?
+    Public Property FITEMNO As String
+    Public Property FOPSEQ As String
+    Public Property Code As String
+    Public Property Description As String
+    Public Property Unit As String
+End Class
