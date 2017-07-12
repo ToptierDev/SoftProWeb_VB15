@@ -571,7 +571,6 @@ var mainController = app.controller('mainController', function ($scope, $filter,
         }
 
     }
-
     $scope.showAddPage = function () {
         if (undefinedToEmpty($scope.txtSearchProject) == '') {
             OpenDialogError('กรุณาเลือกโครงการ');
