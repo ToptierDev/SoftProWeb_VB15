@@ -65,9 +65,9 @@ Public Class ORG_PhaseProject
                 ddl.DataBind()
             End If
             If strType = "A" Then
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
             Else
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
             End If
         Catch ex As Exception
             HelperLog.ErrorLog(CurrentUser.UserID, hddParameterMenuID.Value, Request.UserHostAddress(), "LoadType", ex.GetBaseException)
@@ -103,9 +103,9 @@ Public Class ORG_PhaseProject
             If Session("ORG_PhaseProject_FS").ToString <> String.Empty Then
                 Dim strFS As String = Session("ORG_PhaseProject_FS").ToString
                 If strFS = "1" Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG") & "');", True)
                 ElseIf strFS = "2" Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_deletesuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_deletesuccess", "MSG") & "');", True)
                 End If
             End If
         End If
@@ -177,13 +177,13 @@ Public Class ORG_PhaseProject
         'lblsSave.Text = Me.GetResource("lblsSave", "Text", hddParameterMenuID.Value)
         'lblsCancel.Text = Me.GetResource("btn_cancel", "Text", "1")
 
-        lblMassage1.Text = Me.GetResource("msg_required", "MSG", "1")
+        lblMassage1.Text = Me.GetResource("msg_required", "MSG")
 
-        hddMSGSaveData.Value = Me.GetResource("msg_save_data", "MSG", "1")
-        hddMSGCancelData.Value = Me.GetResource("msg_cancel_data", "MSG", "1")
-        hddMSGDeleteData.Value = Me.GetResource("msg_delete_data", "MSG", "1")
-        hddMSGEditData.Value = Me.GetResource("msg_edit_data", "MSG", "1")
-        hddMSGAddData.Value = Me.GetResource("msg_add_data", "MSG", "1")
+        hddMSGSaveData.Value = Me.GetResource("msg_save_data", "MSG")
+        hddMSGCancelData.Value = Me.GetResource("msg_cancel_data", "MSG")
+        hddMSGDeleteData.Value = Me.GetResource("msg_delete_data", "MSG")
+        hddMSGEditData.Value = Me.GetResource("msg_edit_data", "MSG")
+        hddMSGAddData.Value = Me.GetResource("msg_add_data", "MSG")
 
         btnMSGSaveData.Title = hddMSGSaveData.Value
         btnMSGCancelData.Title = hddMSGCancelData.Value
@@ -267,12 +267,12 @@ Public Class ORG_PhaseProject
             If dt IsNot Nothing Then
                 If dt.Rows.Count > 0 Then
                     If dt.Select("PhaseCode ='' And FlagSetAdd ='0'").Length <> 0 Then
-                        ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_required", "MSG", "1") & Me.GetResource("gPhaseCode", "Text", hddParameterMenuID.Value) & "');", True)
+                        ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_required", "MSG") & Me.GetResource("gPhaseCode", "Text", hddParameterMenuID.Value) & "');", True)
                         Exit Sub
                     End If
                     For i As Integer = 0 To dt.Rows.Count - 1
                         If dt.Select("PhaseCode ='" & dt.Rows(i)("PhaseCode").ToString & "' And FlagSetAdd ='0'").Length > 1 Then
-                            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_data_duplicate", "MSG", "1") & "');", True)
+                            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_data_duplicate", "MSG") & "');", True)
                             Exit Sub
                         End If
                     Next
@@ -282,14 +282,14 @@ Public Class ORG_PhaseProject
                                       dt,
                                       Me.CurrentUser.UserID) Then
 
-                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');", True)
+                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');", True)
             Else
                 Call LoadRedirec("1")
             End If
 
         Catch ex As Exception
             HelperLog.ErrorLog(CurrentUser.UserID, hddParameterMenuID.Value, Request.UserHostAddress(), "btnSave_Click", ex)
-            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');", True)
+            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');", True)
         End Try
     End Sub
 

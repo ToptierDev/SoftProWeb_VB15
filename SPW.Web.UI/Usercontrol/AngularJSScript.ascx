@@ -34,3 +34,4 @@
    <%-- <script src="Scripts/masks.js"></script>--%>
     <script src="Scripts/dynamic-number.js"></script>
 <link href="Style/ng-custom.css?v=<%=version %>" rel="stylesheet" />
+  <script data-require="ui-bootstrap@*" data-semver="0.10.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>

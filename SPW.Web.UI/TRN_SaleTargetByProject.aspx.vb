@@ -37,9 +37,9 @@ Public Class TRN_SaleTargetByProject
         Dim bl As cPermission = New cPermission
         Try
             If strType = "A" Then
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select_all", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select_all", "MSG"), ""))
             ElseIf strType = "S" Then
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
             End If
             Dim lc = bl.LoadProject(CurrentUser.UserID)
             If lc IsNot Nothing Then
@@ -112,7 +112,7 @@ Public Class TRN_SaleTargetByProject
         lblaTransfer.Text = Me.GetResource("lblaTransfer", "Text", hddParameterMenuID.Value)
         lblaTotal.Text = Me.GetResource("lblaTotal", "Text", hddParameterMenuID.Value)
 
-        lblMassage1.Text = Me.GetResource("msg_required", "MSG", "1")
+        lblMassage1.Text = Me.GetResource("msg_required", "MSG")
         lblMassage2.Text = grtt("resPleaseSelect")
 
         txtsYear.Text = Date.Today.Year.ToString()
@@ -630,11 +630,11 @@ Public Class TRN_SaleTargetByProject
             'Call SetCiterail(txtsProject.Text, strProject)
             strProject = ddlsProject.SelectedValue
             'If txtsYear.Text = String.Empty Then
-            '    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_required", "MSG", "1") & " " & Me.GetResource("lblsYear", "Text", hddParameterMenuID.Value) & "');", True)
+            '    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_required", "MSG") & " " & Me.GetResource("lblsYear", "Text", hddParameterMenuID.Value) & "');", True)
             '    Exit Sub
             'End If
             'If ddlsProject.SelectedIndex = 0 Then
-            '    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_required", "MSG", "1") & " " & Me.GetResource("lblsProject", "Text", hddParameterMenuID.Value) & "');", True)
+            '    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_required", "MSG") & " " & Me.GetResource("lblsProject", "Text", hddParameterMenuID.Value) & "');", True)
             '    Exit Sub
             'End If
 
@@ -651,14 +651,14 @@ Public Class TRN_SaleTargetByProject
                                           hddaTotalRoom.Value,
                                           hddaTotalCash.Value,
                                           Me.CurrentUser.UserID) Then
-                            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');fnCalTotal();", True)
+                            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');fnCalTotal();", True)
                         Else
-                            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG", "1") & "');fnCalTotal();", True)
+                            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG") & "');fnCalTotal();", True)
                         End If
                     End If
                 End If
             Else
-                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_rete_notok", "MSG", "1") & strCheckData & "');fnCalTotal();", True)
+                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_rete_notok", "MSG") & strCheckData & "');fnCalTotal();", True)
             End If
 
         Catch ex As Exception

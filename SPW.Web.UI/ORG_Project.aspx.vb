@@ -67,7 +67,7 @@ Public Class ORG_Project
         Dim bl As cProject = New cProject
         Try
 
-            ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
+            ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
 
             Dim lc As List(Of SD03TYPE) = bl.LoadProjectType()
             Dim _Code As String = ""
@@ -90,7 +90,7 @@ Public Class ORG_Project
 
     Public Sub LoadConstructionStatus(ByVal ddl As DropDownList)
         Try
-            'ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
+            'ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
             'ddl.Items.Insert(1, New ListItem(grtt("resConstructionNo"), "0")) '+ ไม่กรอกวันที่เริ่มก่อสร้างและวันที่ก่อสร้างเสร็จ 0=ยังไม่เริ่มก่อสร้าง
             'ddl.Items.Insert(2, New ListItem(grtt("resConstructionStart"), "1")) '+ กรอกวันที่เริ่มก่อสร้าง 1=กำลังดำเนินการก่อสร้าง
             'ddl.Items.Insert(3, New ListItem(grtt("resConstructionEnd"), "2")) '+ กรอกวันที่ก่อสร้างเสร็จ 2=ก่อสร้างเสร็จแล้ว
@@ -104,7 +104,7 @@ Public Class ORG_Project
     End Sub
     Public Sub LoadSaleStatus(ByVal ddl As DropDownList)
         Try
-            'ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
+            'ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
             'ddl.Items.Insert(1, New ListItem(grtt("resSaleNo"), "0")) '+ ไม่กรอกวันที่เริ่มการขายและวันที่การขายเสร็จ 0=ยังไม่เริ่มมีการขาย
             'ddl.Items.Insert(2, New ListItem(grtt("resSaleStart"), "1")) '+ กรอกวันที่เริ่มการขาย 1=กำลังดำเนินการขาย
             'ddl.Items.Insert(3, New ListItem(grtt("resSaleEnd"), "2")) '+ กรอกวันที่การขายเสร็จ 2=การขายเสร็จสิ้นแล้วแล้ว
@@ -137,9 +137,9 @@ Public Class ORG_Project
             If Session("ORG_Project_FS").ToString <> String.Empty Then
                 Dim strFS As String = Session("ORG_Project_FS").ToString
                 If strFS = "1" Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG") & "');", True)
                 ElseIf strFS = "2" Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_deletesuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_deletesuccess", "MSG") & "');", True)
                 End If
             End If
         End If
@@ -266,22 +266,22 @@ Public Class ORG_Project
         'lblsSave.Text = Me.GetResource("btn_save", "Text", "1")
         'lblsCancel.Text = Me.GetResource("btn_cancel", "Text", "1")
 
-        lblMassage1.Text = Me.GetResource("msg_required", "MSG", "1")
-        lblMassage2.Text = Me.GetResource("msg_required", "MSG", "1")
-        lblMassage3.Text = Me.GetResource("msg_required", "MSG", "1")
-        lblMassage4.Text = Me.GetResource("msg_required", "MSG", "1")
-        lblMassage5.Text = Me.GetResource("msg_required", "MSG", "1")
+        lblMassage1.Text = Me.GetResource("msg_required", "MSG")
+        lblMassage2.Text = Me.GetResource("msg_required", "MSG")
+        lblMassage3.Text = Me.GetResource("msg_required", "MSG")
+        lblMassage4.Text = Me.GetResource("msg_required", "MSG")
+        lblMassage5.Text = Me.GetResource("msg_required", "MSG")
 
-        lblHeaderDelete.Text = Me.GetResource("msg_header_delete", "MSG", "1")
-        lblBodydelete.Text = Me.GetResource("msg_body_delete", "MSG", "1") & " " & Me.GetResource("lblFreprjno", "Text", hddParameterMenuID.Value)
+        lblHeaderDelete.Text = Me.GetResource("msg_header_delete", "MSG")
+        lblBodydelete.Text = Me.GetResource("msg_body_delete", "MSG") & " " & Me.GetResource("lblFreprjno", "Text", hddParameterMenuID.Value)
 
-        hddMSGAddFile.Value = Me.GetResource("msg_add_file", "MSG", "1")
-        hddMSGDeleteFile.Value = Me.GetResource("msg_delete_file", "MSG", "1")
-        hddMSGSaveData.Value = Me.GetResource("msg_save_data", "MSG", "1")
-        hddMSGCancelData.Value = Me.GetResource("msg_cancel_data", "MSG", "1")
-        hddMSGDeleteData.Value = Me.GetResource("msg_delete_data", "MSG", "1")
-        hddMSGEditData.Value = Me.GetResource("msg_edit_data", "MSG", "1")
-        hddMSGAddData.Value = Me.GetResource("msg_add_data", "MSG", "1")
+        hddMSGAddFile.Value = Me.GetResource("msg_add_file", "MSG")
+        hddMSGDeleteFile.Value = Me.GetResource("msg_delete_file", "MSG")
+        hddMSGSaveData.Value = Me.GetResource("msg_save_data", "MSG")
+        hddMSGCancelData.Value = Me.GetResource("msg_cancel_data", "MSG")
+        hddMSGDeleteData.Value = Me.GetResource("msg_delete_data", "MSG")
+        hddMSGEditData.Value = Me.GetResource("msg_edit_data", "MSG")
+        hddMSGAddData.Value = Me.GetResource("msg_add_data", "MSG")
 
         btnMSGAddData.Title = hddMSGAddData.Value
         btnMSGSaveData.Title = hddMSGSaveData.Value
@@ -982,13 +982,13 @@ Public Class ORG_Project
             If data IsNot Nothing Then
                 If Not bl.Delete(hddKeyID.Value,
                                  Me.CurrentUser.UserID) Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_cannot_delete_because ", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_cannot_delete_because ", "MSG") & "');", True)
                 Else
                     Call DeleteAllFile(hddKeyID.Value)
                     Call LoadRedirec("2")
                 End If
             Else
-                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_deletenotsuccess", "MSG", "1") & "');", True)
+                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_deletenotsuccess", "MSG") & "');", True)
             End If
         Catch ex As Exception
             HelperLog.ErrorLog(CurrentUser.UserID, hddParameterMenuID.Value, Request.UserHostAddress(), "btnDelete_Click", ex)
@@ -1082,11 +1082,11 @@ Public Class ORG_Project
                                ToSystemDate(txtSaleEndDate.Text)) Then
 
                     Call OpenDialog()
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');", True)
                 Else
                     txtCodeMat.Text = strCodeMat
                     Call CopyFileTempToProcess()
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG") & "');", True)
                 End If
             Else
                 Dim lc As ED01PROJ = bl.GetED01PROJByID(txtFreprjno.Text,
@@ -1164,20 +1164,20 @@ Public Class ORG_Project
                                   ToSystemDate(txtSaleEndDate.Text)) Then
 
                         Call OpenDialog()
-                        ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');", True)
+                        ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');", True)
                     Else
                         hddKeyID.Value = txtFreprjno.Text
                         txtCodeMat.Text = strCodeMat
                         Call CopyFileTempToProcess()
-                        ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG", "1") & "');", True)
+                        ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG") & "');", True)
                     End If
                 Else
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_data_duplicate", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_data_duplicate", "MSG") & "');", True)
                 End If
             End If
         Catch ex As Exception
             HelperLog.ErrorLog(CurrentUser.UserID, hddParameterMenuID.Value, Request.UserHostAddress(), "btnSave_Click", ex)
-            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');", True)
+            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');", True)
         End Try
     End Sub
 

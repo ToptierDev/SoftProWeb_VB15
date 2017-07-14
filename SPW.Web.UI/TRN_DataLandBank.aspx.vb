@@ -60,7 +60,7 @@ Public Class TRN_DataLandBank
         If Request.QueryString("backurl") IsNot Nothing Then
             If Request.QueryString("backurl").ToString <> String.Empty Then
                 If FlagSave = "1" Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG") & "');", True)
                 ElseIf FlagSave = "" Then
                     Call Redirect("ORG_Project.aspx?flagedit=" & Request.QueryString("backurl").ToString & "")
                 End If
@@ -90,9 +90,9 @@ Public Class TRN_DataLandBank
             If Session("TRN_DataLandBank_FS").ToString <> String.Empty Then
                 Dim strFS As String = Session("TRN_DataLandBank_FS").ToString
                 If strFS = "1" Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG") & "');", True)
                 ElseIf strFS = "2" Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_deletesuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_deletesuccess", "MSG") & "');", True)
                 End If
             End If
         End If
@@ -133,12 +133,12 @@ Public Class TRN_DataLandBank
     End Sub
     Public Sub LoadStatus(ByVal ddl As DropDownList)
         Try
-            ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
-            ddl.Items.Insert(1, New ListItem(GetWebMessage("ddlaFASSETOBJ1", "Text", hddParameterMenuID.Value), "3"))
-            ddl.Items.Insert(2, New ListItem(GetWebMessage("ddlaFASSETOBJ2", "Text", hddParameterMenuID.Value), "1"))
-            'ddl.Items.Insert(3, New ListItem(GetWebMessage("ddlaFASSETOBJ3", "Text", hddParameterMenuID.Value), "121"))
-            'ddl.Items.Insert(4, New ListItem(GetWebMessage("ddlaFASSETOBJ4", "Text", hddParameterMenuID.Value), "122"))
-            'ddl.Items.Insert(5, New ListItem(GetWebMessage("ddlaFASSETOBJ5", "Text", hddParameterMenuID.Value), "31"))
+            ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
+            ddl.Items.Insert(1, New ListItem(GetResource("ddlaFASSETOBJ1", "Text", hddParameterMenuID.Value), "3"))
+            ddl.Items.Insert(2, New ListItem(GetResource("ddlaFASSETOBJ2", "Text", hddParameterMenuID.Value), "1"))
+            'ddl.Items.Insert(3, New ListItem(GetResource("ddlaFASSETOBJ3", "Text", hddParameterMenuID.Value), "121"))
+            'ddl.Items.Insert(4, New ListItem(GetResource("ddlaFASSETOBJ4", "Text", hddParameterMenuID.Value), "122"))
+            'ddl.Items.Insert(5, New ListItem(GetResource("ddlaFASSETOBJ5", "Text", hddParameterMenuID.Value), "31"))
 
         Catch ex As Exception
             HelperLog.ErrorLog(CurrentUser.UserID, hddParameterMenuID.Value, Request.UserHostAddress(), "LoadStatus", ex)
@@ -146,9 +146,9 @@ Public Class TRN_DataLandBank
     End Sub
     Public Sub LoadPrice(ByVal ddl As DropDownList)
         Try
-            ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
-            ddl.Items.Insert(1, New ListItem(GetWebMessage("ddlaFMCOMPCOMP1", "Text", hddParameterMenuID.Value), "102"))
-            ddl.Items.Insert(2, New ListItem(GetWebMessage("ddlaFMCOMPCOMP2", "Text", hddParameterMenuID.Value), "202"))
+            ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
+            ddl.Items.Insert(1, New ListItem(GetResource("ddlaFMCOMPCOMP1", "Text", hddParameterMenuID.Value), "102"))
+            ddl.Items.Insert(2, New ListItem(GetResource("ddlaFMCOMPCOMP2", "Text", hddParameterMenuID.Value), "202"))
 
         Catch ex As Exception
             HelperLog.ErrorLog(CurrentUser.UserID, hddParameterMenuID.Value, Request.UserHostAddress(), "LoadStatus", ex)
@@ -156,10 +156,10 @@ Public Class TRN_DataLandBank
     End Sub
     Public Sub LoadFASSETST1(ByVal ddl As DropDownList)
         Try
-            ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
-            ddl.Items.Insert(1, New ListItem(GetWebMessage("ddlaFASSETST11", "Text", hddParameterMenuID.Value), "A"))
-            ddl.Items.Insert(2, New ListItem(GetWebMessage("ddlaFASSETST12", "Text", hddParameterMenuID.Value), "B"))
-            ddl.Items.Insert(3, New ListItem(GetWebMessage("ddlaFASSETST13", "Text", hddParameterMenuID.Value), "C"))
+            ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
+            ddl.Items.Insert(1, New ListItem(GetResource("ddlaFASSETST11", "Text", hddParameterMenuID.Value), "A"))
+            ddl.Items.Insert(2, New ListItem(GetResource("ddlaFASSETST12", "Text", hddParameterMenuID.Value), "B"))
+            ddl.Items.Insert(3, New ListItem(GetResource("ddlaFASSETST13", "Text", hddParameterMenuID.Value), "C"))
 
         Catch ex As Exception
             HelperLog.ErrorLog(CurrentUser.UserID, hddParameterMenuID.Value, Request.UserHostAddress(), "LoadStatus", ex)
@@ -167,10 +167,10 @@ Public Class TRN_DataLandBank
     End Sub
     Public Sub LoadFASSETST2(ByVal ddl As DropDownList)
         Try
-            ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
-            ddl.Items.Insert(1, New ListItem(GetWebMessage("ddlaFASSETST21", "Text", hddParameterMenuID.Value), "1"))
-            ddl.Items.Insert(2, New ListItem(GetWebMessage("ddlaFASSETST22", "Text", hddParameterMenuID.Value), "2"))
-            ddl.Items.Insert(3, New ListItem(GetWebMessage("ddlaFASSETST23", "Text", hddParameterMenuID.Value), "3"))
+            ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
+            ddl.Items.Insert(1, New ListItem(GetResource("ddlaFASSETST21", "Text", hddParameterMenuID.Value), "1"))
+            ddl.Items.Insert(2, New ListItem(GetResource("ddlaFASSETST22", "Text", hddParameterMenuID.Value), "2"))
+            ddl.Items.Insert(3, New ListItem(GetResource("ddlaFASSETST23", "Text", hddParameterMenuID.Value), "3"))
 
         Catch ex As Exception
             HelperLog.ErrorLog(CurrentUser.UserID, hddParameterMenuID.Value, Request.UserHostAddress(), "LoadStatus", ex)
@@ -277,20 +277,20 @@ Public Class TRN_DataLandBank
         TextFt9.Text = Me.GetResource("col_edit", "Text", "1")
         TextFt10.Text = Me.GetResource("col_delete", "Text", "1")
 
-        lblMassage1.Text = Me.GetResource("msg_required", "MSG", "1")
+        lblMassage1.Text = Me.GetResource("msg_required", "MSG")
 
         lblTabUSER1.Text = Me.GetResource("TabUSER1", "Text", hddParameterMenuID.Value)
         lblTabUSER2.Text = Me.GetResource("TabUSER2", "Text", hddParameterMenuID.Value)
         lblTabUSER3.Text = Me.GetResource("TabUSER3", "Text", hddParameterMenuID.Value)
 
-        lblHeaderDelete.Text = Me.GetResource("msg_header_delete", "MSG", "1")
-        lblBodydelete.Text = Me.GetResource("msg_body_delete", "MSG", "1") & " " & Me.GetResource("TextHd2", "Text", hddParameterMenuID.Value)
+        lblHeaderDelete.Text = Me.GetResource("msg_header_delete", "MSG")
+        lblBodydelete.Text = Me.GetResource("msg_body_delete", "MSG") & " " & Me.GetResource("TextHd2", "Text", hddParameterMenuID.Value)
 
-        hddMSGSaveData.Value = Me.GetResource("msg_save_data", "MSG", "1")
-        hddMSGCancelData.Value = Me.GetResource("msg_cancel_data", "MSG", "1")
-        hddMSGDeleteData.Value = Me.GetResource("msg_delete_data", "MSG", "1")
-        hddMSGEditData.Value = Me.GetResource("msg_edit_data", "MSG", "1")
-        hddMSGAddData.Value = Me.GetResource("msg_add_data", "MSG", "1")
+        hddMSGSaveData.Value = Me.GetResource("msg_save_data", "MSG")
+        hddMSGCancelData.Value = Me.GetResource("msg_cancel_data", "MSG")
+        hddMSGDeleteData.Value = Me.GetResource("msg_delete_data", "MSG")
+        hddMSGEditData.Value = Me.GetResource("msg_edit_data", "MSG")
+        hddMSGAddData.Value = Me.GetResource("msg_add_data", "MSG")
 
         btnMSGAddData.Title = hddMSGAddData.Value
         btnMSGSaveData.Title = hddMSGSaveData.Value
@@ -741,7 +741,7 @@ Public Class TRN_DataLandBank
                                pKeyCode,
                                Me.CurrentUser.UserID) Then
                     Call OpenDialog()
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');", True)
                 Else
                     Call CopyFileTempToProcess()
                     Session.Remove("TRN_DataLandBank_Datatable")
@@ -796,19 +796,19 @@ Public Class TRN_DataLandBank
                                   pKeyCode,
                                   Me.CurrentUser.UserID) Then
                         Call OpenDialog()
-                        ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');", True)
+                        ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');", True)
                     Else
                         Call CopyFileTempToProcess()
                         Session.Remove("TRN_DataLandBank_Datatable")
                         Call LoadRedirec("1")
                     End If
                 Else
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_data_duplicate", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_data_duplicate", "MSG") & "');", True)
                 End If
             End If
         Catch ex As Exception
             HelperLog.ErrorLog(CurrentUser.UserID, hddParameterMenuID.Value, Request.UserHostAddress(), "btnSave_Click", ex)
-            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');", True)
+            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');", True)
         End Try
     End Sub
     Protected Sub btnDelete_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnDelete.Click
@@ -819,13 +819,13 @@ Public Class TRN_DataLandBank
             If data IsNot Nothing Then
                 If Not bl.Delete(hddKeyID.Value,
                                  Me.CurrentUser.UserID) Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_cannot_delete_because ", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_cannot_delete_because ", "MSG") & "');", True)
                 Else
                     'Call DeleteAllFile(hddKeyID.Value)
                     Call LoadRedirec("2")
                 End If
             Else
-                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_deletenotsuccess", "MSG", "1") & "');", True)
+                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_deletenotsuccess", "MSG") & "');", True)
             End If
         Catch ex As Exception
             HelperLog.ErrorLog(CurrentUser.UserID, hddParameterMenuID.Value, Request.UserHostAddress(), "btnDelete_Click", ex)
@@ -849,13 +849,13 @@ Public Class TRN_DataLandBank
 
     '        Dim fileType As String() = Split(".jpg,.jpeg,.gif,.png", ",")
     '        If Not fileType.Contains(Path.GetExtension(FileUpload1.FileName).ToLower) Then
-    '            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_pic_jpg", "MSG", "1") & "');", True)
+    '            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_pic_jpg", "MSG") & "');", True)
     '            Exit Sub
     '        End If
 
     '        Dim len As Integer = FileUpload1.FileContent.Length
     '        If len > MAX_FILE_LENGTH_MB * 1000000 Then
-    '            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_pic_notover", "MSG", "1") & "');", True)
+    '            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_pic_notover", "MSG") & "');", True)
     '            Return
     '        End If
 
@@ -873,7 +873,7 @@ Public Class TRN_DataLandBank
     '                imgPic.Attributes.Add("onClick", "CallLoadHrefNewtab('" & strPathServer & hddParameterMenuID.Value & "/" & Me.CurrentUser.UserID & "/" & fileName & "?id=" & TempDate.Substring(TempDate.Length - 2) & "');")
     '            End If
     '            'Else
-    '            'ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_pic_jpg", "MSG", "1") & "');", True)
+    '            'ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_pic_jpg", "MSG") & "');", True)
     '            'End If
     '        End If
     '    End If
@@ -973,7 +973,7 @@ Public Class TRN_DataLandBank
     '                imgPic.Attributes.Remove("onClick")
     '            End If
     '        Else
-    '            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_pic_select", "MSG", "1") & "');", True)
+    '            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_pic_select", "MSG") & "');", True)
     '        End If
     '    End If
     'End Sub

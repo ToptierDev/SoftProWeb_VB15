@@ -53,9 +53,9 @@ Public Class MST_Division
             If Session("MST_Division_FS").ToString <> String.Empty Then
                 Dim strFS As String = Session("MST_Division_FS").ToString
                 If strFS = "1" Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG") & "');", True)
                 ElseIf strFS = "2" Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_deletesuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_deletesuccess", "MSG") & "');", True)
                 End If
             End If
         End If
@@ -162,19 +162,19 @@ Public Class MST_Division
         'lblsSave.Text = Me.GetResource("btn_save", "Text", "1")
         'lblsCancel.Text = Me.GetResource("btn_cancel", "Text", "1")
 
-        'lblMassage1.Text = Me.GetResource("msg_required", "MSG", "1")
-        lblMassage2.Text = Me.GetResource("msg_required", "MSG", "1")
-        lblMassage3.Text = Me.GetResource("msg_required", "MSG", "1")
-        lblMassage4.Text = Me.GetResource("msg_required", "MSG", "1")
+        'lblMassage1.Text = Me.GetResource("msg_required", "MSG")
+        lblMassage2.Text = Me.GetResource("msg_required", "MSG")
+        lblMassage3.Text = Me.GetResource("msg_required", "MSG")
+        lblMassage4.Text = Me.GetResource("msg_required", "MSG")
 
-        lblHeaderDelete.Text = Me.GetResource("msg_header_delete", "MSG", "1")
-        lblBodydelete.Text = Me.GetResource("msg_body_delete", "MSG", "1") & " " & grtt("resComID")
+        lblHeaderDelete.Text = Me.GetResource("msg_header_delete", "MSG")
+        lblBodydelete.Text = Me.GetResource("msg_body_delete", "MSG") & " " & grtt("resComID")
 
-        hddMSGSaveData.Value = Me.GetResource("msg_save_data", "MSG", "1")
-        hddMSGCancelData.Value = Me.GetResource("msg_cancel_data", "MSG", "1")
-        hddMSGDeleteData.Value = Me.GetResource("msg_delete_data", "MSG", "1")
-        hddMSGEditData.Value = Me.GetResource("msg_edit_data", "MSG", "1")
-        hddMSGAddData.Value = Me.GetResource("msg_add_data", "MSG", "1")
+        hddMSGSaveData.Value = Me.GetResource("msg_save_data", "MSG")
+        hddMSGCancelData.Value = Me.GetResource("msg_cancel_data", "MSG")
+        hddMSGDeleteData.Value = Me.GetResource("msg_delete_data", "MSG")
+        hddMSGEditData.Value = Me.GetResource("msg_edit_data", "MSG")
+        hddMSGAddData.Value = Me.GetResource("msg_add_data", "MSG")
 
         btnMSGAddData.Title = hddMSGAddData.Value
         btnMSGSaveData.Title = hddMSGSaveData.Value
@@ -287,12 +287,12 @@ Public Class MST_Division
             If data IsNot Nothing Then
                 If Not bl.DivisionDelete(code,
                                          Me.CurrentUser.UserID) Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_cannot_delete_because ", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_cannot_delete_because ", "MSG") & "');", True)
                 Else
                     Call LoadRedirec("2")
                 End If
             Else
-                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_deletenotsuccess", "MSG", "1") & "');", True)
+                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_deletenotsuccess", "MSG") & "');", True)
             End If
         Catch ex As Exception
             HelperLog.ErrorLog(CurrentUser.UserID, hddParameterMenuID.Value, Request.UserHostAddress(), "btnDelete_Click", ex)
@@ -319,7 +319,7 @@ Public Class MST_Division
                                         txtaSocialBranch.Text,
                                         Me.CurrentUser.UserID) Then
                     Call OpenDialog()
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');", True)
                 Else
                     Call LoadRedirec("1")
                 End If
@@ -330,7 +330,7 @@ Public Class MST_Division
                 'If lc Is Nothing Then
                 Dim lcs As BD10DIVI = bl.GetDivisionByComID(txtaComID.Text,
                                                                 Me.CurrentUser.UserID)
-                    If lcs Is Nothing Then
+                If lcs Is Nothing Then
                     If Not bl.DivisionAdd("",
                                               txtaComID.Text,
                                               txtaDivisionNameEN.Text,
@@ -346,20 +346,20 @@ Public Class MST_Division
                                               Me.CurrentUser.UserID) Then
                         'txtaDivisionCode.Text
                         Call OpenDialog()
-                        ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');", True)
+                        ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');", True)
                     Else
                         Call LoadRedirec("1")
-                        End If
-                    Else
-                        ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & grtt("resDuplicateCOMID") & "');", True)
                     End If
+                Else
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & grtt("resDuplicateCOMID") & "');", True)
+                End If
                 'Else
-                '    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_data_duplicate", "MSG", "1") & "');", True)
+                '    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_data_duplicate", "MSG") & "');", True)
                 'End If
             End If
         Catch ex As Exception
             HelperLog.ErrorLog(CurrentUser.UserID, hddParameterMenuID.Value, Request.UserHostAddress(), "btnSave_Click", ex)
-            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');", True)
+            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');", True)
         End Try
     End Sub
 

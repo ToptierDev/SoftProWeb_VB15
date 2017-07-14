@@ -342,7 +342,7 @@
                                                                                         <Columns>
                                                                                             <asp:TemplateField>
                                                                                                 <HeaderTemplate>
-                                                                                                    <%# GetWebMessage("gUnit", "Text", hddParameterMenuID.Value)%>
+                                                                                                    <%# GetResource("gUnit", "Text", hddParameterMenuID.Value)%>
                                                                                                 </HeaderTemplate>
                                                                                                 <ItemTemplate>
                                                                                                     <asp:TextBox ID="txtgUnit" autocomplete="off" runat="server" CssClass="form-control" Style="height: 28px; vertical-align: top;" MaxLength="10"></asp:TextBox>
@@ -355,7 +355,7 @@
                                                                                             </asp:TemplateField>
                                                                                             <asp:TemplateField>
                                                                                                 <HeaderTemplate>
-                                                                                                    <%# GetWebMessage("gStyleCode", "Text", hddParameterMenuID.Value)%>
+                                                                                                    <%# GetResource("gStyleCode", "Text", hddParameterMenuID.Value)%>
                                                                                                 </HeaderTemplate>
                                                                                                 <ItemTemplate>
                                                                                                     <asp:TextBox ID="txtgStyleCode" autocomplete="off" runat="server" CssClass="form-control" Style="height: 28px; vertical-align: top;border:0;background-color:transparent;" Enabled="false" MaxLength="25"></asp:TextBox>
@@ -365,7 +365,7 @@
                                                                                             </asp:TemplateField>
                                                                                             <asp:TemplateField>
                                                                                                 <HeaderTemplate>
-                                                                                                    <%# GetWebMessage("gAddress", "Text", hddParameterMenuID.Value)%>
+                                                                                                    <%# GetResource("gAddress", "Text", hddParameterMenuID.Value)%>
                                                                                                 </HeaderTemplate>
                                                                                                 <ItemTemplate>
                                                                                                     <asp:TextBox ID="txtgAddress" autocomplete="off" runat="server" CssClass="form-control" Style="height: 28px; vertical-align: top;border:0;background-color:transparent;" Enabled="false" MaxLength="10"></asp:TextBox>
@@ -377,7 +377,7 @@
                                                                                             </asp:TemplateField>
                                                                                             <asp:TemplateField>
                                                                                                 <HeaderTemplate>
-                                                                                                    <%# GetWebMessage("col_delete", "Text", "1")%>
+                                                                                                    <%# GetResource("col_delete", "Text", "1")%>
                                                                                                 </HeaderTemplate>
                                                                                                 <ItemTemplate>
                                                                                                     <asp:ImageButton ID="btnDelete" runat="server" CommandName="btnDelete" ImageUrl="~/image/delete.jpg" Style="width: 30px; height: 30px; margin-left: 5px; margin-top: 7px;" ToolTip="Click to Delete" />
@@ -827,7 +827,7 @@
                     txt.value = "";
                     txtgStyleCode.value = "";
                     txtgAddress.value = "";
-                    OpenDialogError("<%# Me.GetResource("msg_duplicate_table", "MSG", "1") %>" + pDup);
+                    OpenDialogError("<%# Me.GetResource("msg_duplicate_table", "MSG") %>" + pDup);
                     return;
                 }
             }

@@ -216,7 +216,7 @@
                                                                                                         <Columns>
                                                                                                             <asp:TemplateField>
                                                                                                                 <HeaderTemplate>
-                                                                                                                    <%# GetWebMessage("gSectionCode", "Text", hddParameterMenuID.Value)%>
+                                                                                                                    <%# GetResource("gSectionCode", "Text", hddParameterMenuID.Value)%>
                                                                                                                 </HeaderTemplate>
                                                                                                                 <ItemTemplate>
                                                                                                                     <asp:TextBox ID="txtgSectionCode" autocomplete="off" runat="server" CssClass="form-control" style="height:28px;vertical-align:top;" MaxLength="4"></asp:TextBox>
@@ -228,7 +228,7 @@
                                                                                                             </asp:TemplateField>
                                                                                                             <asp:TemplateField>
                                                                                                                 <HeaderTemplate>
-                                                                                                                    <%# GetWebMessage("gName", "Text", hddParameterMenuID.Value)%>
+                                                                                                                    <%# GetResource("gName", "Text", hddParameterMenuID.Value)%>
                                                                                                                 </HeaderTemplate>
                                                                                                                 <ItemTemplate>
                                                                                                                     <asp:TextBox ID="txtgName" autocomplete="off" runat="server" CssClass="form-control" style="height:28px;vertical-align:top;" MaxLength="50"></asp:TextBox>
@@ -238,7 +238,7 @@
                                                                                                             </asp:TemplateField>
                                                                                                             <asp:TemplateField>
                                                                                                                 <HeaderTemplate>
-                                                                                                                    <%# GetWebMessage("gManager", "Text", hddParameterMenuID.Value)%>
+                                                                                                                    <%# GetResource("gManager", "Text", hddParameterMenuID.Value)%>
                                                                                                                 </HeaderTemplate>
                                                                                                                 <ItemTemplate>
                                                                                                                     <asp:TextBox ID="txtgManager" autocomplete="off" runat="server" CssClass="form-control" style="height:28px;vertical-align:top;" MaxLength="6"></asp:TextBox>
@@ -248,7 +248,7 @@
                                                                                                             </asp:TemplateField>
                                                                                                             <asp:TemplateField>
                                                                                                                 <HeaderTemplate>
-                                                                                                                    <%# GetWebMessage("col_delete", "Text", "1")%>
+                                                                                                                    <%# GetResource("col_delete", "Text", "1")%>
                                                                                                                 </HeaderTemplate>
                                                                                                                 <ItemTemplate>
                                                                                                                     <asp:ImageButton ID="btnDelete" runat="server" CommandName="btnDelete" ImageUrl="~/image/delete.jpg" Style="width: 30px; height: 30px; margin-left: 10px; margin-top: 7px;" />

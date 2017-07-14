@@ -75,7 +75,7 @@
                                                                     <label><%=grtt("resSearch") %></label>
                                                                 </div>
                                                                 <div class="col-lg-10 col-md-12 col-sm-12">
-                                                                    <input ng-model="searchQuery" class="form-control"
+                                                                    <input ng-model="searchQuery" class="form-control searchfilterbox"
                                                                         ng-keyup="$event.keyCode == 13 ? getSearchResult() : null" />
                                                                     <label id="resPleaseEnter" style="display: none;"><%=grtt("resPleaseEnter") %></label>
 

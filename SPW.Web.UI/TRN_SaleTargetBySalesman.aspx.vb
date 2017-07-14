@@ -38,9 +38,9 @@ Public Class TRN_SaleTargetBySalesman
         ddl.Items.Clear()
         Try
             If strType = "A" Then
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select_all", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select_all", "MSG"), ""))
             ElseIf strType = "S" Then
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
             End If
             Dim lc = bl.LoadProject(CurrentUser.UserID)
             If lc IsNot Nothing Then
@@ -66,9 +66,9 @@ Public Class TRN_SaleTargetBySalesman
         ddl.Items.Clear()
         Try
             If strType = "A" Then
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select_all", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select_all", "MSG"), ""))
             ElseIf strType = "S" Then
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
             End If
             Dim lc = bl.LoadSalesman(strProject)
             If lc IsNot Nothing Then
@@ -160,9 +160,9 @@ Public Class TRN_SaleTargetBySalesman
         lblaTotalQTY.Text = Me.GetResource("lblaTotalQTY", "Text", hddParameterMenuID.Value)
         lblaTotalAmount.Text = Me.GetResource("lblaTotalAmount", "Text", hddParameterMenuID.Value)
 
-        lblMassage1.Text = Me.GetResource("msg_required", "MSG", "1")
+        lblMassage1.Text = Me.GetResource("msg_required", "MSG")
         lblMassage2.Text = grtt("resPleaseSelect")
-        lblMassage3.Text = Me.GetResource("msg_required", "MSG", "1")
+        lblMassage3.Text = Me.GetResource("msg_required", "MSG")
 
         txtsYear.Text = Date.Today.Year.ToString()
 
@@ -376,11 +376,11 @@ Public Class TRN_SaleTargetBySalesman
             'Call SetCiterail(txtsSaleMan.Text, strSalesMan)
             strSalesMan = ddlsSaleMan.SelectedValue
             'If txtsYear.Text = String.Empty Then
-            '    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_required", "MSG", "1") & " " & Me.GetResource("lblsYear", "Text", hddParameterMenuID.Value) & "');", True)
+            '    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_required", "MSG") & " " & Me.GetResource("lblsYear", "Text", hddParameterMenuID.Value) & "');", True)
             '    Exit Sub
             'End If
             'If ddlsProject.SelectedIndex = 0 Then
-            '    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_required", "MSG", "1") & " " & Me.GetResource("lblsProject", "Text", hddParameterMenuID.Value) & "');", True)
+            '    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_required", "MSG") & " " & Me.GetResource("lblsProject", "Text", hddParameterMenuID.Value) & "');", True)
             '    Exit Sub
             'End If
 
@@ -396,9 +396,9 @@ Public Class TRN_SaleTargetBySalesman
                                       hddaTotalRoom.Value,
                                       hddaTotalCash.Value,
                                       Me.CurrentUser.UserID) Then
-                        ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');fnCalTotal();", True)
+                        ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');fnCalTotal();", True)
                     Else
-                        ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG", "1") & "');fnCalTotal();", True)
+                        ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG") & "');fnCalTotal();", True)
                     End If
                 End If
             End If

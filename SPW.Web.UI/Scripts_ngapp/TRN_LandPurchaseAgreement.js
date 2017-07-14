@@ -476,7 +476,7 @@ var editPageController = app.controller('editPageController', function ($http, $
         total = $scope.mainData.FD11PROP.FQTY;
         r = Math.floor(total / 400);
         n = Math.floor((total % 400)/100);
-        v = Math.floor((total % 100)) ;
+        v = (total % 100).toFixed(2) ;
         //console.log(total);
         $scope.mainData.FD11PROP.FQTY_display = r + '-' + n + '-' + v;
        // console.log($scope.mainData.FD11PROP.FQTY);

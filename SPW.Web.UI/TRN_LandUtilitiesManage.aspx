@@ -6,7 +6,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <uc1:AngularJSScript runat="server" ID="AngularJSScript" />
-
+   
+  
     <style>
         body {
             min-width: 1024px;
@@ -210,6 +211,7 @@
             width: 120px !important;
         }
     </style>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row spw-landutil-container" ng-app="myApp" ng-controller="mainController">
@@ -231,7 +233,6 @@
                                 </li>
                             </ol>
                         </div>
-
                     </div>
                     <!-- main detail -->
                     <div class="col-lg-12 col-md-12 col-sm-12 form-control-container">
@@ -344,6 +345,7 @@
                                                             <input type="text"
                                                                 ng-model="mainData.ED01PROJ.FTOTAREA"
                                                                 class="form-control"
+                                                                 awnum ="price" 
                                                                 readonly />
                                                         </div>
                                                     </div>
@@ -402,25 +404,22 @@
                                           
                                             </div>
                                         </div>
-                                        <div class="row" ng-show="$root.pageState=='LIST' && mainData.List_vwFD11PROP.length>0">
+                                <%--        <div class="row" ng-show="$root.pageState=='LIST' && mainData.List_vwFD11PROP.length>0">
                                                      <br />
                                                      <div class="col-lg-offset-1 col-md-offset-1 
                                                      col-lg-11 col-md-11 col-sm-12">
                                                             <a ng-href="#edit" ng-click="showEditPage()" class="btn btn-info">
-                                                               
                                                                     <i class="glyph-icon icon-edit"></i>
-                                                              
                                                                     <%=grtt("resEdit") %>
-                                                              
                                                             </a>
                                             
-                                                            <a ng-href="#delete" ng-click="deleteAll()" class="btn  btn-danger <%=IIf(Me.GetPermission().isDelete, "", "hide") %>">
+                                                            <a confirm-click 
+                                                                ng-click="(getAllChecked().length==0||confirmClick(getAllChecked())) && deleteAll()" 
+                                                                class="btn  btn-danger <%=IIf(Me.GetPermission().isDelete, "", "hide") %>">
                                                                     <i class="glyph-icon icon-trash"></i> <%=grtt("resDelete") %>
                                                             </a>
                                                     </div>
-                                       
-
-                                        </div>
+                                        </div>--%>
 
 
                                     </div>
@@ -464,7 +463,24 @@
                                     <!--ตารางโฉนด-->
                                     <br />
                                     <div class="row" ng-show="mainData.List_vwFD11PROP.length>0 && $root.pageState=='LIST'">
+
+                                        <div class="col-sm-12">
                                         <div class="row ">
+                                         
+                                                   <div class="col-md-6">
+                                                            <a ng-href="#edit" ng-click="showEditPage()" class="btn btn-info">
+                                                                    <i class="glyph-icon icon-edit"></i>
+                                                                    <%=grtt("resEdit") %>
+                                                            </a>
+                                            
+                                                            <a confirm-click 
+                                                                ng-click="(getAllChecked().length==0||confirmClick(getAllChecked())) && deleteAll()" 
+                                                                class="btn  btn-danger <%=IIf(Me.GetPermission().isDelete, "", "hide") %>">
+                                                                    <i class="glyph-icon icon-trash"></i> <%=grtt("resDelete") %>
+                                                            </a>
+                                                    </div>
+                                           
+
                                             <div class="col-md-4 float-right">
                                                 <input ng-model="queryResult[queryBy]" class="form-control " />
                                                 
@@ -477,6 +493,8 @@
                                                 <label><%#grtt("resSearchInResult") %></label>
                                             </div>
                                         </div>
+                                        </div>
+
                                         <div class="col-lg-12 col-md-12 col-sm-12 detailTable  listInv3">
                                             <div class="detailTable-fixheader">
                                                 <table class="table table-striped fixed-header">
@@ -630,6 +648,13 @@
                                                             </td>
                                                         </tr>
                                                     </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td>
+                                                               <%=grtt("resFQTY") %> {{calTotalArea()}} 
+                                                            </td>
+                                                        </tr>
+                                                    </tfoot>
                                                 </table>
                                             </div>
                                         </div>
@@ -725,8 +750,8 @@
                                                             ng-repeat="e in mainData.List_vwFD11PROP_EDITINGROW"
                                                             ng-click="setSelected($index);$root.pageState=='NEW' && $last && addNewRowDataDefualt()">
                                                             <td style="text-align: center; width: 30px;">
-                                                                <a ng-href="#delete"
-                                                                    ng-click="delete($index)"
+                                                                <a ng-href="#delete" confirm-click
+                                                                    ng-click="confirmClick(e.FASSETNO)&&delete($index)"
                                                                     ng-hide="$root.pageState=='NEW' && $last"
                                                                     class="btn btn-danger btn-xs glyph-icon icon-typicons-trash"></a>
                                                             </td>
@@ -926,6 +951,21 @@
                 </div>
             </div>
         </div>
+
+         <script type="text/ng-template" id="myModalContent.html">
+           <div class="dialog-modal"> 
+                  <div class="modal-header" ng-show="modalTitle"> 
+                      <h3 class="modal-title"><%=GetResource("msg_header_delete", "MSG") %> {{modalTitle}}</h3> 
+                  </div> 
+                  <div class="modal-body"><%=Me.GetResource("msg_body_delete", "MSG") %> {{modalBody}}</div> 
+                  <div class="modal-footer"> 
+                      <button class="btn btn-primary" ng-click="ok()" ng-show="okButton">{{okButton}}</button> 
+                      <button class="btn btn-warning" ng-click="cancel()" ng-show="cancelButton">{{cancelButton}}</button> 
+                  </div> 
+              </div>
+             </script>
+
+
     </div>
 
     <div class="modal fade .bs-example-modal-sm" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
@@ -934,10 +974,10 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h4 class="modal-title" id="H3">
-                        <%=GetResource("msg_header_delete", "MSG", "1") %></h4>
+                        <%=GetResource("msg_header_delete", "MSG") %></h4>
                 </div>
                 <div class="modal-body">
-                    <%=Me.GetResource("msg_body_delete", "MSG", "1") %>
+                    <%=Me.GetResource("msg_body_delete", "MSG") %>
                 </div>
                 <div class="modal-footer">
                     <button id="btnDeleteConfrim" runat="server" type="button" class="btn btn-danger" onclick="javascript:CallDeleteData();"></button>
@@ -1096,5 +1136,10 @@
 
 
     </script>
+
+
+
+
+
     <uc1:FixedTableHeader runat="server" ID="FixedTableHeader" />
 </asp:Content>

@@ -142,7 +142,7 @@
                                                                         <Columns>
                                                                             <asp:TemplateField>
                                                                                 <HeaderTemplate>
-                                                                                    <%# GetWebMessage("gReasonCode", "Text", hddParameterMenuID.Value)%>
+                                                                                    <%# GetResource("gReasonCode", "Text", hddParameterMenuID.Value)%>
                                                                                 </HeaderTemplate>
                                                                                 <ItemTemplate>
                                                                                     <asp:TextBox ID="txtgReasonCode" autocomplete="off" runat="server" CssClass="form-control" Style="height: 28px; vertical-align: top;" MaxLength="4"></asp:TextBox>
@@ -154,7 +154,7 @@
                                                                             </asp:TemplateField>
                                                                             <asp:TemplateField>
                                                                                 <HeaderTemplate>
-                                                                                    <%# GetWebMessage("gReasonDescription", "Text", hddParameterMenuID.Value)%>
+                                                                                    <%# GetResource("gReasonDescription", "Text", hddParameterMenuID.Value)%>
                                                                                 </HeaderTemplate>
                                                                                 <ItemTemplate>
                                                                                     <asp:TextBox ID="txtgReasonDescription" autocomplete="off" runat="server" CssClass="form-control" Style="height: 28px; vertical-align: top;" MaxLength="50"></asp:TextBox>
@@ -164,7 +164,7 @@
                                                                             </asp:TemplateField>
                                                                             <asp:TemplateField>
                                                                                 <HeaderTemplate>
-                                                                                    <%# GetWebMessage("gRemark", "Text", hddParameterMenuID.Value)%>
+                                                                                    <%# GetResource("gRemark", "Text", hddParameterMenuID.Value)%>
                                                                                 </HeaderTemplate>
                                                                                 <ItemTemplate>
                                                                                     <asp:TextBox ID="txtgRemark" autocomplete="off" runat="server" CssClass="form-control" Style="height: 28px; vertical-align: top;" MaxLength="50"></asp:TextBox>
@@ -174,7 +174,7 @@
                                                                             </asp:TemplateField>
                                                                             <asp:TemplateField>
                                                                                 <HeaderTemplate>
-                                                                                    <%# GetWebMessage("col_delete", "Text", "1")%>
+                                                                                    <%# GetResource("col_delete", "Text", "1")%>
                                                                                 </HeaderTemplate>
                                                                                 <ItemTemplate>
                                                                                     <asp:ImageButton ID="btnDelete" runat="server" CommandName="btnDelete" ImageUrl="~/image/delete.jpg" Style="width: 30px; height: 30px; margin-left: 10px;" ToolTip="Click to Delete" />

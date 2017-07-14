@@ -138,7 +138,7 @@
                                                                         <Columns>
                                                                             <asp:TemplateField>
                                                                                 <HeaderTemplate>
-                                                                                    <%# GetWebMessage("gPhaseCode", "Text", hddParameterMenuID.Value)%>
+                                                                                    <%# GetResource("gPhaseCode", "Text", hddParameterMenuID.Value)%>
                                                                                 </HeaderTemplate>
                                                                                 <ItemTemplate>
                                                                                     <asp:TextBox ID="txtgPhaseCode" autocomplete="off" runat="server" CssClass="form-control" Style="height: 28px; vertical-align: top;" MaxLength="3"></asp:TextBox>
@@ -150,7 +150,7 @@
                                                                             </asp:TemplateField>
                                                                             <asp:TemplateField>
                                                                                 <HeaderTemplate>
-                                                                                    <%# GetWebMessage("gStartDate", "Text", hddParameterMenuID.Value)%>
+                                                                                    <%# GetResource("gStartDate", "Text", hddParameterMenuID.Value)%>
                                                                                 </HeaderTemplate>
                                                                                 <ItemTemplate>
                                                                                     <asp:TextBox ID="txtgStartDate" autocomplete="off" runat="server" data-date-format="dd/mm/yyyy" MaxLength="10" Style="height: 28px; vertical-align: top;" onKeyPress="return Check_Key_Date(this,event)"></asp:TextBox>
@@ -160,7 +160,7 @@
                                                                             </asp:TemplateField>
                                                                             <asp:TemplateField>
                                                                                 <HeaderTemplate>
-                                                                                    <%# GetWebMessage("gEndDate", "Text", hddParameterMenuID.Value)%>
+                                                                                    <%# GetResource("gEndDate", "Text", hddParameterMenuID.Value)%>
                                                                                 </HeaderTemplate>
                                                                                 <ItemTemplate>
                                                                                     <asp:TextBox ID="txtgEndDate" autocomplete="off" runat="server" data-date-format="dd/mm/yyyy" MaxLength="10" Style="height: 28px; vertical-align: top;" onKeyPress="return Check_Key_Date(this,event)"></asp:TextBox>
@@ -170,7 +170,7 @@
                                                                             </asp:TemplateField>
                                                                             <asp:TemplateField>
                                                                                 <HeaderTemplate>
-                                                                                    <%# GetWebMessage("gDesc", "Text", hddParameterMenuID.Value)%>
+                                                                                    <%# GetResource("gDesc", "Text", hddParameterMenuID.Value)%>
                                                                                 </HeaderTemplate>
                                                                                 <ItemTemplate>
                                                                                     <asp:TextBox ID="txtgDesc" autocomplete="off" runat="server" class="form-control" Style="height: 28px; vertical-align: top;" MaxLength="50"></asp:TextBox>
@@ -180,7 +180,7 @@
                                                                             </asp:TemplateField>
                                                                             <asp:TemplateField>
                                                                                 <HeaderTemplate>
-                                                                                    <%# GetWebMessage("col_delete", "Text", "1")%>
+                                                                                    <%# GetResource("col_delete", "Text", "1")%>
                                                                                 </HeaderTemplate>
                                                                                 <ItemTemplate>
                                                                                     <asp:ImageButton ID="btnDelete" runat="server" CommandName="btnDelete" ImageUrl="~/image/delete.jpg" Style="width: 30px; height: 30px; margin-left: 10px;" ToolTip="Click to Delete" />

@@ -457,7 +457,7 @@
                                     <!--Ref green:vw_List_ED11PAJ2-->
 
                                       <datalist id="DATASOURCE_ED03UNIT">
-    <option ng-repeat="ed in DATASOURCE_ED03UNIT" value="{{ed.FSERIALNO}}">{{ed.FSERIALNO}} {{ed.FPDCODE}}</option>
+    <option ng-repeat="ed in DATASOURCE_ED03UNIT" value="{{ed.FSERIALNO}}">{{ed.FSERIALNO}}: {{ed.FPDCODE}}</option>
   </datalist>
                                     <div class="row" ng-class="{'disabled':isEmpty(mainData.ED04RECF.FREZONE)}" style="overflow-x:auto;overflow-y:hidden;">
                                         <div class="col-md-12 detailTable listInv3">

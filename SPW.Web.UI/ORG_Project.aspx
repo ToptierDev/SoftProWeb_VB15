@@ -462,7 +462,7 @@
                                                                                                                 <Columns>
                                                                                                                     <asp:TemplateField>
                                                                                                                         <HeaderTemplate>
-                                                                                                                            <%# GetWebMessage("lblgFASSETNO", "Text", hddParameterMenuID.Value)%>
+                                                                                                                            <%# GetResource("lblgFASSETNO", "Text", hddParameterMenuID.Value)%>
                                                                                                                         </HeaderTemplate>
                                                                                                                         <ItemTemplate>
                                                                                                                             <asp:Label ID="txtgFASSETNO" autocomplete="off" runat="server" Style="height: 28px; vertical-align: top; padding: 0.5px 0.5px; background-color: transparent;" MaxLength="10"></asp:Label>
@@ -472,7 +472,7 @@
                                                                                                                     </asp:TemplateField>
                                                                                                                     <asp:TemplateField>
                                                                                                                         <HeaderTemplate>
-                                                                                                                            <%# GetWebMessage("lblChanodNo", "Text", hddParameterMenuID.Value)%>
+                                                                                                                            <%# GetResource("lblChanodNo", "Text", hddParameterMenuID.Value)%>
                                                                                                                         </HeaderTemplate>
                                                                                                                         <ItemTemplate>
                                                                                                                             <asp:Label ID="txtgChanodNo" autocomplete="off" runat="server" Style="height: 28px; vertical-align: top; padding: 0.5px 0.5px; background-color: transparent;" MaxLength="255"></asp:Label>
@@ -484,7 +484,7 @@
                                                                                                                     </asp:TemplateField>
                                                                                                                     <asp:TemplateField>
                                                                                                                         <HeaderTemplate>
-                                                                                                                            <%# GetWebMessage("lblgArea", "Text", hddParameterMenuID.Value)%>
+                                                                                                                            <%# GetResource("lblgArea", "Text", hddParameterMenuID.Value)%>
                                                                                                                         </HeaderTemplate>
                                                                                                                         <ItemTemplate>
                                                                                                                             <asp:Label ID="txtgArea" autocomplete="off" runat="server" Style="height: 28px; vertical-align: top; padding: 0.5px 0.5px; background-color: transparent;" onKeyPress="return Check_Key_Decimal(this,event)" onBlur="return Check_Format2Digit(this);"></asp:Label>
@@ -494,7 +494,7 @@
                                                                                                                     </asp:TemplateField>
                                                                                                                     <asp:TemplateField>
                                                                                                                         <HeaderTemplate>
-                                                                                                                            <%# GetWebMessage("lblChanodMud", "Text", hddParameterMenuID.Value)%>
+                                                                                                                            <%# GetResource("lblChanodMud", "Text", hddParameterMenuID.Value)%>
                                                                                                                         </HeaderTemplate>
                                                                                                                         <ItemTemplate>
                                                                                                                             <asp:Label ID="txtgChanodMud" autocomplete="off" runat="server" Style="height: 28px; vertical-align: top; padding: 0.5px 0.5px; background-color: transparent;" MaxLength="255"></asp:Label>
@@ -504,7 +504,7 @@
                                                                                                                     </asp:TemplateField>
                                                                                                                     <asp:TemplateField>
                                                                                                                         <HeaderTemplate>
-                                                                                                                            <%# GetWebMessage("col_edit", "Text", "1")%>
+                                                                                                                            <%# GetResource("col_edit", "Text", "1")%>
                                                                                                                         </HeaderTemplate>
                                                                                                                         <ItemTemplate>
                                                                                                                             <asp:ImageButton ID="btnEdit" runat="server" CommandName="btnEdit" ImageUrl="~/image/edit.png" Style="width: 15px; height: 15px; margin-left: 9px; margin-top: 7px;" />

@@ -89,9 +89,9 @@ Public Class MST_UsersMenuAccess
             If Session("MST_UsersMenuAccess_FS").ToString <> String.Empty Then
                 Dim strFS As String = Session("MST_UsersMenuAccess_FS").ToString
                 If strFS = "1" Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG") & "');", True)
                 ElseIf strFS = "2" Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_deletesuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_deletesuccess", "MSG") & "');", True)
                 End If
             End If
         End If
@@ -140,9 +140,9 @@ Public Class MST_UsersMenuAccess
             ddl.DataSource = lc
             ddl.DataBind()
             If strType = "A" Then
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
             ElseIf strType = "S" Then
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
             End If
         Catch ex As Exception
             HelperLog.ErrorLog(CurrentUser.UserID, hddParameterMenuID.Value, Request.UserHostAddress(), "LoadModule", ex)
@@ -156,8 +156,8 @@ Public Class MST_UsersMenuAccess
     '    rdblCheckType.SelectedIndex = 0
     'End Sub
     'Public Sub LoadType(ByVal rdbl As RadioButtonList)
-    '    rdbl.Items.Insert(0, New ListItem(GetWebMessage("MenuType", "Text", hddParameterMenuID.Value), "FRM"))
-    '    rdbl.Items.Insert(1, New ListItem(GetWebMessage("ReportType", "Text", hddParameterMenuID.Value), "RPT"))
+    '    rdbl.Items.Insert(0, New ListItem(GetResource("MenuType", "Text", hddParameterMenuID.Value), "FRM"))
+    '    rdbl.Items.Insert(1, New ListItem(GetResource("ReportType", "Text", hddParameterMenuID.Value), "RPT"))
     'End Sub
 #End Region
 
@@ -220,14 +220,14 @@ Public Class MST_UsersMenuAccess
         lblsModule.Text = Me.GetResource("lblsModule", "Text", hddParameterMenuID.Value)
         'lblsTypeMenu.Text = Me.GetResource("lblsTypeMenu", "Text", hddParameterMenuID.Value)
 
-        lblMassage1.Text = Me.GetResource("msg_required", "MSG", "1")
-        lblMassage2.Text = Me.GetResource("msg_required", "MSG", "1")
+        lblMassage1.Text = Me.GetResource("msg_required", "MSG")
+        lblMassage2.Text = Me.GetResource("msg_required", "MSG")
 
-        hddMSGSaveData.Value = Me.GetResource("msg_save_data", "MSG", "1")
-        hddMSGCancelData.Value = Me.GetResource("msg_cancel_data", "MSG", "1")
-        hddMSGDeleteData.Value = Me.GetResource("msg_delete_data", "MSG", "1")
-        hddMSGEditData.Value = Me.GetResource("msg_edit_data", "MSG", "1")
-        hddMSGAddData.Value = Me.GetResource("msg_add_data", "MSG", "1")
+        hddMSGSaveData.Value = Me.GetResource("msg_save_data", "MSG")
+        hddMSGCancelData.Value = Me.GetResource("msg_cancel_data", "MSG")
+        hddMSGDeleteData.Value = Me.GetResource("msg_delete_data", "MSG")
+        hddMSGEditData.Value = Me.GetResource("msg_edit_data", "MSG")
+        hddMSGAddData.Value = Me.GetResource("msg_add_data", "MSG")
 
         btnMSGSaveData.Title = hddMSGSaveData.Value
         btnMSGCancelData.Title = hddMSGCancelData.Value
@@ -614,12 +614,12 @@ Public Class MST_UsersMenuAccess
     '                   Me.CurrentUser.UserID) Then
     '            Call LoadRedirec("1")
     '        Else
-    '            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');", True)
+    '            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');", True)
     '        End If
 
     '    Catch ex As Exception
     '        HelperLog.ErrorLog(CurrentUser.UserID, hddParameterMenuID.Value, Request.UserHostAddress(), "btnSave_Click", ex)
-    '        ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');", True)
+    '        ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');", True)
     '    End Try
     'End Sub
 
@@ -670,14 +670,14 @@ Public Class MST_UsersMenuAccess
                        lstCoreUserMenu,
                        ddlsModule.SelectedValue) Then
                 Call Loaddata()
-                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG", "1") & "');", True)
+                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG") & "');", True)
             Else
-                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');", True)
+                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');", True)
             End If
 
         Catch ex As Exception
             HelperLog.ErrorLog(CurrentUser.UserID, Me.MenuID, Request.UserHostAddress(), "btnSave_Click", ex)
-            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');", True)
+            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');", True)
         End Try
     End Sub
 

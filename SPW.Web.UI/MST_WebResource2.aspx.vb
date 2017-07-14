@@ -67,9 +67,9 @@ Public Class MST_WebResource2
                 ddl.DataBind()
             End If
             If strType = "A" Then
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
             Else
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select_all", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select_all", "MSG"), ""))
             End If
         Catch ex As Exception
             HelperLog.ErrorLog(CurrentUser.UserID, hddParameterMenuID.Value, Request.UserHostAddress(), "LoadType", ex)
@@ -96,9 +96,9 @@ Public Class MST_WebResource2
             End If
 
             If strType = "A" Then
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
             Else
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select_all", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select_all", "MSG"), ""))
             End If
         Catch ex As Exception
             HelperLog.ErrorLog(CurrentUser.UserID, hddParameterMenuID.Value, Request.UserHostAddress(), "LoadType", ex)
@@ -127,9 +127,9 @@ Public Class MST_WebResource2
                 End If
             End If
             If strType = "A" Then
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
             Else
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select_all", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select_all", "MSG"), ""))
             End If
         Catch ex As Exception
             HelperLog.ErrorLog(CurrentUser.UserID, hddParameterMenuID.Value, Request.UserHostAddress(), "LoadType", ex)
@@ -158,10 +158,10 @@ Public Class MST_WebResource2
                 End If
             End If
             If strType = "A" Then
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
             Else
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select_all", "MSG", "1"), ""))
-                'ddl.Items.Insert(1, New ListItem(GetWebMessage("main_label", "Text", "1"), "1"))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select_all", "MSG"), ""))
+                'ddl.Items.Insert(1, New ListItem(GetResource("main_label", "Text", "1"), "1"))
             End If
         Catch ex As Exception
             HelperLog.ErrorLog(CurrentUser.UserID, hddParameterMenuID.Value, Request.UserHostAddress(), "LoadType", ex)
@@ -172,9 +172,9 @@ Public Class MST_WebResource2
         Try
             ddl.Items.Clear()
             If strType = "A" Then
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
             Else
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select_all", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select_all", "MSG"), ""))
             End If
             ddl.Items.Insert(1, New ListItem("Text", "Text"))
             ddl.Items.Insert(2, New ListItem("MSG", "MSG"))
@@ -203,9 +203,9 @@ Public Class MST_WebResource2
                 ddl.DataBind()
             End If
             If strType = "A" Then
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
             Else
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select_all", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select_all", "MSG"), ""))
             End If
         Catch ex As Exception
             HelperLog.ErrorLog(CurrentUser.UserID, hddParameterMenuID.Value, Request.UserHostAddress(), "LoadBaseMassage", ex)
@@ -332,19 +332,19 @@ Public Class MST_WebResource2
         lblaModule.Text = Me.GetResource("lblaModule", "Text", hddParameterMenuID.Value)
         chksCopyToMenu.Text = Me.GetResource("chksCopyToMenu", "Text", hddParameterMenuID.Value)
 
-        lblMassage1.Text = Me.GetResource("msg_required", "MSG", "1")
-        lblMassage2.Text = Me.GetResource("msg_required", "MSG", "1")
-        lblMassage3.Text = Me.GetResource("msg_required", "MSG", "1")
-        lblMassage4.Text = Me.GetResource("msg_required", "MSG", "1")
-        lblMassage5.Text = Me.GetResource("msg_required", "MSG", "1")
-        lblMassage6.Text = Me.GetResource("msg_required", "MSG", "1")
-        lblMassage7.Text = Me.GetResource("msg_required", "MSG", "1")
+        lblMassage1.Text = Me.GetResource("msg_required", "MSG")
+        lblMassage2.Text = Me.GetResource("msg_required", "MSG")
+        lblMassage3.Text = Me.GetResource("msg_required", "MSG")
+        lblMassage4.Text = Me.GetResource("msg_required", "MSG")
+        lblMassage5.Text = Me.GetResource("msg_required", "MSG")
+        lblMassage6.Text = Me.GetResource("msg_required", "MSG")
+        lblMassage7.Text = Me.GetResource("msg_required", "MSG")
 
         hddReloadGrid.Value = String.Empty
 
-        hrefSave.Title = Me.GetResource("msg_save_data", "MSG", "1")
-        hrefCencel.Title = Me.GetResource("msg_cancel_data", "MSG", "1")
-        hrefAdd.Title = Me.GetResource("msg_add_data", "MSG", "1")
+        hrefSave.Title = Me.GetResource("msg_save_data", "MSG")
+        hrefCencel.Title = Me.GetResource("msg_cancel_data", "MSG")
+        hrefAdd.Title = Me.GetResource("msg_add_data", "MSG")
 
         Call ControlValidate()
     End Sub
@@ -604,11 +604,11 @@ Public Class MST_WebResource2
                                           txtaResourceValueLC.Text,
                                           Me.CurrentUser.UserID) Then
                     Call OpenDialog()
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');", True)
                 Else
                     Call Loaddata()
                     Call OpenMain()
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG") & "');", True)
                 End If
             Else
                 If Not bl.AddWebResource(IIf(ddlaSubMenu1.Items.Count > 1, ddlaSubMenu1.SelectedValue, ddlaSubMenu.SelectedValue),
@@ -618,16 +618,16 @@ Public Class MST_WebResource2
                                          txtaResourceValueLC.Text,
                                          Me.CurrentUser.UserID) Then
                     Call OpenDialog()
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');", True)
                 Else
                     Call Loaddata()
                     Call OpenMain()
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG") & "');", True)
                 End If
             End If
         Catch ex As Exception
             HelperLog.ErrorLog(CurrentUser.UserID, hddParameterMenuID.Value, Request.UserHostAddress(), "btnSave_Click", ex)
-            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');", True)
+            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');", True)
         End Try
     End Sub
 #End Region

@@ -295,7 +295,7 @@
                                                                                 <Columns>
                                                                                     <asp:TemplateField>
                                                                                         <HeaderTemplate>
-                                                                                            <%# GetWebMessage("lblGProductCode", "Text", hddParameterMenuID.Value)%>
+                                                                                            <%# GetResource("lblGProductCode", "Text", hddParameterMenuID.Value)%>
                                                                                         </HeaderTemplate>
                                                                                         <ItemTemplate>
                                                                                             <%# DataBinder.Eval(Container.DataItem, "ProjectCode")%>
@@ -305,7 +305,7 @@
                                                                                     </asp:TemplateField>
                                                                                     <asp:TemplateField>
                                                                                         <HeaderTemplate>
-                                                                                            <%# GetWebMessage("lblGUnitNo", "Text", hddParameterMenuID.Value)%>
+                                                                                            <%# GetResource("lblGUnitNo", "Text", hddParameterMenuID.Value)%>
                                                                                         </HeaderTemplate>
                                                                                         <ItemTemplate>
                                                                                             <%# DataBinder.Eval(Container.DataItem, "UnitNo")%>
@@ -315,7 +315,7 @@
                                                                                     </asp:TemplateField>
                                                                                     <asp:TemplateField>
                                                                                         <HeaderTemplate>
-                                                                                            <%# GetWebMessage("lblGLanPriceSqw", "Text", hddParameterMenuID.Value)%>
+                                                                                            <%# GetResource("lblGLanPriceSqw", "Text", hddParameterMenuID.Value)%>
                                                                                         </HeaderTemplate>
                                                                                         <ItemTemplate>
                                                                                             <div style="text-align: right; width: 100%"><%# DataBinder.Eval(Container.DataItem, "LanPriceSqw")%></div>
@@ -325,7 +325,7 @@
                                                                                     </asp:TemplateField>
                                                                                     <asp:TemplateField>
                                                                                         <HeaderTemplate>
-                                                                                            <%# GetWebMessage("lblGCostPrice", "Text", hddParameterMenuID.Value)%>
+                                                                                            <%# GetResource("lblGCostPrice", "Text", hddParameterMenuID.Value)%>
                                                                                         </HeaderTemplate>
                                                                                         <ItemTemplate>
                                                                                             <div style="text-align: right; width: 100%"><%# DataBinder.Eval(Container.DataItem, "CostPrice")%></div>
@@ -335,7 +335,7 @@
                                                                                     </asp:TemplateField>
                                                                                     <asp:TemplateField>
                                                                                         <HeaderTemplate>
-                                                                                            <%# GetWebMessage("lblGStandardPrice", "Text", hddParameterMenuID.Value)%>
+                                                                                            <%# GetResource("lblGStandardPrice", "Text", hddParameterMenuID.Value)%>
                                                                                         </HeaderTemplate>
                                                                                         <ItemTemplate>
                                                                                             <div style="text-align: right; width: 100%"><%# DataBinder.Eval(Container.DataItem, "StandardPrice")%></div>
@@ -345,7 +345,7 @@
                                                                                     </asp:TemplateField>
                                                                                     <asp:TemplateField>
                                                                                         <HeaderTemplate>
-                                                                                            <%# GetWebMessage("lblGLocatePrice", "Text", hddParameterMenuID.Value)%>
+                                                                                            <%# GetResource("lblGLocatePrice", "Text", hddParameterMenuID.Value)%>
                                                                                         </HeaderTemplate>
                                                                                         <ItemTemplate>
                                                                                             <div style="text-align: right; width: 100%"><%# DataBinder.Eval(Container.DataItem, "LocatePrice")%></div>
@@ -355,7 +355,7 @@
                                                                                     </asp:TemplateField>
                                                                                     <asp:TemplateField>
                                                                                         <HeaderTemplate>
-                                                                                            <%# GetWebMessage("lblGTargetPrice", "Text", hddParameterMenuID.Value)%>
+                                                                                            <%# GetResource("lblGTargetPrice", "Text", hddParameterMenuID.Value)%>
                                                                                         </HeaderTemplate>
                                                                                         <ItemTemplate>
                                                                                             <div style="text-align: right; width: 100%"><%# DataBinder.Eval(Container.DataItem, "TargetPrice")%></div>
@@ -468,7 +468,7 @@
                                                                                 <Columns>
                                                                                     <asp:TemplateField>
                                                                                         <HeaderTemplate>
-                                                                                            <%# GetWebMessage("lblGProductCode", "Text", hddParameterMenuID.Value)%>
+                                                                                            <%# GetResource("lblGProductCode", "Text", hddParameterMenuID.Value)%>
                                                                                         </HeaderTemplate>
                                                                                         <ItemTemplate>
                                                                                             <%# DataBinder.Eval(Container.DataItem, "ProjectCode")%>
@@ -478,7 +478,7 @@
                                                                                     </asp:TemplateField>
                                                                                     <asp:TemplateField>
                                                                                         <HeaderTemplate>
-                                                                                            <%# GetWebMessage("lblGUnitNo", "Text", hddParameterMenuID.Value)%>
+                                                                                            <%# GetResource("lblGUnitNo", "Text", hddParameterMenuID.Value)%>
                                                                                         </HeaderTemplate>
                                                                                         <ItemTemplate>
                                                                                             <%# DataBinder.Eval(Container.DataItem, "UnitNo")%>
@@ -488,7 +488,7 @@
                                                                                     </asp:TemplateField>
                                                                                     <asp:TemplateField>
                                                                                         <HeaderTemplate>
-                                                                                            <%# GetWebMessage("lblGLanPriceSqw", "Text", hddParameterMenuID.Value)%>
+                                                                                            <%# GetResource("lblGLanPriceSqw", "Text", hddParameterMenuID.Value)%>
                                                                                         </HeaderTemplate>
                                                                                         <ItemTemplate>
                                                                                             <div style="text-align: right; width: 100%"><%# DataBinder.Eval(Container.DataItem, "LanPriceSqw", "{0:##,##0.00}")%></div>
@@ -498,7 +498,7 @@
                                                                                     </asp:TemplateField>
                                                                                     <asp:TemplateField>
                                                                                         <HeaderTemplate>
-                                                                                            <%# GetWebMessage("lblGCostPrice", "Text", hddParameterMenuID.Value)%>
+                                                                                            <%# GetResource("lblGCostPrice", "Text", hddParameterMenuID.Value)%>
                                                                                         </HeaderTemplate>
                                                                                         <ItemTemplate>
                                                                                             <div style="text-align: right; width: 100%"><%# DataBinder.Eval(Container.DataItem, "CostPrice", "{0:##,##0.00}")%></div>
@@ -508,7 +508,7 @@
                                                                                     </asp:TemplateField>
                                                                                     <asp:TemplateField>
                                                                                         <HeaderTemplate>
-                                                                                            <%# GetWebMessage("lblGStandardPrice", "Text", hddParameterMenuID.Value)%>
+                                                                                            <%# GetResource("lblGStandardPrice", "Text", hddParameterMenuID.Value)%>
                                                                                         </HeaderTemplate>
                                                                                         <ItemTemplate>
                                                                                             <div style="text-align: right; width: 100%"><%# DataBinder.Eval(Container.DataItem, "StandardPrice", "{0:##,##0.00}")%></div>
@@ -518,7 +518,7 @@
                                                                                     </asp:TemplateField>
                                                                                     <asp:TemplateField>
                                                                                         <HeaderTemplate>
-                                                                                            <%# GetWebMessage("lblGLocatePrice", "Text", hddParameterMenuID.Value)%>
+                                                                                            <%# GetResource("lblGLocatePrice", "Text", hddParameterMenuID.Value)%>
                                                                                         </HeaderTemplate>
                                                                                         <ItemTemplate>
                                                                                             <div style="text-align: right; width: 100%"><%# DataBinder.Eval(Container.DataItem, "LocatePrice", "{0:##,##0.00}")%></div>
@@ -528,7 +528,7 @@
                                                                                     </asp:TemplateField>
                                                                                     <asp:TemplateField>
                                                                                         <HeaderTemplate>
-                                                                                            <%# GetWebMessage("lblGTargetPrice", "Text", hddParameterMenuID.Value)%>
+                                                                                            <%# GetResource("lblGTargetPrice", "Text", hddParameterMenuID.Value)%>
                                                                                         </HeaderTemplate>
                                                                                         <ItemTemplate>
                                                                                             <div style="text-align: right; width: 100%"><%# DataBinder.Eval(Container.DataItem, "TargetPrice", "{0:##,##0.00}")%></div>
@@ -538,7 +538,7 @@
                                                                                     </asp:TemplateField>
                                                                                     <asp:TemplateField>
                                                                                         <HeaderTemplate>
-                                                                                            <%# GetWebMessage("lblGGP", "Text", hddParameterMenuID.Value)%>
+                                                                                            <%# GetResource("lblGGP", "Text", hddParameterMenuID.Value)%>
                                                                                         </HeaderTemplate>
                                                                                         <ItemTemplate>
                                                                                             <div style="text-align: right; width: 100%"><%# DataBinder.Eval(Container.DataItem, "GP", "{0:##,##0.00}")%></div>
@@ -548,7 +548,7 @@
                                                                                     </asp:TemplateField>
                                                                                     <asp:TemplateField>
                                                                                         <HeaderTemplate>
-                                                                                            <%# GetWebMessage("lblGImportDate", "Text", hddParameterMenuID.Value)%>
+                                                                                            <%# GetResource("lblGImportDate", "Text", hddParameterMenuID.Value)%>
                                                                                         </HeaderTemplate>
                                                                                         <ItemTemplate>
                                                                                             <%# DataBinder.Eval(Container.DataItem, "ImportDate")%>
@@ -558,7 +558,7 @@
                                                                                     </asp:TemplateField>
                                                                                     <asp:TemplateField>
                                                                                         <HeaderTemplate>
-                                                                                            <%# GetWebMessage("lblGApprove", "Text", hddParameterMenuID.Value)%>
+                                                                                            <%# GetResource("lblGApprove", "Text", hddParameterMenuID.Value)%>
                                                                                         </HeaderTemplate>
                                                                                         <ItemTemplate>
                                                                                             <%# DataBinder.Eval(Container.DataItem, "Approve")%>
@@ -568,7 +568,7 @@
                                                                                     </asp:TemplateField>
                                                                                     <asp:TemplateField>
                                                                                         <HeaderTemplate>
-                                                                                            <%# GetWebMessage("lblGApprovers", "Text", hddParameterMenuID.Value)%>
+                                                                                            <%# GetResource("lblGApprovers", "Text", hddParameterMenuID.Value)%>
                                                                                         </HeaderTemplate>
                                                                                         <ItemTemplate>
                                                                                             <%# DataBinder.Eval(Container.DataItem, "Approvers")%>

@@ -331,7 +331,7 @@
                                                     </div>
                                              </div>
                                             </div>
-                                      <div class="row" ng-show="mainData.List_vwED03UNIT.length>0 && $root.pageState=='LIST'">
+                                   <%--   <div class="row" ng-show="mainData.List_vwED03UNIT.length>0 && $root.pageState=='LIST'">
                                           <br />
                                                 <div class="col-lg-offset-1 col-md-offset-1 
                                                      col-lg-11 col-md-11 col-sm-12" ng-show="$root.pageState=='LIST'">
@@ -350,7 +350,7 @@
                                                                 </a>
                                                         </div>
 
-                                      </div>
+                                      </div>--%>
                                             <div class="row" ng-hide="$root.pageState!='NEW'">
 
                                                       <hr/>
@@ -398,6 +398,26 @@
                                             </div>
                                             <hr />
                                             <div class="row" ng-show="mainData.List_vwED03UNIT.length>0 && $root.pageState=='LIST'">
+
+                                                <div class="col-sm12">
+                                                   <div class=" col-sm-6" ng-show="$root.pageState=='LIST'">
+                                                                <a  ng-click="showEditPage()" class="btn btn-info ">
+                                                                        <i class="glyph-icon icon-edit"></i>
+                                                                        <%=grtt("resEdit") %>
+                                                                
+                                                                </a>
+                                                                <a href="#" onclick="OpenDivFSERNO();" class="btn btn-warning <%=IIf(Me.GetPermission().isEdit, "", "hide") %>">
+                                                                        <i class="glyph-icon icon-refresh"></i>
+                                                                        <%=grtt("resRefreshFSERNO") %>
+                                                                </a>
+                                                                <a   confirm-click 
+                                                                ng-click="(getAllChecked().length==0||confirmClick(getAllChecked())) && deleteAll()" class="btn btn-danger <%=IIf(Me.GetPermission().isDelete, "", "hide") %>">
+                                                                        <i class="glyph-icon icon-trash"></i>
+                                                                        <%=grtt("resDelete") %>
+                                                                </a>
+                                                        </div>
+
+
                                                          <div class="row text-right">    
                          <div class="col-md-4 float-right">      <input ng-model="queryResult[queryBy]" class="form-control" /><select class="hidden" ng-model="queryBy" ng-init="queryBy='$'">
                     <option  value="$"><%#grtt("resSelectAll") %></option>
@@ -407,6 +427,7 @@
                          <div class="col-md-2 float-right">            
      <label> <%#grtt("resSearchInResult") %></label>
                              </div> 
+                                                             </div>
                          </div>  
                                                 
                                                 <div class="col-lg-12 col-md-12 col-sm-12 detailTable  listInv3">
@@ -591,7 +612,8 @@
                                                                     ng-click="setSelected($index);$root.pageState=='NEW' && $last && addNewRowSpecial()">
                                                                     <td style="width: 4.35%; text-align: center">
                                                                         <a ng-href="#delete"
-                                                                            ng-click="delete($index)"
+                                                                            confirm-click
+                                                                    ng-click="confirmClick(e.FSERIALNO)&&delete($index)"
                                                                             ng-hide="$last && $root.pageState=='NEW'"
                                                                             class="btn btn-danger btn-xs glyph-icon icon-typicons-trash"></a>
                                                                        
@@ -789,6 +811,19 @@
                         </div>
                     </div>
                 </div>
+
+                 <script type="text/ng-template" id="myModalContent.html">
+           <div class="dialog-modal"> 
+                  <div class="modal-header" ng-show="modalTitle"> 
+                      <h3 class="modal-title"><%=GetResource("msg_header_delete", "MSG") %> {{modalTitle}}</h3> 
+                  </div> 
+                  <div class="modal-body"><%=Me.GetResource("msg_body_delete", "MSG") %> {{modalBody}}</div> 
+                  <div class="modal-footer"> 
+                      <button class="btn btn-primary" ng-click="ok()" ng-show="okButton">{{okButton}}</button> 
+                      <button class="btn btn-warning" ng-click="cancel()" ng-show="cancelButton">{{cancelButton}}</button> 
+                  </div> 
+              </div>
+             </script>
             </div>
          
        

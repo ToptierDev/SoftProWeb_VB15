@@ -75,9 +75,9 @@ Public Class INT_Promotion
             If Session("INT_Promotion_FS").ToString <> String.Empty Then
                 Dim strFS As String = Session("INT_Promotion_FS").ToString
                 If strFS = "1" Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG") & "');", True)
                 ElseIf strFS = "2" Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_deletesuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_deletesuccess", "MSG") & "');", True)
                 End If
             End If
         End If
@@ -122,9 +122,9 @@ Public Class INT_Promotion
         Dim bl As cPromotion = New cPromotion
         Try
             If strType = "A" Then
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select_all", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select_all", "MSG"), ""))
             ElseIf strType = "S" Then
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select_all", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select_all", "MSG"), ""))
             End If
             Dim lc = bl.LoadProject()
             If lc IsNot Nothing Then
@@ -203,20 +203,20 @@ Public Class INT_Promotion
         lblaTotalAll.Text = Me.GetResource("lblaTotalAll", "Text", hddParameterMenuID.Value)
 
         lblMassage1.Text = Me.GetResource("lblMassage1", "Text", hddParameterMenuID.Value)
-        lblMassage2.Text = Me.GetResource("msg_pricenotover", "MSG", "1")
+        lblMassage2.Text = Me.GetResource("msg_pricenotover", "MSG")
 
         'lblsSave.Text = Me.GetResource("btnSaveTemp", "Text", hddParameterMenuID.Value)
         'lblsCancel.Text = Me.GetResource("btnCencel", "Text", hddParameterMenuID.Value)
 
-        lblHeaderDelete.Text = Me.GetResource("msg_header_delete", "MSG", "1")
-        lblBodydelete.Text = Me.GetResource("msg_body_delete", "MSG", "1") & " " & Me.GetResource("lblaPromotionCode", "Text", hddParameterMenuID.Value)
+        lblHeaderDelete.Text = Me.GetResource("msg_header_delete", "MSG")
+        lblBodydelete.Text = Me.GetResource("msg_body_delete", "MSG") & " " & Me.GetResource("lblaPromotionCode", "Text", hddParameterMenuID.Value)
 
-        hddMSGSaveData.Value = Me.GetResource("msg_save_data", "MSG", "1")
-        hddMSGCancelData.Value = Me.GetResource("msg_cancel_data", "MSG", "1")
-        hddMSGDeleteData.Value = Me.GetResource("msg_delete_data", "MSG", "1")
-        hddMSGEditData.Value = Me.GetResource("msg_edit_data", "MSG", "1")
-        hddMSGAddData.Value = Me.GetResource("msg_add_data", "MSG", "1")
-        'hddpCheckinTable.Value = Me.GetResource("msg_duplicate_table", "MSG", "1")
+        hddMSGSaveData.Value = Me.GetResource("msg_save_data", "MSG")
+        hddMSGCancelData.Value = Me.GetResource("msg_cancel_data", "MSG")
+        hddMSGDeleteData.Value = Me.GetResource("msg_delete_data", "MSG")
+        hddMSGEditData.Value = Me.GetResource("msg_edit_data", "MSG")
+        hddMSGAddData.Value = Me.GetResource("msg_add_data", "MSG")
+        'hddpCheckinTable.Value = Me.GetResource("msg_duplicate_table", "MSG")
 
         btnMSGAddData.Title = hddMSGAddData.Value
         btnMSGSaveData.Title = hddMSGSaveData.Value
@@ -532,7 +532,7 @@ Public Class INT_Promotion
                                                     Me.WebCulture.ToString.ToUpper)
             If lc IsNot Nothing Then
                 If Not bl.Delete(hddKeyID.Value) Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_cannot_delete_because ", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_cannot_delete_because ", "MSG") & "');", True)
                 Else
                     Call LoadRedirec("2")
                 End If
@@ -544,7 +544,7 @@ Public Class INT_Promotion
     Protected Sub btnSave_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnSave.Click
         Try
             If Not SaveDraft() Then
-                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');", True)
+                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');", True)
             Else
                 Call CopyFileTempToProcess()
                 Call LoadRedirec("1")
@@ -597,11 +597,11 @@ Public Class INT_Promotion
         Try
             Dim bl As cPromotion = New cPromotion
             If Not SaveDraft() Then
-                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');", True)
+                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');", True)
             Else
                 If Not bl.Approve(txtaPromotionCode.Text,
                                   Me.CurrentUser.UserID) Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');", True)
                 Else
                     Call CopyFileTempToProcess()
                     Call LoadRedirec("1")
@@ -615,11 +615,11 @@ Public Class INT_Promotion
         Try
             Dim bl As cPromotion = New cPromotion
             If Not SaveDraft() Then
-                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');", True)
+                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');", True)
             Else
                 If Not bl.UnApprove(txtaPromotionCode.Text,
                                     Me.CurrentUser.UserID) Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');", True)
                 Else
                     Call CopyFileTempToProcess()
                     Call LoadRedirec("1")
@@ -646,7 +646,7 @@ Public Class INT_Promotion
                     Dim lstr As List(Of String) = dt.AsEnumerable().Select(Function(s) s.Field(Of String)("ProductCode")).Where(Function(s) s <> "").ToList()
                     If Not bl.chkProduct(lstr,
                                      rdbFlagUtility.Checked) Then
-                        ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_data_producthavenomaster", "MSG", "1") & "');", True)
+                        ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_data_producthavenomaster", "MSG") & "');", True)
                         Exit Function
                     End If
                 End If
@@ -680,7 +680,7 @@ Public Class INT_Promotion
                         Return True
                     End If
                 Else
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_data_duplicate", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_data_duplicate", "MSG") & "');", True)
                 End If
             Else
 

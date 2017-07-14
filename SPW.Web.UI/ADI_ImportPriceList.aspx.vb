@@ -75,9 +75,9 @@ Public Class ADI_ImportPriceList
         ddl.Items.Clear()
         Try
             If strType = "A" Then
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
             Else
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
             End If
             Dim lc = bl.LoadProject(CurrentUser.UserID)
             If lc IsNot Nothing Then
@@ -112,9 +112,9 @@ Public Class ADI_ImportPriceList
                 ddl.DataBind()
             End If
             If strType = "A" Then
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
             Else
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
             End If
         Catch ex As Exception
             HelperLog.ErrorLog(CurrentUser.UserID, hddParameterMenuID.Value, Request.UserHostAddress(), "LoadPhase", ex.GetBaseException)
@@ -156,9 +156,9 @@ Public Class ADI_ImportPriceList
             If Session("ADI_ImportPriceList_FS").ToString <> String.Empty Then
                 Dim strFS As String = Session("ADI_ImportPriceList_FS").ToString
                 If strFS = "1" Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG") & "');", True)
                 ElseIf strFS = "2" Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_deletesuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_deletesuccess", "MSG") & "');", True)
                 End If
                 Dim strPageInfo As String = Session("ADI_ImportPriceList_PageInfo").ToString
                 If strPageInfo <> String.Empty Then
@@ -271,8 +271,8 @@ Public Class ADI_ImportPriceList
             lblsDownPayment.Text = Me.GetResource("lblsDownPayment", "Text", hddParameterMenuID.Value) 'เงินดาวน์ %
 
 
-            hddMSGOKData.Value = Me.GetResource("msg_ok_data", "MSG", "1")
-            hddMSGCancelData.Value = Me.GetResource("msg_cancel_data", "MSG", "1")
+            hddMSGOKData.Value = Me.GetResource("msg_ok_data", "MSG")
+            hddMSGCancelData.Value = Me.GetResource("msg_cancel_data", "MSG")
 
             lblHeaderVerify.Text = Me.GetResource("HeaderVerify", "Text", hddParameterMenuID.Value)
             lblBodyVerify.Text = Me.GetResource("BodyVerify", "Text", hddParameterMenuID.Value)
@@ -297,10 +297,10 @@ Public Class ADI_ImportPriceList
             lblValidate3.Text = Me.GetResource("msg_notnumber", "MSG", hddParameterMenuID.Value)
             lblValidate4.Text = Me.GetResource("msg_notprice", "MSG", hddParameterMenuID.Value)
 
-            '1.ข้อมูลรหัสโครงการ และข้อมูลเลขที่แปลงต้องไม่เป็นค่าว่าง hddMSGNotEmpty.Value = Me.GetWebMessage("msg_notempty", "MSG", hddParameterMenuID.Value)
-            '2.ข้อมูลรหัสโครงการ และข้อมูลเลขที่แปลงห้ามซ้ำกัน hddMSGNoDuplica.Value = Me.GetWebMessage("msg_noduplicate", "MSG", hddParameterMenuID.Value)
-            '3.ไม่มีข้อมูลเลขที่แปลงในโครงการและเฟสนี้ hddMSGNotNumber.Value = Me.GetWebMessage("msg_notnumber", "MSG", hddParameterMenuID.Value)
-            '4.ข้อมูลราคาไม่ถูกต้อง hddMSGNotPrice.Value = Me.GetWebMessage("msg_notprice", "MSG", hddParameterMenuID.Value)
+            '1.ข้อมูลรหัสโครงการ และข้อมูลเลขที่แปลงต้องไม่เป็นค่าว่าง hddMSGNotEmpty.Value = Me.GetResource("msg_notempty", "MSG", hddParameterMenuID.Value)
+            '2.ข้อมูลรหัสโครงการ และข้อมูลเลขที่แปลงห้ามซ้ำกัน hddMSGNoDuplica.Value = Me.GetResource("msg_noduplicate", "MSG", hddParameterMenuID.Value)
+            '3.ไม่มีข้อมูลเลขที่แปลงในโครงการและเฟสนี้ hddMSGNotNumber.Value = Me.GetResource("msg_notnumber", "MSG", hddParameterMenuID.Value)
+            '4.ข้อมูลราคาไม่ถูกต้อง hddMSGNotPrice.Value = Me.GetResource("msg_notprice", "MSG", hddParameterMenuID.Value)
 
             Call clearTextTab1()
             Call clearTextTab2()
@@ -452,11 +452,11 @@ Public Class ADI_ImportPriceList
 
             Dim strMassage As String = String.Empty
             If ddlsProject.SelectedValue = String.Empty Then
-                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & Me.GetResource("msg_please_select", "MSG", "1") & " " & Me.GetResource("lblsProject", "Text", hddParameterMenuID.Value) & "');", True)
+                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & Me.GetResource("msg_please_select", "MSG") & " " & Me.GetResource("lblsProject", "Text", hddParameterMenuID.Value) & "');", True)
                 'Call RegisterSetTabScript(TabNameEnum.IM1)
                 Exit Sub
             ElseIf ddlsPhase.SelectedValue = String.Empty Then
-                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & Me.GetResource("msg_please_select", "MSG", "1") & " " & Me.GetResource("lblsPhase", "Text", hddParameterMenuID.Value) & "');", True)
+                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & Me.GetResource("msg_please_select", "MSG") & " " & Me.GetResource("lblsPhase", "Text", hddParameterMenuID.Value) & "');", True)
                 'Call RegisterSetTabScript(TabNameEnum.IM1)
                 Exit Sub
             End If
@@ -475,12 +475,18 @@ Public Class ADI_ImportPriceList
 
                 Dim datasheet0 = workbook.GetSheet("Price list")
                 Dim datasheet1 = workbook.GetSheet("ข้อมูลบ้าน")
-                Dim datasheet2 = workbook.GetSheet("Sales & Marketing$")
+                Dim datasheet2 = workbook.GetSheet("Sales & Marketing")
                 Dim datasheet3 = workbook.GetSheet("Cost-Unit 093")
                 Dim datasheet4 = workbook.GetSheet("status 300714")
 
-                If datasheet0 Is Nothing OrElse datasheet2 Is Nothing Then
-                    Throw New Exception("No Work Sheet")
+                If datasheet0 Is Nothing Then
+                    Throw New Exception("Price list")
+                End If
+                If datasheet1 Is Nothing Then
+                    Throw New Exception("ข้อมูลบ้าน")
+                End If
+                If datasheet2 Is Nothing Then
+                    Throw New Exception("Sales & Marketing")
                 End If
 
                 Dim bl As cImportPriceList = New cImportPriceList
@@ -540,6 +546,7 @@ Public Class ADI_ImportPriceList
                 Dim cell4 As Integer = 0
                 Dim sVal As String = ""
                 Dim iVal As String = ""
+                Dim chkStep As Boolean = False
 
                 For row As Integer = 0 To datasheet0.PhysicalNumberOfRows - 1
 
@@ -547,7 +554,6 @@ Public Class ADI_ImportPriceList
                     'datasheet0.GetRow(7).Cells(7)	{5,000}             ---->   ColBookingAmount
                     'datasheet0.GetRow(7).Cells(8)	{20,000}            ---->   ColContractAmount
                     'datasheet0.GetRow(7).Cells(9)	{5}	                ---->   ColPeriodDown
-
 
 
 
@@ -566,65 +572,99 @@ Public Class ADI_ImportPriceList
                         If Not IsDBNull(datasheet0.GetRow(row).GetCell(0, CREATE_NULL_AS_BLANK)) Then
                             If datasheet0.GetRow(row).GetCell(0, CREATE_NULL_AS_BLANK).ToString <> String.Empty Then
                                 Try
-                                    _UnitNo = datasheet0.GetRow(row).GetCell(0, CREATE_NULL_AS_BLANK).ToString.Split("!")(1).ToString
+                                    _UnitNo = datasheet0.GetRow(row).GetCell(0, CREATE_NULL_AS_BLANK).StringCellValue
                                 Catch ex As Exception
-                                    _UnitNo = datasheet0.GetRow(row).GetCell(0, CREATE_NULL_AS_BLANK).ToString
+                                    _UnitNo = datasheet0.GetRow(row).GetCell(0, CREATE_NULL_AS_BLANK).NumericCellValue
                                 End Try
+                                'Try
+                                '    _UnitNo = datasheet0.GetRow(row).GetCell(0, CREATE_NULL_AS_BLANK).ToString.Split("!")(1).ToString
+                                '    chkStep = True
+                                'Catch ex As Exception
+                                '    _UnitNo = datasheet0.GetRow(row).GetCell(0, CREATE_NULL_AS_BLANK).ToString
+                                '    chkStep = False
+                                'End Try
 
-                                Call CropNumberAndText(_UnitNo, sVal, iVal)
-                                row1 = CInt(iVal) - 1
-                                cell1 = cellTextToNumber(sVal)
-                                If Not IsDBNull(datasheet1.GetRow(row1).GetCell(cell1, CREATE_NULL_AS_BLANK)) Then
-                                    If datasheet1.GetRow(row1).GetCell(cell1, CREATE_NULL_AS_BLANK).ToString <> String.Empty Then
-                                        Try
-                                            _Sheet1 = datasheet1.GetRow(row1).GetCell(cell1, CREATE_NULL_AS_BLANK).ToString.Split("!")(1).ToString
-                                            _UnitNo = _Sheet1
-                                        Catch ex As Exception
-                                            _Sheet1 = datasheet1.GetRow(row1).GetCell(cell1, CREATE_NULL_AS_BLANK).ToString
-                                            _UnitNo = _Sheet1
-                                        End Try
-                                    End If
-                                End If
+                                'If chkStep = True Then
+                                '    chkStep = False
+                                '    Call CropNumberAndText(_UnitNo, sVal, iVal)
+                                '    If iVal <> String.Empty Then
+                                '        row1 = CInt(iVal) - 1
+                                '        cell1 = cellTextToNumber(sVal)
+                                '        If Not IsDBNull(datasheet1.GetRow(row1).GetCell(cell1, CREATE_NULL_AS_BLANK)) Then
+                                '            If datasheet1.GetRow(row1).GetCell(cell1, CREATE_NULL_AS_BLANK).ToString <> String.Empty Then
+                                '                Try
+                                '                    _Sheet1 = datasheet1.GetRow(row1).GetCell(cell1, CREATE_NULL_AS_BLANK).ToString.Split("!")(1).ToString
+                                '                    _UnitNo = _Sheet1
+                                '                    chkStep = True
+                                '                Catch ex As Exception
+                                '                    _Sheet1 = datasheet1.GetRow(row1).GetCell(cell1, CREATE_NULL_AS_BLANK).ToString
+                                '                    _UnitNo = _Sheet1
+                                '                    chkStep = False
+                                '                End Try
+                                '            End If
+                                '        End If
+                                '    End If
+                                'End If
 
-                                Call CropNumberAndText(_UnitNo, sVal, iVal)
-                                row2 = CInt(iVal) - 1
-                                cell2 = cellTextToNumber(sVal)
-                                If Not IsDBNull(datasheet2.GetRow(row2).GetCell(cell2, CREATE_NULL_AS_BLANK)) Then
-                                    If datasheet2.GetRow(row2).GetCell(cell2, CREATE_NULL_AS_BLANK).ToString <> String.Empty Then
-                                        Try
-                                            _Sheet2 = datasheet2.GetRow(row2).GetCell(cell2, CREATE_NULL_AS_BLANK).ToString.Split("!")(1).ToString
-                                            _UnitNo = _Sheet2
-                                        Catch ex As Exception
-                                            _Sheet2 = datasheet2.GetRow(row2).GetCell(cell2, CREATE_NULL_AS_BLANK).ToString
-                                            _UnitNo = _Sheet2
-                                        End Try
-                                    End If
-                                End If
+                                'If chkStep = True Then
+                                '    chkStep = False
+                                '    Call CropNumberAndText(_UnitNo, sVal, iVal)
+                                '    If iVal <> String.Empty Then
+                                '        row2 = CInt(iVal) - 1
+                                '        cell2 = cellTextToNumber(sVal)
+                                '        If Not IsDBNull(datasheet2.GetRow(row2).GetCell(cell2, CREATE_NULL_AS_BLANK)) Then
+                                '            If datasheet2.GetRow(row2).GetCell(cell2, CREATE_NULL_AS_BLANK).ToString <> String.Empty Then
+                                '                Try
+                                '                    _Sheet2 = datasheet2.GetRow(row2).GetCell(cell2, CREATE_NULL_AS_BLANK).ToString.Split("!")(1).ToString
+                                '                    _UnitNo = _Sheet2
+                                '                    chkStep = True
+                                '                Catch ex As Exception
+                                '                    _Sheet2 = datasheet2.GetRow(row2).GetCell(cell2, CREATE_NULL_AS_BLANK).ToString
+                                '                    _UnitNo = _Sheet2
+                                '                    chkStep = False
+                                '                End Try
+                                '            End If
+                                '        End If
+                                '    End If
+                                'End If
 
-                                Call CropNumberAndText(_UnitNo, sVal, iVal)
-                                row3 = CInt(iVal) - 1
-                                cell3 = cellTextToNumber(sVal)
-                                If Not IsDBNull(datasheet3.GetRow(row3).GetCell(cell3, CREATE_NULL_AS_BLANK)) Then
-                                    If datasheet3.GetRow(row3).GetCell(cell3, CREATE_NULL_AS_BLANK).ToString <> String.Empty Then
-                                        Try
-                                            _Sheet3 = datasheet3.GetRow(row3).GetCell(cell3, CREATE_NULL_AS_BLANK).ToString.Split("!")(1).ToString
-                                            _UnitNo = _Sheet3
-                                        Catch ex As Exception
-                                            _Sheet3 = datasheet3.GetRow(row3).GetCell(cell3, CREATE_NULL_AS_BLANK).ToString
-                                            _UnitNo = _Sheet3
-                                        End Try
-                                    End If
-                                End If
+                                'If chkStep = True Then
+                                '    chkStep = False
+                                '    Call CropNumberAndText(_UnitNo, sVal, iVal)
+                                '    If iVal <> String.Empty Then
+                                '        row3 = CInt(iVal) - 1
+                                '        cell3 = cellTextToNumber(sVal)
+                                '        If Not IsDBNull(datasheet3.GetRow(row3).GetCell(cell3, CREATE_NULL_AS_BLANK)) Then
+                                '            If datasheet3.GetRow(row3).GetCell(cell3, CREATE_NULL_AS_BLANK).ToString <> String.Empty Then
+                                '                Try
+                                '                    _Sheet3 = datasheet3.GetRow(row3).GetCell(cell3, CREATE_NULL_AS_BLANK).ToString.Split("!")(1).ToString
+                                '                    _UnitNo = _Sheet3
+                                '                    chkStep = True
+                                '                Catch ex As Exception
+                                '                    _Sheet3 = datasheet3.GetRow(row3).GetCell(cell3, CREATE_NULL_AS_BLANK).ToString
+                                '                    _UnitNo = _Sheet3
+                                '                    chkStep = False
+                                '                End Try
+                                '            End If
+                                '        End If
+                                '    End If
+                                'End If
 
-                                Call CropNumberAndText(_UnitNo, sVal, iVal)
-                                row4 = CInt(iVal) - 1
-                                cell4 = cellTextToNumber(sVal)
-                                If Not IsDBNull(datasheet4.GetRow(row4).GetCell(cell4, CREATE_NULL_AS_BLANK)) Then
-                                    If datasheet4.GetRow(row4).GetCell(cell4, CREATE_NULL_AS_BLANK).ToString <> String.Empty Then
-                                        _Sheet4 = datasheet4.GetRow(row4).GetCell(cell4, CREATE_NULL_AS_BLANK).ToString
-                                        _UnitNo = _Sheet4
-                                    End If
-                                End If
+                                'If chkStep = True Then
+                                '    chkStep = False
+                                '    Call CropNumberAndText(_UnitNo, sVal, iVal)
+                                '    If iVal <> String.Empty Then
+                                '        row4 = CInt(iVal) - 1
+                                '        cell4 = cellTextToNumber(sVal)
+                                '        If Not IsDBNull(datasheet4.GetRow(row4).GetCell(cell4, CREATE_NULL_AS_BLANK)) Then
+                                '            If datasheet4.GetRow(row4).GetCell(cell4, CREATE_NULL_AS_BLANK).ToString <> String.Empty Then
+                                '                _Sheet4 = datasheet4.GetRow(row4).GetCell(cell4, CREATE_NULL_AS_BLANK).ToString
+                                '                _UnitNo = _Sheet4
+                                '            End If
+                                '        End If
+                                '    End If
+                                'End If
+
 
                                 dr.Item(ColUnitNo) = _UnitNo
                             End If
@@ -632,22 +672,38 @@ Public Class ADI_ImportPriceList
 
                         If Not IsDBNull(datasheet0.GetRow(row).GetCell(7, CREATE_NULL_AS_BLANK)) Then
                             If datasheet0.GetRow(row).GetCell(7, CREATE_NULL_AS_BLANK).ToString <> String.Empty Then
-                                dr.Item(ColBookingAmount) = datasheet0.GetRow(row).GetCell(7, CREATE_NULL_AS_BLANK).ToString.Replace("*", "").Replace(",", "")
+                                Try
+                                    dr.Item(ColBookingAmount) = datasheet0.GetRow(row).GetCell(7, CREATE_NULL_AS_BLANK).NumericCellValue
+                                Catch ex As Exception
+                                    dr.Item(ColBookingAmount) = datasheet0.GetRow(row).GetCell(7, CREATE_NULL_AS_BLANK).StringCellValue
+                                End Try
+                                'dr.Item(ColBookingAmount) = datasheet0.GetRow(row).GetCell(7, CREATE_NULL_AS_BLANK).ToString.Replace("*", "").Replace(",", "")
                             End If
                         End If
 
+
+
                         If Not IsDBNull(datasheet0.GetRow(row).GetCell(8, CREATE_NULL_AS_BLANK)) Then
                             If datasheet0.GetRow(row).GetCell(8, CREATE_NULL_AS_BLANK).ToString <> String.Empty Then
-                                dr.Item(ColContractAmount) = datasheet0.GetRow(row).GetCell(8, CREATE_NULL_AS_BLANK).ToString.Replace("*", "").Replace(",", "")
+                                Try
+                                    dr.Item(ColContractAmount) = datasheet0.GetRow(row).GetCell(8, CREATE_NULL_AS_BLANK).NumericCellValue
+                                Catch ex As Exception
+                                    dr.Item(ColContractAmount) = datasheet0.GetRow(row).GetCell(8, CREATE_NULL_AS_BLANK).StringCellValue
+                                End Try
+                                'dr.Item(ColContractAmount) = datasheet0.GetRow(row).GetCell(8, CREATE_NULL_AS_BLANK).ToString.Replace("*", "").Replace(",", "")
                             End If
                         End If
 
                         If Not IsDBNull(datasheet0.GetRow(row).GetCell(9, CREATE_NULL_AS_BLANK)) Then
                             If datasheet0.GetRow(row).GetCell(9, CREATE_NULL_AS_BLANK).ToString <> String.Empty Then
-                                dr.Item(ColPeriodDown) = datasheet0.GetRow(row).GetCell(9, CREATE_NULL_AS_BLANK).ToString.Replace("*", "").Replace(",", "")
+                                Try
+                                    dr.Item(ColPeriodDown) = datasheet0.GetRow(row).GetCell(9, CREATE_NULL_AS_BLANK).NumericCellValue
+                                Catch ex As Exception
+                                    dr.Item(ColPeriodDown) = datasheet0.GetRow(row).GetCell(9, CREATE_NULL_AS_BLANK).StringCellValue
+                                End Try
+                                'dr.Item(ColPeriodDown) = datasheet0.GetRow(row).GetCell(9, CREATE_NULL_AS_BLANK).ToString.Replace("*", "").Replace(",", "")
                             End If
                         End If
-
 
 
                         'datasheet2.GetRow(row2).Cells(7)	{0}	            ---->   ColLandPrice
@@ -656,16 +712,26 @@ Public Class ADI_ImportPriceList
                         'datasheet2.GetRow(row2).Cells(16)	{990,000}	    ---->   ColTargetPrice
                         'datasheet2.GetRow(row2).Cells(19)	{1,000,000}	    ---->   ColActualPrice , ColPriceList
 
-
+                        If row2 = 0 Then row2 = 4 'เริ่มที่ Row 4
                         If Not IsDBNull(datasheet2.GetRow(row2).GetCell(7, CREATE_NULL_AS_BLANK)) Then
                             If datasheet2.GetRow(row2).GetCell(7, CREATE_NULL_AS_BLANK).ToString <> String.Empty Then
-                                dr.Item(ColLandPrice) = datasheet2.GetRow(row2).GetCell(7, CREATE_NULL_AS_BLANK).ToString.Replace("*", "").Replace(",", "")
+                                Try
+                                    dr.Item(ColLandPrice) = datasheet2.GetRow(row2).GetCell(7, CREATE_NULL_AS_BLANK).NumericCellValue
+                                Catch ex As Exception
+                                    dr.Item(ColLandPrice) = datasheet2.GetRow(row2).GetCell(7, CREATE_NULL_AS_BLANK).StringCellValue
+                                End Try
+                                'dr.Item(ColLandPrice) = datasheet2.GetRow(row2).GetCell(7, CREATE_NULL_AS_BLANK).ToString.Replace("*", "").Replace(",", "")
                             End If
                         End If
 
                         If Not IsDBNull(datasheet2.GetRow(row2).GetCell(8, CREATE_NULL_AS_BLANK)) Then
                             If datasheet2.GetRow(row2).GetCell(8, CREATE_NULL_AS_BLANK).ToString <> String.Empty Then
-                                dr.Item(ColCostPrice) = datasheet2.GetRow(row2).GetCell(8, CREATE_NULL_AS_BLANK).ToString.Replace("*", "").Replace(",", "")
+                                Try
+                                    dr.Item(ColCostPrice) = datasheet2.GetRow(row2).GetCell(8, CREATE_NULL_AS_BLANK).NumericCellValue
+                                Catch ex As Exception
+                                    dr.Item(ColCostPrice) = datasheet2.GetRow(row2).GetCell(8, CREATE_NULL_AS_BLANK).StringCellValue
+                                End Try
+                                'dr.Item(ColCostPrice) = datasheet2.GetRow(row2).GetCell(8, CREATE_NULL_AS_BLANK).ToString.Replace("*", "").Replace(",", "")
                             End If
                         End If
 
@@ -673,7 +739,12 @@ Public Class ADI_ImportPriceList
 
                         If Not IsDBNull(datasheet2.GetRow(row2).GetCell(9, CREATE_NULL_AS_BLANK)) Then
                             If datasheet2.GetRow(row2).GetCell(9, CREATE_NULL_AS_BLANK).ToString <> String.Empty Then
-                                dr.Item(ColStandardPrice) = datasheet2.GetRow(row2).GetCell(9, CREATE_NULL_AS_BLANK).ToString.Replace("*", "").Replace(",", "")
+                                Try
+                                    dr.Item(ColStandardPrice) = datasheet2.GetRow(row2).GetCell(9, CREATE_NULL_AS_BLANK).NumericCellValue
+                                Catch ex As Exception
+                                    dr.Item(ColStandardPrice) = datasheet2.GetRow(row2).GetCell(9, CREATE_NULL_AS_BLANK).StringCellValue
+                                End Try
+                                'dr.Item(ColStandardPrice) = datasheet2.GetRow(row2).GetCell(9, CREATE_NULL_AS_BLANK).ToString.Replace("*", "").Replace(",", "")
                             End If
                         End If
 
@@ -681,17 +752,28 @@ Public Class ADI_ImportPriceList
 
                         If Not IsDBNull(datasheet2.GetRow(row2).GetCell(16, CREATE_NULL_AS_BLANK)) Then
                             If datasheet2.GetRow(row2).GetCell(16, CREATE_NULL_AS_BLANK).ToString <> String.Empty Then
-                                dr.Item(ColTargetPrice) = datasheet2.GetRow(row2).GetCell(16, CREATE_NULL_AS_BLANK).ToString.Replace("*", "").Replace(",", "")
+                                Try
+                                    dr.Item(ColTargetPrice) = datasheet2.GetRow(row2).GetCell(16, CREATE_NULL_AS_BLANK).NumericCellValue
+                                Catch ex As Exception
+                                    dr.Item(ColTargetPrice) = datasheet2.GetRow(row2).GetCell(16, CREATE_NULL_AS_BLANK).StringCellValue
+                                End Try
+                                'dr.Item(ColTargetPrice) = datasheet2.GetRow(row2).GetCell(16, CREATE_NULL_AS_BLANK).ToString.Replace("*", "").Replace(",", "")
                             End If
                         End If
 
 
                         If Not IsDBNull(datasheet2.GetRow(row2).GetCell(19, CREATE_NULL_AS_BLANK)) Then
                             If datasheet2.GetRow(row2).GetCell(19, CREATE_NULL_AS_BLANK).ToString <> String.Empty Then
-                                dr.Item(ColActualPrice) = datasheet2.GetRow(row2).GetCell(19, CREATE_NULL_AS_BLANK).ToString.Replace("*", "").Replace(",", "")
+                                Try
+                                    dr.Item(ColActualPrice) = datasheet2.GetRow(row2).GetCell(19, CREATE_NULL_AS_BLANK).NumericCellValue
+                                Catch ex As Exception
+                                    dr.Item(ColActualPrice) = datasheet2.GetRow(row2).GetCell(19, CREATE_NULL_AS_BLANK).StringCellValue
+                                End Try
+                                'dr.Item(ColActualPrice) = datasheet2.GetRow(row2).GetCell(19, CREATE_NULL_AS_BLANK).ToString.Replace("*", "").Replace(",", "")
                                 dr.Item(ColPriceList) = dr.Item(ColActualPrice)
                             End If
                         End If
+                        row2 = row2 + 1
 
                         dr.Item(ColPromotionPrice) = "0.00"
                         dr.Item(ColRemark) = ""
@@ -1140,10 +1222,10 @@ Public Class ADI_ImportPriceList
                 Else
                     grdImport.CssClass = ""
                     '===== Set Color
-                    '1.ข้อมูลรหัสโครงการ และข้อมูลเลขที่แปลงต้องไม่เป็นค่าว่าง hddMSGNotEmpty.Value = Me.GetWebMessage("msg_notempty", "MSG", hddParameterMenuID.Value)
-                    '2.ข้อมูลรหัสโครงการ และข้อมูลเลขที่แปลงห้ามซ้ำกัน hddMSGNoDuplica.Value = Me.GetWebMessage("msg_noduplicate", "MSG", hddParameterMenuID.Value)
-                    '3.ไม่มีข้อมูลเลขที่แปลงในโครงการและเฟสนี้ hddMSGNotNumber.Value = Me.GetWebMessage("msg_notnumber", "MSG", hddParameterMenuID.Value)
-                    '4.ข้อมูลราคาไม่ถูกต้อง hddMSGNotPrice.Value = Me.GetWebMessage("msg_notprice", "MSG", hddParameterMenuID.Value)
+                    '1.ข้อมูลรหัสโครงการ และข้อมูลเลขที่แปลงต้องไม่เป็นค่าว่าง hddMSGNotEmpty.Value = Me.GetResource("msg_notempty", "MSG", hddParameterMenuID.Value)
+                    '2.ข้อมูลรหัสโครงการ และข้อมูลเลขที่แปลงห้ามซ้ำกัน hddMSGNoDuplica.Value = Me.GetResource("msg_noduplicate", "MSG", hddParameterMenuID.Value)
+                    '3.ไม่มีข้อมูลเลขที่แปลงในโครงการและเฟสนี้ hddMSGNotNumber.Value = Me.GetResource("msg_notnumber", "MSG", hddParameterMenuID.Value)
+                    '4.ข้อมูลราคาไม่ถูกต้อง hddMSGNotPrice.Value = Me.GetResource("msg_notprice", "MSG", hddParameterMenuID.Value)
                     For Each vRow As GridViewRow In Me.grdImport.Rows
                         vStatus = (TryCast(vRow.Cells(vRow.Cells.Count - 1).Controls(0), DataBoundLiteralControl).Text).Trim(New [Char]() {" "c, ControlChars.Cr, ControlChars.Lf})
                         'vStatus = vRow.Cells(vRow.Cells.Count - 1).Text
@@ -1221,11 +1303,11 @@ Public Class ADI_ImportPriceList
         Try
             Dim strMassage As String = String.Empty
             If ddlsProject.SelectedValue = String.Empty Then
-                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & Me.GetResource("msg_please_select", "MSG", "1") & " " & Me.GetResource("lblsProject", "Text", hddParameterMenuID.Value) & "');", True)
+                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & Me.GetResource("msg_please_select", "MSG") & " " & Me.GetResource("lblsProject", "Text", hddParameterMenuID.Value) & "');", True)
                 'Call RegisterSetTabScript(TabNameEnum.IM1)
                 Exit Sub
             ElseIf ddlsPhase.SelectedValue = String.Empty Then
-                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & Me.GetResource("msg_please_select", "MSG", "1") & " " & Me.GetResource("lblsPhase", "Text", hddParameterMenuID.Value) & "');", True)
+                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & Me.GetResource("msg_please_select", "MSG") & " " & Me.GetResource("lblsPhase", "Text", hddParameterMenuID.Value) & "');", True)
                 'Call RegisterSetTabScript(TabNameEnum.IM1)
                 Exit Sub
             ElseIf txtsDownPayment.Text = String.Empty OrElse txtsDownPayment.Text = "0.00" OrElse txtsDownPayment.Text = "0" Then

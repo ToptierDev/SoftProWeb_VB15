@@ -82,8 +82,10 @@ Public Class cMenu
                     .MenuIcon = mMenu.MenuIcon,
                     .ModuleID = mMenu.ModuleID,
                     .ModuleNameLC = mModule.ModuleNameTH,
-                    .ModuleNameEN = mModule.ModuleNameEN
+                    .ModuleNameEN = mModule.ModuleNameEN,
+                     .ModuleIcon = mModule.ModuleIcon
                 }
+
 
                 qury = qury.Distinct()
                 qury = qury.OrderBy(Function(s) s.ParentID).ThenBy(Function(s) s.Sequence)

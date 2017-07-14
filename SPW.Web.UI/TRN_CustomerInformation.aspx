@@ -1571,7 +1571,7 @@
                             if ($('#<%=hddKeyID.ClientID%>').val() ==""){
                                 var arr = "[" + $('#<%=hddCheckPeopleID.ClientID%>').val() + "]";
                                 if (arr.indexOf($('#<%=txtaFPEOPLEID.ClientID%>').val()) != "-1"){
-                                    OpenDialogError('<%= GetResource("resMSGDupPeopleID", "MSG", "1")%>');                             
+                                    OpenDialogError('<%= GetResource("resMSGDupPeopleID", "MSG")%>');                             
                                     scrollAndFocus('#<%=txtaFPEOPLEID.ClientID%>');
                                     return;
                                 }

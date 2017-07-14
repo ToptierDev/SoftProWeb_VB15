@@ -211,6 +211,11 @@
     content:'';
 }
 
+
+        #sidebar-menu .icon-basic-data {
+    background-position-x: 209px;
+    background-position-y: -22px;
+      }
         #sidebar-menu .icon-data32 {
             background-position-x: 209px;
             background-position-y: -21px;
@@ -222,7 +227,7 @@
         }
 
         #sidebar-menu .icon-home32 {
-            background-position-x: 212px;
+            background-position-x: 129px;
             background-position-y: -292px;
         }
 
@@ -242,11 +247,11 @@
         }
 
          #sidebar-menu .icon-tag {
-            background-position-x: 212px;
-            background-position-y: -407px;
+            background-position-x: 209px;
+            background-position-y: -406px;
         }
           #sidebar-menu .icon-gears {
-            background-position-x: 212px;
+            background-position-x: 129px;
             background-position-y: -459px;
         }
              #sidebar-menu .icon-magic {
@@ -255,9 +260,18 @@
         }
          
             #sidebar-menu .icon-bookmark-o {
-          background-position-x: 209px;
+          background-position-x: 121px;
     background-position-y: -130px;
+        } 
+            #sidebar-menu .icon-realestate {
+          background-position-x: 126px;
+    background-position-y: -578px;
         }
+             #sidebar-menu .icon-saleagreement {
+          background-position-x: 126px;
+    background-position-y: -676px;
+        }
+        
                 #sidebar-menu .icon-bank {
           background-position-x: 209px;
     background-position-y: -181px;

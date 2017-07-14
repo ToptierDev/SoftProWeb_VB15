@@ -120,7 +120,7 @@
                                                                             <Columns>
                                                                                 <asp:TemplateField>
                                                                                     <HeaderTemplate>
-                                                                                        <%# GetWebMessage("gFASSETNO", "Text", hddParameterMenuID.Value)%>
+                                                                                        <%# GetResource("gFASSETNO", "Text", hddParameterMenuID.Value)%>
                                                                                     </HeaderTemplate>
                                                                                     <ItemTemplate>
                                                                                         <asp:TextBox ID="txtgFASSETNO" autocomplete="off" BackColor="#ffe0c0" runat="server" CssClass="form-control paddingZero" Style="height: 28px; vertical-align: top;" MaxLength="10"></asp:TextBox>
@@ -133,7 +133,7 @@
                                                                                 </asp:TemplateField>
                                                                                 <asp:TemplateField>
                                                                                     <HeaderTemplate>
-                                                                                        <%# GetWebMessage("gPCPIECE", "Text", hddParameterMenuID.Value)%>
+                                                                                        <%# GetResource("gPCPIECE", "Text", hddParameterMenuID.Value)%>
                                                                                     </HeaderTemplate>
                                                                                     <ItemTemplate>
                                                                                         <asp:Textbox ID="txtgPCPIECE" autocomplete="off" runat="server" class="form-control paddingZero" Style="height: 28px; vertical-align: top;" Enabled="true" BackColor="#F5F5F5" ReadOnly="true"></asp:Textbox>
@@ -143,7 +143,7 @@
                                                                                 </asp:TemplateField>
                                                                                 <asp:TemplateField>
                                                                                     <HeaderTemplate>
-                                                                                        <%# GetWebMessage("gFQTY", "Text", hddParameterMenuID.Value)%>
+                                                                                        <%# GetResource("gFQTY", "Text", hddParameterMenuID.Value)%>
                                                                                     </HeaderTemplate>
                                                                                     <ItemTemplate>
                                                                                         <asp:Textbox ID="txtgFQTY" autocomplete="off" runat="server" class="form-control text-right paddingZero" onKeyPress="return Check_Key_Decimal(this,event)" Style="height: 28px; vertical-align: top;" Enabled="true" BackColor="#F5F5F5" ReadOnly="true"></asp:Textbox>
@@ -153,7 +153,7 @@
                                                                                 </asp:TemplateField>
                                                                                 <asp:TemplateField>
                                                                                     <HeaderTemplate>
-                                                                                        <%# GetWebMessage("gFMORTGBK", "Text", hddParameterMenuID.Value)%>
+                                                                                        <%# GetResource("gFMORTGBK", "Text", hddParameterMenuID.Value)%>
                                                                                     </HeaderTemplate>
                                                                                     <ItemTemplate>
                                                                                         <asp:Textbox ID="txtgFMORTGBK" autocomplete="off" runat="server" class="form-control paddingZero" Style="height: 28px; vertical-align: top;" Enabled="true" BackColor="#F5F5F5" ReadOnly="true"></asp:Textbox>
@@ -163,7 +163,7 @@
                                                                                 </asp:TemplateField>
                                                                                 <asp:TemplateField>
                                                                                     <HeaderTemplate>
-                                                                                        <%# GetWebMessage("gFMAINCSTR", "Text", hddParameterMenuID.Value)%>
+                                                                                        <%# GetResource("gFMAINCSTR", "Text", hddParameterMenuID.Value)%>
                                                                                     </HeaderTemplate>
                                                                                     <ItemTemplate>
                                                                                         <asp:TextBox ID="txtgFMAINCSTR" autocomplete="off" runat="server" data-date-format="dd/mm/yyyy" MaxLength="10" Style="height: 28px; vertical-align: top;" onKeyPress="return Check_Key_Date(this,event)"></asp:TextBox>
@@ -173,7 +173,7 @@
                                                                                 </asp:TemplateField>
                                                                                 <asp:TemplateField>
                                                                                     <HeaderTemplate>
-                                                                                        <%# GetWebMessage("gFMAINCEND", "Text", hddParameterMenuID.Value)%>
+                                                                                        <%# GetResource("gFMAINCEND", "Text", hddParameterMenuID.Value)%>
                                                                                     </HeaderTemplate>
                                                                                     <ItemTemplate>
                                                                                         <asp:TextBox ID="txtgFMAINCEND" autocomplete="off" runat="server" data-date-format="dd/mm/yyyy" MaxLength="10" Style="height: 28px; vertical-align: top;" onKeyPress="return Check_Key_Date(this,event)"></asp:TextBox>
@@ -183,7 +183,7 @@
                                                                                 </asp:TemplateField>
                                                                                 <asp:TemplateField>
                                                                                     <HeaderTemplate>
-                                                                                        <%# GetWebMessage("gFQTYADJPLUS", "Text", hddParameterMenuID.Value)%>
+                                                                                        <%# GetResource("gFQTYADJPLUS", "Text", hddParameterMenuID.Value)%>
                                                                                     </HeaderTemplate>
                                                                                     <ItemTemplate>
                                                                                         <table style="width: 100%">
@@ -209,7 +209,7 @@
                                                                                 </asp:TemplateField>
                                                                                 <asp:TemplateField>
                                                                                     <HeaderTemplate>
-                                                                                        <%# GetWebMessage("gFQTYADJNPLUS", "Text", hddParameterMenuID.Value)%>
+                                                                                        <%# GetResource("gFQTYADJNPLUS", "Text", hddParameterMenuID.Value)%>
                                                                                     </HeaderTemplate>
                                                                                     <ItemTemplate>
                                                                                         <table style="width: 100%">
@@ -235,7 +235,7 @@
                                                                                 </asp:TemplateField>
                                                                                 <asp:TemplateField>
                                                                                     <HeaderTemplate>
-                                                                                        <%# GetWebMessage("gFPCLNDNO", "Text", hddParameterMenuID.Value)%>
+                                                                                        <%# GetResource("gFPCLNDNO", "Text", hddParameterMenuID.Value)%>
                                                                                     </HeaderTemplate>
                                                                                     <ItemTemplate>
                                                                                         <asp:Textbox ID="txtgFPCLNDNO" autocomplete="off" runat="server" class="form-control paddingZero" Style="height: 28px; vertical-align: top;" Enabled="true" BackColor="#F5F5F5" ReadOnly="true"></asp:Textbox>
@@ -245,7 +245,7 @@
                                                                                 </asp:TemplateField>
                                                                                 <asp:TemplateField>
                                                                                     <HeaderTemplate>
-                                                                                        <%# GetWebMessage("gFPCWIDTH", "Text", hddParameterMenuID.Value)%>
+                                                                                        <%# GetResource("gFPCWIDTH", "Text", hddParameterMenuID.Value)%>
                                                                                     </HeaderTemplate>
                                                                                     <ItemTemplate>
                                                                                         <asp:Textbox ID="txtgFPCWIDTH" autocomplete="off" runat="server" class="form-control paddingZero" Style="height: 28px; vertical-align: top;" Enabled="true" BackColor="#F5F5F5" ReadOnly="true"></asp:Textbox>
@@ -255,7 +255,7 @@
                                                                                 </asp:TemplateField>
                                                                                 <asp:TemplateField>
                                                                                     <HeaderTemplate>
-                                                                                        <%# GetWebMessage("gFPCBETWEEN", "Text", hddParameterMenuID.Value)%>
+                                                                                        <%# GetResource("gFPCBETWEEN", "Text", hddParameterMenuID.Value)%>
                                                                                     </HeaderTemplate>
                                                                                     <ItemTemplate>
                                                                                         <asp:TextBox ID="txtgFPCBETWEEN" autocomplete="off" runat="server" class="form-control paddingZero" Style="height: 28px; vertical-align: top;" Enabled="true" BackColor="#F5F5F5" ReadOnly="true"></asp:TextBox>
@@ -265,7 +265,7 @@
                                                                                 </asp:TemplateField>
                                                                                 <asp:TemplateField>
                                                                                     <HeaderTemplate>
-                                                                                        <%# GetWebMessage("gFPCNOTE", "Text", hddParameterMenuID.Value)%>
+                                                                                        <%# GetResource("gFPCNOTE", "Text", hddParameterMenuID.Value)%>
                                                                                     </HeaderTemplate>
                                                                                     <ItemTemplate>
                                                                                         <asp:TextBox ID="txtgFPCNOTE" autocomplete="off" runat="server" class="form-control paddingZero" Style="height: 28px; vertical-align: top;"></asp:TextBox>
@@ -275,7 +275,7 @@
                                                                                 </asp:TemplateField>
                                                                                 <asp:TemplateField>
                                                                                     <HeaderTemplate>
-                                                                                        <%# GetWebMessage("col_delete", "Text", "1")%>
+                                                                                        <%# GetResource("col_delete", "Text", "1")%>
                                                                                     </HeaderTemplate>
                                                                                     <ItemTemplate>
                                                                                         <asp:ImageButton ID="btnDelete" runat="server" CommandName="btnDelete" ImageUrl="~/image/delete.jpg" Style="width: 30px; height: 30px; margin-left: 10px;" ToolTip="Click to Delete" />
@@ -552,7 +552,7 @@
                         txtgFPCWIDTH.value = "";
                         txtgFPCBETWEEN.value = "";
                         txtgFPCNOTE.value = "";
-                        OpenDialogError("<%# Me.GetResource("msg_duplicate_table", "MSG", "1") %>" + pDup);
+                        OpenDialogError("<%# Me.GetResource("msg_duplicate_table", "MSG") %>" + pDup);
                         return false;
                     }
 

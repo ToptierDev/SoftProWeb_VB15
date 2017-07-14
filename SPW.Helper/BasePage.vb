@@ -180,7 +180,7 @@ Public Class BasePage
                             Return resource.ResourceValueLC
                         End If
                     ElseIf WebCulture.ToLower = "en" Then
-                        If Not IsDBNull(resource.ResourceValueLC) Then
+                        If Not IsDBNull(resource.ResourceValueEN) Then
                             Return resource.ResourceValueEN
                         End If
                     End If

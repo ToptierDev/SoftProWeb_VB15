@@ -12,4 +12,5 @@
     Public Property ModuleID As Integer?
     Public Property ModuleNameLC As String
     Public Property ModuleNameEN As String
+    Public Property ModuleIcon As String
 End Class

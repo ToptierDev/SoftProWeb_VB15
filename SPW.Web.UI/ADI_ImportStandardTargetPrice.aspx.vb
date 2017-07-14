@@ -73,9 +73,9 @@ Public Class ADI_ImportStandardTargetPrice
         ddl.Items.Clear()
         Try
             If strType = "A" Then
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
             Else
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
             End If
             Dim lc = bl.LoadProject(CurrentUser.UserID)
             If lc IsNot Nothing Then
@@ -110,9 +110,9 @@ Public Class ADI_ImportStandardTargetPrice
                 ddl.DataBind()
             End If
             If strType = "A" Then
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
             Else
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
             End If
         Catch ex As Exception
             HelperLog.ErrorLog(CurrentUser.UserID, hddParameterMenuID.Value, Request.UserHostAddress(), "LoadPhase", ex.GetBaseException)
@@ -171,9 +171,9 @@ Public Class ADI_ImportStandardTargetPrice
             If Session("ADI_ImportStandardTargetPrice_FS").ToString <> String.Empty Then
                 Dim strFS As String = Session("ADI_ImportStandardTargetPrice_FS").ToString
                 If strFS = "1" Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG") & "');", True)
                 ElseIf strFS = "2" Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_deletesuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_deletesuccess", "MSG") & "');", True)
                 End If
                 Dim strPageInfo As String = Session("ADI_ImportStandardTargetPrice_PageInfo").ToString
                 If strPageInfo <> String.Empty Then
@@ -312,8 +312,8 @@ Public Class ADI_ImportStandardTargetPrice
             lblsTarget.Text = Me.GetResource("lblsTarget", "Text", hddParameterMenuID.Value)
             lblsExportTemplate.Text = Me.GetResource("lblsExportTemplate", "Text", hddParameterMenuID.Value)
 
-            hddMSGOKData.Value = Me.GetResource("msg_ok_data", "MSG", "1")
-            hddMSGCancelData.Value = Me.GetResource("msg_cancel_data", "MSG", "1")
+            hddMSGOKData.Value = Me.GetResource("msg_ok_data", "MSG")
+            hddMSGCancelData.Value = Me.GetResource("msg_cancel_data", "MSG")
 
             lblHeaderVerify.Text = Me.GetResource("HeaderVerify", "Text", hddParameterMenuID.Value)
             lblBodyVerify.Text = Me.GetResource("BodyVerify", "Text", hddParameterMenuID.Value)
@@ -354,10 +354,10 @@ Public Class ADI_ImportStandardTargetPrice
             lblValidate4.Text = Me.GetResource("msg_notprice", "MSG", hddParameterMenuID.Value)
 
 
-            '1.ข้อมูลรหัสโครงการ และข้อมูลเลขที่แปลงต้องไม่เป็นค่าว่าง hddMSGNotEmpty.Value = Me.GetWebMessage("msg_notempty", "MSG", hddParameterMenuID.Value)
-            '2.ข้อมูลรหัสโครงการ และข้อมูลเลขที่แปลงห้ามซ้ำกัน hddMSGNoDuplica.Value = Me.GetWebMessage("msg_noduplicate", "MSG", hddParameterMenuID.Value)
-            '3.ไม่มีข้อมูลเลขที่แปลงในโครงการและเฟสนี้ hddMSGNotNumber.Value = Me.GetWebMessage("msg_notnumber", "MSG", hddParameterMenuID.Value)
-            '4.ข้อมูลราคาไม่ถูกต้อง hddMSGNotPrice.Value = Me.GetWebMessage("msg_notprice", "MSG", hddParameterMenuID.Value)
+            '1.ข้อมูลรหัสโครงการ และข้อมูลเลขที่แปลงต้องไม่เป็นค่าว่าง hddMSGNotEmpty.Value = Me.GetResource("msg_notempty", "MSG", hddParameterMenuID.Value)
+            '2.ข้อมูลรหัสโครงการ และข้อมูลเลขที่แปลงห้ามซ้ำกัน hddMSGNoDuplica.Value = Me.GetResource("msg_noduplicate", "MSG", hddParameterMenuID.Value)
+            '3.ไม่มีข้อมูลเลขที่แปลงในโครงการและเฟสนี้ hddMSGNotNumber.Value = Me.GetResource("msg_notnumber", "MSG", hddParameterMenuID.Value)
+            '4.ข้อมูลราคาไม่ถูกต้อง hddMSGNotPrice.Value = Me.GetResource("msg_notprice", "MSG", hddParameterMenuID.Value)
 
             Call clearTextTab1()
             Call clearTextTab2()
@@ -485,9 +485,9 @@ Public Class ADI_ImportStandardTargetPrice
     Protected Sub lblsExportTemplate_Click(ByVal sender As Object, ByVal e As EventArgs) Handles lblsExportTemplate.Click
         Try
             'If ddlsProject.SelectedValue = String.Empty Then
-            '    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & Me.GetResource("msg_please_select", "MSG", "1") & " " & Me.GetResource("lblsProject", "Text", hddParameterMenuID.Value) & "');", True)
+            '    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & Me.GetResource("msg_please_select", "MSG") & " " & Me.GetResource("lblsProject", "Text", hddParameterMenuID.Value) & "');", True)
             'ElseIf ddlsPhase.SelectedValue = String.Empty Then
-            '    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & Me.GetResource("msg_please_select", "MSG", "1") & " " & Me.GetResource("lblsPhase", "Text", hddParameterMenuID.Value) & "');", True)
+            '    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & Me.GetResource("msg_please_select", "MSG") & " " & Me.GetResource("lblsPhase", "Text", hddParameterMenuID.Value) & "');", True)
             'Else
             Call Redirect("ADI_ImportStandardTargetPriceTemplates.ashx?infoLang=" & hddpLG.Value)
             'End If
@@ -524,11 +524,11 @@ Public Class ADI_ImportStandardTargetPrice
 
             Dim strMassage As String = String.Empty
             If ddlsProject.SelectedValue = String.Empty Then
-                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & Me.GetResource("msg_please_select", "MSG", "1") & " " & Me.GetResource("lblsProject", "Text", hddParameterMenuID.Value) & "');", True)
+                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & Me.GetResource("msg_please_select", "MSG") & " " & Me.GetResource("lblsProject", "Text", hddParameterMenuID.Value) & "');", True)
                 Call RegisterSetTabScript(TabNameEnum.IM1)
                 Exit Sub
             ElseIf ddlsPhase.SelectedValue = String.Empty Then
-                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & Me.GetResource("msg_please_select", "MSG", "1") & " " & Me.GetResource("lblsPhase", "Text", hddParameterMenuID.Value) & "');", True)
+                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & Me.GetResource("msg_please_select", "MSG") & " " & Me.GetResource("lblsPhase", "Text", hddParameterMenuID.Value) & "');", True)
                 Call RegisterSetTabScript(TabNameEnum.IM1)
                 Exit Sub
             End If
@@ -544,13 +544,15 @@ Public Class ADI_ImportStandardTargetPrice
                 End If
 
                 'Dim datasheet = workbook.GetSheetAt(0)
-                Dim datasheet = workbook.GetSheet("Sales & Marketing$")
+                Dim datasheet = workbook.GetSheet("Sales & Marketing")
                 Dim datasheet2 = workbook.GetSheet("Cost-Unit 093")
                 Dim datasheet3 = workbook.GetSheet("status 300714")
 
                 If datasheet Is Nothing Then
-                    Throw New Exception("No Work Sheet")
+                    Throw New Exception("Sales & Marketing")
                 End If
+
+
 
                 'Document  Name
                 Dim ColProjectCode As ICell = Nothing
@@ -620,6 +622,7 @@ Public Class ADI_ImportStandardTargetPrice
                 Dim cell3 As Integer = 0
                 Dim sVal As String = ""
                 Dim iVal As String = ""
+                Dim chkStep As Boolean = False
                 For row As Integer = 0 To datasheet.PhysicalNumberOfRows - 1
 
                     'datasheet.GetRow(4).Cells(0)	{+'Cost-Unit 093'!B8}
@@ -647,36 +650,56 @@ Public Class ADI_ImportStandardTargetPrice
                         If Not IsDBNull(datasheet.GetRow(row).GetCell(0, CREATE_NULL_AS_BLANK)) Then
                             If datasheet.GetRow(row).GetCell(0, CREATE_NULL_AS_BLANK).ToString <> String.Empty Then
                                 Try
-                                    _UnitNo = datasheet.GetRow(row).GetCell(0, CREATE_NULL_AS_BLANK).ToString.Split("!")(1).ToString
+                                    _UnitNo = datasheet.GetRow(row).GetCell(0, CREATE_NULL_AS_BLANK).StringCellValue
                                 Catch ex As Exception
-                                    _UnitNo = datasheet.GetRow(row).GetCell(0, CREATE_NULL_AS_BLANK).ToString
+                                    _UnitNo = datasheet.GetRow(row).GetCell(0, CREATE_NULL_AS_BLANK).NumericCellValue
                                 End Try
+                                'Try
+                                '    _UnitNo = datasheet.GetRow(row).GetCell(0, CREATE_NULL_AS_BLANK).ToString.Split("!")(1).ToString
+                                '    chkStep = True
+                                'Catch ex As Exception
+                                '    _UnitNo = datasheet.GetRow(row).GetCell(0, CREATE_NULL_AS_BLANK).ToString
+                                '    chkStep = False
+                                'End Try
+
+                                'If chkStep = True Then
+                                '    chkStep = False
+                                '    Call CropNumberAndText(_UnitNo, sVal, iVal)
+                                '    If iVal <> String.Empty Then
+                                '        row2 = CInt(iVal) - 1
+                                '        cell2 = cellTextToNumber(sVal)
+                                '        If Not IsDBNull(datasheet2.GetRow(row2).GetCell(cell2, CREATE_NULL_AS_BLANK)) Then
+                                '            If datasheet2.GetRow(row2).GetCell(cell2, CREATE_NULL_AS_BLANK).ToString <> String.Empty Then
+                                '                Try
+                                '                    _Sheet2 = datasheet2.GetRow(row2).GetCell(cell2, CREATE_NULL_AS_BLANK).ToString.Split("!")(1).ToString
+                                '                    _UnitNo = _Sheet2
+                                '                    chkStep = True
+                                '                Catch ex As Exception
+                                '                    _Sheet2 = datasheet2.GetRow(row2).GetCell(cell2, CREATE_NULL_AS_BLANK).ToString
+                                '                    _UnitNo = _Sheet2
+                                '                    chkStep = False
+                                '                End Try
+                                '            End If
+                                '        End If
+                                '    End If
+                                'End If
 
 
-                                Call CropNumberAndText(_UnitNo, sVal, iVal)
-                                row2 = CInt(iVal) - 1
-                                cell2 = cellTextToNumber(sVal)
-                                If Not IsDBNull(datasheet2.GetRow(row2).GetCell(cell2, CREATE_NULL_AS_BLANK)) Then
-                                    If datasheet2.GetRow(row2).GetCell(cell2, CREATE_NULL_AS_BLANK).ToString <> String.Empty Then
-                                        Try
-                                            _Sheet2 = datasheet2.GetRow(row2).GetCell(cell2, CREATE_NULL_AS_BLANK).ToString.Split("!")(1).ToString
-                                            _UnitNo = _Sheet2
-                                        Catch ex As Exception
-                                            _Sheet2 = datasheet2.GetRow(row2).GetCell(cell2, CREATE_NULL_AS_BLANK).ToString
-                                            _UnitNo = _Sheet2
-                                        End Try
-                                    End If
-                                End If
+                                'If chkStep = True Then
+                                '    chkStep = False
+                                '    Call CropNumberAndText(_UnitNo, sVal, iVal)
+                                '    If iVal <> String.Empty Then
+                                '        row3 = CInt(iVal) - 1
+                                '        cell3 = cellTextToNumber(sVal)
+                                '        If Not IsDBNull(datasheet3.GetRow(row3).GetCell(cell3, CREATE_NULL_AS_BLANK)) Then
+                                '            If datasheet3.GetRow(row3).GetCell(cell3, CREATE_NULL_AS_BLANK).ToString <> String.Empty Then
+                                '                _Sheet3 = datasheet3.GetRow(row3).GetCell(cell3, CREATE_NULL_AS_BLANK).ToString
+                                '                _UnitNo = _Sheet3
+                                '            End If
+                                '        End If
+                                '    End If
+                                'End If
 
-                                Call CropNumberAndText(_UnitNo, sVal, iVal)
-                                row3 = CInt(iVal) - 1
-                                cell3 = cellTextToNumber(sVal)
-                                If Not IsDBNull(datasheet3.GetRow(row3).GetCell(cell3, CREATE_NULL_AS_BLANK)) Then
-                                    If datasheet3.GetRow(row3).GetCell(cell3, CREATE_NULL_AS_BLANK).ToString <> String.Empty Then
-                                        _Sheet3 = datasheet3.GetRow(row3).GetCell(cell3, CREATE_NULL_AS_BLANK).ToString
-                                        _UnitNo = _Sheet3
-                                    End If
-                                End If
 
                                 dr.Item("UnitNo") = _UnitNo
                             End If
@@ -684,31 +707,56 @@ Public Class ADI_ImportStandardTargetPrice
 
                         If Not IsDBNull(datasheet.GetRow(row).GetCell(7, CREATE_NULL_AS_BLANK)) Then
                             If datasheet.GetRow(row).GetCell(7, CREATE_NULL_AS_BLANK).ToString <> String.Empty Then
-                                dr.Item("LanPriceSqw") = datasheet.GetRow(row).GetCell(7, CREATE_NULL_AS_BLANK).ToString.Replace("*", "").Replace(",", "")
+                                Try
+                                    dr.Item("LanPriceSqw") = datasheet.GetRow(row).GetCell(7, CREATE_NULL_AS_BLANK).NumericCellValue
+                                Catch ex As Exception
+                                    dr.Item("LanPriceSqw") = datasheet.GetRow(row).GetCell(7, CREATE_NULL_AS_BLANK).StringCellValue
+                                End Try
+                                'dr.Item("LanPriceSqw") = datasheet.GetRow(row).GetCell(7, CREATE_NULL_AS_BLANK).ToString.Replace("*", "").Replace(",", "")
                             End If
                         End If
 
                         If Not IsDBNull(datasheet.GetRow(row).GetCell(8, CREATE_NULL_AS_BLANK)) Then
                             If datasheet.GetRow(row).GetCell(8, CREATE_NULL_AS_BLANK).ToString <> String.Empty Then
-                                dr.Item("CostPrice") = datasheet.GetRow(row).GetCell(8, CREATE_NULL_AS_BLANK).ToString.Replace("*", "").Replace(",", "")
+                                Try
+                                    dr.Item("CostPrice") = datasheet.GetRow(row).GetCell(8, CREATE_NULL_AS_BLANK).NumericCellValue
+                                Catch ex As Exception
+                                    dr.Item("CostPrice") = datasheet.GetRow(row).GetCell(8, CREATE_NULL_AS_BLANK).StringCellValue
+                                End Try
+                                'dr.Item("CostPrice") = datasheet.GetRow(row).GetCell(8, CREATE_NULL_AS_BLANK).ToString.Replace("*", "").Replace(",", "")
                             End If
                         End If
 
                         If Not IsDBNull(datasheet.GetRow(row).GetCell(9, CREATE_NULL_AS_BLANK)) Then
                             If datasheet.GetRow(row).GetCell(9, CREATE_NULL_AS_BLANK).ToString <> String.Empty Then
-                                dr.Item("StandardPrice") = datasheet.GetRow(row).GetCell(9, CREATE_NULL_AS_BLANK).ToString.Replace("*", "").Replace(",", "")
+                                Try
+                                    dr.Item("StandardPrice") = datasheet.GetRow(row).GetCell(9, CREATE_NULL_AS_BLANK).NumericCellValue
+                                Catch ex As Exception
+                                    dr.Item("StandardPrice") = datasheet.GetRow(row).GetCell(9, CREATE_NULL_AS_BLANK).StringCellValue
+                                End Try
+                                'dr.Item("StandardPrice") = datasheet.GetRow(row).GetCell(9, CREATE_NULL_AS_BLANK).ToString.Replace("*", "").Replace(",", "")
                             End If
                         End If
 
                         If Not IsDBNull(datasheet.GetRow(row).GetCell(19, CREATE_NULL_AS_BLANK)) Then
                             If datasheet.GetRow(row).GetCell(19, CREATE_NULL_AS_BLANK).ToString <> String.Empty Then
-                                dr.Item("LocatePrice") = datasheet.GetRow(row).GetCell(19, CREATE_NULL_AS_BLANK).ToString.Replace("*", "").Replace(",", "")
+                                Try
+                                    dr.Item("LocatePrice") = datasheet.GetRow(row).GetCell(19, CREATE_NULL_AS_BLANK).NumericCellValue
+                                Catch ex As Exception
+                                    dr.Item("LocatePrice") = datasheet.GetRow(row).GetCell(19, CREATE_NULL_AS_BLANK).StringCellValue
+                                End Try
+                                'dr.Item("LocatePrice") = datasheet.GetRow(row).GetCell(19, CREATE_NULL_AS_BLANK).ToString.Replace("*", "").Replace(",", "")
                             End If
                         End If
 
                         If Not IsDBNull(datasheet.GetRow(row).GetCell(16, CREATE_NULL_AS_BLANK)) Then
                             If datasheet.GetRow(row).GetCell(16, CREATE_NULL_AS_BLANK).ToString <> String.Empty Then
-                                dr.Item("TargetPrice") = datasheet.GetRow(row).GetCell(16, CREATE_NULL_AS_BLANK).ToString.Replace("*", "").Replace(",", "")
+                                Try
+                                    dr.Item("TargetPrice") = datasheet.GetRow(row).GetCell(16, CREATE_NULL_AS_BLANK).NumericCellValue
+                                Catch ex As Exception
+                                    dr.Item("TargetPrice") = datasheet.GetRow(row).GetCell(16, CREATE_NULL_AS_BLANK).StringCellValue
+                                End Try
+                                'dr.Item("TargetPrice") = datasheet.GetRow(row).GetCell(16, CREATE_NULL_AS_BLANK).ToString.Replace("*", "").Replace(",", "")
                             End If
                         End If
 
@@ -948,10 +996,10 @@ Public Class ADI_ImportStandardTargetPrice
                 Else
                     grdImport.CssClass = ""
                     '===== Set Color
-                    '1.ข้อมูลรหัสโครงการ และข้อมูลเลขที่แปลงต้องไม่เป็นค่าว่าง hddMSGNotEmpty.Value = Me.GetWebMessage("msg_notempty", "MSG", hddParameterMenuID.Value)
-                    '2.ข้อมูลรหัสโครงการ และข้อมูลเลขที่แปลงห้ามซ้ำกัน hddMSGNoDuplica.Value = Me.GetWebMessage("msg_noduplicate", "MSG", hddParameterMenuID.Value)
-                    '3.ไม่มีข้อมูลเลขที่แปลงในโครงการและเฟสนี้ hddMSGNotNumber.Value = Me.GetWebMessage("msg_notnumber", "MSG", hddParameterMenuID.Value)
-                    '4.ข้อมูลราคาไม่ถูกต้อง hddMSGNotPrice.Value = Me.GetWebMessage("msg_notprice", "MSG", hddParameterMenuID.Value)
+                    '1.ข้อมูลรหัสโครงการ และข้อมูลเลขที่แปลงต้องไม่เป็นค่าว่าง hddMSGNotEmpty.Value = Me.GetResource("msg_notempty", "MSG", hddParameterMenuID.Value)
+                    '2.ข้อมูลรหัสโครงการ และข้อมูลเลขที่แปลงห้ามซ้ำกัน hddMSGNoDuplica.Value = Me.GetResource("msg_noduplicate", "MSG", hddParameterMenuID.Value)
+                    '3.ไม่มีข้อมูลเลขที่แปลงในโครงการและเฟสนี้ hddMSGNotNumber.Value = Me.GetResource("msg_notnumber", "MSG", hddParameterMenuID.Value)
+                    '4.ข้อมูลราคาไม่ถูกต้อง hddMSGNotPrice.Value = Me.GetResource("msg_notprice", "MSG", hddParameterMenuID.Value)
                     For Each vRow As GridViewRow In Me.grdImport.Rows
                         vStatus = (TryCast(vRow.Cells(vRow.Cells.Count - 1).Controls(0), DataBoundLiteralControl).Text).Trim(New [Char]() {" "c, ControlChars.Cr, ControlChars.Lf})
                         'vStatus = vRow.Cells(vRow.Cells.Count - 1).Text
@@ -1013,11 +1061,11 @@ Public Class ADI_ImportStandardTargetPrice
     Protected Sub btnImport_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnImport.Click
         Try
             If ddlsProject.SelectedValue = String.Empty Then
-                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & Me.GetResource("msg_please_select", "MSG", "1") & " " & Me.GetResource("lblsProject", "Text", hddParameterMenuID.Value) & "');", True)
+                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & Me.GetResource("msg_please_select", "MSG") & " " & Me.GetResource("lblsProject", "Text", hddParameterMenuID.Value) & "');", True)
                 Call RegisterSetTabScript(TabNameEnum.IM1)
                 Exit Sub
             ElseIf ddlsPhase.SelectedValue = String.Empty Then
-                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & Me.GetResource("msg_please_select", "MSG", "1") & " " & Me.GetResource("lblsPhase", "Text", hddParameterMenuID.Value) & "');", True)
+                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & Me.GetResource("msg_please_select", "MSG") & " " & Me.GetResource("lblsPhase", "Text", hddParameterMenuID.Value) & "');", True)
                 Call RegisterSetTabScript(TabNameEnum.IM1)
                 Exit Sub
             End If
@@ -1189,9 +1237,9 @@ Public Class ADI_ImportStandardTargetPrice
         Try
             Session.Remove("dtUploadSTPriceImport")
             If ddlsProject2.SelectedValue = String.Empty Then
-                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & Me.GetResource("msg_please_select", "MSG", "1") & " " & Me.GetResource("lblsProject2", "Text", hddParameterMenuID.Value) & "');", True)
+                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & Me.GetResource("msg_please_select", "MSG") & " " & Me.GetResource("lblsProject2", "Text", hddParameterMenuID.Value) & "');", True)
             ElseIf ddlsPhase2.SelectedValue = String.Empty Then
-                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & Me.GetResource("msg_please_select", "MSG", "1") & " " & Me.GetResource("lblsPhase2", "Text", hddParameterMenuID.Value) & "');", True)
+                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & Me.GetResource("msg_please_select", "MSG") & " " & Me.GetResource("lblsPhase2", "Text", hddParameterMenuID.Value) & "');", True)
             Else
                 If chbItemNoApprove.Checked = True Then
                     If lblUserNotApprove.Text = "" Then
@@ -1215,9 +1263,9 @@ Public Class ADI_ImportStandardTargetPrice
     Protected Sub btnApprove2_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnApprove2.Click
         Try
             If ddlsProject2.SelectedValue = String.Empty Then
-                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & Me.GetResource("msg_please_select", "MSG", "1") & " " & Me.GetResource("lblsProject2", "Text", hddParameterMenuID.Value) & "');", True)
+                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & Me.GetResource("msg_please_select", "MSG") & " " & Me.GetResource("lblsProject2", "Text", hddParameterMenuID.Value) & "');", True)
             ElseIf ddlsPhase2.SelectedValue = String.Empty Then
-                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & Me.GetResource("msg_please_select", "MSG", "1") & " " & Me.GetResource("lblsPhase2", "Text", hddParameterMenuID.Value) & "');", True)
+                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & Me.GetResource("msg_please_select", "MSG") & " " & Me.GetResource("lblsPhase2", "Text", hddParameterMenuID.Value) & "');", True)
             Else
                 Dim dtFileUploadSTPrice As New DataTable
                 If Session("dtUploadSTPriceImportTab2") IsNot Nothing Then

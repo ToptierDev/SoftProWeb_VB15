@@ -3,7 +3,7 @@ var ApiUrl_UnitDefineProject = rootHost + "/webapi/UnitDefineProject/";
 var ApiUrl_AutoComplete = rootHost + "/webapi/AutoComplete/";
 
 
-var app = angular.module('myApp', ['ngTable', 'ngMaterial', 'ngMessages', 'material.svgAssetsCache', 'dynamicNumber']);
+var app = angular.module('myApp', ['ngTable', 'ngMaterial', 'ngMessages', 'material.svgAssetsCache', 'dynamicNumber', 'ui.bootstrap']);
 app.config(function ($logProvider) {
     $logProvider.debugEnabled(true);
 });
@@ -18,6 +18,99 @@ app.config(['dynamicNumberStrategyProvider', function (dynamicNumberStrategyProv
         numThousand: true
     });
 }]);
+app.directive('confirmClick', ['$q', 'dialogModal', function ($q, dialogModal) {
+    return {
+        link: function (scope, element, attrs) {
+            // ngClick won't wait for our modal confirmation window to resolve,
+            // so we will grab the other values in the ngClick attribute, which
+            // will continue after the modal resolves.
+            // modify the confirmClick() action so we don't perform it again
+            // looks for either confirmClick() or confirmClick('are you sure?')
+            var ngClick = attrs.ngClick.replace('confirmClick()', 'true')
+                .replace('confirmClick(', 'confirmClick(true,');
+
+            // setup a confirmation action on the scope
+            scope.confirmClick = function (msg, title) {
+                // if the msg was set to true, then return it (this is a workaround to make our dialog work)
+                if (msg === true) {
+                    return true;
+                }
+                // msg can be passed directly to confirmClick('are you sure?') in ng-click
+                // or through the confirm-click attribute on the <a confirm-click="Are you sure?"></a>
+                msg = msg || attrs.confirmClick || 'Are you sure?';
+                // open a dialog modal, and then continue ngClick actions if it's confirmed
+                dialogModal(msg, title).result.then(function () {
+                    scope.$eval(ngClick);
+                });
+                // return false to stop the current ng-click flow and wait for our modal answer
+                return false;
+            };
+        }
+    }
+}])
+
+/*
+ Open a modal confirmation dialog window with the UI Bootstrap Modal service.
+ This is a basic modal that can display a message with okay or cancel buttons.
+ It returns a promise that is resolved or rejected based on okay/cancel clicks.
+ The following settings can be passed:
+
+    message         the message to pass to the modal body
+    title           (optional) title for modal window
+    okButton        text for OK button. set false to not include button
+    cancelButton    text for Cancel button. ste false to not include button
+
+ */
+app.service('dialogModal', ['$modal', function ($modal) {
+    return function (message, title, okButton, cancelButton) {
+        // setup default values for buttons
+        // if a button value is set to false, then that button won't be included
+        okButton = okButton === false ? false : (okButton || 'Confirm');
+        cancelButton = cancelButton === false ? false : (cancelButton || 'Cancel');
+
+        // setup the Controller to watch the click
+        var ModalInstanceCtrl = function ($scope, $modalInstance, settings) {
+            // add settings to scope
+            angular.extend($scope, settings);
+            // ok button clicked
+            $scope.ok = function () {
+                $modalInstance.close(true);
+            };
+            // cancel button clicked
+            $scope.cancel = function () {
+                $modalInstance.dismiss('cancel');
+            };
+        };
+
+        // open modal and return the instance (which will resolve the promise on ok/cancel clicks)
+        var modalInstance = $modal.open({
+            //template: '<div class="dialog-modal"> \
+            //    <div class="modal-header" ng-show="modalTitle"> \
+            //        <h3 class="modal-title">{{modalTitle}}</h3> \
+            //    </div> \
+            //    <div class="modal-body">{{modalBody}}</div> \
+            //    <div class="modal-footer"> \
+            //        <button class="btn btn-primary" ng-click="ok()" ng-show="okButton">{{okButton}}</button> \
+            //        <button class="btn btn-warning" ng-click="cancel()" ng-show="cancelButton">{{cancelButton}}</button> \
+            //    </div> \
+            //</div>',
+            templateUrl: 'myModalContent.html',
+            controller: ModalInstanceCtrl,
+            resolve: {
+                settings: function () {
+                    return {
+                        modalTitle: title,
+                        modalBody: message,
+                        okButton: okButton,
+                        cancelButton: cancelButton
+                    };
+                }
+            }
+        });
+        // return the modal instance
+        return modalInstance;
+    }
+}])
 angular.module('myApp').config(function ($mdDateLocaleProvider) {
     var bYears = 0;
     if (culture == 'th-TH') {
@@ -253,9 +346,9 @@ var mainController = app.controller('mainController', function ($scope, $filter,
 
         var pId = $scope.mainData.List_vwED03UNIT_EDITINGROW[index].FSERIALNO;
         var pId2 = $scope.mainData.List_vwED03UNIT_EDITINGROW[index].FREPRJNO;
-        if (!confirm("Want to delete UNIT# " + pId + "?")) {
-            return false;
-        }
+        //if (!confirm("Want to delete UNIT# " + pId + "?")) {
+        //    return false;
+        //}
         console.log("Parameter Delete : " + pId, pId2);
         if (!(pId === "" && pId2 === "")) {
             deleteData(pId, pId2, index);
@@ -264,6 +357,17 @@ var mainController = app.controller('mainController', function ($scope, $filter,
             //$scope.$apply();
         }
         
+    };
+    $scope.getAllChecked = function () {
+        listid = [];
+        listindex = [];
+        for (i = 0; i < $scope.mainData.List_vwED03UNIT.length; i++) {
+            if ($scope.mainData.List_vwED03UNIT[i].isRowChecked) {
+                listid.push($scope.mainData.List_vwED03UNIT[i].FSERIALNO);
+                listindex.push(i);
+            }
+        }
+        return listid.join(',')
     };
     $scope.deleteAll = function () {
         console.log('deleteAll');
@@ -280,9 +384,9 @@ var mainController = app.controller('mainController', function ($scope, $filter,
             }
         }
         if (listindex.length > 0) {
-            if (!confirm("Want to delete UNIT# " + listid.join(',') + "?")) {
-                return false;
-            }
+            //if (!confirm("Want to delete UNIT# " + listid.join(',') + "?")) {
+            //    return false;
+            //}
             deleteAllData(listid, projectId, listindex);
         } else {
 

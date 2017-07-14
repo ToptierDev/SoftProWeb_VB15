@@ -53,9 +53,9 @@ Public Class PRD_Reason
         Try
             ddl.Items.Clear()
             If strType = "S" Then
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
             Else
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select_all", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select_all", "MSG"), ""))
             End If
             Dim Temp1 As String = Me.GetResource("resProblem", "Text", hddParameterMenuID.Value)
             Dim Temp2 As String = Me.GetResource("resSolving", "Text", hddParameterMenuID.Value)
@@ -110,9 +110,9 @@ Public Class PRD_Reason
             If Session("PRD_Reason_FS").ToString <> String.Empty Then
                 Dim strFS As String = Session("PRD_Reason_FS").ToString
                 If strFS = "1" Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG") & "');", True)
                 ElseIf strFS = "2" Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_deletesuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_deletesuccess", "MSG") & "');", True)
                 End If
             End If
         End If
@@ -183,13 +183,13 @@ Public Class PRD_Reason
         'lblsSave.Text = Me.GetResource("lblsSave", "Text", hddParameterMenuID.Value)
         'lblsCancel.Text = Me.GetResource("btn_cancel", "Text", "1")
 
-        lblMassage1.Text = Me.GetResource("msg_required", "MSG", "1")
+        lblMassage1.Text = Me.GetResource("msg_required", "MSG")
 
-        hddMSGSaveData.Value = Me.GetResource("msg_save_data", "MSG", "1")
-        hddMSGCancelData.Value = Me.GetResource("msg_cancel_data", "MSG", "1")
-        hddMSGDeleteData.Value = Me.GetResource("msg_delete_data", "MSG", "1")
-        hddMSGEditData.Value = Me.GetResource("msg_edit_data", "MSG", "1")
-        hddMSGAddData.Value = Me.GetResource("msg_add_data", "MSG", "1")
+        hddMSGSaveData.Value = Me.GetResource("msg_save_data", "MSG")
+        hddMSGCancelData.Value = Me.GetResource("msg_cancel_data", "MSG")
+        hddMSGDeleteData.Value = Me.GetResource("msg_delete_data", "MSG")
+        hddMSGEditData.Value = Me.GetResource("msg_edit_data", "MSG")
+        hddMSGAddData.Value = Me.GetResource("msg_add_data", "MSG")
 
         btnMSGSaveData.Title = hddMSGSaveData.Value
         btnMSGCancelData.Title = hddMSGCancelData.Value
@@ -273,12 +273,12 @@ Public Class PRD_Reason
             If dt IsNot Nothing Then
                 If dt.Rows.Count > 0 Then
                     If dt.Select("FRSCODE ='' And FlagSetAdd ='0'").Length <> 0 Then
-                        ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_required", "MSG", "1") & Me.GetResource("gReasonCode", "Text", hddParameterMenuID.Value) & "');", True)
+                        ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_required", "MSG") & Me.GetResource("gReasonCode", "Text", hddParameterMenuID.Value) & "');", True)
                         Exit Sub
                     End If
                     For i As Integer = 0 To dt.Rows.Count - 1
                         If dt.Select("FRSCODE ='" & dt.Rows(i)("FRSCODE").ToString & "' And FlagSetAdd ='0'").Length > 1 Then
-                            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_data_duplicate", "MSG", "1") & "');", True)
+                            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_data_duplicate", "MSG") & "');", True)
                             Exit Sub
                         End If
                     Next
@@ -288,14 +288,14 @@ Public Class PRD_Reason
                                 dt,
                                 Me.CurrentUser.UserID) Then
 
-                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');", True)
+                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');", True)
             Else
                 Call LoadRedirec("1")
             End If
 
         Catch ex As Exception
             HelperLog.ErrorLog(CurrentUser.UserID, hddParameterMenuID.Value, Request.UserHostAddress(), "btnSave_Click", ex)
-            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');", True)
+            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');", True)
         End Try
     End Sub
 

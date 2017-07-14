@@ -274,7 +274,7 @@
                                                                             </asp:TemplateField>
                                                                             <%--<asp:TemplateField>
                                                                                 <HeaderTemplate>
-                                                                                    <%# GetWebMessage("ModuuleName", "Text", hddParameterMenuID.Value)%>
+                                                                                    <%# GetResource("ModuuleName", "Text", hddParameterMenuID.Value)%>
                                                                                 </HeaderTemplate>
                                                                                 <ItemTemplate>
                                                                                     <asp:Label ID="lblSystemName" runat="server"></asp:Label>

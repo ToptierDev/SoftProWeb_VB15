@@ -752,7 +752,7 @@
         });
         
         function attachPreventKeypress() {
-            $('input').on("keypress", function (e) {
+            $('input:not(.searchfilterbox)').on("keypress", function (e) {
                 var keyCode = e.keyCode || e.which;
                 if (keyCode === 13) {
                     var key = e.charCode ? e.charCode : e.keyCode ? e.keyCode : 0;

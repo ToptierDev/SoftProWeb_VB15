@@ -22,18 +22,121 @@ Namespace WebAPI
             Return db.ED03UNIT
         End Function
 
+        'Private Function generateUnit(ByVal start As String, ByVal finish As String) As List(Of String)
+        '    Dim listUnit As List(Of String)
+        '    If (start.Length <> finish.Length) Then
+        '        Return listUnit
+        '    End If
+        '    Dim seperateStartIndex = 0
+        '    For i = 0 To start.Length - 1
+        '        Try
+        '            Dim a = start.Substring(i)
+        '            Integer.Parse(a)
+
+        '        Catch ex As Exception
+        '            seperateStartIndex = i
+        '        End Try
+        '    Next
+        '    Dim seperateFinishIndex = 0
+        '    For i = 0 To finish.Length - 1
+        '        Try
+        '            Dim a = finish.Substring(i)
+        '            Integer.Parse(a)
+        '        Catch ex As Exception
+        '            seperateFinishIndex = i
+        '        End Try
+        '    Next
+        '    If (seperateStartIndex <> seperateFinishIndex) Then
+        '        Return listUnit
+        '    End If
+
+        '    Dim strStart = start.Substring(0, seperateStartIndex + 1)
+        '    Dim intStart = Integer.Parse(start.Substring(seperateStartIndex + 1))
+        '    Dim strFinish = start.Substring(0, seperateFinishIndex + 1)
+        '    Dim intFinish = Integer.Parse(finish.Substring(seperateFinishIndex + 1))
+        '    Dim padleng = start.Substring(seperateStartIndex + 1).Length
+        '    If (strStart <> strFinish) Then
+        '        Return listUnit
+        '    End If
+
+
+        '    listUnit = New List(Of String)
+        '    Try
+        '        Dim s = strStart(strStart.Length - 1)
+        '        Dim f = strFinish(strFinish.Length - 1)
+        '        While s <> f
+        '            strStart = Mid(strStart, strFinish.Length - 1, 1)
+        '            For i As Integer = intStart To intFinish
+        '                listUnit.Add(strStart + (i).ToString.PadLeft(padleng, "0"))
+        '            Next
+        '            s = Inc(s)
+        '        End While
+
+
+        '        Return listUnit
+        '    Catch ex As Exception
+        '        Return listUnit
+        '    End Try
+
+        'End Function
+
+        'Public Function Inc(ByVal c As Char)
+
+        '    'Remember if input is uppercase for later
+        '    Dim isUpper = Char.IsUpper(c)
+
+        '    'Work in lower case for ease
+        '    c = Char.ToLower(c)
+
+        '    'Check input range
+        '    If c < "a" Or c > "z" Then Throw New ArgumentOutOfRangeException
+
+        '    'Do the increment
+        '    c = Chr(Asc(c) + 1)
+
+        '    'Check not left alphabet
+        '    If c > "z" Then c = "a"
+
+        '    'Check if input was upper case
+        '    If isUpper Then c = Char.ToUpper(c)
+        '    Return c
+        'End Function
+
 
         ' GET: api/ED03UNIT/5
         <ResponseType(GetType(ED03UNIT))>
         Async Function GetED03UNIT(ByVal id As String, ByVal phase As String, ByVal zone As String, ByVal unitfrom As String, ByVal unitto As String) As Task(Of IHttpActionResult)
-            Dim eD03UNIT As List(Of vw_UnitDefineProject) =
-                Await dbView.vw_UnitDefineProject.Where(Function(s) _
+            Dim f As String = "0000000000"
+            Dim t As String = "ZZZZZZZZZZ"
+            Dim query =
+                 dbView.vw_UnitDefineProject.Where(Function(s) _
                                                          s.FREPRJNO = id _
                                                          And (s.FREPHASE = phase Or phase Is Nothing) _
-                                                         And (s.FREZONE = zone Or zone Is Nothing) _
-                                                         And (s.FSERIALNO >= unitfrom Or unitfrom Is Nothing) _
-                                                         And (s.FSERIALNO <= unitto Or unitto Is Nothing)
-                                                    ).OrderBy(Function(s) s.FSERIALNO).ToListAsync
+                                                         And (s.FREZONE = zone Or zone Is Nothing))
+
+            If (unitfrom <> Nothing) Then
+                Try
+                    f = (Integer.Parse(unitfrom)).ToString().PadLeft(10, "0")
+                    query = query.Where(Function(s) SqlServer.SqlFunctions.Replicate("0", 10 - s.FSERIALNO.ToString().Length) + s.FSERIALNO >= f)
+                Catch ex As Exception
+                    f = unitfrom.PadRight(10, "0")
+                    query = query.Where(Function(s) s.FSERIALNO + SqlServer.SqlFunctions.Replicate("0", 10 - s.FSERIALNO.ToString().Length) >= f)
+                End Try
+
+            End If
+            If (unitto <> Nothing) Then
+                Try
+                    t = (Integer.Parse(unitto)).ToString().PadLeft(10, "0")
+                    query = query.Where(Function(s) SqlServer.SqlFunctions.Replicate("0", 10 - s.FSERIALNO.ToString().Length) + s.FSERIALNO <= t)
+
+                Catch ex As Exception
+                    t = unitto.PadRight(10, "Z")
+                    query = query.Where(Function(s) s.FSERIALNO + SqlServer.SqlFunctions.Replicate("Z", 10 - s.FSERIALNO.ToString().Length) <= t)
+                End Try
+            End If
+
+
+            Dim eD03UNIT As List(Of vw_UnitDefineProject) = Await query.OrderBy(Function(s) s.FSERIALNO).ToListAsync
             If IsNothing(eD03UNIT) Then
                 Return NotFound()
             End If

@@ -70,9 +70,9 @@ Public Class TRN_CustomerInformation
             If Session("TRN_CustomerInformation_FS").ToString <> String.Empty Then
                 Dim strFS As String = Session("TRN_CustomerInformation_FS").ToString
                 If strFS = "1" Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG") & "');", True)
                 ElseIf strFS = "2" Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_deletesuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_deletesuccess", "MSG") & "');", True)
                 End If
                 Dim strPageInfo As String = Session("TRN_CustomerInformation_PageInfo").ToString
                 If strPageInfo <> String.Empty Then
@@ -126,8 +126,8 @@ Public Class TRN_CustomerInformation
     Public Sub LoadSex(ByVal rbt As RadioButtonList)
         Try
             rbt.Items.Clear()
-            rbt.Items.Insert(0, New ListItem("&nbsp;&nbsp;" & GetWebMessage("rbtaMale", "Text", hddParameterMenuID.Value) & "&nbsp;&nbsp;&nbsp;&nbsp;", "M"))
-            rbt.Items.Insert(1, New ListItem("&nbsp;&nbsp;" & GetWebMessage("rbtaFemale", "Text", hddParameterMenuID.Value), "F"))
+            rbt.Items.Insert(0, New ListItem("&nbsp;&nbsp;" & GetResource("rbtaMale", "Text", hddParameterMenuID.Value) & "&nbsp;&nbsp;&nbsp;&nbsp;", "M"))
+            rbt.Items.Insert(1, New ListItem("&nbsp;&nbsp;" & GetResource("rbtaFemale", "Text", hddParameterMenuID.Value), "F"))
 
         Catch ex As Exception
             HelperLog.ErrorLog(CurrentUser.UserID, hddParameterMenuID.Value, Request.UserHostAddress(), "LoadSex", ex)
@@ -240,14 +240,14 @@ Public Class TRN_CustomerInformation
             TextFt6.Text = Me.GetResource("col_edit", "Text", "1")
             TextFt7.Text = Me.GetResource("col_delete", "Text", "1")
 
-            lblHeaderDelete.Text = Me.GetResource("msg_header_delete", "MSG", "1")
-            hddBodydelete.Value = Me.GetResource("msg_body_delete", "MSG", "1") & " " & Me.GetResource("FContCode", "Text", hddParameterMenuID.Value)
+            lblHeaderDelete.Text = Me.GetResource("msg_header_delete", "MSG")
+            hddBodydelete.Value = Me.GetResource("msg_body_delete", "MSG") & " " & Me.GetResource("FContCode", "Text", hddParameterMenuID.Value)
 
-            hddMSGSaveData.Value = Me.GetResource("msg_save_data", "MSG", "1")
-            hddMSGCancelData.Value = Me.GetResource("msg_cancel_data", "MSG", "1")
-            hddMSGDeleteData.Value = Me.GetResource("msg_delete_data", "MSG", "1")
-            hddMSGEditData.Value = Me.GetResource("msg_edit_data", "MSG", "1")
-            hddMSGAddData.Value = Me.GetResource("msg_add_data", "MSG", "1")
+            hddMSGSaveData.Value = Me.GetResource("msg_save_data", "MSG")
+            hddMSGCancelData.Value = Me.GetResource("msg_cancel_data", "MSG")
+            hddMSGDeleteData.Value = Me.GetResource("msg_delete_data", "MSG")
+            hddMSGEditData.Value = Me.GetResource("msg_edit_data", "MSG")
+            hddMSGAddData.Value = Me.GetResource("msg_add_data", "MSG")
 
             hddMsgMobileFormat.Value = Me.GetResource("msg_mobile_format", "MSG", hddParameterMenuID.Value)
 
@@ -269,11 +269,11 @@ Public Class TRN_CustomerInformation
 
             hddCulture.Value = WebCulture().ToLower.ToString
 
-            lblMassage1.Text = Me.GetResource("msg_required", "MSG", "1")
-            lblMassage2.Text = Me.GetResource("msg_required", "MSG", "1")
-            lblMassage3.Text = Me.GetResource("msg_required", "MSG", "1")
-            lblMassage4.Text = Me.GetResource("msg_required", "MSG", "1")
-            lblMassage5.Text = Me.GetResource("msg_required", "MSG", "1")
+            lblMassage1.Text = Me.GetResource("msg_required", "MSG")
+            lblMassage2.Text = Me.GetResource("msg_required", "MSG")
+            lblMassage3.Text = Me.GetResource("msg_required", "MSG")
+            lblMassage4.Text = Me.GetResource("msg_required", "MSG")
+            lblMassage5.Text = Me.GetResource("msg_required", "MSG")
             lblMassage6.Text = grtt("resPleaseEnter")
 
             lblsMessageFPEOPLEID.Text = grtt("resPlease13Digit")
@@ -600,14 +600,14 @@ Public Class TRN_CustomerInformation
             If lc IsNot Nothing Then
                 If Not bl.Delete(hddKeyID.Value,
                                  Me.CurrentUser.UserID) Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_cannot_delete_because ", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_cannot_delete_because ", "MSG") & "');", True)
                 Else
                     Dim strKeyID As String = txtaFCONTCODE.Text & "-0"
                     Call DeleteAllFile(strKeyID)
                     Call LoadRedirec("2")
                 End If
             Else
-                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_deletenotsuccess", "MSG", "1") & "');", True)
+                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_deletenotsuccess", "MSG") & "');", True)
             End If
         Catch ex As Exception
             HelperLog.ErrorLog(CurrentUser.UserID, hddParameterMenuID.Value, Request.UserHostAddress(), "btnDelete_Click", ex)
@@ -801,7 +801,7 @@ Public Class TRN_CustomerInformation
                                 txtaTaxNo.Text,
                                 Me.CurrentUser.UserID) Then
                     'Call OpenDialog()
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');", True)
                 Else
                     If FileUpload.HasFile Then
                         Call CopyFileTempToProcess()
@@ -811,7 +811,7 @@ Public Class TRN_CustomerInformation
                         Call DeleteAllFile(strKeyID)
                     End If
                     Call Edit()
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG") & "');", True)
                     'Call LoadRedirec("1")
                 End If
 
@@ -960,7 +960,7 @@ Public Class TRN_CustomerInformation
                                 Me.CurrentUser.UserID) Then
 
                         'Call OpenDialog()
-                        ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');", True)
+                        ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');", True)
                     Else
                         txtaFCONTCODE.Text = cCode
 
@@ -973,11 +973,11 @@ Public Class TRN_CustomerInformation
                         End If
                         hddKeyID.Value = cCode
                         Call Edit()
-                        ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG", "1") & "');", True)
+                        ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG") & "');", True)
                         'Call LoadRedirec("1")
                     End If
                 Else
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_data_duplicate", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_data_duplicate", "MSG") & "');", True)
                 End If
 
 
@@ -985,7 +985,7 @@ Public Class TRN_CustomerInformation
             End If
         Catch ex As Exception
             HelperLog.ErrorLog(CurrentUser.UserID, hddParameterMenuID.Value, Request.UserHostAddress(), "btnSave_Click", ex)
-            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');", True)
+            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');", True)
         End Try
     End Sub
 

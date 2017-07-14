@@ -35,11 +35,11 @@ Public Class ChangePassword
         lblMain2.Text = Me.GetResource("HeaderPageChangePassword", "Text", "1")
         lblMain3.Text = Me.GetResource("HeaderPageChangePassword", "Text", "1")
 
-        lblMassage1.Text = Me.GetResource("msg_required", "MSG", "1")
-        lblMassage2.Text = Me.GetResource("msg_required", "MSG", "1")
-        lblMassage3.Text = Me.GetResource("msg_required", "MSG", "1")
-        lblPasswordNotPass.Text = Me.GetResource("msg_required_Password_notyet", "MSG", "1")
-        lblConfirmNot.Text = Me.GetResource("msg_required_Password_notequal", "MSG", "1")
+        lblMassage1.Text = Me.GetResource("msg_required", "MSG")
+        lblMassage2.Text = Me.GetResource("msg_required", "MSG")
+        lblMassage3.Text = Me.GetResource("msg_required", "MSG")
+        lblPasswordNotPass.Text = Me.GetResource("msg_required_Password_notyet", "MSG")
+        lblConfirmNot.Text = Me.GetResource("msg_required_Password_notequal", "MSG")
     End Sub
     Public Sub Redirects(ByVal url As String, Optional ByVal hasErrored As Boolean = False)
 
@@ -72,12 +72,12 @@ Public Class ChangePassword
 
                 If bl.UpdatePassword(strUserid,
                                      txtaNewPassword.Text) Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & Me.GetResource("msg_change_password_success", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & Me.GetResource("msg_change_password_success", "MSG") & "');", True)
                     Timer1.Enabled = True
                 End If
             End If
         Catch ex As Exception
-            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & Me.GetResource("msg_change_password_not_success", "MSG", "1") & "');", True)
+            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & Me.GetResource("msg_change_password_not_success", "MSG") & "');", True)
             HelperLog.ErrorLog(CurrentUser.UserID, hddParameterMenuID.Value, Request.UserHostAddress(), "Page_Load", ex)
         End Try
     End Sub

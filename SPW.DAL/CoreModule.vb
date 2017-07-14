@@ -16,5 +16,6 @@ Partial Public Class CoreModule
     Public Property ModuleNameTH As String
     Public Property UpdateBy As String
     Public Property UpdateDate As Nullable(Of Date)
+    Public Property ModuleIcon As String
 
 End Class

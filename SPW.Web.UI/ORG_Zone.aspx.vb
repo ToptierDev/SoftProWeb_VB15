@@ -72,9 +72,9 @@ Public Class ORG_Zone
                 ddl.DataBind()
             End If
             If strType = "A" Then
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
             Else
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
             End If
         Catch ex As Exception
             HelperLog.ErrorLog(CurrentUser.UserID, hddParameterMenuID.Value, Request.UserHostAddress(), "LoadType", ex.GetBaseException)
@@ -98,9 +98,9 @@ Public Class ORG_Zone
                 ddl.DataBind()
             End If
             If strType = "A" Then
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
             Else
-                ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select_all", "MSG", "1"), ""))
+                ddl.Items.Insert(0, New ListItem(GetResource("msg_select_all", "MSG"), ""))
             End If
         Catch ex As Exception
             HelperLog.ErrorLog(CurrentUser.UserID, hddParameterMenuID.Value, Request.UserHostAddress(), "LoadType", ex)
@@ -160,9 +160,9 @@ Public Class ORG_Zone
             If Session("ORG_Zone_FS").ToString <> String.Empty Then
                 Dim strFS As String = Session("ORG_Zone_FS").ToString
                 If strFS = "1" Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_savesuccess", "MSG") & "');", True)
                 ElseIf strFS = "2" Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_deletesuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogSuccess('" & GetResource("msg_deletesuccess", "MSG") & "');", True)
                 End If
             End If
         End If
@@ -199,15 +199,15 @@ Public Class ORG_Zone
         Try
             hddReloadGrid.Value = String.Empty
             If ddlaProject.SelectedIndex = 0 Then
-                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_please_select", "MSG", "1") & " " & GetResource("lblsProject", "Text", hddParameterMenuID.Value) & "');", True)
+                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_please_select", "MSG") & " " & GetResource("lblsProject", "Text", hddParameterMenuID.Value) & "');", True)
                 Exit Sub
             End If
             If ddlaPhase.SelectedIndex = 0 Then
-                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_please_select", "MSG", "1") & " " & GetResource("PhaseCode", "Text", hddParameterMenuID.Value) & "');", True)
+                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_please_select", "MSG") & " " & GetResource("PhaseCode", "Text", hddParameterMenuID.Value) & "');", True)
                 Exit Sub
             End If
             If txtaZoneCode.Text = String.Empty Then
-                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_please_select", "MSG", "1") & " " & GetResource("ZoneCode", "Text", hddParameterMenuID.Value) & "');", True)
+                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_please_select", "MSG") & " " & GetResource("ZoneCode", "Text", hddParameterMenuID.Value) & "');", True)
                 Exit Sub
             End If
             Dim dt As New DataTable
@@ -218,12 +218,12 @@ Public Class ORG_Zone
             If lst IsNot Nothing Then
                 If lst.Count > 0 Then
                     txtaZoneCode.Text = String.Empty
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_zone_already", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_zone_already", "MSG") & "');", True)
                     Exit Sub
                 End If
             Else
                 txtaZoneCode.Text = String.Empty
-                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_zone_already", "MSG", "1") & "');", True)
+                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_zone_already", "MSG") & "');", True)
                 Exit Sub
             End If
 
@@ -333,33 +333,33 @@ Public Class ORG_Zone
         'lblsSave.Text = Me.GetResource("btn_save", "Text", "1")
         'lblsCancel.Text = Me.GetResource("btn_cancel", "Text", "1")
 
-        lblMassage1.Text = Me.GetResource("msg_required", "MSG", "1")
-        lblMassage2.Text = Me.GetResource("msg_required", "MSG", "1")
-        lblMassage3.Text = Me.GetResource("msg_required", "MSG", "1")
+        lblMassage1.Text = Me.GetResource("msg_required", "MSG")
+        lblMassage2.Text = Me.GetResource("msg_required", "MSG")
+        lblMassage3.Text = Me.GetResource("msg_required", "MSG")
         lblMassage4.Text = grtt("resPleaseSelect")
-        lblMassage5.Text = Me.GetResource("msg_required", "MSG", "1")
-        lblMassage6.Text = Me.GetResource("msg_required", "MSG", "1")
+        lblMassage5.Text = Me.GetResource("msg_required", "MSG")
+        lblMassage6.Text = Me.GetResource("msg_required", "MSG")
 
-        lblHeaderDelete.Text = Me.GetResource("msg_header_delete", "MSG", "1")
-        lblBodydelete.Text = Me.GetResource("msg_body_delete", "MSG", "1") & " " & Me.GetResource("ZoneCode", "Text", hddParameterMenuID.Value)
+        lblHeaderDelete.Text = Me.GetResource("msg_header_delete", "MSG")
+        lblBodydelete.Text = Me.GetResource("msg_body_delete", "MSG") & " " & Me.GetResource("ZoneCode", "Text", hddParameterMenuID.Value)
 
-        lblHeaderSave.Text = Me.GetResource("msg_header_save", "MSG", "1")
-        lblBodySave.Text = Me.GetResource("msg_body_save", "MSG", "1")
+        lblHeaderSave.Text = Me.GetResource("msg_header_save", "MSG")
+        lblBodySave.Text = Me.GetResource("msg_body_save", "MSG")
 
-        'btnAddPicture.Title = Me.GetResource("msg_add_file", "MSG", "1")
-        'btnDeletePictures.Title = Me.GetResource("msg_delete_file", "MSG", "1")
-        btnSaveData.Title = Me.GetResource("msg_save_data", "MSG", "1")
-        btnCancelData.Title = Me.GetResource("msg_cancel_data", "MSG", "1")
-        hddMSGDeleteData.Value = Me.GetResource("msg_delete_data", "MSG", "1")
-        hddMSGEditData.Value = Me.GetResource("msg_edit_data", "MSG", "1")
-        btnAddData.Title = Me.GetResource("msg_add_data", "MSG", "1")
+        'btnAddPicture.Title = Me.GetResource("msg_add_file", "MSG")
+        'btnDeletePictures.Title = Me.GetResource("msg_delete_file", "MSG")
+        btnSaveData.Title = Me.GetResource("msg_save_data", "MSG")
+        btnCancelData.Title = Me.GetResource("msg_cancel_data", "MSG")
+        hddMSGDeleteData.Value = Me.GetResource("msg_delete_data", "MSG")
+        hddMSGEditData.Value = Me.GetResource("msg_edit_data", "MSG")
+        btnAddData.Title = Me.GetResource("msg_add_data", "MSG")
         btnConfrimDelete.InnerText = hddMSGDeleteData.Value
-        btnConfrimCancel.InnerText = Me.GetResource("msg_cancel_data", "MSG", "1")
-        hddpMSGDup.Value = Me.GetResource("msg_check_master", "MSG", "1")
-        hddMSGCheckProjectPriceList.Value = Me.GetResource("resUsedED11PAJ1", "MSG", "1")
-        'hddpMSGDupInTable.Value = Me.GetResource("msg_duplicate_table", "MSG", "1")
-        btnCallSaveOK.InnerText = Me.GetResource("msg_save_data", "MSG", "1")
-        btnCallSaveCancel.InnerText = Me.GetResource("msg_cancel_data", "MSG", "1")
+        btnConfrimCancel.InnerText = Me.GetResource("msg_cancel_data", "MSG")
+        hddpMSGDup.Value = Me.GetResource("msg_check_master", "MSG")
+        hddMSGCheckProjectPriceList.Value = Me.GetResource("resUsedED11PAJ1", "MSG")
+        'hddpMSGDupInTable.Value = Me.GetResource("msg_duplicate_table", "MSG")
+        btnCallSaveOK.InnerText = Me.GetResource("msg_save_data", "MSG")
+        btnCallSaveCancel.InnerText = Me.GetResource("msg_cancel_data", "MSG")
 
         Call ControlValidate()
     End Sub
@@ -584,7 +584,7 @@ Public Class ORG_Zone
                                        txtaZoneCode.Text,
                                        dt,
                                        Session("ORG_Zone_Datatable_Delete")) Then
-                            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');", True)
+                            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');", True)
                         Else
                             If FileUpload.HasFile Then
                                 Call CopyFileTempToProcess()
@@ -597,15 +597,15 @@ Public Class ORG_Zone
                             Call LoadRedirec("1")
                         End If
                     Else
-                        ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');", True)
+                        ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');", True)
                     End If
                 Else
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');", True)
                 End If
             End If
         Catch ex As Exception
             HelperLog.ErrorLog(CurrentUser.UserID, hddParameterMenuID.Value, Request.UserHostAddress(), "btnSave_Click", ex)
-            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG", "1") & "');", True)
+            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_savenotsuccess", "MSG") & "');", True)
         End Try
     End Sub
 
@@ -638,7 +638,7 @@ Public Class ORG_Zone
                                  strPhaseCode,
                                  strZoneCode,
                                  Me.CurrentUser.UserID) Then
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_cannot_delete_because ", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_cannot_delete_because ", "MSG") & "');", True)
                 Else
                     Dim strKeyid As String = strProjectCode & "-" & strPhaseCode & "-" & strZoneCode & "-0"
                     'Call DeleteAllFile(strKeyid)
@@ -661,13 +661,13 @@ Public Class ORG_Zone
 
     '        Dim fileType As String() = Split(".jpg,.jpeg,.gif,.png", ",")
     '        If Not fileType.Contains(Path.GetExtension(FileUpload1.FileName).ToLower) Then
-    '            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_pic_jpg", "MSG", "1") & "');", True)
+    '            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_pic_jpg", "MSG") & "');", True)
     '            Exit Sub
     '        End If
 
     '        Dim len As Integer = FileUpload1.FileContent.Length
     '        If len > MAX_FILE_LENGTH_MB * 1000000 Then
-    '            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_pic_notover", "MSG", "1") & "');", True)
+    '            ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_pic_notover", "MSG") & "');", True)
     '            Return
     '        End If
 
@@ -678,7 +678,7 @@ Public Class ORG_Zone
     '            imgPic.ImageUrl = strPathServer & hddParameterMenuID.Value & "/" & Me.CurrentUser.UserID & "/" & "0." & fileName.Split(".")(1) & "?id=" & TempDate.Substring(TempDate.Length - 2)
     '            imgPic.Attributes.Add("onClick", "CallLoadHrefNewtab('" & strPathServer & hddParameterMenuID.Value & "/" & Me.CurrentUser.UserID & "/" & "0." & fileName.Split(".")(1) & "?id=" & TempDate.Substring(TempDate.Length - 2) & "');")
     '            'Else
-    '            'ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_pic_jpg", "MSG", "1") & "');", True)
+    '            'ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_pic_jpg", "MSG") & "');", True)
     '            'End If
     '        End If
     '    End If
@@ -706,11 +706,11 @@ Public Class ORG_Zone
             hddReloadGrid.Value = String.Empty
 
             'If txtaUnitFrom.Text = String.Empty Then
-            '    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_please_select", "MSG", "1") & " " & GetResource("lblaUnitFrom", "Text", hddParameterMenuID.Value) & "');", True)
+            '    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_please_select", "MSG") & " " & GetResource("lblaUnitFrom", "Text", hddParameterMenuID.Value) & "');", True)
             '    Exit Sub
             'End If
             'If txtaUnitTo.Text = String.Empty Then
-            '    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_please_select", "MSG", "1") & " " & GetResource("lblaUnitTo", "Text", hddParameterMenuID.Value) & "');", True)
+            '    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_please_select", "MSG") & " " & GetResource("lblaUnitTo", "Text", hddParameterMenuID.Value) & "');", True)
             '    Exit Sub
             'End If
 
@@ -741,7 +741,7 @@ Public Class ORG_Zone
                         grdView2.DataSource = dt
                         grdView2.DataBind()
 
-                        ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("resUsedED11PAJ1", "MSG", "1") & " " & pUsed & "');", True)
+                        ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("resUsedED11PAJ1", "MSG") & " " & pUsed & "');", True)
                         Exit Sub
                     End If
                     If dt.Select("FlagDup = '1'").Length > 0 Then
@@ -758,7 +758,7 @@ Public Class ORG_Zone
                         grdView2.DataSource = dt
                         grdView2.DataBind()
 
-                        ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_duplicate_table", "MSG", "1") & " " & pDup & "');", True)
+                        ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_duplicate_table", "MSG") & " " & pDup & "');", True)
                         Exit Sub
                     Else
                         hddIDRealTime.Value = String.Empty
@@ -766,11 +766,11 @@ Public Class ORG_Zone
                         grdView2.DataBind()
                     End If
                 Else
-                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_data_not_found", "MSG", "1") & "');", True)
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_data_not_found", "MSG") & "');", True)
                     Exit Sub
                 End If
             Else
-                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_data_not_found", "MSG", "1") & "');", True)
+                ScriptManager.RegisterStartupScript(Me, Me.GetType, "callScriptFunction", "OpenDialogError('" & GetResource("msg_data_not_found", "MSG") & "');", True)
                 Exit Sub
             End If
 

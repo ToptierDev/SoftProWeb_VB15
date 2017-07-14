@@ -44,8 +44,8 @@ Public Class Displaymap
 #Region "Dropdownlist"
     Public Sub LoadDropdownlist()
         Call LoadWebLang(ddlaWebLang)
-        ddlsCompany.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
-        ddlsModule.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
+        ddlsCompany.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
+        ddlsModule.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
     End Sub
     Public Sub LoadWebLang(ByVal ddl As DropDownList)
         Try
@@ -65,7 +65,7 @@ Public Class Displaymap
             ddl.DataValueField = "Code"
             ddl.DataSource = lc
             ddl.DataBind()
-            ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
+            ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
             If lc IsNot Nothing Then
                 If lc.Count = 1 Then
                     ddl.SelectedIndex = 1
@@ -88,7 +88,7 @@ Public Class Displaymap
             ddl.DataValueField = "Code"
             ddl.DataSource = lc
             ddl.DataBind()
-            ddl.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
+            ddl.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
             If lc IsNot Nothing Then
                 If lc.Count = 1 Then
                     ddl.SelectedIndex = 1
@@ -150,26 +150,46 @@ Public Class Displaymap
         Else
             ddlsCompany.Items.Clear()
             ddlsModule.Items.Clear()
-            ddlsCompany.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
-            ddlsModule.Items.Insert(0, New ListItem(GetWebMessage("msg_select", "MSG", "1"), ""))
+            ddlsCompany.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
+            ddlsModule.Items.Insert(0, New ListItem(GetResource("msg_select", "MSG"), ""))
         End If
     End Sub
 #End Region
 
 #Region "WebResource"
-    Public Function GetWebMessage(ByVal messageName As String,
-                                  ByVal messageType As String,
-                                  ByVal messageMenuID As String) As String
-        Dim ctx As PNSDBWEBEntities = PNSDBWEBEntities.Context
-        Dim resource As CoreWebResource = ctx.CoreWebResources.Where(Function(s) s.ResourceName.ToLower() = messageName.ToLower() And s.ResourceType.ToLower() = messageType.ToLower() And s.MenuID = messageMenuID).SingleOrDefault
-        If resource IsNot Nothing Then
-            If Not IsDBNull(resource.ResourceValueEN) Then
-                Return resource.ResourceValueEN
-            End If
-        Else
-            Throw New Exception(String.Format("No resource name [{0}]", messageName))
-        End If
-        Return String.Empty
+    Public Function GetResource(ByVal strResourceName As String,
+                                ByVal strResourceType As String) As String
+        Return GetResource(strResourceName, strResourceType, "1")
     End Function
+    Public Function GetResource(ByVal strResourceName As String,
+                                ByVal strResourceType As String,
+                                ByVal strResourceMenuID As String) As String
+
+        Try
+
+
+            Dim ctx As PNSDBWEBEntities = PNSDBWEBEntities.Context
+            ' Dim resultsList As List(Of CoreWebResource) ' = ctx.CoreWebResources.ToList()
+            Dim resource As CoreWebResource
+            resource = ctx.CoreWebResources.Where(Function(s) s.ResourceName.ToLower() = strResourceName.ToLower() _
+                                         And s.ResourceType.ToLower() = strResourceType.ToLower() _
+                                         And (s.MenuID = strResourceMenuID _
+                                         Or s.MenuID = 99999)).OrderBy(Function(s) s.MenuID).FirstOrDefault()
+            If resource IsNot Nothing Then
+                If Not IsDBNull(resource.ResourceValueEN) Then
+                    Return resource.ResourceValueEN
+                End If
+            Else
+                'Throw New Exception(String.Format("No resource name [{0}]", strResourceName))
+
+                HelperLog.ErrorLog("0", "99999", Request.UserHostAddress(), "GetResource", New Exception(strResourceName))
+                Return strResourceName
+            End If
+        Catch ex As Exception
+            HelperLog.ErrorLog("0", "99999", Request.UserHostAddress(), "GetResource", ex)
+            Return strResourceName
+        End Try
+    End Function
+
 #End Region
 End Class
